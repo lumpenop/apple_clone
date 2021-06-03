@@ -5,7 +5,7 @@
 
 ### 프로젝트 주제
 애플 공식 홈페이지 기능 및 페이지 구현
-<img src="https://img.shields.io/badge/apple-000000?style=plastic&logo=HTML5&logoColor=white"/>
+<img src="https://img.shields.io/badge/apple-000000?style=plastic&logo=apple&logoColor=white"/>
 
 #### 프로젝트 목표
 html / css / vanilla.js / node.js 를 이용하여 MVC 디자인패턴과 ORM, jwt 토큰 인증 
