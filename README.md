@@ -1,7 +1,7 @@
 
 
 
-## 웹 프로젝트 apple <img src="https://img.shields.io/badge/apple-000000?style=plastic&logo=apple&logoColor=white"/>
+## 웹 프로젝트 <img src="https://img.shields.io/badge/apple-000000?style=plastic&logo=apple&logoColor=white"/>
 
 ### 프로젝트 주제
 애플 공식 홈페이지 기능 및 페이지 구현
