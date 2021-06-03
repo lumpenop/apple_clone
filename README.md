@@ -8,7 +8,7 @@
 
 
 #### 프로젝트 목표
-html / css / vanilla.js / node.js 를 이용하여 MVC 디자인패턴과 ORM, jwt 토큰 인증 
+html / css / vanilla.js / node.js 를 이용하여 MVC 디자인패턴과 ORM, jwt 토큰 인증, 웹 소켓 등 구현
 
 #### 팀원
 - main page front end
