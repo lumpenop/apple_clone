@@ -1,24 +1,26 @@
 
 
 
-## ki 웹 프로젝트
+## 웹 프로젝트 apple 
 
 ### 프로젝트 주제
-웹사이트 기능 및 페이지 구현
+애플 공식 홈페이지 기능 및 페이지 구현
+<img src="https://img.shields.io/badge/apple-000000?style=plastic&logo=HTML5&logoColor=white"/>
 
 #### 프로젝트 목표
 html / css / vanilla.js / node.js 를 이용하여 MVC 디자인패턴과 ORM, jwt 토큰 인증 
 
 #### 팀원
-- main page
+- main page front end
   - 김승원
-  - 강지현
-- user page 
-  - 이승희
-- back end
-  - 오미희
+- main page back end
+  - 오세연
+- admin page full stack
+  - 김서영
+ 
 
 #### 사용 기술
+
 
 <p>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=plastic&logo=HTML5&logoColor=white"/>
