@@ -1,5 +1,24 @@
 {% include "./top.html" %}
 
+<main class="main" role="main" data-anim-scroll-group="bubble-gum-group">
+    <section class="homepage-section collection-module">
+        <div data-unit-id="shop-online" data-analytics-activitymap-region-id="ribbon-shop-online">
+            <div class="module-content">
+                <div class="ribbon-shop-online">
+                    <div class="section-content section-content-shop-online">
+                        <span class="covid-ribbon-copy variant">
+                            <a href="/kr/shop/goto/shop" target="_self" data-analytics-title="shop online - control">
+                                온라인으로 쇼핑
+                            </a>
+                            하고 무료 배송, 스페셜리스트 지원 등의 혜택을 받으세요.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
 <div class="hero create">
         <div class="hero-image-wrapper">
             <div class="container hero-image-alignment">
@@ -23,140 +42,147 @@
         </div>
     </div>
     <!---- end intro text section ---->
-    <form method="post" action="join/success">
-    <div class="flow-section account-info-section">
-        <div class="container-xs centered">
-            <div class="form-table">
-                <div class="form-element">
-                    <input id="username" type="text" class="generic-input-field form-textbox">
-                    <span aria-hidden="true" for="username" class="form-label">이름</span>
+    <div id="app-content">
+        <form method="post" action="join/success">
+    
+            <div class="flow-section account-info-section">
+                <div class="container-xs centered">
+                    <div class="form-table">
+                        <div class="form-element">
+                            <input id="username" type="text" class="generic-input-field form-textbox">
+                            <span aria-hidden="true" for="username" class="form-label">이름</span>
+                        </div>
+                        <div class="form-element">
+                            <input id="userbirth" name="userbirth" type="text" class="form-cell form-textbox form-textbox-text form-field generic-input-field">
+                            <span aria-hidden="true" class="form-label" for="userbirth">
+                                생년월일
+                            </span>
+                        </div>
+                        <button class="button button-link">
+                            <i aria-hidden="ture" class="icon icon-help"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="form-element">
-                    <input id="userbirth" name="userbirth" type="text" class="form-cell form-textbox form-textbox-text form-field generic-input-field">
-                    <span aria-hidden="true" class="form-label" for="userbirth">
-                        생년월일
-                    </span>
+            </div>
+            <!---- end user info section ---->
+            
+            <div class="flow-section">
+                <div class="container-xs centered">
+                    <div class="form-element">
+                        <input id="userid" type="email" aria-invalid="false" maxlength="254" class="generic-input-field form-textbox">
+                        <span aria-hidden="true" class="form-label" id="idms-input-labelledby-1623047548334-1" for="userid">
+                            name@example.com
+                        </span>
+                        <div id="aidCaption" class="tk-body-reduced field-caption aid-caption">
+                            새 Apple ID로 사용될 주소입니다.
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <input id="userpw" type="password" class="pwd form-textbox form-textbox-text">
+                        <span class="form-label" aria-hidden="true" for="userpw">암호</span>
+                    </div>
+                    <div class="form-element">
+                        <input id="pwcheck" type="password" class="pwd form-textbox form-textbox-text">
+                        <span class="form-label" aria-hidden="true" for="pwcheck">암호확인</span>
+                    </div>
                 </div>
-                <button class="button button-link">
-                    <i aria-hidden="ture" class="icon icon-help"></i>
+            </div>
+            <!---- end id pw section ---->
+
+            <div class="flow-section">
+                <div class="container-xs centered phone-section">
+                    <div class="form-element">
+                        <input id="mobile" name="mobile" type="tel" class="generic-input-field phone-field form-textbox form-textbox-text">
+                        <span class="form-label">전화번호</span>
+                    </div>
+                    <button class="phone-info list-action">
+                        <i aria-hidden="true" class="icon icon-help"></i>
+                    </button>
+                    <div class="tk-body-reduced field-caption">
+                        항상 사용할 수 있는 전화번호를 입력하십시오.
+                    </div>
+                    <div class="form-row phone-type">
+                        <div class="form-cell form-label-inline">
+                            번호 확인 방법
+                        </div>
+                        <div class="form-cell">
+                            <div class="form-element">
+                                <input type="radio" class="verify-mode-sms-input" id="_gp1_1" name="type" checked>
+                                <label for="_gp1_1">
+                                    문자 메시지
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-cell">
+                            <div class="form-element">
+                                <input type="radio" class="verify-mode-sms-input" id="_gp1_2" name="type">
+                                <label for="_gp1_2">
+                                    음성 메시지                    
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!---- end phone section ---->
+
+            <div class="flow-section">
+                <div class="container-xs centered updates-section">
+                    <div class="updates">
+                        <div class="form-element">
+                            <input type="checkbox" id="news" class="form-choice form-choice-checkbox">
+                            <label class="form-label" for="news" >
+                                <span class="form-choice-indicator"></span>
+                                공지사항
+                                <small class="label-small tk-caption">
+                                    Apple 제품, 서비스 및 소프트웨어에 대한 공지사항, 추천 및 업데이트를 받아봅니다.
+                                </small>
+                            </label>
+                        </div>
+                        <div class="form-element">
+                            <input type="checkbox" id="itunes" name="itunes" class="form-choice form-choice-checkbox">
+                            <label for="itunes" class="form-label">
+                                <span class="form-choice-indicator"></span>
+                                앱, 음악, 영화 등
+                                <small class="label-small tk-caption">앱, 음악, 영화, TV, 독서, 팟캐스트 등에 대한 신규 출시 정보</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <!---- end updates section ---->
+            <div class="flow-section">
+                <div class="container-xs centered privacy-policy-section">
+                    <div class="form-element">
+                        <input type="checkbox" id="privacyPolicy" name="privacyPolicy" class="form-choice form-choice-checkbox" can-value="privacyPolicyChecked">
+                        <label class="form-label privacy-policy" for="privacyPolicy">
+                            <span class="form-choice-indicator"></span>
+                            <a href="http://www.apple.com/kr/privacy/privacy-policy" target="_blank">
+                                Apple의 개인정보 처리 방침
+                                <span class="sr-only">새 윈도우에서 열림</span>
+                            </a>
+                            에 따라 개인 정보를 수집, 사용, 타사에 대한 제공 및 처리하는 데 동의합니다.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="label-small text-centered centered tk-caption field-caption details privacy-wrapper">
+                <div class="privacy-icon"></div>
+                Apple&nbsp;ID 정보를 사용해 안전하게 계정에 로그인하고 데이터에 엑세스합니다. Apple은 보안, 지원 및 보고의 목적으로 특정 사용 데이터를 기록합니다.
+                <a href="https://support.apple.com/HT208650" target="_blank">
+                    데이터가 어떻게 관리되는지 알아보기
+                </a> 
+            </div>
+            <div class="toolbar-wrapper toolbar-footer claearfix">
+                <button id ="joinBtn" type="submit" tabindex="0">
+                    <div class="overflow-text">계속</div>
                 </button>
             </div>
-        </div>
-    </div>
-    <!---- end user info section ---->
-    
-    <div class="flow-section">
-        <div class="container-xs centered">
-            <div class="form-element">
-                <input id="userid" type="email" aria-invalid="false" maxlength="254" class="generic-input-field form-textbox">
-                <span aria-hidden="true" class="form-label" id="idms-input-labelledby-1623047548334-1" for="userid">
-                    name@example.com
-                </span>
-                <div id="aidCaption" class="tk-body-reduced field-caption aid-caption">
-                    새 Apple ID로 사용될 주소입니다.
-                </div>
-            </div>
-            <div class="form-element">
-                <input id="userpw" type="password" class="pwd form-textbox form-textbox-text">
-                <span class="form-label" aria-hidden="true" for="userpw">암호</span>
-            </div>
-            <div class="form-element">
-                <input id="pwcheck" type="password" class="pwd form-textbox form-textbox-text">
-                <span class="form-label" aria-hidden="true" for="pwcheck">암호확인</span>
-            </div>
-        </div>
-    </div>
-    <!---- end id pw section ---->
-
-    <div class="flow-section">
-        <div class="container-xs centered phone-section">
-            <div class="form-element">
-                <input id="mobile" name="mobile" type="tel" class="generic-input-field phone-field form-textbox form-textbox-text">
-                <span class="form-label">전화번호</span>
-            </div>
-            <button class="phone-info list-action">
-                <i aria-hidden="true" class="icon icon-help"></i>
-            </button>
-        </div>
-        <div class="tk-body-reduced field-caption">
-            항상 사용할 수 있는 전화번호를 입력하십시오.
-        </div>
-        <div class="form-row phone-type">
-            <div class="form-cell form-label-inline">
-                번호 확인 방법
-            </div>
-            <div class="form-cell">
-                <div class="form-element">
-                    <input type="radio" class="verify-mode-sms-input" id="_gp1_1" name="type" checked>
-                    <label for="_gp1_1">
-                        문자 메시지
-                    </label>
-                </div>
-            </div>
-            <div class="form-cell">
-                <div class="form-element">
-                    <input type="radio" class="verify-mode-sms-input" id="_gp1_2" name="type">
-                    <label for="_gp1_2">
-                        음성 메시지                    
-                    </label>
-                </div>
-        </div>
-    </div>
-    </form>
-    <!---- end phone section ---->
-
-    <div class="flow-section">
-        <div class="container-xs updates-section">
-            <div class="updates">
-                <div class="form-element">
-                    <input type="checkbox" id="news" class="form-choice form-choice-checkbox">
-                    <label class="form-label" for="news" >
-                        <span class="form-choice-indicator"></span>
-                        공지사항
-                        <small class="label-small tk-caption">
-                            Apple 제품, 서비스 및 소프트웨어에 대한 공지사항, 추천 및 업데이트를 받아봅니다.
-                        </small>
-                    </label>
-                </div>
-                <div class="form-element">
-                    <input type="checkbox" id="itunes" name="itunes" class="form-choice form-choice-checkbox">
-                    <label for="itunes" class="form-label">
-                        <span class="form-choice-indicator"></span>
-                        앱, 음악, 영화 등
-                        <small >앱, 음악, 영화, TV, 독서, 팟캐스트 등에 대한 신규 출시 정보</small>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!---- end updates section ---->
-
-    <privacy-policy {(privacy-policy-checked)}="privacyPolicyChecked" {(validation-errors)}="validationErrors.privacyPolicyChecked">
-        <div class="container-xs privacy-policy-section">
-            <div class="form-element">
-                <input type="checkbox" id="privacyPolicy" name="privacyPolicy" class="form-choice form-choice-checkbox" can-value="privacyPolicyChecked">
-                <label class="form-label privacy-policy" for="privacyPolicy">
-                    <span class="form-choice-indicator"></span>
-                    <a href="http://www.apple.com/kr/privacy/privacy-policy" target="_blank">
-                        Apple의 개인정보 처리 방침
-                        <span class="sr-only">새 윈도우에서 열림</span>
-                    </a>
-                    에 따라 개인 정보를 수집, 사용, 타사에 대한 제공 및 처리하는 데 동의합니다.
-                </label>
-            </div>
-        </div>
-    </privacy-policy>
-    <div class="label-small text-centered centered tk-caption field-caption details privacy-wrapper">
-        <div class="privacy-icon"></div>
-        Apple&nbsp;ID 정보를 사용해 안전하게 계정에 로그인하고 데이터에 엑세스합니다. Apple은 보안, 지원 및 보고의 목적으로 특정 사용 데이터를 기록합니다.
-        <a href="https://support.apple.com/HT208650" target="_blank">
-            데이터가 어떻게 관리되는지 알아보기
-        </a> 
-    </div>
-    <div class="idms-step-footer claearfix">
-        <button id ="joinBtn" type="submit" tabindex="0">
-            <div class="overflow-text">계속</div>
-        </button>
+        </form>
     </div>
 
 

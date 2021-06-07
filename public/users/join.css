@@ -35,7 +35,6 @@
     max-width: 1200px;
     margin: auto;
     width: 80%;
-
     border-bottom: 1px solid #e7e7e8;
     padding: 30px 0 20px;
 }
@@ -64,7 +63,7 @@
     position: relative;
 }
 
-.form-label{
+.form-textbox~.form-label{
     position: absolute;
     top: 18px;
     left: 17px;
@@ -91,3 +90,110 @@
 .container-xs{
     max-width: 460px;
 }
+
+.privacy-wrapper{
+    max-width: 465px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    color:#666;
+}
+
+.tk-caption{
+    font-size: 12px;
+    line-height: 1.33341;
+    font-weight: 400;
+}
+
+.text-centered{
+    text-align: center;
+}
+
+.privacy-icon{
+    background:url(
+        https://appleid.cdn-apple.com/static/bin/cb1900903086/dist/assets/privacy-icon.png
+    )no-repeat;
+    width: 35px;
+    height: 28px;
+    margin: 10px auto;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.toolbar-footer{
+    min-height: 40px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 0 0 40px;
+}
+
+#joinBtn{
+    font-size: 18px;
+    line-height: 1.47059;
+    font-weight: 400;
+    background-color: #0070c9;
+    background: linear-gradient(
+        #42a1ec, #0070c9);
+    border: 1px solid #07c;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    min-width: 30px;
+    padding: 4px 15px;
+    text-align: center;
+}
+
+#app-content{
+    padding-bottom: 95px;
+}
+
+#ac-globalfooter{
+    min-width: 320px;
+
+    font-size: 12px;
+    line-height: 1.33337;
+    font-weight: 400;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    position: relative;
+    z-index: 1;
+}
+
+.ac-gf-footer{
+
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 22px;
+    min-width: 1024px;
+
+}
+
+.choose{
+    color: #515154;
+    float: right;
+}
+
+.ac-gf-footer-legal-copyright{
+    margin-right: 20px;
+    float: left;
+}
+
+
+.ac-gf-footer-legal-link{
+    margin-left: 8px !important;
+}
+
+.con:after{
+    content: '|';
+    padding-left: 8px;
+}
+
+
+.ac-gf-footer-legal-links > a{
+    color: #515154;
+}
+
+.ac-gf-footer{
+    color: #86868b;
+}
+
