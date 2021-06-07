@@ -5,3 +5,89 @@
         https://appleid.cdn-apple.com/static/bin/cb3521079850/dist/assets/apple_id_recovery_2880x340.jpg
     )no-repeat;
 }
+
+.intro{
+    padding-top: 30px;
+    color: #000;
+    text-align: center;
+}
+
+.sk-icon-chevronright:before{
+    content: ">";
+}
+
+.more:after, .more:before, .sk-icon:after, .sk-icon:before {
+    font-family: SF Pro Icons;
+    display: inline-block;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+
+}
+.no-wrap{
+    color: #0070C9;
+}
+
+/***** end intro section *****/
+
+.flow-section{
+    max-width: 1200px;
+    margin: auto;
+    width: 80%;
+
+    border-bottom: 1px solid #e7e7e8;
+    padding: 30px 0 20px;
+}
+
+.form-textbox{
+    font-size:17px;
+    line-height: 1.23543;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 3.3em;
+    margin-bottom: 14px;
+    padding-top: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px ;
+    background: hsla(0, 0%, 100%, .8);
+    background-clip: padding-box;
+}
+
+.form-element{
+    position: relative;
+}
+
+.form-label{
+    position: absolute;
+    top: 18px;
+    left: 17px;
+    color: #888;
+
+}
+
+.tk-body-reduced{
+    font-size: 14px;
+    line-height: 1.42861;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.form-cell{
+    display: inline-block;
+}
+
+.centered{
+    margin: auto;
+}
+
+.container-xs{
+    max-width: 460px;
+}
