@@ -7,6 +7,7 @@ const port = process.env.SERVER_PORT || 3000;
 const main= require('./routers/index.js')
 
 
+app.use(express.static(__dirname + 'public'));
 
 nunjucks.configure('views', {
     express:app,
@@ -14,6 +15,7 @@ nunjucks.configure('views', {
 app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
+
 
 
 app.get('/', main)
