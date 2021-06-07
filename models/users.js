@@ -32,10 +32,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    address: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
     register_date: {
       type: DataTypes.DATEONLY,
       allowNull: false,
