@@ -20,8 +20,7 @@
     "sequelize-auto": "^0.8.3",
     "sequelize-cli": "^6.2.0"
   },
-    "nunjucks": "^3.2.3"
-  ,
+  "nunjucks": "^3.2.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lumpenop/seoYoungCessMaker2.git"

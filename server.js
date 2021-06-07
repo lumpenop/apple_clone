@@ -22,7 +22,7 @@ app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
-app.get('/', main)
+app.use('/', main)
 
 //DB 잘 연결되는지 확인 환료 , users, items, buy 모두ㅇㅋㅇㅋ
 app.get('/asdf',async (req,res)=>{

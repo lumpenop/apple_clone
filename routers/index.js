@@ -1,7 +1,9 @@
-const express=require('express');
+const express = require('express');
 const router = express.Router();
+const userRouter = require('./users/index.js');
 
-router.get('/',(req,res)=>{
+router.use('/join', userRouter);
+router.use('/',(req,res)=>{
     res.render('index.html');
 })
 
