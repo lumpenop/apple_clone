@@ -127,7 +127,11 @@
     padding: 0 0 40px;
 }
 
+/*joinBtn (button 에서 script사용때문에 div로 바꿧습니다) 
+그래서 joinBtn에 width, height, margin:0 , auto 추가해서 이전 button과 똑같이 만들엇습니다*/
 #joinBtn{
+    width:68px;
+    height:36px;
     font-size: 18px;
     line-height: 1.47059;
     font-weight: 400;
@@ -140,7 +144,7 @@
     cursor: pointer;
     min-width: 30px;
     padding: 4px 15px;
-    text-align: center;
+    margin : 0 auto;
 }
 
 #app-content{

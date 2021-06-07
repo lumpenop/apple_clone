@@ -18,6 +18,7 @@ function createToken(userid){
 }
 
 function createPW(userpw){
+    console.log('dd')
     const cryptoPassword = crypto.createHmac('sha256', Buffer.from(process.env.salt))
                         .update(userpw)
                         .digest('base64')

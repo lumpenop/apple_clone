@@ -21,7 +21,6 @@ sequelize.sync({force:true,})
 .then(()=>{console.log('접속완료')})
 .catch(()=>{console.log('접속 실패')})
 
-
 nunjucks.configure('views', {
     express:app,
 })
@@ -37,9 +36,7 @@ app.use(session({
 }))
 app.use(express.static('node_modules'));
 
-// io.sockets.on('connection',(socket)=>{
-
-// })
+// io.sockets.on('connection',(socket)=>{})
 
 app.use('/', main)
 
