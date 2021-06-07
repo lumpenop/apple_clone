@@ -20,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: false
     },
+    userbirth:{
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     image: {
       type: DataTypes.STRING(200),
       allowNull: true
@@ -29,10 +33,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     address: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
-    email: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
