@@ -41,7 +41,7 @@ app.use(express.static('node_modules'));
 
 // })
 
-app.get('/', main)
+app.use('/', main)
 
 //DB 잘 연결되는지 확인 완료 , users, items, buy 모두ㅇㅋㅇㅋ
 app.get('/asdf',async (req,res)=>{
