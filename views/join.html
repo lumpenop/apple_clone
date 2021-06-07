@@ -23,16 +23,16 @@
         </div>
     </div>
     <!---- end intro text section ---->
-
+    <form method="post" action="join/success">
     <div class="flow-section account-info-section">
         <div class="container-xs centered">
             <div class="form-table">
                 <div class="form-element">
-                    <input id="username" type="text" class="generic-input-field">
-                    <span aria-hidden="true" class="form-label" id="username">이름</span>
+                    <input id="username" name="username" type="text" class="generic-input-field">
+                    <span aria-hidden="true" class="form-label" name ="username" id="username">이름</span>
                 </div>
                 <div class="form-element">
-                    <input id="userbirth" type="text" class="form-cell form-textbox form-textbox-text form-field generic-input-field">
+                    <input id="userbirth" name="userbirth" type="text" class="form-cell form-textbox form-textbox-text form-field generic-input-field">
                     <span aria-hidden="true" class="form-label" for="userbirth">
                         생년월일
                     </span>
@@ -44,11 +44,11 @@
         </div>
     </div>
     <!---- end user info section ---->
-
+    
     <div class="flow-section">
         <div class="container-xs centered">
             <div class="form-element">
-                <input id="userid" type="email" aria-invalid="false" maxlength="254" class="generic-input-field">
+                <input id="userid" name="userid" type="email" aria-invalid="false" maxlength="254" class="generic-input-field">
                 <span aria-hidden="true" class="form-label" id="idms-input-labelledby-1623047548334-1" for="userid">
                     name@example.com
                 </span>
@@ -57,12 +57,12 @@
                 새 Apple ID로 사용될 주소입니다.
             </div>
         </div>
-        <div class="form-element">\
-            <input id="userpw" type="password" class="pwd form-textbox form-textbox-text">
+        <div class="form-element">
+            <input id="userpw" name="userpw" type="password" class="pwd form-textbox form-textbox-text">
             <span class="form-label" aria-hidden="true" for="userpw">암호</span>
         </div>
         <div class="form-element">
-            <input id="pwcheck" type="password" class="pwd form-textbox form-textbox-text">
+            <input id="pwcheck" name="pwcheck" type="password" class="pwd form-textbox form-textbox-text">
             <span class="form-label" aria-hidden="true" for="pwcheck">암호확인</span>
         </div>
     </div>
@@ -71,7 +71,7 @@
     <div class="flow-section">
         <div class="container-xs centered phone-section">
             <div class="form-element">
-                <input id="mobile" type="tel" class="generic-input-field phone-field form-textbox form-textbox-text">
+                <input id="mobile" name="mobile" type="tel" class="generic-input-field phone-field form-textbox form-textbox-text">
                 <span class="form-label">전화번호</span>
             </div>
             <button class="phone-info list-action">
@@ -102,6 +102,7 @@
                 </div>
         </div>
     </div>
+    </form>
     <!---- end phone section ---->
 
     <div class="flow-section">
@@ -134,10 +135,11 @@
         </a> 
     </div>
     <div class="idms-step-footer claearfix">
-        <button type="button" disabled tabindex="0">
+        <button id ="joinBtn" type="submit" tabindex="0">
             <div class="overflow-text">계속</div>
         </button>
     </div>
+
 
 
 

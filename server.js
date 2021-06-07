@@ -17,7 +17,7 @@ const http = require('http');
 const server = http.createServer(app);
 const io = socket(server);
 
-sequelize.sync({force:false,})
+sequelize.sync({force:true,})
 .then(()=>{console.log('접속완료')})
 .catch(()=>{console.log('접속 실패')})
 
