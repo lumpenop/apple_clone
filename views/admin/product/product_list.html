@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "headerWrap wrap">
+        <div class = "header w1200">
+            <div class = "logo">
+                <img src = "">
+            </div>
+            <div class = "user">
+                <img src = "">
+                <div class = "userId">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "middleWrap wrap">
+        <div class = "middle w1200">
+            <div class = "menu">
+                <div>카테고리</div>
+                <ul>
+                    <li><a href = "">팝업 관리</a></li>
+                    <li><a href = "">상품 관리</a></li>
+                    <li><a href = "">고객 문의/채팅</a></li>
+                </ul>
+                <div>유저정보</div>
+                <ul>
+                    <li><a href = "">관리자 정보</a></li>
+                </ul>
+            </div>
+            <div class = "content">
+                <div>
+                    <div>상품 관리 하기</div>
+                    <form action = "/product" method = "post">
+                        <div>
+                            <div class = "">상품 검색</div>
+                            <input type = "text">
+                            <div class = "">등록기간</div>
+                            <input type = "text">
+                            <input type = "text">
+                            <input type = "submit">
+                        </div>      
+                    </form>
+                </div>
+                <div>
+                    <table class = "table">
+                        <tr>
+                            <td>상품 번호</td>
+                            <td>제품명</td>
+                            <td>제품가격</td>
+                            <td>제품이미지</td>
+                            <td>제품사이즈</td>
+                            <td>제품색깔</td>
+                            <td>제품용량</td>
+                            <td>삭제하기</td>
+                        </tr>
+                        {% for item in list %}
+                        <form action = "" method = "post"></form>
+                            <tr>
+                                <td>1</td>
+                                <td><a href = "?{{idx}}">{{제품명}}</a></td>
+                                <td>{{제품가격 id}}</td>
+                                <td>{{제품이미지}}</td>
+                                <td>{{제품사이즈}}</td>
+                                <td>{{제품색깔}}</td>
+                                <td>{{제품용량}}</td>
+                                <td>
+                                    <input type = "submit" value = "삭제하기">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>1</td>
+                                <td><a href = "?{{idx}}">{{제품명}}</a></td>
+                                <td>{{제품가격 id}}</td>
+                                <td>{{제품이미지}}</td>
+                                <td>{{제품사이즈}}</td>
+                                <td>{{제품색깔}}</td>
+                                <td>{{제품용량}}</td>
+                                <td>
+                                    <input type = "submit" value = "삭제하기">
+                                </td>
+                            </tr> 
+                        </form>
+                        {% endfor %}
+                    </table>
+                    <div class = ""><a href = "">상품 추가하기</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+
+</script>
+</html>
