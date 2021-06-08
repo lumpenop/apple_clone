@@ -22,35 +22,45 @@
 
 <div class="login-container">
     <div class="login-wrapper">
-        <div class="hero signin">
+        <div class="login-hero signin">
             <div id="autWidgetContainer" class="auth-widget-container">
                 <div class="rs-aos-sign-in-form">
-                        <div class="signin-content">
+                        <div class="login-content">
+                            <form id = "loginForm" method="post" action="/user/logincheck">
                             <div class="rs-aos-sign-in-fields">
-                                <form id = "loginForm" method="post" action="/user/logincheck">
-                                <div class="form-textbox">
-                                    <input class="form-textbox-input" type="text" name="userid">
-                                    <span class="form-textbox-label" aria-hidden="true">
+                                <div class="login-textbox">
+                                    <input class="login-textbox-input" type="text" name="userid">
+                                    <span class="login-textbox-label" aria-hidden="true">
                                         Apple ID
                                     </span>
                                 </div>
-                                <div class="form-textbox">
-                                    <input class="form-textbox-input" type="password" name="userpw">
-                                    <span class="form-textbox-lebel" aria-hidden="ture">
+                                <div class="login-textbox">
+                                    <input class="login-textbox-input" type="password" name="userpw">
+                                    <span class="login-textbox-label" aria-hidden="ture">
                                         암호
                                     </span>
                                 </div>
-                                </form>
                             </div>
-                            <p class="rs-sign-in-info">
+                            </form>
+                            <p class="login-sign-in-info">
                                 Apple ID는 Itunes, App Store에 로그인 할 때 사용하는 이메일 주소입니다.
                             </p>
-                            <div class="rs-aos-sign-in-submit">
+                            <div class="login-aos-sign-in-submit">
                                 <div id="loginBtn" >
                                     <span>
-                                        <span aria-hidden="true">로그인</span>
+                                        <span>로그인</span>
                                     </span>
                                 </div>
+                            </div>
+                            <div class="login-sign-in-forgot-password">
+                                <a href="/">
+                                    <span>Apple ID 또는 암호를 잊으셨나요?</span>
+                                </a>
+                            </div>
+                            <div class="login-sign-in-forgot-account">
+                                <a href="/">
+                                    <span>Apple ID가 없으신가요? 지금 생성.</span>
+                                </a>
                             </div>
                         </div>
                 </div>
