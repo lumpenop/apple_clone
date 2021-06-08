@@ -202,3 +202,9 @@
 .menu{
     display: flex;
 }
+
+.as-footnotes-sosumi{
+    border-bottom: 1px solid #d2d2d7;
+    padding: 17px 0 21px;
+}
+
