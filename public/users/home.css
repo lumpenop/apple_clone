@@ -141,3 +141,28 @@ a{
 .ac-gf-footer-shop{
     margin-bottom: 4px;
 }
+
+
+.inputFocus{
+    animation-name: inputFocus;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+.inputFocusOut{
+    animation-name: inputFocus;
+    animation-duration: .2s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+@keyframes inputFocus{
+    from{
+        font-size: 17px;
+        top: 18px;
+
+    }to{
+        font-size: 12px;
+        top: 10px;
+    }
+}

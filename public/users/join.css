@@ -199,6 +199,7 @@
 
 .form-label{
     font-size: 14px;
+    pointer-events: none;
 }
 
 .ac-gf-footer-mini{
