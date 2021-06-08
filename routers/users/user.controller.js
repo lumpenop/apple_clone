@@ -6,17 +6,30 @@ let join = async (req, res) =>{
 }
 
 let join_success = (req,res)=>{
-    // 맞으면 pw 암호화 -> 
-    //받은 내용들 db에 넣기
-    let {username, userbirth, userid, userpw, pwcheck, mobile} = req.body; 
+    let {username, userbirth, userid, userpw, mobile} = req.body; 
+    userpw = createPW(userpw);
 
-    let encrypted_userpw = createPW(userpw);
-    console.log(encrypted_userpw)
-
-    
+    users.create({userid,userpw,username,userbirth,mobile})
     res.redirect('/');
 }
 
+let login = (req,res)=>{
+    let {userid,userpw} = req.body;
+    userpw = createPW(userpw);//고객이 로그인할 때 쓴 비번을 암호화 
+    
+    let result = {result:false,}
+    let pick = users.findOne({where:{userid}});
+    if (pick==undefined){
+        result.msg='이메일이 존재하지 않습니다.'
+    }
+    let userpwfromDB = pick.userpw
+    if(userpw!=userpwfromDB){
+        result.msg='비밀번호가 일치하지 않습니다.'
+    }
+    
+
+}
+
 module.exports= {
-    join,join_success,
+    join,join_success,login,
 }

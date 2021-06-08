@@ -13,13 +13,12 @@ const {createPW, createToken} = require('./JWT');
 const session = require('express-session'); 
 const socket = require('socket.io');
 const http = require('http');
-
 const server = http.createServer(app);
 const io = socket(server);
 
-sequelize.sync({force:true,})
+sequelize.sync({force:false,})
 .then(()=>{console.log('접속완료')})
-.catch(()=>{console.log('접속 실패')})
+.catch(()=>{console.log('접속 실패')});
 
 nunjucks.configure('views', {
     express:app,
@@ -27,6 +26,7 @@ nunjucks.configure('views', {
 app.set('view engine', 'html');
 app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'));
+app.use(express.static('node_modules'));
 app.use(express.json());
 app.use(session({
     secret:'any',
@@ -34,7 +34,6 @@ app.use(session({
     secure:false,
     saveUninitialized:false,
 }))
-app.use(express.static('node_modules'));
 
 // io.sockets.on('connection',(socket)=>{})
 

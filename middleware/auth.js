@@ -30,5 +30,4 @@ module.exports=(req,res,next)=>{
         console.log('검증 실패');
         res.redirect('/msg=해킹이요')
     }
-
 }
