@@ -69,7 +69,6 @@
 .login-wrapper{
     padding-top: 30px;
     padding-bottom: 92px;
-    border-bottom: 1px solid #d2d2d7;
 }
 
 .login-sign-in-forgot-password{
@@ -122,6 +121,7 @@
     padding: 20px 0 ;
     color: #fff;
     text-align: center;
+    
 }
 
 .rs-aos-sign-in-form{
@@ -137,3 +137,74 @@
     color: #E8F0FE;
     font-size: 14px;
 }
+.flow-container{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.ar-chat{
+    border-top: 1px solid #d2d2d7;
+}
+
+.apps-icons-2x{
+    background: url(
+        /users/app_icons2x.png
+    );
+    background-size: cover;
+    width: 656px;
+    height: 68px;
+    margin: 0 auto;
+}
+
+.apps{
+    padding: 40px 0;
+}
+
+.flow-header{
+    margin-bottom: 12px;
+}
+
+.subnav{
+    z-index: 2;
+    background-color: #fff;
+    opacity: .9;
+    height: 61px;
+    width: 100%;
+    position: absolute;
+}
+
+.subnav-container{
+    max-width: 900px;
+    margin: auto;
+    box-sizing: content-box;
+    padding: 0 15px;
+}
+
+.title{
+    line-height: 61px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.009em;
+    display: inline-block;
+}
+
+.pull-right{
+    float: right;
+    display: flex;
+}
+
+.subnav .item{
+    height: 60px;
+    padding: 0 15px;
+    line-height: 60px;
+}
+
+.menu{
+    display: flex;
+}
+
+.as-footnotes-sosumi{
+    border-bottom: 1px solid #d2d2d7;
+    padding: 17px 0 21px;
+}
+

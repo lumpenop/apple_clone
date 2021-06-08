@@ -1,4 +1,6 @@
 
+
+/////  join  /////
 let joinBtn = document.querySelector('#joinBtn');
 joinBtn.addEventListener('click',joinFn)
 
@@ -21,5 +23,8 @@ function joinFn(){
     
     joinform.submit();
 }
+
+
+
 
 

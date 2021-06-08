@@ -158,7 +158,6 @@
     margin: 0 auto;
     max-width: 980px;
     padding: 0 22px;
-    min-width: 1024px;
 
 }
 
@@ -200,4 +199,9 @@
 
 .form-label{
     font-size: 14px;
+    pointer-events: none;
+}
+
+.ac-gf-footer-mini{
+    padding: 17px 0 21px;
 }

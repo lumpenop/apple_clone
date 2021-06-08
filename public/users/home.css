@@ -136,11 +136,33 @@ a{
     
 }
 
-.ac-gf-footer-mini{
-    border-top: 1px solid #d2d2d7;
-    padding: 17px 0 21px;
-}
+
 
 .ac-gf-footer-shop{
     margin-bottom: 4px;
+}
+
+
+.inputFocus{
+    animation-name: inputFocus;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+.inputFocusOut{
+    animation-name: inputFocus;
+    animation-duration: .2s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+@keyframes inputFocus{
+    from{
+        font-size: 17px;
+        top: 18px;
+
+    }to{
+        font-size: 12px;
+        top: 10px;
+    }
 }
