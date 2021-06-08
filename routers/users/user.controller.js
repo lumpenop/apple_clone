@@ -19,7 +19,9 @@ let join_success = (req, res) => {
 
 let logincheck = async (req, res) => {
     let { userid, userpw } = req.body;
+    console.log(userpw)
     userpw = createPW(userpw);//고객이 로그인할 때 쓴 비번을 암호화 
+    console.log(userpw)
     let result = { result: false, }
     let pick = await users.findOne({ where: { userid } });
 
@@ -46,9 +48,17 @@ let login_success = (req, res) => {
 }
 
 let chat = (req,res)=>{
-    res.render('chat.html')
+    res.render('chat.html');
+}
+
+let chatRoom = (req,res)=>{
+    res.render('chatRoom.html');
+}
+
+let chatHelp = (req,res)=>{
+    res.render('chatHelp.html');
 }
 
 module.exports = {
-    join, join_success, login, logincheck, login_success, chat
+    join, join_success, login, logincheck, login_success, chat, chatRoom, chatHelp,
 }

@@ -41,3 +41,29 @@
     background-color: #eee;
     border:1px solid #999999;
 }
+
+
+
+.chat_off{
+    display:none;
+}
+.chat_on{
+    display:block;
+}
+
+
+
+
+/*    chatHelp    */
+
+.chatHelp_box{
+    cursor: pointer;
+    width:260px;
+    height:160px;
+}
+
+
+
+
+
+

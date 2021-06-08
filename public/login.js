@@ -1,6 +1,7 @@
 let loginBtn = document.querySelector('#loginBtn');
 loginBtn.addEventListener('click',loginFn);
-
+let chatBtn = document.querySelector('#chatBtn');
+chatBtn.addEventListener('click', chatFn);
 
 async function loginFn(){
     let loginForm = document.querySelector('#loginForm');
@@ -33,4 +34,9 @@ async function loginFn(){
         userpw.value='';
         userid.focus();
     }
+}
+
+
+function chatFn(){
+    window.open('chat','a','width=400,height=600,left=90%,top=100');
 }
