@@ -1,4 +1,51 @@
-<button id="chatBtn" data-value="0">채팅</button>
-<div id="chatRoom">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../../admin/css/chat.css">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class = "headerWrap wrap">
+        <div class = "header w1200">
+            <div class = "logo">
+                <img src = "">
+            </div>
+            <div class = "user blue">
+                <div class = "">관리자 {{userid}}님</div>
+                <a href = "/admin/logout">로그아웃</a>
+            </div>
+        </div>
+    </div>
+    <div class = "middleWrap wrap">
+        <div class = "middle w1200">
+            <div class = "menu">
+                <div>카테고리</div>
+                <ul>
+                    <li><a href = "">팝업 관리</a></li>
+                    <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
+                    <li><a href = "/admin/valuation">수강 후기 관리</a></li>
+                    <li class = "margintop"><a href = "/admin/chat_list">고객 문의/채팅</a></li>
+                </ul>
+                <div class = >유저정보</div>
+                <ul>
+                    <li><a href = "/admin/admin_info">관리자 정보</a></li>
+                </ul>
+            </div>
+            <div class = "content">
+                <div class = "grey">고객의 소리함</div>
+                <button id="chatBtn" data-value="0" class = "grey">현재 문의</button>
+                <div id="chatRoom">
+        
+                </div>
+                <div><a href = "/admin/main">메인으로</a> </div>       
+            </div>
+        </div>
+    </div>
 
-</div>
+</body>
+<script type = "text/javascript" src = "/admin/js/chat.js"></script>
+</html>

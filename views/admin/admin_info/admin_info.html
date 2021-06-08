@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../../../admin/css/admin_info.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,11 +13,9 @@
             <div class = "logo">
                 <img src = "">
             </div>
-            <div class = "user">
-                <img src = "">
-                <div class = "userId">
-
-                </div>
+            <div class = "user blue">
+                <div class = "">관리자 {{userid}}님</div>
+                <a href = "/admin/logout">로그아웃</a>
             </div>
         </div>
     </div>
@@ -26,49 +25,51 @@
                 <div>카테고리</div>
                 <ul>
                     <li><a href = "">팝업 관리</a></li>
-                    <li><a href = "">상품 관리</a></li>
-                    <li><a href = "">고객 문의/채팅</a></li>
+                    <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
+                    <li><a href = "/admin/valuation">수강 후기 관리</a></li>
+                    <li class = "margintop"><a href = "/admin/chat_list">고객 문의/채팅</a></li>
                 </ul>
-                <div>유저정보</div>
+                <div class = >유저정보</div>
                 <ul>
-                    <li><a href = "">관리자 정보</a></li>
+                    <li><a href = "/admin/admin_info">관리자 정보</a></li>
                 </ul>
             </div>
             <div class = "content">
-                <div class = "">웹 기본정보</div>
-                <table>
+                <div class = "grey margintop">웹 기본정보</div>
+                <table class = "lineheight" >
                     <tr>
-                        <td>사이트명</td>
+                        <td class = "width100">사이트명</td>
                         <td><input type = "text" value = "애플"></td>
                     </tr>
                     <tr>
-                        <td>사이트 URL</td>
+                        <td class = "width100">사이트 URL</td>
                         <td><input type = "text" value = "http://www.apple.com"></td>
                     </tr>
                     <tr>
-                        <td>대표 이메일</td>
+                        <td class = "width100">대표 이메일</td>
                         <td><input type = "text" value = "http://www.apple.com"></td>
                     </tr>
                 </table>
-                <div class = "">업체정보</div>
-                <table>
+                <div class = "grey margintop marginbottom">업체정보</div>
+                <table class = "ab">
                     <tr>
-                        <td>사업자 등록 번호</td>
+                        <td class = "width120">사업자 등록 번호</td>
                         <td><input type = "text" value = "012"><input type = "text" value = "012"><input type = "text" value = "012"></td>
                     </tr>
                     <tr>
-                        <td>대표자</td>
+                        <td class = "width120">대표자</td>
                         <td><input type = "text" value = "김승원"></td>
                     </tr>
                     <tr>
-                        <td>사업장 주소</td>
+                        <td class = "width120">사업장 주소</td>
                         <td><input type = "text" value = "서울특별시 이태원로 "></td>
                     </tr>
                     <tr>
-                        <td>전화번호</td>
+                        <td class = "width120">전화번호</td>
                         <td><input type = "text" value = "111"><input type = "text" value = "111"><input type = "text" value = "111"></td>
                     </tr>
                 </table>
+                <a href = "/admin/main">메인으로</a>
             </div>
         </div>
     </div>

@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action = "/main" method = "post">
+    <form action = "/admin/login_success" method = "post">
         <div class = "">로그인 해주세욤</div>
-        <input type = "text" placeholder = "id">
-        <input type = "password" placeholder = "pw">
+        <input type = "text" placeholder = "id" name = "userid">
+        <input type = "password" placeholder = "pw" name = "userpw">
         <input type = "submit">
     </form>
+    <div><a href = "/admin/join">회원가입해주세요</a></div>
 </body>
+{% if boolean == "false" %}
+<script type = "text/javascript">
+    alert(msg)
+</script>
+{% endif %}
 </html>

@@ -21,6 +21,7 @@ function initModels(sequelize) {
     users,
   };
 }
+
 module.exports = initModels;
 module.exports.initModels = initModels;
 module.exports.default = initModels;

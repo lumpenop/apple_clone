@@ -1,12 +1,23 @@
-<div id="chat">
-    <div>
-        <span class="my">안녕하세요</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="chat">
+        <div>
+            <p class="my"></p>
+        </div>
+        <div>
+            <p class="you"></p>
+        </div>
     </div>
-    <div>
-        <span class="you">네 안녕하세요</span>
+    <div id="chatInputArea">
+        <input type="text" id="msg">
+        <button id="chatSend" onclick="send()">전송</button>
     </div>
-</div>
-<div id="chatInputArea">
-    <input type="text" id="msg">
-    <button id="chatSend" onclick="send()">전송</button>
-</div>
+</body>
+</html>

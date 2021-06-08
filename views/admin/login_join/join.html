@@ -7,25 +7,63 @@
     <title>Document</title>
 </head>
 <body>
-    <form action = "/login" method = "post">
+    <form action = "/admin/join_success" method = "post" enctype="multipart/form-data">
         아이디:
-        <input type="text" placeholder="ID" name = "userid">
-        <p class="userid_msg"></p>
+        <input type="text" placeholder="ID" class = "userid" name = "userid">
+        <p class="userid_msg" id = "check_msg"></p>
         비밀번호 :
-        <input type="password" placeholder="PASSWORD" name = "userpw"></br>
+        <input type="password" placeholder="PASSWORD" class = "userpw" name = "userpw"></br>
         비밀번호 확인 :
-        <input type="password" placeholder="PASSWORD_CHECK"></br>
+        <input type="password" placeholder="PASSWORD_CHECK" class = "userpw_check"></br>
         이름 :
         <input type="text" placeholder="NAME" name = "username"></br>
-        <div id="radio_box">
-            <input name="gender" type="radio" value="0" checked="checked"><span>Male</span>
-            <input name="gender" type="radio" value="1"><span>Female</span>
-        </div>
         이메일 :
-        <input class="useremail" type="text" placeholder="E-MAIL">
+        <input class="useremail" type="text" placeholder="E-MAIL" name = "useremail">
+        휴대폰 :
+        <input class="useremail" type="text" placeholder="E-MAIL" name = "mobile">
+        주소 :
+        <input class="useremail" type="text" placeholder="E-MAIL" name = "address">
         <div>IMAGE UPLOAD</div>
-        <input name="image" type="file">
-        <input type = "submit">
+        <input name="img" type="file">
+        <input type = "submit" id = "submitBtn">
     </form>
 </body>
+<script type = "text/javascript">
+    
+    const submitBtn = document.querySelector('#submitBtn')
+    const userid = document.querySelector('.userid')
+    submitBtn.addEventListener('click',submitBtnFn)
+    userid.addEventListener('focusout',useridFn)
+        
+    async function useridFn(){
+        const userid = document.querySelector('.userid').value
+        const check_msg = document.querySelector('#check_msg')
+        let result = await fetch(`http://localhost:3000/admin/userid_check?userid=${userid}`)
+        let {check}= await result.json()
+        if(check){
+            check_msg.innerHTML = '사용 가능한 아이디입니다.'
+        }else{
+            check_msg.innerHTML = '중복된 아이디입니다.'
+        }
+    }
+
+    async function submitBtnFn(){
+        const userid = document.querySelector('.userid').value
+        const userpw = document.querySelector('.userpw').value
+        const userpwCheck = document.querySelector('.userpw_check').value
+        const username = document.querySelector('.username').value
+        const userimage = document.querySelector('#input_image').value
+        const useremail = document.querySelector('.useremail').value
+
+        if(userpw != userpwCheck){
+            alert('비밀번호가 일치하지 않습니다')
+            return
+        }
+        if(userid==""||userpw==""||username==""||useremail==""){
+            alert('빈칸을 채워주세요')
+            return
+        }
+
+    }
+</script>
 </html>

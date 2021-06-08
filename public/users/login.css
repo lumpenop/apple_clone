@@ -18,7 +18,7 @@
 }
 
 .login-content{
- max-width: 408px;  
+ max-width: 320px;  
  margin: 0 auto; 
 }
 
@@ -26,8 +26,8 @@
     line-height:1.35296;
     letter-spacing: 0;
     color: #1d1d1f;
-    border-color: #d2d2d7;
-    background-color: hsla(0, 0%, 100%, .8);
+    border-color: #d6d6d6;
+    background-color: #E8F0FE;
     text-overflow: ellipsis;
     font-size: 17px;
     font-weight: 400;
@@ -63,5 +63,77 @@
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 35px;
-    color: #1d1d1f;
+    color: #fff;
+}
+
+.login-wrapper{
+    padding-top: 30px;
+    padding-bottom: 92px;
+    border-bottom: 1px solid #d2d2d7;
+}
+
+.login-sign-in-forgot-password{
+    margin-top: 4px;
+}
+
+.login-sign-in-account{
+    margin-top: 7px;
+}
+
+.login-sign-in-forgot-password,
+.login-sign-in-account{
+    line-height: 1.58824;
+    
+}
+
+.ar-chat{
+    padding: 21px 0;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.as-footnotes{
+    font-size: 12px;
+    color: #86868d;
+    line-height: 1.33337;
+    font-weight: 400;
+    background-color: #f5f5f7;
+}
+
+.as-footnotes-content{
+    max-width: 980px;
+    padding: 0 22px;
+    margin: 0 auto;
+}
+
+.as-footnotes-sosumi{
+    padding: 17px 0 11px;
+}
+
+.lastP{
+    margin-top: 4px;
+}
+
+.securityInfo{
+    color: #515154;
+}
+
+.login-header{
+    padding: 20px 0 ;
+    color: #fff;
+    text-align: center;
+}
+
+.rs-aos-sign-in-form{
+    background: url(
+        /users/apple_id_desktop.jpeg
+    );
+    background-size: cover;
+    padding: 80px 0 90px;
+}
+
+.login-sign-in-forgot-password span,
+.login-sign-in-account span{
+    color: #E8F0FE;
+    font-size: 14px;
 }
