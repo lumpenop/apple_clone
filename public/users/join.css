@@ -201,3 +201,13 @@
     color: #86868b;
 }
 
+.label-small{
+    display: block;
+    color: #666666;
+    font-size: 12px;
+    margin: 6px 0 10px 0;
+}
+
+.form-label{
+    font-size: 14px;
+}
