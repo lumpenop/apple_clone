@@ -17,43 +17,47 @@
             <div>카테고리</div>
             <ul>
                 <li><a href = "">팝업 관리</a></li>
-                <li><a href = "">상품 관리</a></li>
-                <li><a href = "">고객 문의/채팅</a></li>
+                <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
+                <li><a href = "/admin/chat_list">고객 문의/채팅</a></li>
             </ul>
             <div>유저정보</div>
             <ul>
-                <li><a href = "">관리자 정보</a></li>
+                <li><a href = "/admin/admin_info">관리자 정보</a></li>
             </ul>
         </div>
     </div>
     <div class = "middle w1200">
         <div class = "">상품 추가하기</div>
-        <form action = "/" method = "post">
+        <form action = "/admin/product_list" method = "post" enctype = "multipart/form-data">
             <table>
                 <tr>
+                    <td>아이템 넘버</td>
+                    <td><input type = "text" name = "item_serial_number"></td>
+                </tr>
+                <tr>
                     <td>제품 번호</td>
-                    <td></td>
+                    <td><input type = "text" value = "{{result.id}}" name = "id"></td>
                 </tr>
                 <tr>
                     <td>제품명</td>
-                    <td><input type = "text" value = "{{}}" name = ""></td>
+                    <td><input type = "text" value = "{{result.item_name}}" name = "item_name"></td>
                 </tr>
                 <tr>
                     <td>제품가격</td>
-                    <td><input type = "text"></td>
+                    <td><input type = "text" value = "{{result.item_price}}" name = "item_price"></td>
                 </tr>
                 <tr>
                     <td>제품이미지</td>
-                    <td><input type = "file"></td>
+                    <td><input type = "file" value = "{{result.item_img}}" id = "img" name = "img"></td>
                 </tr>
                 <tr>
                     <td>제품사이즈</td>
-                    <td><input type = "text"></td>
+                    <td><input type = "text" value = "{{result.item_size}}" name = "item_size"></td>
                 </tr>
                 <tr>
                     <td>제품색깔</td>
                     <td>
-                        <select>
+                        <select value = "{{result.item_color}}" name = "item_color">
                             <option value = "pink">pink</option>
                             <option value = "green">green</option>
                             <option value = "yellow">yellow</option>
@@ -63,7 +67,7 @@
                 <tr>
                     <td>제품용량</td>
                     <td>
-                        <select>
+                        <select value = "{{result.item_capacity}}" name = "item_capacity">
                             <option value = "15">15</option>
                             <option value = "18">18</option>
                             <option value = "24">24</option>
