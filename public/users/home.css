@@ -18,7 +18,7 @@ a{
     width: 16px;
 }
 
-#ac-globalnav .ac-gn-link {
+.ac-gn-link {
     font-size: 14px;
     line-height: 3.14286;
     font-weight: 400;
@@ -37,10 +37,7 @@ a{
     outline-offset: -7px;
 }
 
-#ac-globalnav{
-    background: rgba(0, 0, 0, 0.8);
-    height: 30px;
-}
+
 #ac-globalnav .ac-gn-link-search {
     background-size: 18px 88px;
     background-repeat: no-repeat;
@@ -77,20 +74,22 @@ a{
     min-width: 1024px;
     display: block;
     font-size: 17px;
-    max-height: 44px;
+    max-height: 48px;
     height: 48px;
-    z-index: 9999;
+    z-index: 9997;
+
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .ac-gn-content{
     margin: 0 auto;
     max-width: 980px;
     padding: 0 22px;
-    z-index: 2;
+    z-index: 9999;
     position: relative;
 }
 
-#ac-globalnav .ac-gn-list {
+.ac-gn-list {
     cursor: default;
     margin: 0 -10px;
     width: auto;
@@ -165,4 +164,109 @@ a{
         font-size: 12px;
         top: 10px;
     }
+}
+
+/***** aside *****/
+
+.item-bag{
+ background: url(
+     /users/apple_bag.png
+ );
+ background-repeat: no-repeat;
+ background-position: 0px 12px;   
+ background-size: 18px 18px;
+}
+.item-favorite{
+    background: url(
+        /users/apple_favorite.png
+    );
+    background-repeat: no-repeat;
+    background-position: 0px 12px;   
+    background-size: 18px 18px;
+}
+.item-orders{
+    background: url(
+        /users/apple_orders.png
+    );
+    background-repeat: no-repeat;
+    background-position: 0px 12px;   
+    background-size: 18px 18px;
+}
+.item-account{
+    background: url(
+        /users/apple_account.png
+    );
+    background-repeat: no-repeat;
+    background-position: 0px 12px;   
+    background-size: 18px 18px;
+}
+
+.item-signIn{
+    background: url(
+        /users/apple_signIn.png
+    );
+    background-repeat: no-repeat;
+    background-position: 0px 12px;   
+    background-size: 18px 18px;
+}
+
+
+.item-link{
+    color: #06c;
+    display: block;
+    line-height: 44px;
+    padding: 0 28px;
+    text-decoration: none;
+    letter-spacing: -0.016em;
+    font-size: 14px;
+    font-weight:400;
+    z-index: 9999;
+}
+.ac-gn-bagview{
+    position: relative;
+    background: #fff;
+    border: 1px solid #d2d2d7;
+    border-radius: 18px;
+    width: 286px;
+    z-index: 9998;
+    overflow: hidden;
+}
+.ac-gn-bagview-message{
+    text-align: center;
+    font-size: 14px;
+    padding: 35px 0 23px;
+}
+.ac-gn-bagview-nav-item{
+    border-top: 1px solid #d2d2d7;
+}
+.ac-gn-bagview-content{
+    padding: 0 20px;
+}
+
+.caret{
+    position: absolute;
+    right: 1%;
+    top: 36px;
+    z-index: 9999;
+}
+.caret:after{
+    content: "";
+    display: block;
+ 
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    transform-origin: 0% 0;
+    background: #fff;
+    border-color: #d2d2d7;
+    border-radius: 2px 0 0 0;
+    
+}
+
+.ac-gn-bagview{
+    top: -2px;
+    left: 100%;
+    transform: translateX(-50%);
+    margin-right: calc(512px-50vw);
+    background: #fff;
 }

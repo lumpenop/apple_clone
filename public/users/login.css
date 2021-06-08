@@ -178,6 +178,7 @@
     margin: auto;
     box-sizing: content-box;
     padding: 0 15px;
+    z-index: 3;
 }
 
 .title{

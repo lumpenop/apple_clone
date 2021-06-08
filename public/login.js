@@ -1,4 +1,3 @@
-alert('d')
 let loginBtn = document.querySelector('#loginBtn');
 console.log(loginBtn)
 loginBtn.addEventListener('click',loginFn);
