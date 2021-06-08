@@ -11,7 +11,7 @@ module.exports=(req,res,next)=>{
         const signatureChecked = crypto.createHmac('sha256', Buffer.from(process.env.salt))
                                 .update(`${header}.${payload}`)
                                 .digest('base64').replace('==','').replace('=','');
-        return signatureChecked; 
+        return signatureChecked;
     }
 
     if(signature==signatureToCheck){

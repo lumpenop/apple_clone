@@ -35,7 +35,7 @@ app.use(session({
     saveUninitialized:false,
 }))
 
-// io.sockets.on('connection',(socket)=>{})
+io.sockets.on('connection',(socket)=>{})
 
 app.use('/', main)
 

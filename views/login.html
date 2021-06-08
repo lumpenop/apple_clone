@@ -25,28 +25,27 @@
         <div class="login-hero signin">
             <div id="autWidgetContainer" class="auth-widget-container">
                 <div class="rs-aos-sign-in-form">
+                    <form id ="loginForm" method="post" action="/user/login_success">
                         <div class="login-content">
-                            <form id = "loginForm" method="post" action="/user/logincheck">
                             <div class="rs-aos-sign-in-fields">
                                 <div class="login-textbox">
-                                    <input class="login-textbox-input" type="text" name="userid">
+                                    <input id="userid" class="login-textbox-input" type="text" name="userid">
                                     <span class="login-textbox-label" aria-hidden="true">
                                         Apple ID
                                     </span>
                                 </div>
                                 <div class="login-textbox">
-                                    <input class="login-textbox-input" type="password" name="userpw">
+                                    <input id="userpw" class="login-textbox-input" type="password" name="userpw">
                                     <span class="login-textbox-label" aria-hidden="ture">
                                         암호
                                     </span>
                                 </div>
                             </div>
-                            </form>
                             <p class="login-sign-in-info">
                                 Apple ID는 Itunes, App Store에 로그인 할 때 사용하는 이메일 주소입니다.
                             </p>
                             <div class="login-aos-sign-in-submit">
-                                <div id="loginBtn" >
+                                <div id="loginBtn">
                                     <span>
                                         <span>로그인</span>
                                     </span>
@@ -63,11 +62,15 @@
                                 </a>
                             </div>
                         </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
 
 <script type="text/javascript" src="/login.js"></script>
 
