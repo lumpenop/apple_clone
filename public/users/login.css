@@ -1,0 +1,17 @@
+
+
+#loginBtn{
+ cursor: pointer;
+ text-align: center;
+ background: #0071e3;   
+ color: #fff;
+ font-size: 17px;
+ line-height: 1.17648;
+ font-weight: 400;
+ min-width: 28px;
+ padding: 18px 31px;
+}
+
+.signin-content{
+ max-width: 408px;   
+}

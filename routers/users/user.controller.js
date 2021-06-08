@@ -5,6 +5,11 @@ let join = async (req, res) =>{
     res.render('join.html');
 }
 
+let login = async (req, res) =>{
+    res.render('login.html');
+}
+
+
 let join_success = (req,res)=>{
     // 맞으면 pw 암호화 -> 
     //받은 내용들 db에 넣기
@@ -18,5 +23,5 @@ let join_success = (req,res)=>{
 }
 
 module.exports= {
-    join,join_success,
+    join,join_success, login
 }
