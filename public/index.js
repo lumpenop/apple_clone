@@ -15,9 +15,6 @@ for(var i=0; i<input.length; i++){
 }
 
 
-
-
-
 function inputFocus(){
     const span = this.parentNode.querySelector('span');
     span.classList.remove('inputFocusOut');
@@ -38,21 +35,33 @@ const timer = ms => new Promise(res => setTimeout(res,ms));
 
 async function searchOnClick(){
     const items = document.querySelectorAll('.ac-gn-item');
-    await timer(100);
+    await timer(45);
+    
     for(var i = items.length-1; i > 0; i--){
-        items[i].style.display = 'none';
-        await timer(100);
+        items[i].classList.add('sizeDown');
+       
     }
-    await timer(800);
+
+    for(var i = items.length-1; i > 0; i--){
+        items[i].classList.add('displayNone');
+        await timer(45);
+    }
+    
+    
     const gnbsub = document.querySelector('.ac-gn-list');
     const searchView = document.querySelector('#ac-gn-searchview');
     const subnav = document.querySelector('.subnav');
     const curtain = document.querySelector('#ac-gn-curtain');
+    const appleLogo = document.querySelector('.ac-gn-link-apple');
     
-    items[0].style.display = 'none';
-    gnbsub.style.display = 'none';
-    searchView.style.display = 'block';
-    subnav.style.display = 'none';
+    appleLogo.classList.add('anApple');
+    await timer(440);
+    
+    items[0].classList.add('displayNone');
+    gnbsub.classList.add('displayNone');
+    searchView.classList.add('displayBlock');
+    subnav.classList.add('displayNone');
+    
     curtain.classList.add('ac-gn-curtain');
 }
 
@@ -63,19 +72,22 @@ async function searchClose(){
     const curtain = document.querySelector('#ac-gn-curtain');
     const items = document.querySelectorAll('.ac-gn-item');
     const searchInput = document.querySelector('#ac-gn-searchform-input');
-    
+    const appleLogo = document.querySelector('.ac-gn-link-apple');
 
 
     curtain.classList.remove('ac-gn-curtain');
-    gnbsub.style.display = 'flex';
-    searchView.style.display = 'none';
-    subnav.style.display = 'block';
-    items[0].style.display = 'inline-block';
-    await timer(100);
+
+    gnbsub.classList.remove('displayNone');
+    searchView.classList.remove('displayBlock')
+    subnav.classList.remove('displayNone');
+    items[0].classList.remove('displayNone');
+    appleLogo.classList.remove('anApple');
+    await timer(60);
     for(var i = 1; i < items.length; i++){
         
-        items[i].style.display = 'inline-block';
-        await timer(100);
+        items[i].classList.remove('displayNone');
+        items[i].classList.add('fromNavSlowly')
+        await timer(20);
     }
     searchInput.value = '';
 }
