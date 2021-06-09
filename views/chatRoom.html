@@ -10,18 +10,21 @@
     <div id="chatRoom">
         <div id="chat">
             <div>
-                <span class="you">안녕하세요! 무엇을 도와드릴까요? :) </span>
+                <li id="time"></li>
+                <li>Apple님과 연결되었습니다.</li>
             </div>
-            <div>
-                <span class="me"></span>
-            </div>
+            <ul>
+                <li class="you">Apple에 오신 것을 환영합니다.<br/>무엇을 도와 드릴까요?</span> </span>
+            </ul>
 
         </div>
         <div id="chatInputArea">
             <input type="text" id="msg">
-            <button id="chatSend">전송</button>
+            <button id="chatSend"  onclick="send()">보내기</button>
         </div>
-        <script type="text/javascript" src="/chat.js"></script>
     </div>
+    <script type="text/javascript">
+        alert('d'); 
+    </script>
 </body>
 </html>

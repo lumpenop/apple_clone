@@ -8,8 +8,8 @@ const userRouter = require('./users/index.js');
 router.use('/search',search)
 router.use('/user', userRouter);
 router.use('/admin',admin)
-// router.use('/',(req,res)=>{
-//     res.render('index.html');
-// })
+router.use('/',(req,res)=>{
+    res.render('index.html');
+})
 
 module.exports = router;
