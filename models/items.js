@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     item_price: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     item_image: {
@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     item_size: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     item_color: {

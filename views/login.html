@@ -1,73 +1,131 @@
 {% include "./top.html" %}
 
 <main class="main" role="main" data-anim-scroll-group="bubble-gum-group">
-    <section class="homepage-section collection-module">
-        <div data-unit-id="shop-online" data-analytics-activitymap-region-id="ribbon-shop-online">
-            <div class="module-content">
-                <div class="ribbon-shop-online">
-                    <div class="section-content section-content-shop-online">
-                        <span class="covid-ribbon-copy variant">
-                            <a href="/kr/shop/goto/shop" target="_self" data-analytics-title="shop online - control">
-                                온라인으로 쇼핑
-                            </a>
-                            하고 무료 배송, 스페셜리스트 지원 등의 혜택을 받으세요.
-                        </span>
-                    </div>
-                </div>
+    <div class="subnav">
+        <div class="subnav-container">
+            <div class="title tk-label pull-left">
+                Apple&nbsp;ID
+            </div>
+            <div class="menu-wrapper pull-right">
+                <ul class="menu">
+                    <li class="item active">
+                        <a class="btn btn-link tk-caption btn-signin" href="/user/login">로그인</a>
+                    </li>
+                    <li class="item">
+                        <a class="btn btn-link tk-caption btn-signin" href="/user/join">Apple ID 생성</a>
+                    </li>
+                    <li class="item">
+                        <a class="btn btn-link tk-caption btn-signin" href="#">FAQ</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
 </main>
 
 
 <div class="login-container">
     <div class="login-wrapper">
+        
         <div class="login-hero signin">
             <div id="autWidgetContainer" class="auth-widget-container">
                 <div class="rs-aos-sign-in-form">
+                    <form id ="loginForm" method="post" action="/user/login_success">
                         <div class="login-content">
-                            <form id = "loginForm" method="post" action="/user/logincheck">
+                            <h1 class="login-header">Apple ID 로그인</h1>
                             <div class="rs-aos-sign-in-fields">
                                 <div class="login-textbox">
-                                    <input class="login-textbox-input" type="text" name="userid">
+                                    <input id="userid" class="login-textbox-input" type="text" name="userid">
                                     <span class="login-textbox-label" aria-hidden="true">
                                         Apple ID
                                     </span>
                                 </div>
                                 <div class="login-textbox">
-                                    <input class="login-textbox-input" type="password" name="userpw">
+                                    <input id="userpw" class="login-textbox-input" type="password" name="userpw">
                                     <span class="login-textbox-label" aria-hidden="ture">
                                         암호
                                     </span>
                                 </div>
                             </div>
-                            </form>
                             <p class="login-sign-in-info">
                                 Apple ID는 Itunes, App Store에 로그인 할 때 사용하는 이메일 주소입니다.
                             </p>
                             <div class="login-aos-sign-in-submit">
-                                <div id="loginBtn" >
+                                <div id="loginBtn">
                                     <span>
                                         <span>로그인</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="login-sign-in-forgot-password">
-                                <a href="/">
+                                <a href="#">
                                     <span>Apple ID 또는 암호를 잊으셨나요?</span>
                                 </a>
                             </div>
-                            <div class="login-sign-in-forgot-account">
-                                <a href="/">
+                            <div class="login-sign-in-account">
+                                <a href="/user/join">
                                     <span>Apple ID가 없으신가요? 지금 생성.</span>
                                 </a>
                             </div>
                         </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <div class="flow-body">
+        <div class="flow-container">
+            <h2 class="flow-header">
+                Apple의 모든 서비스에 사용하는 계정입니다.
+            </h2>
+            <div class="intro-signin">
+                <p>하나의 Apple ID와 암호로 모든 Apple 서비스를 이용할 수</p>
+                <p>있습니다. <a href="#">Apple ID에 대한 추가 정보</a><i class="sk-icon"></i></p>
+            </div>
+            <div class="apps text-center">
+                <div class="apps-icons-2x">
+
+                </div>
+            </div>
+            <div class="intro-sign show">
+                <a class="button link craete-link" href="/user/join">
+                    Apple ID 생성
+                </a>
+                <i class="sk-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="as-chat">
+        <div class="ar-chat">
+            <div>
+                도움이 더 필요하신가요?
+                <a id = "chatBtn" class="chatBtn">
+                    지금 채팅하기
+                </a>
+                또는 080-330-8877 번호로 문의하세요.
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="as-footnotes">
+    <div class="as-footnotes-content">
+        <div class="as-footnotes-sosumi">
+            <p>
+                <p>사업자등록번호 : 123-12-12345</p>
+                <p>대표이사 : Seyeon Oh | 주소 : 서울 특별시 강동구 천호동</p>
+                <p>대표전화 : 080-123-1234 | 팩스 : 02-0000-0000</p>
+            </p>
+            <p class="lastP">Apple 온라인 스토어는 표준 암호화를 사용하여 제출된 고객 비밀 정보를 보호합니다. 
+                <a href="#" target="popup-" class="securityInfo">보안정보</a>에 대해 더 알아보기.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <script type="text/javascript" src="/login.js"></script>
 

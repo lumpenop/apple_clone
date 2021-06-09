@@ -13,12 +13,13 @@ function createToken(userid){
     const signature = crypto.createHmac('sha256', Buffer.from(process.env.salt))
                         .update(encodingHeader+'.'+encodingPayload)
                         .digest('base64').replace('==','').replace('=','');
+                        
     let jwt = `${encodingHeader}.${encodingPayload}.${signature}`;
     return jwt;
 }
 
 function createPW(userpw){
-    console.log('dd')
+
     const cryptoPassword = crypto.createHmac('sha256', Buffer.from(process.env.salt))
                         .update(userpw)
                         .digest('base64')
