@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require('./user.controller');
 const auth = require('../../middleware/auth.js');
 
+router.get('/bags', controller.bags);
 router.get('/join', controller.join);
 router.post('/join_success', controller.join_success);
 router.get('/login', controller.login);

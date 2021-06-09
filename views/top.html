@@ -56,9 +56,9 @@
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-search" role="search">
-                    <a href="#" class="ac-gn-link ac-gn-link-search" role="button">
-                        <img src="/users/globalnav_search.svg" alt="">
-                    </a>
+                    <div href="#" class="ac-gn-link ac-gn-link-search" role="button">
+                        <img src="/users/globalnav_search.svg" alt="" >
+                    </div>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-bag">
                     <a class="ac-gn-link ac-gn-link-bag" href="#" role="">
@@ -67,7 +67,29 @@
                 </li>
             </ul>
             <aside id="ac-gn-searchview">
+                <div class="ac-gn-sarchview-content">
+                    <div class="ac-gn-sarchview-bar">
+                        <div class="ac-gn-sarchview-bar-wrapper">
+                            <form action="#" id="ca-gn-searchform" class="ac-gn-searchform">
+                                <div class="ac-gn-searchform-wrapper">
+                                    <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" aria-label="apple.com 검색" placeholder="apple.com 검색" type="text">
+                                    <input type="hidden" id="ac-gn-searchform-src" name="src" value="globalnav">
+                                    <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit"></button>
+                                    <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset"></button>
+                                </div>
+                            </form>
+                            <button id="ac-gn-searchview-close-small" class="ac-gn-searchview-close-small" >
+                                <span class="ac-gn-searchview-close-cancel">취소</span>
+                            </button>
+                        </div>
+                    </div>
+                    <aside class="ac-gn-sarchview-results">
 
+                    </aside>
+                    <button class="ac-gn-sarchview-close">
+                        
+                    </button>
+                </div>
             </aside>
             <span class="caret"></span>
             <aside class="ac-gn-bagview">
@@ -97,15 +119,19 @@
         </div>
         
     </nav>
+    <div class="ac-gn-blur"></div>
+    <div class="ac-gn-curtain"></div>
+    <div class="ac-gn-placeholder"></div>
+    <div class="as-search-wrapper"></div>
     <!----- end global navigation ----->
 
 
     <div class="ac-gn-blur"></div>
     <div id="ac-gn-curtain"></div>
     <div id="ac-gn-placeholder"></div>
-    <script></script>
+   
     <div id="ac-gn-viewport-emitter"></div>
-    <script></script>
+   
 
     <!----- main section ----->
 

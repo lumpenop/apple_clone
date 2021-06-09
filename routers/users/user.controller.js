@@ -1,4 +1,4 @@
-const { users, items, buy } = require('../../models');
+const { users, items, buy, bag } = require('../../models');
 const { createToken, createPW } = require("../../JWT");
 
 let join = async (req, res) => {
@@ -7,6 +7,24 @@ let join = async (req, res) => {
 
 let login = async (req, res) => {
     res.render('login.html');
+}
+
+let bags = async (req, res) => {
+    // console.log(req.cookies['Access_token'])
+    // res.render('index.html');
+
+    // let payload = Buffer.from(req.cookies['Access_token'].split('.')[1],'base64').toString();
+    // console.log(payload)
+    // var {userid} = JSON.parse(payload)
+    // console.log(userid)
+    // let userList= await bag.findAll({
+    //     where:{
+    //         users_id:req.id
+    //     }
+    // });
+    // res.json({
+        
+    // })
 }
 
 let join_success = (req, res) => {
@@ -60,5 +78,5 @@ let chatHelp = (req,res)=>{
 }
 
 module.exports = {
-    join, join_success, login, logincheck, login_success, chat, chatRoom, chatHelp,
+    bags,join, join_success, login, logincheck, login_success, chat, chatRoom, chatHelp,
 }
