@@ -9,5 +9,8 @@ router.use('/admin',admin)
 router.use('/',(req,res)=>{
     res.render('index.html');
 })
+router.use('/search',(req,res)=>{
+    res.render('search.html');
+})
 
 module.exports = router;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href = "../../../admin/css/product_add.css">
 </head>
 <body>
     <div class = "headerWrap wrap">
@@ -12,11 +13,9 @@
             <div class = "logo">
                 <img src = "">
             </div>
-            <div class = "user">
-                <img src = "">
-                <div class = "userId">
-
-                </div>
+            <div class = "user blue">
+                <div class = "">관리자 <span>{{userid}}</span>님</div>
+                <a href = "/admin/logout">로그아웃</a>
             </div>
         </div>
     </div>
@@ -26,62 +25,64 @@
                 <div>카테고리</div>
                 <ul>
                     <li><a href = "">팝업 관리</a></li>
+                    <li><a href = "/admin/user_list">사용자 관리</a></li>
                     <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
-                    <li><a href = "/admin/chat_list">고객 문의/채팅</a></li>
+                    <li><a href = "/admin/valuation">수강 후기 관리</a></li>
+                    <li class = "margintop"><a href = "/admin/chat_list">고객 문의/채팅</a></li>
                 </ul>
-                <div>유저정보</div>
+                <div class = >유저정보</div>
                 <ul>
                     <li><a href = "/admin/admin_info">관리자 정보</a></li>
                 </ul>
             </div>
-        </div>
-        <div class = "middle w1200">
-            <form action = "/admin/product_list/success" method = "post" enctype = "multipart/form-data">
-                <div class = "">상품 추가하기</div>
-                <table>
-                    <tr>
-                        <td>아이템 넘버</td>
-                        <td><input type = "text" name = "item_serial_number"></td>
-                    </tr>
-                    <tr>
-                        <td>제품명</td>
-                        <td><input type = "text" name = "item_name"></td>
-                    </tr>
-                    <tr>
-                        <td>제품가격</td>
-                        <td><input type = "text" name = "item_price"></td>
-                    </tr>
-                    <tr>
-                        <td>제품이미지</td>
-                        <td><input type = "file" name = "img" id = "img"></td>
-                    </tr>
-                    <tr>
-                        <td>제품사이즈</td>
-                        <td><input type = "text" name = "item_size"></td>
-                    </tr>
-                    <tr>
-                        <td>제품색깔</td>
-                        <td>
-                            <select name = "item_color">
-                                <option value = "pink">pink</option>
-                                <option value = "green">green</option>
-                                <option value = "yellow">yellow</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>제품용량</td>
-                        <td>
-                            <select name = "item_capacity">
-                                <option value = "15">15</option>
-                                <option value = "18">18</option>
-                                <option value = "24">24</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <input type = "submit" value = "상품추가">
-            </form>
+            <div class = "content">
+                <form action = "/admin/product_list/success" method = "post" enctype = "multipart/form-data">
+                    <div class = "grey">교육 서비스 추가하기</div>
+                    <table class = "table">
+                        <tr>
+                            <td class = "w100">아이템 넘버</td>
+                            <td class = "w600"><input type = "text" class = "w600" name = "item_serial_number"></td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">교육 서비스명</td>
+                            <td class = "w600"><input type = "text" class = "w600" name = "item_name"></td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">가격</td>
+                            <td class = "w600"><input type = "text" class = "w600" name = "item_price"></td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">교육 이미지</td>
+                            <td class = "w600"><input class = "greyBtn" value = "파일" type = "file" name = "img" id = "img"></td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">교육 특성</td>
+                            <td class = "w600"><input type = "text" class = "w600" name = "item_size"></td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">교육 시작일</td>
+                            <td class = "w600">
+                                <select name = "item_color" class = "greyBtn" >
+                                    <option value = "pink">pink</option>
+                                    <option value = "green">green</option>
+                                    <option value = "yellow">yellow</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">교육 커리큘럼</td>
+                            <td class = "w600">
+                                <select name = "item_capacity" class = "greyBtn" >
+                                    <option value = "15">15</option>
+                                    <option value = "18">18</option>
+                                    <option value = "24">24</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class = "blueBtn" type = "submit" value = "서비스 추가">
+                </form>
+            </div>
         </div>
     </div>
 </body>

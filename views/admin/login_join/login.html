@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href = "../../../admin/css/login.css">
 </head>
 <body>
-    <form action = "/admin/login_success" method = "post">
-        <div class = "">로그인 해주세욤</div>
-        <input type = "text" placeholder = "id" name = "userid">
-        <input type = "password" placeholder = "pw" name = "userpw">
-        <input type = "submit">
-    </form>
-    <div><a href = "/admin/join">회원가입해주세요</a></div>
+    <div class = "loginWrap wrap">
+        <div class = "login w1200">
+            <form action = "/admin/login_success" method = "post">
+                <div class = "class">관리자</div>
+                <div class = "id"> 아이디 :  <input type = "text" placeholder = "id" name = "userid"></div>
+                <div class = "pw"> 패스워드 :  <input type = "password" placeholder = "pw" name = "userpw"></div>
+                <br/><input class = "greyBtn" type = "submit" value="로그인">
+            </form><br/>
+            <div class = "blue">관리자용 회원가입</div>
+            <div class = "blue2"><a href = "/admin/join">회원가입</a></div>
+            <div class = "blue2"><a href = "/admin/chat_list">채팅테스트</a></div>
+        </div>
+    </div>
 </body>
-{% if boolean == "false" %}
-<script type = "text/javascript">
-    alert(msg)
-</script>
-{% endif %}
 </html>

@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.wrap{
+    width: 100%;
+}
+
+.w1000{
+    width:400px;
+    margin: 0 auto;
+}
+
+.join{
+    margin-top:50px;
+    background: grey;
+    text-align: center;
+    color:whitesmoke;
+    height:60px;
+    box-sizing: border-box;
+    padding:9px;
+    margin-bottom: 35px;
+    width:420px;
+    padding:15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.userid{
+    display: inline-block;
+    margin-left: 85px;
+
+    color: grey;
+}
+
+.userpw{
+    display: inline-block;
+    margin-left: 68px;
+    margin-bottom: 7px;
+    color: grey;
+}
+
+.userpw_check{
+    display: inline-block;
+    margin-left: 30px;
+    margin-bottom: 7px;
+    color: grey;
+}
+
+.username{
+    display: inline-block;
+    margin-left: 100px;
+    margin-bottom: 7px;
+    color: grey;
+}
+
+.useremail{
+    display: inline-block;
+    margin-left: 84px;
+    margin-bottom: 7px;
+    color: grey;
+}
+
+.image{
+    display: inline-block;
+    color: grey;
+    margin-left: 16px;
+}
+
+.blue2{
+    border: 1px solid #6666ff;
+    width:420px;
+    height:60px;
+    margin-top: 50px;
+    padding:8px;
+    box-sizing: border-box;
+    text-align: center;
+    color:#6666ff;
+    background: white;
+    font-size: 20px;
+}
+
+.grey{
+    border:1px solid grey;
+    height:30px;
+    margin-bottom: 30px;
+    width:220px;
+}
+
+.grey3{
+
+}
+
+.grey2{
+    color:grey
+}
+
+.wid{
+    width:172px;
+}
+
+.blue{
+    color:#6666ff;
+    margin-left: 117px;
+    margin-bottom:20px;
+}
+
+.userlevel{
+    margin-bottom: 30px;
+    color: grey;
+    margin-left: 48px;
+    display: inline-block;
+}

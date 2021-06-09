@@ -14,7 +14,7 @@ ul,li{
 }
 
 .w1200{
-    width:800px;
+    width:1000px;
     margin:0 auto;
 }
 
@@ -60,7 +60,7 @@ ul,li{
     width:200px;
     box-sizing: border-box;
     padding:20px;
-    height:900px;
+    height:930px;
 }
 .menu>ul>li>a{
     color:whitesmoke;
@@ -68,7 +68,9 @@ ul,li{
 .menu>ul{
     margin-left: 30px;
 }
-
+.marginbottom{
+    margin-top: 50px;
+}
 .margintop{
     margin-bottom: 50px;
 }
@@ -76,7 +78,7 @@ ul,li{
     display: inline-block;
     float:left;
     box-sizing: border-box;
-    padding:25px;
+    padding:30px;
     margin-left:35px;
 }
 .content>div>form>div{
@@ -91,13 +93,9 @@ ul,li{
     background: #808080;
     text-align: center;
     color:whitesmoke;
-    width:500px;
-    margin-bottom: 50px;
-    height:35px;
-    padding:12px;
+    margin-bottom: 110px;
+    padding:5px;
     box-sizing: border-box;
-    height:50px;
-    font-size: 20px;
 }
 .delete{
     background: #80808080;
@@ -112,8 +110,6 @@ ul,li{
     text-align: center;
 }
 
-#img1, #img{width:230px; 
-height:200px;}
 
 .product_name_length{
     width:150px;
@@ -126,48 +122,34 @@ height:200px;}
 
 }
 
-.content>div>a{
+.w100{
+    width:100px;
+    background: #808080;
+    text-align: center;
+    color:whitesmoke;
+    height:80px;
+}
+.w600{
+    text-align: center;
+    width:550px;
+    height:80px;
+}
+
+.table{
+    margin-bottom: 80px;
+}
+
+.greyBtn{
+    background: #808080;
+    color:whitesmoke;
+    width:73px;
+    height:24px;
+
+}
+
+.blueBtn{
+    background: white;
     color:#6666ff;
-}
-#chat{
-    width:500px;
-    height:600px;
-    background: #404040;
-    overflow: scroll;
-    clear: both;
-}
-#chatInputArea{
-    margin-bottom: 60px;
-    clear:both;
-}
-.my{
-    float:right;
-    clear: both;
-    color:#e0e0e0;
-
-}
-
-.you{
-    clear: both;
-    float:left;
-    color:#99ccff;
-}
-
-#msg{
-    width:445px;
-    height:30px;
-}
-
-#button{
-    width:45px;
-    height:35px;
-}
-
-#chat > div > span{
-    display: block;
-    padding: 7px 14px;
-    border-radius: 15px;
-}
-#chat>div{
-    display: block;
+    border:1px solid white;
+    font-size: 20px;
 }
