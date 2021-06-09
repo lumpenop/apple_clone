@@ -70,16 +70,17 @@
                 <div class="ac-gn-searchview-content">
                     <div class="ac-gn-searchview-bar">
                         <div class="ac-gn-searchview-bar-wrapper">
-                            <form action="#" id="ca-gn-searchform" class="ac-gn-searchform">
-                                <div class="ac-gn-searchform-wrapper">
-                                    <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" aria-label="apple.com 검색" placeholder="apple.com 검색" type="text">
+                                <div class="ac-gn-searchform-wrapper">                            
+                                    <form action = "/search/search" method = "post">
+                                    <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" aria-label="apple.com 검색" placeholder="apple.com 검색" name = "AppleSearch" type="text">
+                                    <input type = "submit" value = "보내기">
+                                    </form>
                                     <input type="hidden" id="ac-gn-searchform-src" name="src" value="globalnav">
                                     <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit">
                                         
                                     </button>
                                     <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset"></button>
                                 </div>
-                            </form>
                             <button id="ac-gn-searchview-close-small" class="ac-gn-searchview-close-small" >
                                 <span class="ac-gn-searchview-close-cancel">취소</span>
                             </button>
