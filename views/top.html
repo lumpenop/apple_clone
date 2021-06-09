@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-search" role="search">
-                    <div href="#" class="ac-gn-link ac-gn-link-search" role="button">
+                    <div href="#" class="ac-gn-link ac-gn-link-search" role="button" onclick="searchOnClick()">
                         <img src="/users/globalnav_search.svg" alt="" >
                     </div>
                 </li>
@@ -83,16 +83,43 @@
                             </button>
                         </div>
                     </div>
-                    <aside class="ac-gn-sarchview-results">
-
+                    <aside class="ac-gn-searchview-results">
+                        <section class="ac-gn-searchresults-section ac-gn-searchresults-section-defaultlinks">
+                            <div class="ac-gn-searchresults-section-wrapper">
+                                <h3 class="ac-gn-searchresults-header">빠른 링크</h3>
+                                <ul class="ac-gn-searchresults-list" id="defaultslinks">
+                                    <li class="ac-gn-searchresults-item">
+                                        <a href="#" class="ac-gn-searchresults-link">Apple Store 임시 휴무 관련 자주하는 질문</a>
+                                    </li>
+                                    <li class="ac-gn-searchresults-item">
+                                        <a href="#" class="ac-gn-searchresults-link">Apple Store 온라인에서 쇼핑하기</a>
+                                    </li>
+                                    <li class="ac-gn-searchresults-item">
+                                        <a href="#" class="ac-gn-searchresults-link">액세서리</a>
+                                    </li>
+                                    <li class="ac-gn-searchresults-item">
+                                        <a href="#" class="ac-gn-searchresults-link">AirPods</a>
+                                    </li>
+                                    <li class="ac-gn-searchresults-item">
+                                        <a href="#" class="ac-gn-searchresults-link">AirTag</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
                     </aside>
                     <button class="ac-gn-sarchview-close">
-                        
+
                     </button>
                 </div>
+                <button id="ac-gn-searchview-close" class="ac-gn-searchview-close">
+                    <span class="ac-gn-searchview-close-wrapper">
+                        <span class="ac-gn-searchview-close-left"></span>
+                        <span class="ac-gn-searchview-close-right"></span>
+                    </span>
+                </button>
             </aside>
             <span class="caret"></span>
-            <!-- <aside class="ac-gn-bagview" >
+            <aside class="ac-gn-bagview" >
                 <div class="ac-gn-bagview-content">
                     <p class="ac-gn-bagview-message">장바구니가 비어있습니다.</p>
                     <nav class="ac-gn-bagview-nav">
@@ -115,7 +142,7 @@
                         </ul>
                     </nav>
                 </div>
-            </aside> -->
+            </aside>
         </div>
         
     </nav>
