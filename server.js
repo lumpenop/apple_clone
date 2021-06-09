@@ -37,7 +37,7 @@ app.set('view engine', 'html');
 app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'));
 app.use(express.static('uploads'));
-
+app.use(express.static('images'));
 app.use('/',router)
 
 // io.sockets.on('connection',socket=>{
