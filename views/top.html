@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-search" role="search">
-                    <div href="#" class="ac-gn-link ac-gn-link-search" role="button" onclick="searchOnClick()">
+                    <div href="#" class="ac-gn-link ac-gn-link-search" role="button">
                         <img src="/users/globalnav_search.svg" alt="" >
                     </div>
                 </li>
@@ -73,7 +73,7 @@
                                 <div class="ac-gn-searchform-wrapper">                            
                                     <form action = "/search/search" method = "post">
                                     <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" aria-label="apple.com 검색" placeholder="apple.com 검색" name = "AppleSearch" type="text">
-                                    <input type = "submit" value = "보내기">
+                                    
                                     </form>
                                     <input type="hidden" id="ac-gn-searchform-src" name="src" value="globalnav">
                                     <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit">
@@ -81,9 +81,7 @@
                                     </button>
                                     <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset"></button>
                                 </div>
-                            <button id="ac-gn-searchview-close-small" class="ac-gn-searchview-close-small" >
-                                <span class="ac-gn-searchview-close-cancel">취소</span>
-                            </button>
+                            
                         </div>
                     </div>
                     <aside class="ac-gn-searchview-results">
@@ -150,7 +148,7 @@
         
     </nav>
     <div class="ac-gn-blur"></div>
-    <div class="ac-gn-curtain"></div>
+    <div id="ac-gn-curtain"></div>
     <div class="ac-gn-placeholder"></div>
     <div class="as-search-wrapper"></div>
     <!----- end global navigation ----->

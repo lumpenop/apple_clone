@@ -41,7 +41,6 @@ a{
 #ac-globalnav .ac-gn-link-search {
     background-size: 18px 88px;
     background-repeat: no-repeat;
-   
     background-position: center center;
     width: 18px;
 }
@@ -50,6 +49,9 @@ a{
 
 .ac-gn-link{
     overflow: hidden;
+    padding: 0 10px;
+    box-sizing: content-box;
+    cursor: pointer;
 }
 
 #ac-globalnav .ac-gn-link-text {
@@ -66,6 +68,7 @@ a{
 
 
 #ac-globalnav{
+    position: relative;
     width: 100%;
     min-width: 1024px;
     display: block;
@@ -73,8 +76,8 @@ a{
     max-height: 48px;
     height: 48px;
     z-index: 9997;
-
     background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
 .ac-gn-content{
@@ -295,6 +298,8 @@ a{
     overflow-y: auto;
     white-space: nowrap;
     z-index: 9999;
+    top: -1px;
+    position: relative;
 }
 .ac-gn-searchresults-header{
     font-size: 12px;
@@ -324,6 +329,17 @@ a{
     text-decoration: none;
     text-overflow:ellipsis;
 }
+.ac-gn-searchresults-item{
+    margin: 6px -32px;
+}
+
+.ac-gn-searchresults-item:hover{
+    background-color: #f5f5f7;
+}
+
+.ac-gn-searchresults-item:hover > a{
+    color: #06c;
+}
 
 
 #ac-gn-searchview{
@@ -338,7 +354,7 @@ a{
     left: 16.66667%;
     width: 66.66667%;
     height: calc(100vh - 16px);
-    z-index: 3;
+    z-index: 9999;
 }
 
 .ac-gn-item span{
@@ -355,6 +371,12 @@ a{
     width: calc(100% - 39px - 38px);
     height: 44px;
     padding: 0 38px 0 39px;
+    caret-color: #fff;
+    
+}
+
+.ac-gn-searchform-input:focus {
+    outline:none;
 }
 
 .ac-gn-searchform-submit{
@@ -372,3 +394,73 @@ a{
     border: none;
     background-color: transparent;
 }
+
+.ac-gn-search-small{
+    display: none;
+}
+
+
+.ac-gn-searchview-close{
+    position: absolute;
+    right: 18%;
+    opacity: 0.8;
+    z-index: 9999;
+    width: 38px;
+    height: 44px;
+    top: 0;
+    color: #86868b;
+    cursor: pointer;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.ac-gn-searchview-close-wrapper{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.ac-gn-searchview-close-left{
+    right: 12px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.ac-gn-searchview-close-right{
+    left: 12px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.ac-gn-searchview-close-right,
+.ac-gn-searchview-close-left{
+    height: 18px;
+    width: 1px;
+    background: #86868b;
+    position: absolute;
+    display: block;
+    border-radius: 0.5px;
+    top: 11px;
+    z-index: 1;
+}
+
+.ac-gn-curtain{
+    display: block;
+
+    background: rgba(0, 0, 0, 0.48);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+
+
+/*****  end search  *****/
+
+
+
+
