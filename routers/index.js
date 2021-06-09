@@ -10,7 +10,7 @@ router.use('/',(req,res)=>{
     res.render('index.html');
 })
 router.use('/search',(req,res)=>{
-    res.render('search.html');
+    res.render('search_error.html');
 })
 
 module.exports = router;
