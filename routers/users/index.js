@@ -8,7 +8,9 @@ router.post('/join_success', controller.join_success);
 router.get('/login', controller.login);
 router.post('/logincheck', controller.logincheck);
 router.get('/chat', controller.chat);
-router.get('/chatRoom', controller.chatRoom);
-router.get('/chatHelp', controller.chatHelp)
+router.get('/chatHelp', controller.chatHelp);
+router.get('/chatBtn', controller.chatBtn);
+router.get('/chatRoom',auth, controller.chatRoom);
+
 
 module.exports = router;

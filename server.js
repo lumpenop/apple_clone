@@ -40,27 +40,29 @@ app.use(express.static('uploads'));
 
 app.use('/',router)
 
-io.sockets.on('connection',socket=>{
-    let cookie = socket.handshake.headers.cookie;
+// io.sockets.on('connection',socket=>{
+//     let cookie = socket.handshake.headers.cookie;
 
-    if(cookie != undefined){
-        let cookie_array = cookie.split('; ')
-        let obj = new Object
-        cookie_array.forEach(v=>{
-            [name, value] = v.split('=')
-            obj[name] = value
-        })
-        let {AccessToken} = obj
-        let payload = Buffer.from(AccessToken.split('.')[1],'base64').toString();
-        var {userid} = JSON.parse(payload)
-    }
-    socket.emit('userid',userid)
+//     if(cookie != undefined){
+//         let cookie_array = cookie.split('; ')
+//         let obj = new Object
+//         cookie_array.forEach(v=>{
+//             [name, value] = v.split('=')
+//             obj[name] = value
+//         })
+//         let {AccessToken} = obj
+//         let payload = Buffer.from(AccessToken.split('.')[1],'base64').toString();
+//         var {userid} = JSON.parse(payload)
+//     }
+//     socket.emit('userid',userid)
 
-    socket.on('send',data=>{
-        socket.broadcast.emit('msg',{userid:userid,data:data})
-    })
+//     socket.on('send',data=>{
+//         socket.broadcast.emit('msg',{userid:userid,data:data})
+//     })
+// })
 
-})
+
+
 
 server.listen(port,()=>{
     console.log(`server start port : ${port}`)
