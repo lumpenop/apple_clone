@@ -21,10 +21,6 @@ db.Sequelize = Sequelize;
 db.users = models.users;
 db.items = models.items;
 db.buy = models.buy; 
-<<<<<<< HEAD
-db.valuation = models.valuation; 
-=======
 db.bag = models.bag;
->>>>>>> 1f57ea2246185a45f7803174e414bd57552baaef
 
 module.exports = db;
