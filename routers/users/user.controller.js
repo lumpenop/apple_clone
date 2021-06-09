@@ -83,5 +83,5 @@ let chatRoom = (req,res)=>{
 }
 
 module.exports = {
-    bags,join, join_success, login, logincheck, login_success, chat, chatRoom, chatHelp,
+    bags,join, join_success, login, logincheck, login_success, chat, chatRoom, chatHelp, chatBtn, 
 }
