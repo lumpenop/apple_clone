@@ -37,9 +37,7 @@ let join_success = (req, res) => {
 
 let logincheck = async (req, res) => {
     let { userid, userpw } = req.body;
-    console.log(userpw)
     userpw = createPW(userpw);//고객이 로그인할 때 쓴 비번을 암호화 
-    console.log(userpw)
     let result = { result: false, }
     let pick = await users.findOne({ where: { userid } });
 
@@ -54,11 +52,14 @@ let logincheck = async (req, res) => {
         } else if (userpw == userpwfromDB && userid == useridfromDB) {
             result.result = true;
             result.msg = `Welcom back ${usernamefromDB}!`;
-            console.log(result)
         }
     }
+    let Token = createToken(userid);
+    res.cookie('AccessToken', Token, {httpOnly:true, secure:true});
     req.session.userid=userid;
-    res.json(result);
+    req.session.save(()=>{
+        res.json(result);
+    })
 }
 
 let login_success = (req, res) => {
@@ -69,12 +70,16 @@ let chat = (req,res)=>{
     res.render('chat.html');
 }
 
-let chatRoom = (req,res)=>{
-    res.render('chatRoom.html');
-}
-
 let chatHelp = (req,res)=>{
     res.render('chatHelp.html');
+}
+
+let chatBtn = (rea,res)=>{
+    res.render('chatBtn.html');
+}
+
+let chatRoom = (req,res)=>{
+    res.render('chatRoom.html');
 }
 
 module.exports = {

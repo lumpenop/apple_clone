@@ -25,8 +25,7 @@ async function loginFn(){
     let res_body = await response.json();
     let {result, msg} = res_body;
     alert(msg);
-    console.log('res_boy==',res_body);
-    console.log(result)
+
     if(result){
         loginForm.submit();
     }else{
@@ -36,7 +35,6 @@ async function loginFn(){
     }
 }
 
-
 function chatFn(){
-    window.open('chat','a','width=400,height=600,left=90%,top=100');
+    window.open('chat','a','width=450,height=780,left=90%,top=100');
 }
