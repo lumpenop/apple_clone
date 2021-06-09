@@ -1,4 +1,4 @@
-const {users,items,buy} = require('../../models');
+const {users,items,buy,valuation} = require('../../models');
 const sequelize = require("sequelize")
 const ctoken = require('./jwt'); 
 const chash = require('./chash')
@@ -21,7 +21,7 @@ let login = (req,res)=>{
 let logout = (req,res)=>{
 
     delete req.session.uid
-    res.clearCookie('token')
+    res.clearCookie('AccessToken')
 
     req.session.save(()=>{
         res.redirect('/admin/login')
@@ -73,6 +73,8 @@ let join_success = async (req,res)=>{
     let useremail = req.body.useremail
     let mobile = req.body.mobile
     let address = req.body.address
+    let admin = req.body.admin
+    let userbirth = req.body.userbirth
     let split_img = image.split('\\')[1]
     let token = chash(userpw)
 
@@ -83,7 +85,9 @@ let join_success = async (req,res)=>{
         image:split_img,
         mobile:mobile,
         address:address,
+        userbirth:userbirth,
         email:useremail,
+        admin:admin
     })
     console.log(result)
     
@@ -101,10 +105,19 @@ let product_view = async (req,res)=>{
     let result = await items.findOne({ where: {id:idx}})
     console.log(result)
     res.render('./admin/product/product_view.html',{
-        result:result
+        result:result,
+        userid:req.session.uid
     })
 }
-
+let value_view = async (req,res)=>{
+    let idx = req.query.idx
+    let result = await valuation.findOne({ where: {id:idx}})
+    console.log(result)
+    res.render('./admin/valuation/value_view.html',{
+        result:result,
+        userid:req.session.uid
+    })
+}
 let product_view2 = async (req,res)=>{
     let id = req.body.id
     let item_serial_number = req.body.item_serial_number
@@ -140,7 +153,7 @@ let product_list = async (req,res)=>{
 }
 
 let value_list = async (req,res)=>{
-    let result = await items.findAll({})
+    let result = await valuation.findAll({})
     console.log(result)
     res.render('./admin/valuation/value_list.html',{list:result, userid:req.session.uid})
 }
@@ -152,15 +165,32 @@ let delete_success = async (req,res)=>{
     res.redirect('/admin/product_list')
 }
 
+let delete_success2 = async (req,res)=>{
+    let id = req.query.idx
+    let result = await users.destroy({where:{id}})
+    console.log(result)
+    res.redirect('/admin/user_list')
+}
+
+let delete_success3 = async (req,res)=>{
+    let id = req.query.idx
+    let result = await valuation.destroy({where:{id}})
+    console.log(result)
+    res.redirect('/admin/valuation')
+}
+
 let product_add = (req,res)=>{
-    res.render('./admin/product/product_add.html',{})
+    res.render('./admin/product/product_add.html',{
+        userid:req.session.uid
+    })
 }
 
 let product_modify = async (req,res)=>{
     let idx = req.query.idx
     let result = await items.findOne({ where: {id:idx}})
     res.render('./admin/product/product_modify.html',{
-        result:result
+        result:result,
+        userid:req.session.uid,
     })
 }
 
@@ -179,7 +209,22 @@ let search_success = async (req,res) => {
 
     console.log(result)
 }
+let search_success2 = async (req,res) => {
+    let search = req.body.search
+    let result = await users.findAll({where:{userid:{[Op.like]:"%"+search+"%"}}})
+    res.render('./admin/user/user_list.html',{list:result,})
 
+
+    console.log(result)
+}
+let search_success3 = async (req,res) => {
+    let search = req.body.search
+    let result = await valuation.findAll({where:{value_subject:{[Op.like]:"%"+search+"%"}}})
+    res.render('./admin/valuation/value_list.html',{list:result,})
+
+
+    console.log(result)
+}
 let create_list = async (req,res)=>{
 
     let item_serial_number = req.body.item_serial_number
@@ -206,6 +251,12 @@ let create_list = async (req,res)=>{
     res.redirect('/admin/product_list')
 }
 
+let user_list = async (req,res) => {
+    let result = await users.findAll({})
+    console.log(result)
+    res.render('./admin/user/user_list.html',{list:result, userid:req.session.uid})
+}
+
 module.exports = { 
     main,
     login,
@@ -221,9 +272,15 @@ module.exports = {
     create_list,
     search_success,
     delete_success,
+    delete_success2,
+    delete_success3,
     join_success,
     login_success,
     logout,
     userid_check,
-    value_list
+    value_list,
+    user_list,
+    search_success2,
+    search_success3,
+    value_view,
 }; 

@@ -22,6 +22,7 @@ router.get('/join',controller.join);
 router.post('/join_success',upload.single('img'),controller.join_success);
 router.get('/admin_info',controller.admin_info);
 router.get('/product_view',controller.product_view);
+router.get('/value_view',controller.value_view);
 router.post('/product_list',upload.single('img'),controller.product_view2);
 router.get('/product_list',controller.product_list);
 router.get('/product_modify',controller.product_modify);
@@ -30,10 +31,16 @@ router.get('/chat_list',controller.chat_list);
 router.get('/chat_view',controller.chat_view);
 router.post('/login_success',controller.login_success)
 router.post('/delete_success',controller.delete_success);
+router.post('/delete_success2',controller.delete_success2);
+router.post('/delete_success3',controller.delete_success3);
 router.post('/search_success',controller.search_success);
+router.post('/search_success2',controller.search_success2);
+router.post('/search_success3',controller.search_success3);
 router.post('/product_list/success',upload.single('img'),controller.create_list);
 router.get('/userid_check',controller.userid_check);
 
 router.get('/valuation',controller.value_list);
+
+router.get('/user_list',controller.user_list);
 
 module.exports = router;

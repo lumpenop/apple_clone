@@ -96,9 +96,10 @@ ul,li{
     background: #80808080;
     color:whitesmoke;
 }
-.blue>a{
+.blue>a, .blue>div>span{
     color:#6666ff;
 }
+
 
 .table{
     text-align: center;

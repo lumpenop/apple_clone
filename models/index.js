@@ -21,5 +21,6 @@ db.Sequelize = Sequelize;
 db.users = models.users;
 db.items = models.items;
 db.buy = models.buy; 
+db.valuation = models.valuation; 
 
 module.exports = db;

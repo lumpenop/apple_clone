@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href = "../../../admin/css/product_list.css">
+    <link rel = "stylesheet" href = "../../../admin/css/user_list.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
@@ -40,10 +40,10 @@
             </div>
             <div class = "content">
                 <div>
-                    <form action = "/admin/search_success" method = "post">
+                    <form action = "/admin/search_success2" method = "post">
                         <div class = "search">
-                            <div class = "">교육 서비스 검색</div>
-                             <input type = "text" placeholder = "교육 서비스를 검색하세요" name = "search" class = "searchwidth searchheight">
+                            <div class = "">사용자 검색</div>
+                             <input type = "text" placeholder = "사용자를 검색하세요" name = "search" class = "searchwidth searchheight">
                             <input type = "submit" class = "searchheight buttonwidth" value = "?">
                         </div>      
                     </form>
@@ -52,27 +52,29 @@
                     <table class = "table paginated">
                         <tr class = "grey">
                             <td>인덱스값</td>
-                            <td>상품 번호</td>
-                            <td class = "product_name_length">교육 서비스명</td>
-                            <td>가격</td>
-                            <td>교육 이미지</td>
-                            <td>교육 특성</td>
-                            <td>교육 시작일</td>
-                            <td>교육 커리큘럼</td>
+                            <td>아이디</td>
+                            <td class = "product_name_length">비밀번호</td>
+                            <td>이름</td>
+                            <td>생년월일</td>
+                            <td>이미지</td>
+                            <td>연락처</td>
+                            <td>등록일</td>
+                            <td>유저 레벨</td>
                             <td>삭제하기</td>
                         </tr>
                         {% for item in list %}
-                        <form action = "/admin/delete_success?idx={{item.id}}" method = "post"> 
+                        <form action = "/admin/delete_success2?idx={{item.id}}" method = "post"> 
                             <section>
                                 <tr class = "blueGreen">
                                     <td class = "length">{{item.id}}</td>
-                                    <td>{{item.item_serial_number}}</td>
-                                    <td class = "prduct_name_length blue"><a href = "/admin/product_view?idx={{item.id}}">{{item.item_name}}</a></td>
-                                    <td class = "oneContent" name = "oneContent1">{{item.item_price}}</td>
-                                    <td id = "img1"><img id = "img" src = "../../../{{item.item_image}}"></td>
-                                    <td>{{item.item_size}}</td>
-                                    <td>{{item.item_color}}</td>
-                                    <td>{{item.item_capacity}}</td>
+                                    <td>{{item.userid}}</td>
+                                    <td class = "product_name_length">{{item.userpw}}</td>
+                                    <td>{{item.username}}</td>
+                                    <td>{{item.userbirth}}</td>
+                                    <td class = "width100"><img class = "width100" src = "../../../{{item.image}}"></td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.register_date}}</td>
+                                    <td>{{item.admin}}</td>
                                     <td>
                                         <input type = "submit" class = "delete" value = "삭제하기">
                                     </td>
@@ -81,7 +83,6 @@
                         </form>   
                         {% endfor %} 
                     </table>
-                    <div class = "blue margin_top"><a href = "/admin/product_add">서비스 추가하기</a></div>
                     <div id="pagination">
 
                     </div>
@@ -96,7 +97,7 @@ function page(){
 $('table.paginated').each(function() {
  var pagesu = 105;  //페이지 번호 갯수
  var currentPage = 0;
- var numPerPage = 3;  //목록의 수
+ var numPerPage = 2;  //목록의 수
  var $table = $(this);    
  var pagination = $("#pagination");
 

@@ -14,14 +14,17 @@ ul,li{
 }
 
 .w1200{
-    width:800px;
+    width:1480px;
     margin:0 auto;
 }
 
 .logo{
     float:left;
 }
-
+.width100{
+    width:250px;
+    height:220px;
+}
 .user{
     float:right;
     margin-top:50px;
@@ -60,7 +63,11 @@ ul,li{
     width:200px;
     box-sizing: border-box;
     padding:20px;
-    height:900px;
+    height:1200px;
+}
+
+#pagination{
+    margin-top: 50px;
 }
 .menu>ul>li>a{
     color:whitesmoke;
@@ -76,7 +83,7 @@ ul,li{
     display: inline-block;
     float:left;
     box-sizing: border-box;
-    padding:25px;
+    padding:30px;
     margin-left:35px;
 }
 .content>div>form>div{
@@ -91,13 +98,6 @@ ul,li{
     background: #808080;
     text-align: center;
     color:whitesmoke;
-    width:500px;
-    margin-bottom: 50px;
-    height:35px;
-    padding:12px;
-    box-sizing: border-box;
-    height:50px;
-    font-size: 20px;
 }
 .delete{
     background: #80808080;
@@ -107,7 +107,9 @@ ul,li{
     color:#6666ff;
 }
 
-
+.margin_top{
+    margin-top: 100px;
+}
 .table{
     text-align: center;
 }
@@ -116,8 +118,10 @@ ul,li{
 height:200px;}
 
 .product_name_length{
-    width:150px;
+    width:50px;
+    overflow: hidden;
 }
+
 
 .content>div>form>div>div{
     background: #808080;
@@ -126,48 +130,22 @@ height:200px;}
 
 }
 
-.content>div>a{
-    color:#6666ff;
-}
-#chat{
-    width:500px;
-    height:600px;
-    background: #404040;
-    overflow: scroll;
-    clear: both;
-}
-#chatInputArea{
-    margin-bottom: 60px;
-    clear:both;
-}
-.my{
-    float:right;
-    clear: both;
-    color:#e0e0e0;
-
+.back{
+    background: #808080;
+    color:whitesmoke;
+    width:40px;
+    height:10px;
+    margin-right: 18px;
 }
 
-.you{
-    clear: both;
-    float:left;
-    color:#99ccff;
+.next{
+    background: #808080;
+    color:whitesmoke;
+    width:40px;
+    height:10px;
+    margin-left: 5px;
 }
 
-#msg{
-    width:445px;
-    height:30px;
-}
-
-#button{
-    width:45px;
-    height:35px;
-}
-
-#chat > div > span{
-    display: block;
-    padding: 7px 14px;
-    border-radius: 15px;
-}
-#chat>div{
-    display: block;
+.NUMBER{
+    margin-right: 15px;
 }

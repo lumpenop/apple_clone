@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../../../admin/css/join.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "wrap">
+        <div class = "w1000">
+            <div class = "join">관리자 인증</div>
+            <form action = "/admin/join" id = "frm" method = "post" enctype="multipart/form-data">
+                <div class = "userid">관리자 인증 코드 : </div>
+                <input type = "text" class = "grey userid_value" placeholder="ID" name = "userid">
+                <input type = "button" id = "submitBtn" class = "blue2" value = "회원가입 이동">
+            </form>
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+    
+    const submitBtn = document.querySelector('#submitBtn')
+    const frm = document.querySelector('#frm')
+    const userid = document.querySelector('.userid_value')
+    submitBtn.addEventListener('click',submitBtnFn)
+    userid.addEventListener('focusout',useridFn)
+        
+    async function submitBtnFn(){
+        const userid_value = document.querySelector('.userpw_value').value
+        const userpw = document.querySelector('.userpw_value').value
+        const userpwCheck = document.querySelector('.userpwcheck_value').value
+        const username = document.querySelector('.username_value').value
+        const userimage = document.querySelector('#input_image').value
+        const useremail = document.querySelector('.useremail_value').value
+
+        if(userid_value != 5353){
+            alert('관리자 인증에 실패 했습니다.')
+            return
+        }
+
+
+        frm.submit()
+
+    }
+</script>
+</html>
