@@ -214,3 +214,18 @@ h5{
     margin-top: 20px;
     display: inline-block;
 }
+
+.bold{
+    font-weight: bold;
+    color:grey;
+    margin-bottom:5px;
+}
+
+.ggg{
+    color:grey;
+    line-height:22px;
+}
+
+.clear>div>a{
+    color:#0070c9;
+}

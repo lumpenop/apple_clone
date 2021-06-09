@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../search.css">
+</head>
+<body>
+    <div class = "ContentWrap wrap">
+        <div class = "content wrap1200">
+            <div class = "search">
+                <div class = "click">
+                    <input TYPE="IMAGE" src="../search.png" name="Submit" value="Submit">
+                </div>
+                <form action = "/search?" method = "post">
+                    <div class = "input">
+                        <input type = "text" name = "search_value">
+                    </div>
+                </form>
+            </div>
+            <div class = "MainContent">
+                <ul class = "menu">
+                    <li>Explore</li>
+                    <li>Accessories</li>
+                    <li>Support</li>
+                    <li>Apple Stores</li>
+                </ul>
+                <div class = "line"></div>
+                <h5>10 results found</h5>
+                <ul>
+                    {% for item in result %}
+                    <li class = "clear">
+                        <div class = "image"><img class = "image" src = "/iphone.jpg"></div>
+                        <div class = "margin_left">
+                            <h3 class = "font1">{{item.item_name}}</h3>
+                            <div class = "font2">{{item.item_serial_number}}</div>
+                            <div class = "font3"><a href = "">{{item.price}}</a></div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <ul>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                </ul>
+                <div class = "line2 clear"></div>
+                <div class = "w300">
+                    <div class = "d">
+                        <img class = "image2 inline" src = "/itunes.jpg">
+                        <a class = "text" href = "">Search iTunes></a>
+                    </div>
+                    <div class = "d">
+                        <img class = "image2" src = "/itunes.jpg">
+                        <a href = "text" class = "text">Search iTunes></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "wrap2">
+        <div class = "footer wrap1300">
+            <h6 class = "h6">†† We approximate your location from your internet IP address by matching it to a geographic region or from the location entered during your previous visit to Apple.</h6>
+            <div class = "line2"></div>
+            <div class = "s">Search Results</div>
+            <div class = "footer_list">
+                <ul class = "first">
+                    <h3>Shop and Learn</h3>
+                    <li>Mac</li>
+                    <li>iPad</li>
+                    <li>iPhone</li>
+                    <li>Apple Watch</li>
+                    <li>TV</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                    <li>HomePod</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+                <ul>
+                    <h3>Apple Store</h3>
+                    <li>Find a Store</li>
+                    <li>Shop Online</li>
+                    <li>Genius Bar</li>
+                    <li>Today at Apple</li>
+                    <li>Youth Programs</li>
+                    <li>Apple Store App</li>
+                    <li>Refurbished and Clearance</li>
+                    <li>Financing</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+                <ul>
+                    <h3>For Education</h3>
+                    <li>Apple and Education</li>
+                    <li>Shop for College</li>
+                    <li>For Business</li>
+                    <li>Apple and Business</li>
+                    <li>Shop for Business</li>
+                    <li>Shop for Government</li>
+                    <li>Shop for Veterans & Military</li>
+                    <li>Financing</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+                <ul>
+                    <h3>Account</h3>
+                    <li>Manage Your Apple ID</li>
+                    <li>Apple Store Account</li>
+                    <li>iCloud.com</li>
+                    <li>Apple and Business</li>
+                    <li>Shop for Business</li>
+                    <li>Shop for Government</li>
+                    <li>Shop for Veterans & Military</li>
+                    <li>Financing</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+            </div>
+            <div class = "font5">More ways to shop: Find an Apple Store or other retailer near you. Or call 1‑800‑MY‑APPLE.</div>
+            <div class = "font6">Copyright © 2021 Apple Inc. All rights reserved.</div>
+            <ul class = "flist">
+                <li>Privacy Policy</li>
+                <li> | </li>
+                <li>Terms of Use</li>
+                <li> | </li>
+                <li>Sales and Refunds</li>
+                <li> | </li>
+                <li>LegalSite Map</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+    input = document.querySelector('.search')
+    input.addEventListener('mouseover',inputClick)
+    input.addEventListener('mouseout',outputClick)
+
+    function inputClick(){
+        input.style.border = '1px solid blue'
+    }
+
+    function outputClick(){
+        input.style.border = '1px solid black'
+    }
+</script>
+</html>
