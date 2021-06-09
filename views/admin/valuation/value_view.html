@@ -36,44 +36,26 @@
                 </ul>
             </div>
             <div class = "content blue">
-                <div class = "grey">상품 정보</div>
+                <div class = "grey">수강 후기</div>
                 <table class = "table">
                     <tr>
                         <td class = "w100">제품번호</td>
                         <td class = "w600">{{result.id}}</td>
                     </tr>
                     <tr>
-                        <td class = "w100">교육 서비스명</td>
-                        <td class = "w600">{{result.item_name}}</td>
+                        <td class = "w100">제목</td>
+                        <td class = "w600">{{result.value_subject}}</td>
                     </tr>
                     <tr>
-                        <td class = "w100">가격</td>
-                        <td class = "w600">{{result.item_price}}</td>
+                        <td class = "w100">아이디</td>
+                        <td class = "w600">{{result.userid}}</td>
                     </tr>
                     <tr>
-                        <td class = "w100">교육 이미지</td>
-                        <td class = "product_img"><img src = "../../../{{result.item_image}}"></td>
-                    </tr>
-                    <tr>
-                        <td class = "w100">교육 특성</td>
-                        <td class = "w600">{{result.item_size}}</td>
-                    </tr>
-                    <tr>
-                        <td class = "w100">교육 시작일</td>
-                        <td class = "w600">
-                            {{result.item_color}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class = "w100">교육 커리큘럼</td>
-                        <td class = "w600">
-                            {{result.item_capacity}}
-                        </td>
+                        <td class = "w100">수강평</td>
+                        <td class = "product_img">{{result.value_content}}</td>
                     </tr>
                 </table>
-                <a href = "/admin/product_modify?idx={{result.id}}">수정하기</a>
-                <span> | </span>
-                <a href = "/admin/product_list">리스트로</a>
+                <a href = "/admin/valuation">리스트로</a>
             </div>
         </div>
     </div>

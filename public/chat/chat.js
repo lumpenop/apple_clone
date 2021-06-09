@@ -30,7 +30,7 @@ async function getChatRoom() {
     let response = await fetch(url, options);
     let result = await response.text();
     console.log(result)
-    if (typeof (JSON.parse(result)) == 'object') {
+    if (isJson(result)) {
         let json = JSON.parse(result);
         if (json.result == false) alert(json.msg);
         return;
@@ -44,12 +44,12 @@ async function getChatRoom() {
     }
 }
 
-// function isJson(str) {
-//     try {
-//         let json = JSON.parse(str)
-//         return (typeof json == 'object');
-//     } catch (e) { return false;}
-// }
+function isJson(str) {
+    try {
+        let json = JSON.parse(str)
+        return (typeof json == 'object');
+    } catch (e) { return false;}
+}
 
 
 

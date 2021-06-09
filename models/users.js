@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: Sequelize.Sequelize.fn('curdate')
     },
     admin: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER(100),
       allowNull: true,
     }
   }, {

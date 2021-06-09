@@ -24,7 +24,7 @@ chatBtn.addEventListener('click' ,async ()=>{
 
 async function getChatRoom(){
     
-    let url = "http://localhost:3000/admin/chat_view"
+    let url = "http://localhost:4000/admin/chat_view"
     let options = {method:'GET'}
     let response = await fetch(url,options)
     let result = await response.text()
@@ -42,15 +42,16 @@ async function getChatRoom(){
 async function socketChat(){
     socket = io();
     socket.on('connect',()=>{})
-    socket.on('userid',data=>{
-        userId = data   
-    })
+    // socket.on('userid',data=>{
+    //     userId = data   
+    // })
     socket.on('msg',data=>{
         chatBtn.dataset.value = parseInt(chatBtn.dataset.value)+1
         if(flag==false){
             chatBtn.innerHTML = `채팅<sapn style="color:red; padding:2px;">${chatBtn.dataset.value}</span>`
         }
-        addCard(data.userid,data.data,'you')
+        addCard(data.data,'you')
+        // addCard(data.userid,data.data,'you')
     })
 }
 
@@ -59,14 +60,16 @@ async function socketChat(){
 function send(){
     const msg = document.querySelector('#msg')
     socket.emit('send',msg.value)
-    addCard(userId,msg.value,'my')
+    addCard(msg.value,'my')
+   // addCard(userId,msg.value,'my')
 }
 
-function addCard(id,text,type){
+function addCard(text,type){
     const div = document.createElement('div')
-    const span = document.createElement('p')
-    span.innerHTML = id +"<br>"
-    span.innerHTML += text
+    const span = document.createElement('span')
+    // span.innerHTML = id +"<br>"
+    span.innerHTML = span.innerHTML + text 
+    span.innerHTML = span.innerHTML + "<br>"
     span.classList.add(type)
     div.appendChild(span)
     const chat = document.querySelector('#chat')

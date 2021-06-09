@@ -1,4 +1,6 @@
 const input = document.getElementsByTagName("input");
+const linkSearch = document.querySelector('.ac-gn-link ac-gn-link-search');
+
 
 for(var i=0; i<input.length; i++){
     input[i].addEventListener('focus', inputFocus);
@@ -22,8 +24,24 @@ function inputFocusOut(){
     }
 }
 
-function searchOnClick(){
-    
+const timer = ms => new Promise(res => setTimeout(res,ms));
+
+
+async function searchOnClick(){
+    const items = document.querySelectorAll('.ac-gn-item');
+    console.log(items);
+    await timer(300);
+    for(var i = items.length-1; i > 0; i--){
+        console.log(items[i])
+        items[i].style.display = 'none';
+        await timer(100);
+    }
+    await timer(1000);
+    items[0].style.display = 'none';
+    const gnbsub = document.querySelector('.ac-gn-list');
+    gnbsub.style.display = 'none';
+    const searchView = document.querySelector('#ac-gn-searchview');
+    searchView.style.display = 'block';
 }
 
 
