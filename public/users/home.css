@@ -353,8 +353,8 @@ a{
     top: 0;
     left: 16.66667%;
     width: 66.66667%;
-    height: calc(100vh - 16px);
     z-index: 9999;
+    height: 0px;
 }
 
 .ac-gn-item span{
@@ -372,6 +372,7 @@ a{
     height: 44px;
     padding: 0 38px 0 39px;
     caret-color: #fff;
+    color: #fff;
     
 }
 
