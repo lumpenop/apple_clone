@@ -294,6 +294,7 @@ a{
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
+    z-index: 9999;
 }
 .ac-gn-searchresults-header{
     font-size: 12px;
@@ -329,8 +330,10 @@ a{
     display: none;
 }
 
-#ac-gn-searchview-content{
-    position: absolute;
+
+
+.ac-gn-searchview-content{
+    position: relative;
     top: 0;
     left: 16.66667%;
     width: 66.66667%;
@@ -353,4 +356,20 @@ a{
     width: calc(100% - 39px - 38px);
     height: 44px;
     padding: 0 38px 0 39px;
+}
+
+.ac-gn-searchform-submit{
+    background-image: url(
+        ../users/globalnav_search.svg
+    );
+    background-repeat: no-repeat;
+    background-size: 18px 88px;
+    background-position: 10px -44px;
+    width: 38px;
+    height: 44px;
+}
+
+#ac-globalnav input, #ac-globalnav button {
+    border: none;
+    background-color: transparent;
 }
