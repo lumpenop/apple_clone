@@ -4,6 +4,7 @@ var _items = require("./items");
 var _users = require("./users");
 var _valuation = require("./valuation");
 var _bag = require("./bag");
+var _history = require("./history");
 
 function initModels(sequelize) {
   var buy = _buy(sequelize, DataTypes);
@@ -11,6 +12,7 @@ function initModels(sequelize) {
   var users = _users(sequelize, DataTypes);
   var valuation = _valuation(sequelize, DataTypes);
   var bag = _bag(sequelize, DataTypes);
+  var history = _history(sequelize, DataTypes);
 
   buy.belongsTo(items, { as: "buying_item_serial_number_item", foreignKey: "buying_item_serial_number"});
   items.hasMany(buy, { as: "buys", foreignKey: "buying_item_serial_number"});
@@ -24,7 +26,8 @@ function initModels(sequelize) {
     items,
     users,
     valuation,
-    bag
+    bag,
+    history,
   };
 }
 

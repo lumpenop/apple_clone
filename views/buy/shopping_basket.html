@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../shopping_basket.css">
+</head>
+<body>
+    <div class = "wrappingwrap wrap">
+        <div class = "content w1200">
+            <div class = "header">
+                <h1>장바구니에 들어 있는 제품입니다</h1>
+                <div class = "font">모든 주문에 무료 배송 서비스가 제공됩니다.</div>
+                <a href = "/buy/shopping_form?name={{list.item_name}}"><input type = "submit" class = "BTT" value = "결제"></a>
+            </div>
+            <div class = "line"></div>
+            <div class = "content">
+                <div class = "img height"><img class = "img" src = "../../{{list.item_image}}"></div>
+                <div class = "text height">
+                    <ul>
+                        <li>
+                            {{list.item_name}}
+                        </li>
+                        <li>
+                            <select class = "b">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                            </select>   
+                        </li>
+                        <li class = "float">{{list.item_price}}</li>
+                    </ul>
+                    <div class = "line2">
+    
+                    </div>
+                    <div>
+                        <div class = "LEFT"><img src = "../../aa.jpg"></div>
+                        <div class = "right">
+                            <h3 class = "h3">iPhone 12 mini을 위한 AppleCare+ 추가, ₩179,000</h3>
+                            <ul>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li class = "blue"><a href = "">더 알아보기</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class = "line2">
+
+                    </div>
+                    <div class = "foo">
+                        <h3 class = "h3">이 제품을 얼마나 빨리 받을 수 있는지 확인해보십시오.</h3>
+                        <div class = "blue"><a href = ""> 우편번호 입력</a></div>
+                        <div>
+                            <div>
+                                <div class = "imglast"><img class = "imglast" src = "../../box_img.png"></div>
+                                <div class = "it_text">
+                                    <h3>오늘 오후 3 까지 주문 시:배송</h3>
+                                    <div>월 2021/06/14 - 무료 배송</div>
+                                    <div>월 2021/06/14 - 무료 배송</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class = "imglast"><img class = "imglast" src = "../../box_img.png"></div>
+                                <div class = "it_text">
+                                    <h3>오늘 오후 3 까지 주문 시:배송</h3>
+                                    <div>월 2021/06/14 - 무료 배송</div>
+                                    <div>월 2021/06/14 - 무료 배송</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "line"></div>
+            <div class = "pay">
+                <div class = "w1000">
+                    <div class = "clear grey2">
+                        <div class = "c1">소계</div>
+                        <div class = "c2">{{list.item_price}}</div>
+                    </div>
+                    <div class = "clear grey2">
+                        <div class = "c1">배송</div>
+                        <div class = "c2">무료</div>
+                    </div>
+                    <div class = "line4"></div>
+                    <div class = "clear bodd">
+                        <div class = "c1">총계</div>
+                        <div class = "c2">{{list.item_price}}</div>
+                    </div><br/>
+                    <a href = "/buy/shopping_form?name={{list.item_name}}"><input type = "submit" class = "BTT add" value = "결제"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

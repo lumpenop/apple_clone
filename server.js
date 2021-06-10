@@ -12,7 +12,7 @@ const io = socket(server)
 const mysql = require('mysql');
 const {sequelize} = require('./models');
 const session = require("express-session");
-const {users,items,buy} = require('./models');
+const {users,items,buy,valuation} = require('./models');
 const auth = require('./middleware/auth.js');
 const {createPW, createToken} = require('./JWT');
 const router = require('./routers/index');
@@ -65,15 +65,6 @@ io.sockets.on('connection',socket=>{
         //socket.broadcast.emit('msg',{userid:userid,data:data})
     })
 })
-app.use(express.static('node_modules'));
-app.use(express.json());
-app.use(session({
-    secret:'any',
-    resave:true,
-    secure:false,
-    saveUninitialized:false,
-}))
-
 
 
 

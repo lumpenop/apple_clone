@@ -32,9 +32,9 @@
                 <ul>
                     {% for item in result %}
                     <li class = "clear">
-                        <div class = "image"><img class = "image" src = "/iphone.jpg"></div>
+                        <div class = "image"><img class = "image" src = "/{{item.item_image}}"></div>
                         <div class = "margin_left">
-                            <h3 class = "font1">{{item.item_name}}</h3>
+                            <h3 class = "font1"><a href = "/buy/buy_show?name={{item.item_name}}">{{item.item_name}}</a></h3>
                             <div class = "font2">{{item.item_serial_number}}</div>
                             <div class = "font3"><a href = "">{{item.price}}</a></div>
                         </div>

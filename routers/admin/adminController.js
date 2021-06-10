@@ -109,7 +109,7 @@ let product_view = async (req,res)=>{
         userid:req.session.uid
     })
 }
-let value_view = async (req,res)=>{
+let value_view = async (reqc,res)=>{
     let idx = req.query.idx
     let result = await valuation.findOne({ where: {id:idx}})
     console.log(result)
