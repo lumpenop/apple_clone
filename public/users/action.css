@@ -72,8 +72,8 @@
 
 @keyframes sizeUp{
     from{
-        font-size: 10px;
-        background-size: 12px 38px;
+        font-size: 8px;
+        background-size: 11px 36px;
   
     }to{
 
@@ -85,14 +85,14 @@
 
 .sizeUp{
     animation-fill-mode:forwards;
-    animation: sizeUp 0.6s;
+    animation: sizeUp 0.4s;
 }
 
 
 @keyframes sizeUpForSearch{
     from{
-        background-position: 0 -4px;        
-        background-size: 14px 80px;
+        background-position: 0 -5px;        
+        background-size: 13px 80px;
         
   
     }to{
