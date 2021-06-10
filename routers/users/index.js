@@ -12,6 +12,7 @@ router.get('/chat', controller.chat);
 router.get('/chatHelp', controller.chatHelp);
 router.get('/chatBtn', controller.chatBtn);
 router.get('/chatRoom',auth, controller.chatRoom);
+router.post('/userid_check', controller.userid_check);
 
 
 module.exports = router;

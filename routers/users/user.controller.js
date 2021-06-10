@@ -35,6 +35,19 @@ let join_success = (req, res) => {
     res.redirect('/');
 }
 
+let userid_check = async (req,res) =>{
+    let {userid} = req.body;
+    let rst = {result:false, msg:'해당 email은 기존 등록된 아이디입니다. 다른 email 주소를 입력해주세요.'};
+    let idCheckfromDB = await users.findOne({
+        where:{userid}
+    })
+    if (idCheckfromDB == undefined){
+        res.json({result:true, msg:'Apple 회원이 되신 것을 축하합니다!'});
+    }
+    res.json(rst)
+}
+
+
 let logincheck = async (req, res) => {
     let { userid, userpw } = req.body;
     userpw = createPW(userpw);//고객이 로그인할 때 쓴 비번을 암호화 
@@ -82,6 +95,9 @@ let chatRoom = (req,res)=>{
     res.render('./chat/chatRoom.html');
 }
 
+
+
+
 module.exports = {
-    bags,join, join_success, login, logincheck, login_success, chat, chatRoom, chatHelp, chatBtn, 
+    bags,join, join_success,userid_check, login, logincheck, login_success, chat, chatRoom, chatHelp, chatBtn, 
 }
