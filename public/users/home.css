@@ -225,7 +225,10 @@ a{
     z-index: 9999;
 }
 .ac-gn-bagview{
-    position: relative;
+    position: absolute;
+    top: 42px;
+    left: 100%;
+    transform: translateX(-55%);
     background: #fff;
     border: 1px solid #d2d2d7;
     border-radius: 18px;
@@ -233,6 +236,9 @@ a{
     z-index: 9998;
     overflow: hidden;
 }
+
+
+
 .ac-gn-bagview-message{
     text-align: center;
     font-size: 14px;
@@ -266,13 +272,6 @@ a{
     
 }
 
-.ac-gn-bagview{
-    top: -2px;
-    left: 100%;
-    transform: translateX(-50%);
-    margin-right: calc(512px-50vw);
-    background: #fff;
-}
 
 .ac-gn-bagview,
 .caret{

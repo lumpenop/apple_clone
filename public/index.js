@@ -3,7 +3,10 @@ const linkSearch = document.querySelector('.ac-gn-link.ac-gn-link-search');
 const searchCloseBtn = document.querySelector('.ac-gn-searchview-close-wrapper');
 const curtain = document.querySelector('#ac-gn-curtain');
 const globalNav = document.querySelector('#ac-globalnav');
-const bagBtn = document.querySelector('.ac-gn-bagview');
+const bagBtn = document.querySelector('.ac-gn-link-bag > span');
+const bagView = document.querySelector('.ac-gn-bagview');
+const bagViewMessage = document.querySelector('.ac-gn-bagview-message');
+const itemLink = document.querySelector('.item-link');
 
 linkSearch.addEventListener('click', searchOnClick);
 searchCloseBtn.addEventListener('click', searchClose);
@@ -12,17 +15,39 @@ globalNav.addEventListener('click', event => layerClose(event, globalNav));
 bagBtn.addEventListener('click', bagViewOn);
 
 
+
+
+
+window.addEventListener('click', event => windowClick(event));
+
+function windowClick (event){
+
+    if(event.target!=bagViewMessage && event.target.className != 'item-link' && event.target != bagBtn){
+        console.log(event.target);
+        document.querySelector('.ac-gn-bagview').classList.remove('displayBlock');
+        document.querySelector('.caret').classList.remove('displayBlock');
+        bagViewFlag = true;    
+    }
+}
+
+
 for(var i=0; i<input.length; i++){
     input[i].addEventListener('focus', inputFocus);
     input[i].addEventListener('focusout', inputFocusOut);
 }
 
-
+let bagViewFlag = true;
 function bagViewOn(){
-    
-    document.querySelector('.ac-gn-bagview').classList.add('displayBlock');
-    this.classList.add('displayBlock');
+    if(bagViewFlag){
+        document.querySelector('.ac-gn-bagview').classList.add('displayBlock');
+        document.querySelector('.caret').classList.add('displayBlock');
+        bagViewFlag = false;
 
+    }else{
+        document.querySelector('.ac-gn-bagview').classList.remove('displayBlock');
+        document.querySelector('.caret').classList.remove('displayBlock');
+        bagViewFlag = true;
+    }  
 }
 
 
@@ -147,7 +172,7 @@ async function searchClose(){
 
 function layerClose(event, layer){
     
-    if(event.target == layer){
+    if(event.target == layer&&document.querySelector('#ac-gn-curtain').className=='ac-gn-curtain'){
         searchClose();
     }
 }
