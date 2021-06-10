@@ -3,6 +3,10 @@ const chatPlace = document.querySelector('#chatPlace');
 let flag = undefined;
 
 chatBtn.addEventListener('click', () => {
+    chatBtn.style.marginTop = "0px";
+    chatBtn.style.transition = "0.5s ease-in-out";
+    chatBtn.style.fontSize = "17px";
+
     switch (flag) {
         case true:
             flag = false;
@@ -29,7 +33,7 @@ async function getChatRoom() {
     }
     let response = await fetch(url, options);
     let result = await response.text();
-    console.log(result)
+
     if (isJson(result)) {
         let json = JSON.parse(result);
         if (json.result == false) alert(json.msg);
@@ -48,10 +52,8 @@ function isJson(str) {
     try {
         let json = JSON.parse(str)
         return (typeof json == 'object');
-    } catch (e) { return false;}
+    } catch (e) { return false; }
 }
-
-
 
 //        s o c k e t s        //
 
@@ -83,20 +85,22 @@ function msgAdd(msgValue, who) {
     const li_time = document.createElement('li');
     const li_msg = document.createElement('li');
     const chat = document.querySelector('#chat');
+    const B = document.querySelectorAll('.time_clocking');
 
-    let T = new Date()
+    let T = new Date();
     let H = T.getHours();
-    let M = ('00'+T.getMinutes()).slice(-2);
+    let M = ('00' + T.getMinutes()).slice(-2);
     let now = (H >= 12 && H <= 24) ? '오후' : '오전';
     H = H >= 12 ? H - 12 : H;
-    H = ('00'+ H).slice(-2);
+    H = ('00' + H).slice(-2);
     let clock = `${now} ${H}:${M}`
 
-    const B = document.querySelectorAll('.timeClass')
-    li_time.innerHTML = clock;
-    li_time.classList.add('timeClass');
     li_msg.innerHTML = msgValue;
     li_msg.classList.add(who);
+    li_time.innerHTML = clock;
+    li_time.classList.add('time_clocking');
+    if (who == 'you') li_time.classList.add('time_you');
+    else li_time.classList.add('time_me');
 
     if (B.length == 0 || B[B.length - 1].textContent != clock) {
         ul_time.appendChild(li_time);
@@ -104,11 +108,10 @@ function msgAdd(msgValue, who) {
         chat.appendChild(ul_time);
         chat.appendChild(ul_msg);
     } else {
-        if (B[B.length - 1].textContent == clock) {
-            ul_msg.appendChild(li_msg);
-            chat.appendChild(ul_msg);
-        }
+        ul_msg.appendChild(li_msg);
+        chat.appendChild(ul_msg);
     }
+
 }
 
 

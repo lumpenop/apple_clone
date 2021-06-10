@@ -67,19 +67,19 @@ let login_success = (req, res) => {
 }
 
 let chat = (req,res)=>{
-    res.render('chat.html');
+    res.render('./chat/chat.html');
 }
 
 let chatHelp = (req,res)=>{
-    res.render('chatHelp.html');
+    res.render('./chat/chatHelp.html');
 }
 
 let chatBtn = (rea,res)=>{
-    res.render('chatBtn.html');
+    res.render('./chat/chatBtn.html');
 }
 
 let chatRoom = (req,res)=>{
-    res.render('chatRoom.html');
+    res.render('./chat/chatRoom.html');
 }
 
 module.exports = {
