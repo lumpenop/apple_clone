@@ -11,12 +11,6 @@ a{
     color: #0070c9;
 }
 
-#ac-globalnav .ac-gn-link-apple{
-   
-    background-size: 16px 44px;
-    background-position: center center;
-    width: 16px;
-}
 
 .ac-gn-link {
     font-size: 14px;
@@ -37,41 +31,50 @@ a{
     outline-offset: -7px;
 }
 
-.ac-gn-link > span:hover{
-    color: #fff !important;
-  
+.ac-gn-link:hover{
+    filter :invert(20%);
 }
 
-.ac-gn-link > img:hover{
-    filter :invert(25%);
+.ac-gn-link{
+    line-height: 44px;
 }
 
-@keyframes sizeDown{
-    from{
-        width: 44px;
-        height: 44px;
-    }to{
-        width: 22px !important;
-        height: 22px !important;
-    }
-}
-.sizeDown{
-    animation-fill-mode:forwards;
-    animation: sizeDown 0.1s;
-}
 
-#ac-globalnav .ac-gn-link-search {
+#ac-globalnav .ac-gn-link-search span{
+    background: url(
+        ../users/globalnav_search.svg
+    )no-repeat;
     background-size: 18px 88px;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 0;
     width: 18px;
+    height: 44px;
 }
 
+.ac-gn-link-bag span{
+    background: url(
+        ../users/globalnav_bag.svg
+    )no-repeat;
+    
+    background-size: 16px 44px;
+    background-position: center center;
+    width: 16px;
+    height: 44px;
+}
+
+#ac-globalnav .ac-gn-link-apple span{
+    width: 16px;
+    height: 44px;
+    background: url(
+        ../users/globalnav_apple_image.svg
+    )no-repeat;
+    background-size: 16px 44px;
+    background-position: center center;
+    
+}
 
 
 .ac-gn-link{
-    overflow: hidden;
-    padding: 0 10px;
     box-sizing: content-box;
     cursor: pointer;
     
@@ -104,9 +107,10 @@ a{
 }
 
 .ac-gn-content{
+
     margin: 0 auto;
     max-width: 980px;
-    padding: 0 22px;
+    padding: 2px 22px 0px;
     z-index: 9999;
     position: relative;
 }
@@ -163,39 +167,6 @@ a{
     margin-bottom: 4px;
 }
 
-
-.inputFocus{
-    animation-name: inputFocus;
-    animation-duration: .2s;
-    animation-fill-mode: forwards;
-}
-
-.inputFocusOut{
-    animation-name: inputFocusOut;
-    animation-duration: .2s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes inputFocus{
-    from{
-        font-size: 14px;
-        top: 18px;
-
-    }to{
-        font-size: 12px;
-        top: 10px;
-    }
-}
-
-@keyframes inputFocusOut{
-    from{
-        font-size: 12px;
-        top: 10px;
-    }to{
-        font-size: 14px;
-        top: 18px;
-    }
-}
 
 /***** aside *****/
 
@@ -308,6 +279,10 @@ a{
     display: none;
 }
 
+.ac-gn-searchview-bar{
+    height: 48px;
+}
+
 .ac-gn-searchview-results{
     font-size: 14px;
     line-height: 2;
@@ -321,7 +296,7 @@ a{
     overflow-y: auto;
     white-space: nowrap;
     z-index: 9999;
-    top: -1px;
+    top: -2px;
     position: relative;
 }
 .ac-gn-searchresults-header{
@@ -348,10 +323,12 @@ a{
     overflow: hidden;
     color: #1d1d1f;
     display: block;
-    padding: 0 20px;
+    padding: 0 40px;
     text-decoration: none;
     text-overflow:ellipsis;
+    position: relative;
 }
+
 .ac-gn-searchresults-item{
     margin: 6px -32px;
 }
@@ -397,17 +374,26 @@ a{
 
 .ac-gn-searchform-input{
     position: absolute;
-    width: calc(100% - 39px - 38px);
+    width: 590px;
     height: 44px;
     padding: 0 38px 0 39px;
     caret-color: #fff;
     color: #fff;
-    
+    left: 10%;
 }
 
 .ac-gn-searchform-input:focus {
     outline:none;
 }
+
+
+.ac-gn-searchform-wrapper{
+    position: relative;
+    z-index: 9999;
+    width: 44px;
+    display: inline-block;
+}
+
 
 .ac-gn-searchform-submit{
     background-image: url(
@@ -418,6 +404,8 @@ a{
     background-position: 10px -44px;
     width: 38px;
     height: 44px;
+    position: relative;
+    left: 10%;
 }
 
 #ac-globalnav input, #ac-globalnav button {
@@ -441,10 +429,13 @@ a{
     color: #86868b;
     cursor: pointer;
     transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    
 }
 
 .ac-gn-searchview-close-wrapper{
-    display: block;
+    top: 0;
+    position: absolute;
+    display: none;
     width: 100%;
     height: 100%;
 }
@@ -473,35 +464,7 @@ a{
     z-index: 1;
 }
 
-.ac-gn-curtain{
-    display: block;
 
-    background: rgba(0, 0, 0, 0.48);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-.displayBlock{
-    display: block !important;
-}
-
-.displayFlex{
-    display: flex !important;
-}
-
-.displayInline{
-    display: inline-block !important;
-}
-
-.displayNone{
-    display: none !important;
-}
 
 
 /*****  end search  *****/

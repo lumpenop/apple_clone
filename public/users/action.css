@@ -1,0 +1,142 @@
+
+
+
+.inputFocus{
+    animation-name: inputFocus;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+.inputFocusOut{
+    animation-name: inputFocusOut;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes inputFocus{
+    from{
+        font-size: 14px;
+        top: 18px;
+
+    }to{
+        font-size: 12px;
+        top: 10px;
+    }
+}
+
+@keyframes inputFocusOut{
+    from{
+        font-size: 12px;
+        top: 10px;
+    }to{
+        font-size: 14px;
+        top: 18px;
+    }
+}
+
+
+
+.displayBlock{
+    display: block !important;
+}
+
+.displayFlex{
+    display: flex !important;
+}
+
+.displayInline{
+    display: inline-block !important;
+}
+
+.displayNone{
+    display: none !important;
+}
+
+
+.ac-gn-curtain{
+    display: block;
+
+    background: rgba(0, 0, 0, 0.48);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+
+
+
+@keyframes sizeUp{
+    from{
+        font-size: 10px;
+        background-size: 12px 38px;
+  
+    }to{
+
+        font-size: 14px;
+        background-size: 16px 44px;
+   
+    }
+}
+
+.sizeUp{
+    animation-fill-mode:forwards;
+    animation: sizeUp 0.6s;
+}
+
+
+@keyframes sizeUpForSearch{
+    from{
+        background-position: 0 -4px;        
+        background-size: 14px 80px;
+        
+  
+    }to{
+        background-size: 18px 88px;
+        background-position: center 0px;
+    }
+}
+
+.sizeUpForSearch{
+    animation-fill-mode:forwards;
+    animation: sizeUpForSearch 0.8s;
+}
+
+
+@keyframes slidingText4{
+    from{
+        display: none;
+        left: 8%;
+    }to{
+        left: 0;
+        display: inline-block;
+    }
+}
+
+.slidingText4{
+    animation-fill-mode:forwards;
+    animation: slidingText4 0.4s;
+    left: 0;
+    display: inline-block !important;
+}
+
+@keyframes slidingText8{
+    from{
+        left: 60%;
+        display: none;
+    }to{
+        left: 0;
+        display: inline-block;
+    }
+}
+
+.slidingText8{
+    animation-fill-mode:forwards;
+    animation: slidingText8 0.8s;
+    left: 0;
+    display: inline-block !important;
+}
