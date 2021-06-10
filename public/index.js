@@ -2,17 +2,27 @@ const input = document.querySelectorAll(".inputFocus");
 const linkSearch = document.querySelector('.ac-gn-link.ac-gn-link-search');
 const searchCloseBtn = document.querySelector('.ac-gn-searchview-close-wrapper');
 const curtain = document.querySelector('#ac-gn-curtain');
-const globalNav = document.querySelector('#ac-globalnav')
+const globalNav = document.querySelector('#ac-globalnav');
+const bagBtn = document.querySelector('.ac-gn-bagview');
 
 linkSearch.addEventListener('click', searchOnClick);
 searchCloseBtn.addEventListener('click', searchClose);
 curtain.addEventListener('click', event => layerClose(event, curtain));
 globalNav.addEventListener('click', event => layerClose(event, globalNav));
+bagBtn.addEventListener('click', bagViewOn);
 
 
 for(var i=0; i<input.length; i++){
     input[i].addEventListener('focus', inputFocus);
     input[i].addEventListener('focusout', inputFocusOut);
+}
+
+
+function bagViewOn(){
+    
+    document.querySelector('.ac-gn-bagview').classList.add('displayBlock');
+    this.classList.add('displayBlock');
+
 }
 
 
