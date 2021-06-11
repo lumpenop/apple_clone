@@ -36,5 +36,5 @@ async function loginFn(){
 }
 
 function chatFn(){
-    window.open('chat','a','width=450,height=780,left=90%,top=100');
+    window.open('chat','a','width=450,height=820,left=90%,top=100');
 }

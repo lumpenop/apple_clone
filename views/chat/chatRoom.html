@@ -1,0 +1,25 @@
+{% include "./chat_top.html" %}
+<div id="chatRoom">
+    <div id="chat">
+        <div id="chat_greeting">
+            <li class="chat_greeting" id="time"></li>
+            <li class="chat_greeting"> Apple님과 연결되었습니다.</li>
+        </div>
+        <ul id="first_ul">
+            <li class="you first_chat">Apple에 오신 것을 환영합니다.<br />무엇을 도와 드릴까요?</span> </span>
+        </ul>
+
+    </div>
+    <div id = "chat_bottom">
+        <div id="chat_bottom1">
+            <p>
+                Apple에서는 품질 관리 및 교육 목적으로 <br />다음 대화를 기록하고 보관할 수 있습니다.
+            </p>
+        </div>
+        <div id="chatInputArea">
+            <input type="text" id="msg" placeholder="메세지 보내기">
+            <button id="chatSend" onclick="send()">^</button>
+        </div>
+    </div>
+</div>
+{% include "./chat_bottom.html" %}
