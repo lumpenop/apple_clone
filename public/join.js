@@ -1,3 +1,4 @@
+
 // const {users} = require('./models'); 질문 : 여기에 못쓰는 이유가 궁금 server쪽이아닌 html과 연결된 js라서?? 
 
 let joinBtn = document.querySelector('#joinBtn');

@@ -2,6 +2,7 @@ const chatBtn = document.querySelector('#chatBtn');
 const chatPlace = document.querySelector('#chatPlace');
 let flag = undefined;
 
+
 chatBtn.addEventListener('click', () => {
     chatBtn.style.marginTop = "0px";
     chatBtn.style.transition = "0.5s ease-in-out";
@@ -31,20 +32,42 @@ async function getChatRoom() {
     let options = {
         method: 'get'
     }
+
     let response = await fetch(url, options);
     let result = await response.text();
 
     if (isJson(result)) {
         let json = JSON.parse(result);
-        if (json.result == false) alert(json.msg);
+        if (json.result == false) {
+            const msg = confirm(json.msg);
+            if(msg == true){
+                opener.parent.location='/user/login';
+                window.close();
+            }else{
+                window.location.reload();
+                return ;
+            }
+            
+        };
         return;
     } else {
+
         chatPlace.innerHTML = result;
         chatBtn.innerHTML = '환영합니다!';
         const time = document.querySelector('#time');
         let now = new Date();
         time.innerHTML = now.toLocaleString();
         socketChat();
+        const chatInput = document.querySelector('#msg');
+        // chatInput.addEventListener('keydown', event => {
+        //     console.log(event);
+        // })
+
+        chatInput.addEventListener('keydown', function(event){
+            if(event.keyCode == 13){ 
+                send();
+            } 
+        })
     }
 }
 
@@ -72,11 +95,13 @@ function socketChat() {
 
 function send() {
     const msg = document.querySelector('#msg');
-    if (msg.value == '') { }
-
-    socket.emit('send', msg.value);
-    msgAdd(msg.value, 'me');
-    msg.value = '';
+    if (msg.value == '') { 
+        return;   
+    }else{
+        socket.emit('send', msg.value);
+        msgAdd(msg.value, 'me');
+        msg.value = '';
+    }
 }
 
 function msgAdd(msgValue, who) {
@@ -84,6 +109,7 @@ function msgAdd(msgValue, who) {
     const ul_msg = document.createElement('ul');
     const li_time = document.createElement('li');
     const li_msg = document.createElement('li');
+    const div = document.createElement('div');
     const chat = document.querySelector('#chat');
     const B = document.querySelectorAll('.time_clocking');
 
@@ -95,7 +121,8 @@ function msgAdd(msgValue, who) {
     H = ('00' + H).slice(-2);
     let clock = `${now} ${H}:${M}`
 
-    li_msg.innerHTML = msgValue;
+    div.innerHTML = msgValue;
+    li_msg.appendChild(div);
     li_msg.classList.add(who);
     li_time.innerHTML = clock;
     li_time.classList.add('time_clocking');
@@ -113,7 +140,6 @@ function msgAdd(msgValue, who) {
     }
 
 }
-
 
 
 

@@ -43,8 +43,10 @@ let userid_check = async (req,res) =>{
     })
     if (idCheckfromDB == undefined){
         res.json({result:true, msg:'Apple 회원이 되신 것을 축하합니다!'});
+    }else{
+        res.json(rst)
     }
-    res.json(rst)
+    
 }
 
 

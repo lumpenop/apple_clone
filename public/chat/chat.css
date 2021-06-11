@@ -45,6 +45,7 @@ ul,li{
     color:white;
 }
 
+
 .chat_div{
     width:330px;
     height:50px;
@@ -56,6 +57,7 @@ ul,li{
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
+    line-height: 30px;
 }
 
 .chat_div:hover{
@@ -115,8 +117,9 @@ ul,li{
 }
 
 .chatHelp_boxes>a>p{
-    font-size: 16px;
+    font-size: 14px;
     padding:10px;
+    color: #888;
 }
 
 .chatHelp_boxes>a>div>img{
@@ -148,10 +151,14 @@ ul,li{
 }
 
 
-
 #chatBtn:hover{
     background-color: rgba(197, 209, 223, 0.596);
     /* background: linear-gradient(rgb(241, 239, 239), #949494); */
+}
+
+.startChatText{
+    padding-top: 8px;
+    display: block;
 }
 
 /*         chatroom        */
@@ -163,6 +170,7 @@ ul,li{
 #chat{
     width:100%;
     height:618px;
+    overflow-y: auto;
 }
 
 #chat_greeting{
@@ -181,8 +189,9 @@ ul,li{
 }
 
 #chat>ul{
-    height:30px;
+    clear: both;
     padding:5px;
+    min-height: 30px;
 }
 
 #chat>ul>li.time_me{
@@ -198,23 +207,36 @@ ul,li{
     color:gray;
 }
 
+#chat>ul>li>div{
+    max-width: 200px;
+    word-break:break-all;
+    white-space: normal !important;
+    display: block;
+
+}
+
 #chat>ul>li.me{
-    float:right;
-    background-color: #d7e0ec;
+    
+    float: right;
+    background-color: #007aff;
     position:relative;
     border-radius: 10px;
     margin-right: 15px;
+    color: #fff;
+    max-width: 200px;
+   
 }
 #chat>ul>li.me:after {
-    border-top:15px solid #d7e0ec;
+    border-top:15px solid #007aff;;
     border-left: 15px solid transparent;
     border-right: 0px solid transparent;
     border-bottom: 0px solid transparent;
     content:"";
     position:absolute;
-    top:10px;
+    top:6px;
     right:-12px;
-    transform: rotate(182deg);
+    transform: rotate(-90deg);
+    
 }
 
 
@@ -243,7 +265,7 @@ ul,li{
     height:100px;
 }
 
-#chatInputArea>button{
+#chatInputArea > button{
     padding:7px 11px;
     background-color: #eee;
     border:none;
@@ -254,7 +276,8 @@ ul,li{
     bottom:18px;
     color:rgb(154, 167, 180);
     font-weight: bold;
-    
+    height: 29px;
+    line-height: 17px;
 }
 
 #chat_bottom>div>p{

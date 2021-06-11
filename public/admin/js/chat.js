@@ -1,6 +1,7 @@
-const chatBtn = document.querySelector('#chatBtn')
-const chatRoom = document.querySelector('#chatRoom')
+const chatBtn = document.querySelector('#chatBtn');
+const chatRoom = document.querySelector('#chatRoom');
 let flag = undefined;
+
 
 chatBtn.addEventListener('click' ,async ()=>{
 

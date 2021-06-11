@@ -36,5 +36,12 @@ async function loginFn(){
 }
 
 function chatFn(){
-    window.open('chat','a','width=450,height=820,left=90%,top=100');
+    var chatWidth = 450;
+    var chatHeight = 820;
+    var chatLeft = 90;
+    var chatTop = 100;
+    // xPos = (document.body.offsetWidth) - w; // 오른쪽 정렬
+    // xPos += window.screenLeft; // 듀얼 모니터일 때
+    // var yPos = (document.body.offsetHeight/2) - (h/2);
+    window.open('chat','a',`width = ${chatWidth}px, height = ${chatHeight}px,left = ${chatLeft}%,top = ${chatTop}`);
 }
