@@ -120,6 +120,9 @@ ul,li{
 
 }
 
+.w1000{
+    width:700px;
+}
 .w100{
     width:100px;
     background: #808080;
@@ -150,4 +153,5 @@ ul,li{
     color:#6666ff;
     border:1px solid white;
     font-size: 20px;
+    margin-top: 50px;
 }

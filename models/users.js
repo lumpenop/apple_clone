@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
     admin: {
       type: DataTypes.INTEGER(100),
       allowNull: true,
-    }
+    },
   }, {
     sequelize,
     tableName: 'users',

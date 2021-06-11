@@ -56,9 +56,9 @@
                             <td class = "product_name_length">교육 서비스명</td>
                             <td>가격</td>
                             <td>교육 이미지</td>
-                            <td>교육 특성</td>
-                            <td>교육 시작일</td>
-                            <td>교육 커리큘럼</td>
+                            <td>교육 카테고리</td>
+                            <td>교육 과목명</td>
+                            <td>교육 태그</td>
                             <td>삭제하기</td>
                         </tr>
                         {% for item in list %}
@@ -70,9 +70,9 @@
                                     <td class = "prduct_name_length blue"><a href = "/admin/product_view?idx={{item.id}}">{{item.item_name}}</a></td>
                                     <td class = "oneContent" name = "oneContent1">{{item.item_price}}</td>
                                     <td id = "img1"><img id = "img" src = "../../../{{item.item_image}}"></td>
-                                    <td>{{item.item_size}}</td>
-                                    <td>{{item.item_color}}</td>
-                                    <td>{{item.item_capacity}}</td>
+                                    <td>{{item.item_category}}</td>
+                                    <td>{{item.item_skill}}</td>
+                                    <td>{{item.item_tag}}</td>
                                     <td>
                                         <input type = "submit" class = "delete" value = "삭제하기">
                                     </td>

@@ -61,28 +61,28 @@
                         <td class = "w600"><input type = "file" class = "greyBtn" value = "{{result.item_img}}" id = "img" name = "img"></td>
                     </tr>
                     <tr>
-                        <td class = "w100">교육 특성</td>
-                        <td class = "w600"><input type = "text" class = "w600" value = "{{result.item_size}}" name = "item_size"></td>
-                    </tr>
-                    <tr>
-                        <td class = "w100">교육 시작일</td>
+                        <td class = "w100">교육 카테고리</td>
                         <td class = "w600">
-                            <select class = "greyBtn" value = "{{result.item_color}}" name = "item_color">
-                                <option value = "pink">pink</option>
-                                <option value = "green">green</option>
-                                <option value = "yellow">yellow</option>
+                            <select class = "greyBtn" value = "{{result.item_skill}}" name = "item_category">
+                                <option value = "블록체인" name = "item_category">블록체인</option>
+                                <option value = "가상증강" name = "item_category">가상증강</option>
+                                <option value = "게임" name = "item_category">게임</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td class = "w100">교육 커리큘럼</td>
+                        <td class = "w100">교육 과목명</td>
                         <td class = "w600">
-                            <select class = "greyBtn"  value = "{{result.item_capacity}}" name = "item_capacity">
-                                <option value = "15">15</option>
-                                <option value = "18">18</option>
-                                <option value = "24">24</option>
+                            <select class = "greyBtn" value = "{{result.item_skill}}" name = "item_skill">
+                                <option value = "C++"  name = "item_skill">C++</option>
+                                <option value = "JAVSCRIPT"  name = "item_skill">JAVSCRIPT</option>
+                                <option value = "NODEJS"  name = "item_skill">NODEJS</option>
                             </select>
                         </td>
+                    </tr>
+                    <tr>
+                        <td class = "w100">교육 태그</td>
+                        <td class = "w600"><input type = "text" class = "w600" value = "{{result.item_tag}}" name = "item_tag"></td>
                     </tr>
                 </table>
                 <input class = "blueBtn marginbottom" type = "submit" value = "수정완료">

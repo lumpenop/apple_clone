@@ -24,15 +24,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(200),
       allowNull: false
     },
-    item_size: {
-      type: DataTypes.INTEGER,
+    item_category: {
+      type: DataTypes.STRING(200),
       allowNull: false
     },
-    item_color: {
+    item_skill: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    item_capacity: {
+    item_tag: {
       type: DataTypes.STRING(100),
       allowNull: false
     }
@@ -41,22 +41,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'items',
     timestamps: false,
     indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-      {
-        name: "item_serial_number",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "item_serial_number" },
-        ]
-      },
     ]
   });
 };

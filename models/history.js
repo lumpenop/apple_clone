@@ -38,7 +38,27 @@ module.exports = function(sequelize, DataTypes) {
     phone: {
       type: DataTypes.INTEGER(100),
       allowNull: true,
-    }
+    },
+    item_skill: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+    item_name: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_price: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    item_image: {
+      type: DataTypes.STRING(200),
+      allowNull: false
+    },
+    item_category: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
   }, {
     sequelize,
     tableName: 'history',

@@ -124,9 +124,9 @@ let product_view2 = async (req,res)=>{
     let item_name = req.body.item_name
     let item_price = req.body.item_price
     let item_image = req.file.path
-    let item_size = req.body.item_size
-    let item_color = req.body.item_color
-    let item_capacity = req.body.item_capacity
+    let item_category = req.body.item_category
+    let item_skill = req.body.item_skill
+    let item_tag = req.body.item_tag
     let split_img = item_image.split('\\')[1]
     console.log(id)
 
@@ -135,9 +135,9 @@ let product_view2 = async (req,res)=>{
             item_name:item_name,
             item_price:item_price,
             item_image:split_img,
-            item_size:item_size,
-            item_color:item_color,
-            item_capacity:item_capacity,
+            item_category:item_category,
+            item_skill:item_skill,
+            item_tag:item_tag,
     },{where:{id:id}})
 
     let result2 = await items.findAll({})
@@ -231,9 +231,9 @@ let create_list = async (req,res)=>{
     let item_name = req.body.item_name
     let item_price = req.body.item_price
     let item_image = req.file.path
-    let item_size = req.body.item_size
-    let item_color = req.body.item_color
-    let item_capacity = req.body.item_capacity
+    let item_category = req.body.item_category
+    let item_skill = req.body.item_skill
+    let item_tag = req.body.item_tag
     console.log(item_image)
 
     let split_img = item_image.split('\\')[1]
@@ -243,9 +243,9 @@ let create_list = async (req,res)=>{
         item_name:item_name,
         item_price:item_price,
         item_image:split_img,
-        item_size:item_size,
-        item_color:item_color,
-        item_capacity:item_capacity,
+        item_category:item_category,
+        item_skill:item_skill,
+        item_tag:item_tag,
     })
 
     res.redirect('/admin/product_list')

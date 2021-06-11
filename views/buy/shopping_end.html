@@ -15,16 +15,18 @@
             </h1>
             <div class = "line"></div>
             <div class = "product">
-                <div class = "img"><img class = "img" src = "../../{{list.item_image}}"></div>
-                <div class = "text">{{itemName}}</div>
+                <div class = "img"><img class = "img" src = "../../{{item_image}}"></div>
+                <div class = "text">{{item_name}}</div>
+                <div class = "text">{{item_category}}</div>
                 <div class = "text">1</div>
-                <div class = "text1"></div>
+                <div class = "text1">{{item_price}}</div>
             </div>
             <div class = "product">
-                <div class = "img"><img class = "img" src = "../../{{list.item_image}}"></div>
-                <div class = "text"></div>
+                <div class = "img"><img class = "img" src = "../../{{item_image}}"></div>
+                <div class = "text">{{item_name}}</div>
+                <div class = "text">{{item_category}}</div>
                 <div class = "text">1</div>
-                <div class = "text1"></div>
+                <div class = "text1">{{item_price}}</div>
             </div>
             <div class = "line clear"></div>
             <div class = "clear padding">
@@ -38,9 +40,9 @@
                 </div>
                 <div class = "text5">
                     <div class = "tb">결제인 정보:</div>
-                    <div>이름</div>
-                    <div>생년월일</div>
-                    <div>연락처</div>
+                    <div>{{name}}</div>
+                    <div>{{addressnumber}}</div>
+                    <div>{{phone}}</div>
                 </div>
             </div>
             <div class = "line"></div>
@@ -55,7 +57,7 @@
                     <div class = "w700">
                         <div class = "font-grey">
                             <div class = "left">소계</div>
-                            <div class = "right">₩1,900,000</div>
+                            <div class = "right">₩{{item_price}}</div>
                         </div>
                         <div class = "font-grey">
                             <div class = "clear left">배송</div>
@@ -66,7 +68,7 @@
                         </div>
                         <div class = "lastbold">
                             <div class = "clear left">총계</div>
-                            <div class = "right">₩1,900,000</div>
+                            <div class = "right">₩{{item_price}}</div>
                         </div>
                         <div class = "clear right"><a href = "/"><input value = "메인으로 이동" class = "btn" type = "button"></a></div>
                     </div>

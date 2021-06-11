@@ -38,7 +38,7 @@
             <div class = "content">
                 <form action = "/admin/product_list/success" method = "post" enctype = "multipart/form-data">
                     <div class = "grey">교육 서비스 추가하기</div>
-                    <table class = "table">
+                    <table>
                         <tr>
                             <td class = "w100">아이템 넘버</td>
                             <td class = "w600"><input type = "text" class = "w600" name = "item_serial_number"></td>
@@ -53,31 +53,31 @@
                         </tr>
                         <tr>
                             <td class = "w100">교육 이미지</td>
-                            <td class = "w600"><input class = "greyBtn" value = "파일" type = "file" name = "img" id = "img"></td>
+                            <td class = "w600"><input type = "file" class = "greyBtn" id = "img" name = "img"></td>
                         </tr>
                         <tr>
-                            <td class = "w100">교육 특성</td>
-                            <td class = "w600"><input type = "text" class = "w600" name = "item_size"></td>
-                        </tr>
-                        <tr>
-                            <td class = "w100">교육 시작일</td>
+                            <td class = "w100">교육 카테고리</td>
                             <td class = "w600">
-                                <select name = "item_color" class = "greyBtn" >
-                                    <option value = "pink">pink</option>
-                                    <option value = "green">green</option>
-                                    <option value = "yellow">yellow</option>
+                                <select class = "greyBtn" name = "item_category">
+                                    <option value = "Blockchain" name = "item_category">블록체인</option>
+                                    <option value = "ARVR" name = "item_category">가상증강</option>
+                                    <option value = "GAMMING" name = "item_category">게임</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <td class = "w100">교육 커리큘럼</td>
+                            <td class = "w100">교육 과목명</td>
                             <td class = "w600">
-                                <select name = "item_capacity" class = "greyBtn" >
-                                    <option value = "15">15</option>
-                                    <option value = "18">18</option>
-                                    <option value = "24">24</option>
+                                <select class = "greyBtn" name = "item_skill">
+                                    <option value = "C++" name = "item_skill">C++</option>
+                                    <option value = "JAVSCRIPT" name = "item_skill">JAVSCRIPT</option>
+                                    <option value = "NODEJS" name = "item_skill">NODEJS</option>
                                 </select>
                             </td>
+                        </tr>
+                        <tr>
+                            <td class = "w100">교육 태그 </td>
+                            <td class = "w600"><input type = "text" class = "w600" name = "item_tag"></td>
                         </tr>
                     </table>
                     <input class = "blueBtn" type = "submit" value = "서비스 추가">
