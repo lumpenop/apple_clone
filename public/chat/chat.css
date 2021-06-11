@@ -79,7 +79,6 @@ ul,li{
 .chatHelp_box{
     cursor: pointer;
     width:260px;
-    height:160px;
 }
 
 
@@ -111,18 +110,18 @@ ul,li{
     border:1px solid #44abff;
 }
 
-.chatHelp_boxes>a>h3{
+.chatHelp_boxes h3{
     font-size: 17px;
     padding:5px 10px 5px 10px ;
 }
 
-.chatHelp_boxes>a>p{
+.chatHelp_boxes p{
     font-size: 14px;
     padding:10px;
     color: #888;
 }
 
-.chatHelp_boxes>a>div>img{
+.chatHelp_boxes img{
     padding: 7px 0;
 
 }
@@ -265,7 +264,7 @@ ul,li{
     height:100px;
 }
 
-#chatInputArea > button{
+.chatSend{
     padding:7px 11px;
     background-color: #eee;
     border:none;
@@ -307,6 +306,7 @@ ul,li{
     border-radius: 15px;
     box-sizing: border-box;
     font-size:16px;
+    outline:none;
 }
 
 
@@ -315,8 +315,6 @@ ul,li{
     height:60px;
 
 }
-
-
 
 
 

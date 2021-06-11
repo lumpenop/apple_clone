@@ -51,7 +51,7 @@ async function getChatRoom() {
         };
         return;
     } else {
-
+        
         chatPlace.innerHTML = result;
         chatBtn.innerHTML = '환영합니다!';
         const time = document.querySelector('#time');
@@ -59,14 +59,28 @@ async function getChatRoom() {
         time.innerHTML = now.toLocaleString();
         socketChat();
         const chatInput = document.querySelector('#msg');
-        // chatInput.addEventListener('keydown', event => {
-        //     console.log(event);
-        // })
-
         chatInput.addEventListener('keydown', function(event){
             if(event.keyCode == 13){ 
                 send();
+                const chatSend = document.querySelector('.chatSend');
+                chatSend.style.backgroundColor = '#EEE';
+                chatSend.style.color = '#9AA7B4';
+                
+                var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+                console.log(scrollPosition);
+                window.scrollTo(0, scrollPosition+20000);
+                
             } 
+        })
+        chatInput.addEventListener('input', ()=>{
+            const chatSend = document.querySelector('.chatSend');
+            if(chatInput.value != ''){
+                chatSend.style.backgroundColor = '#4D9DCB'
+                chatSend.style.color = '#fff'
+            }else{
+                chatSend.style.backgroundColor = '#EEE'
+                chatSend.style.color = '#9AA7B4'
+            }
         })
     }
 }
