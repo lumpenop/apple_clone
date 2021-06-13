@@ -1,4 +1,17 @@
 {% include "./chat_top.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/chat/chat.css">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+
 <div id="chatRoom">
     <div id="chat">
         <div id="chat_greeting">
@@ -18,8 +31,14 @@
         </div>
         <div id="chatInputArea">
             <input type="text" id="msg" placeholder="메세지 보내기">
-            <button id="chatSend" onclick="send()">^</button>
+            <button class="chatSend" onclick="send()">^</button>
         </div>
     </div>
 </div>
+
+
+<script src="../../public/chat/chatRoom.js"></script>
+</body>
+</html>
+
 {% include "./chat_bottom.html" %}
