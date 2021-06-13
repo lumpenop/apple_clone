@@ -26,16 +26,22 @@
 //     return a-b
 // }))
 
+c = 'b'
+
+
+console.log(c.charCodeAt(0) - 'a'.charCodeAt(0) >= 0)
+console.log(-c.charCodeAt(0) + 'z'.charCodeAt(0) >= 0)
+console.log()
+
+
 // console.log(String.fromCharCode(92))
 
-let AB=0
-let cc ='asdf'.split('');
-let CC =[];
-cc.forEach(v=>{
-    if (v=='a') {CC[0] = 1;}
-    if (v=='s')  {CC[1] = 1;}
-})
+// let AB=0
+// let cc ='asdf'.split('');
+// let CC =[];
+// cc.forEach(v=>{
+//     if (v=='a') {CC[0] = 1;}
+//     if (v=='s')  {CC[1] = 1;}
+// })
 
-
-
-console.log(CC)
+// console.log(CC)

@@ -1,4 +1,3 @@
-
 // const {users} = require('./models'); 질문 : 여기에 못쓰는 이유가 궁금 server쪽이아닌 html과 연결된 js라서?? 
 // import swal from 'sweetalert';
 
@@ -21,6 +20,12 @@ async function joinFn(){
     if (mobile.value==""){swal('핸드폰 번호를 입력해주세요'); mobile.focus(); return 0;};
     if (userpw.value!=pwcheck.value){swal('비밀번호가 서로 다릅니다.'); userpw.focus(); return 0;};
     
+    // ID & PW 길이 미니멈 JS 
+    // ID -> 메일 주소 유효한거 구별하는거 만들기 ex) naver, daum, gmail etc 
+    
+    // 완성 전에 주석 풀기 ! 
+    //if (userpw.value.length<=6){swal('비밀번호는 6글자 이상으로 설정해주세요.'); return 0;};
+
 
     //  ID (email) 중복 JS 
     let url = `http://localhost:3000/user/userid_check`;
@@ -35,8 +40,8 @@ async function joinFn(){
 
 
     //  Password 영문,숫자,기호 JS 
-    let pwCheck = userpw.value.split('')
-    let pwCount = [];
+    let pwCheck = userpw.value.split('');
+    let pwCount = []; 
     pwCheck.forEach(v=>{
         let c = v.charCodeAt()
         if (48<=c && c <=57) pwCount[0] = 1;
@@ -49,8 +54,3 @@ async function joinFn(){
     //  모든 절차 통과 후 회원가입 완료
     joinform.submit(); swal(msg);
 }
-
-
-
-
-
