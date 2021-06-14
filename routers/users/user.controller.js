@@ -46,7 +46,6 @@ let userid_check = async (req,res) =>{
     }else{
         res.json(rst)
     }
-    
 }
 
 
@@ -54,8 +53,7 @@ let logincheck = async (req, res) => {
     let { userid, userpw } = req.body;
     userpw = createPW(userpw);//고객이 로그인할 때 쓴 비번을 암호화 
     let result = { result: false, }
-    let pick = await users.findOne({ where: { userid } });
-
+    let pick = await users.findOne({where:{userid}});
     if (pick == undefined) {
         result.msg = '이메일이 존재하지 않습니다.';
     } else {

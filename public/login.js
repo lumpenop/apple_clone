@@ -37,7 +37,7 @@ async function loginFn(){
 
 function chatFn(){
     var chatWidth = 450;
-    var chatHeight = 820;
+    var chatHeight = 655;
     var chatLeft = 90;
     var chatTop = 100;
     // xPos = (document.body.offsetWidth) - w; // 오른쪽 정렬
