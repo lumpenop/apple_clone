@@ -1,7 +1,29 @@
+const input = document.querySelectorAll(".inputFocus");
 let loginBtn = document.querySelector('#loginBtn');
 loginBtn.addEventListener('click',loginFn);
 let chatBtn = document.querySelector('#chatBtn');
 chatBtn.addEventListener('click', chatFn);
+
+for(var i=0; i<input.length; i++){
+    input[i].addEventListener('focus', inputFocus);
+    input[i].addEventListener('focusout', inputFocusOut);
+}
+
+
+function inputFocus(){
+    const span = this.parentNode.querySelector('span');
+    span.classList.remove('inputFocusOut');
+    span.classList.add('inputFocus'); 
+}
+
+function inputFocusOut(){
+    const span = this.parentNode.querySelector('span');
+    if(this.value == ''){
+        span.classList.remove('inputFocus');
+        span.classList.add('inputFocusOut');    
+    }
+}
+
 
 async function loginFn(){
     let loginForm = document.querySelector('#loginForm');

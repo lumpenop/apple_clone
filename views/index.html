@@ -1,31 +1,34 @@
 {% include "./top.html" %}
 
 <div id="ac-ln-sticky-placeholder" class="css-sticky"></div>
-<nav id="ac-localnav" class="ac-localnav-scrim js no-touch css-sticky">
+<nav id="ac-localnav" class="ac-localnav-scrim js no-touch css-sticky subnav" data-analytics-region="localnav">
     <div class="ac-ln-wrapper">
         <div class="ac-ln-background"></div>
         <div class="ac-ln-content">
             <div class="ac-ln-title">
                 <a href="#">iPhone&nbsp;12</a>
             </div>
-            <div class="ac-ln-menu-tray">
-                <ul class="ac-ln-menu-items">
-                    <li class="ac-ln-menu-item">
-                        <span class="ac-ln-menu-link current">개요</span>
-                    </li>
-                    <li class="ac-ln-munu-item">
-                        <a href="#" class="ac-ln-menu-link">제품 사양</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="ac-ln-actions">
-                <div class="ac-ln-action ac-ln-action-button">
-                    <a href="#" class="ac-ln-button">
-                        <span class="ac-ln-action-product">iPhone 12</span>
-                        구입하기
-                    </a>
+            <div class="ac-ln-menu">
+                <div class="ac-ln-menu-tray">
+                    <ul class="ac-ln-menu-items">
+                        <li class="ac-ln-menu-item">
+                            <span class="ac-ln-menu-link current">개요</span>
+                        </li>
+                        <li class="ac-ln-menu-item">
+                            <a href="#" class="ac-ln-menu-link">제품 사양</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ac-ln-actions">
+                    <div class="ac-ln-action ac-ln-action-button">
+                        <a href="#" class="ac-ln-button">
+                            <span class="ac-ln-action-product">iPhone 12</span>
+                            구입하기
+                        </a>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </nav>
@@ -34,7 +37,7 @@
 <div class="ac-ln-viewport-emitter"></div>
 
 <main id="main" class="main" role="main">
-    <section class="section section-hero section-fill-light-alt">
+    <section class="section section-hero section-fill-light-alt" style="--hero-top-offset:70.6px">
         <div class="sticky-wrapper">
             <div class="sticky-content" style="min-height:949.2px">
                 <div class="hero-sequence-centered">
@@ -1079,5 +1082,6 @@
 
 
 <script type="text/javascript" src ="/socket.io/socket.io.js"></script>
+
 <script src="/main/section1.js"></script>
 {% include "./bottom.html" %}

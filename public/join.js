@@ -3,6 +3,27 @@
 // 요 해석하는 client 브라우저연결된js는 DB해석할수 없음 
 // import swal from 'sweetalert';
 
+const input = document.querySelectorAll(".inputFocus");
+
+for(var i=0; i<input.length; i++){
+    input[i].addEventListener('focus', inputFocus);
+    input[i].addEventListener('focusout', inputFocusOut);
+}
+
+function inputFocus(){
+    const span = this.parentNode.querySelector('span');
+    span.classList.remove('inputFocusOut');
+    span.classList.add('inputFocus'); 
+}
+
+function inputFocusOut(){
+    const span = this.parentNode.querySelector('span');
+    if(this.value == ''){
+        span.classList.remove('inputFocus');
+        span.classList.add('inputFocusOut');    
+    }
+}
+
 let joinBtn = document.querySelector('#joinBtn');
 joinBtn.addEventListener('click',joinFn)
 

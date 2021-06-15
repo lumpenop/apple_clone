@@ -101,7 +101,7 @@ a{
     font-size: 17px;
     max-height: 48px;
     height: 48px;
-    z-index: 9997;
+    z-index: 9999;
     background: linear-gradient(#2a3136e8, #181c20);
     backdrop-filter: saturate(180%) blur(20px);
 }
@@ -290,13 +290,13 @@ a{
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
     color: #86868b;
-    max-height: calc(100%-44px);
+    max-height: calc(100% - 44px);
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
     z-index: 9999;
     top: -2px;
-    position: relative;
+    display: block;
 }
 .ac-gn-searchresults-header{
     font-size: 12px;
@@ -348,12 +348,13 @@ a{
 
 
 .ac-gn-searchview-content{
-    position: relative;
+    position: absolute;
     top: 0;
     left: 16.66667%;
     width: 66.66667%;
     z-index: 9999;
     height: 0px;
+    height: calc(100vh - 16px);
 }
 
 .ac-gn-item span{
