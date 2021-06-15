@@ -1,5 +1,5 @@
 :root{
-    --r-localnav-height:52px;
+    --r-localnav-height:1px;
 }
 .body{
     font-size: 17px;
@@ -18,6 +18,7 @@ main{
 
 #ac-ln-sticky-placeholder{
     display: block;
+    margin-top: 44px;
     margin: 0;
     padding:0;
     position: relative;
@@ -29,8 +30,13 @@ main{
     position: sticky;
 }
 
+
+
+
+
 #ac-localnav{
-    margin-bottom: -96px;
+    margin-top: 44px !important;
+    margin-bottom: -96px !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -54,11 +60,7 @@ main{
     position: relative;
 }
 
-html.enhance-base-xp.enhance-hero .section-hero .sticky-wrapper{
-    position: relative;
-    height: 140vh;
-    min-height: 1279.6px;
-}
+
 
 .ac-ln-background{
     background-color: rgba(255, 255, 255, 0.9);
@@ -300,7 +302,7 @@ html.enhance-base-xp.enhance-hero .section-hero .sticky-wrapper{
     visibility: hidden !important;
 }
 .section-hero .video-container .endframe{
-    position: absolute;
+    
     z-index: 3;
     opacity: 1;
     width: 1188px;
@@ -310,6 +312,7 @@ html.enhance-base-xp.enhance-hero .section-hero .sticky-wrapper{
     background-image: url(
         https://www.apple.com/kr/iphone-12/g/images/overview/hero/hero_endframe__fc7apyu3c7au_large.jpg
     );
+    margin: 0 auto;
 }
 
 .section-hero .video-container video{
@@ -334,15 +337,11 @@ html.enhance-base-xp.enhance-hero .section-hero .sticky-wrapper{
 
 .section-hero .video-container{
     width: 1188px;
-    height: 914px;
-
+    height: 854px;
     position: relative;
 }
 
-.video-container{
-    left: 50%;
-    margin-left: -230.5px;
-}
+
 
 .section-hero{
     z-index: 13;
@@ -360,8 +359,93 @@ html.enhance-base-xp.enhance-hero .section-hero .sticky-wrapper{
     overflow: visible;
 }
 
+.hero-sequence-wrapper{
+    position: relative;
+    width: 1188px;
+    height: 854px;
+    margin: 0 auto;
+}
+
 
 
 /********** end startframe *************/
 
 
+.hero-copy-container{
+    width: 980px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+.section-hero .hero-copy{
+    text-align: center;
+}
+
+.section-hero .hero-headline{
+    margin-top: 18px;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.medium-8{
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+}
+
+.large-centered{
+    margin: 0 auto;
+}
+
+.section-hero .hero-intro{
+    margin-top: 29px;
+}
+
+.section-hero .hero-preoder,
+.section-hero .hero-avil,
+.section-hero .hero-pricing{
+    color: #86868b;
+}
+
+.section-hero .hero-pricing{
+    margin-top: 16px;
+}
+
+.footnote-number > a{
+    color: #86868b;
+    font-size: 0.9em;
+   
+}
+
+.section-hero .hero-cta{
+    margin-top: 16px;
+}
+
+#film-iphone12{
+    color: #86868b;
+}
+
+.icon-wrapper .icon{
+    position: relative;
+    display: inline;
+}
+
+.icon-wrapper .icon::after{
+    content: "👉🏼";
+    position: relative;
+    transform: translateY(-2px);
+    display: inline;
+}
+.section-hero .sticky-wrapper{
+    position: relative;
+    height: 140vh;
+    min-height: 1600.2px;
+}
+
+.section-hero .sticky-content{
+    min-height: 798.6px;
+    position: sticky;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+}

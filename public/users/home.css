@@ -7,6 +7,11 @@
     
 }
 
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 a{
     color: #0070c9;
 }
@@ -94,9 +99,12 @@ a{
 
 
 #ac-globalnav{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    min-width: 1024px;
+    min-width: 320px;
     display: block;
     font-size: 17px;
     max-height: 48px;
@@ -111,7 +119,7 @@ a{
     margin: 0 auto;
     max-width: 980px;
     padding: 2px 22px 0px;
-    z-index: 9999;
+    z-index: 2;
     position: relative;
 }
 
@@ -356,6 +364,15 @@ a{
     
 
 }
+
+
+.ac-gn-item{
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    z-index: 1;
+}
+
 
 .ac-gn-item span{
     display: block;
