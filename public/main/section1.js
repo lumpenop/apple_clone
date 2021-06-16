@@ -94,7 +94,7 @@ function eyebrowScroll(text){
     // if(textTop<=window.innerHeight){
     console.log(window.innerHeight - textTop);
     
-    opa = (window.innerHeight - textTop - 100)/100
+    opa = (window.innerHeight - textTop - 100)/300
     text.style.opacity = sigmoid(opa)
     // }
 }
