@@ -129,7 +129,9 @@ let product_view2 = async (req,res)=>{
     let item_skill2 = req.body.item_skill2
     let item_skill3 = req.body.item_skill3
     let maximum_number = req.body.maximum_number
-    let item_tag = req.body.item_tag
+    let item_tag1 = req.body.item_tag1
+    let item_tag2 = req.body.item_tag2
+    let item_tag3 = req.body.item_tag3
     let split_img = item_image.split('\\')[1]
     console.log(id)
 
@@ -144,7 +146,9 @@ let product_view2 = async (req,res)=>{
             item_skill3:item_skill3,
             item_skill1:item_skill1,
             maximum_number:maximum_number,
-            item_tag:item_tag,
+            item_tag1:item_tag1,
+            item_tag2:item_tag2,
+            item_tag3:item_tag3,
     },{where:{id:id}})
 
     let result2 = await items.findAll({})
@@ -243,7 +247,9 @@ let create_list = async (req,res)=>{
     let item_skill2 = req.body.item_skill2
     let item_skill3 = req.body.item_skill3
     let maximum_number = req.body.maximum_number
-    let item_tag = req.body.item_tag
+    let item_tag1 = req.body.item_tag1
+    let item_tag2 = req.body.item_tag2
+    let item_tag3 = req.body.item_tag3
     console.log(item_image)
 
     let split_img = item_image.split('\\')[1]
@@ -258,7 +264,9 @@ let create_list = async (req,res)=>{
         item_skill2:item_skill2,
         item_skill3:item_skill3,
         maximum_number:maximum_number,
-        item_tag:item_tag,
+        item_tag1:item_tag1,
+        item_tag2:item_tag2,
+        item_tag3:item_tag3,
     })
 
     res.redirect('/admin/product_list')

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            width:100px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    ㅁㄴㅇㄻㄴㅇㄹ
+    <input type="text" id = "textbox">
+    <button id = "dd">버튼이다</button>
+    <div id ="place">
+        <li class="d">dd</li>
+    </div>
+
+    <script type="text/javascript" src="./aaa.js"></script>
+    <script type="text/javascript">
+        let dd = document.querySelector('#dd');
+        let place = document.querySelector('#place');
+        let textbox = document.querySelector('#textbox');
+        dd.addEventListener('click',()=>{
+            let li = document.createElement('li');
+            li.innerHTML=textbox.value;
+            li.classList.add('d');
+            place.appendChild(li);
+        })
+
+        window.onscroll = function(){scrollFn()};
+        function scrollFn(){
+            console.log('d');
+            // let scroll_Y = window.scrollY;
+            // console.log(scroll_Y);
+            // if (scroll_Y >100){
+            //     scroll_Y = 0;
+            //     console.log(scroll_Y);
+            // }
+        }
+
+    </script>
+</body>
+</html>

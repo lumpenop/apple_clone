@@ -1,8 +1,9 @@
-// const chatBtn = document.querySelector('#chatBtn')
-// const chatRoom = document.querySelector('#chatRoom')
-// let flag = undefined;
+const chatBtn = document.querySelector('#chatBtn');
+const chatRoom = document.querySelector('#chatRoom');
+let flag = undefined;
 
-// chatBtn.addEventListener('click' ,async ()=>{
+
+chatBtn.addEventListener('click' ,async ()=>{
 
 //     switch(flag){
 //         case true:

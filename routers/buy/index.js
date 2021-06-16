@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('./buyController')
 const sequelize = require("sequelize")
 
-
+router.post('/history',controller.valuation_send);
 router.post('/shopping_end',controller.shopping_form_success);
 router.post('/shopping_basket_send',controller.shopping_basket_send);
 router.get('/buy_show',controller.buy_show);

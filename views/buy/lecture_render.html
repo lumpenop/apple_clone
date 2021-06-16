@@ -16,7 +16,10 @@
                     <h2 class = "font">{{result.item_category}}</h2>
                     <h2 class = "red">{{result.item_name}}</h2>
                     <div class = "font1">수강 인원 수 : {{result.maximum_number}}</div>
-                    <div class = "tag">#{{result.item_tag}}</div>
+                    <div class = "tag0">태그</div>
+                    <span class = "tag">#{{result.item_tag1}}</span>
+                    <span class = "tag">#{{result.item_tag2}}</span>
+                    <span class = "tag">#{{result.item_tag3}}</span>
                 </div>             
             </div>
         </div>
@@ -24,33 +27,195 @@
     <div class = "wrapping wrap2">
         <div class = "content">
             <div class = "mainLecture">
-                <h2>교육 과정</h2>
+                <h1 class = "h1">교육 과정</h1>
                 <div class = "">              
-                    <div class = "main_subject">{{result.item_skill1}} 강의</div> 
-                    {% for item in result1 %}
-                    <div class = "">{{item.iframe_number}}강</div>
-                    <div class = "display float">강의 명 : {{item.iframe_name}}</div>
-                    <div class = "display"><iframe src = "{{item.skill_iframe}}"></iframe></div>
-                    {% endfor %}                    
+                    <div class = "main_subject">section1. <span class = "Red">{{result.item_skill1}} 강의</span></div> 
+                    <table class = "">                    
+                        {% for item in result1 %}
+                        <tr>
+                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                        </tr>                    
+                        {% endfor %}
+                    </table>
                 </div>  
                 <div class = "">
-                    <div class = "main_subject">{{result.item_skill2}} 강의</div>  
-                    {% for item in result2 %} 
-                    <div class = "">{{item.iframe_number}}강</div>
-                    <div>강의 명 : {{item.iframe_name}}</div>
-                    <div><iframe src = "{{item.skill_iframe}}"></iframe></div>
-                    {% endfor %}                    
+                    <div class = "main_subject">section2. <span class = "Red">{{result.item_skill2}} 강의</span></div>  
+                    <table>                    
+                        {% for item in result2 %}
+                        <tr>
+                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section2{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                        </tr>                  
+                        {% endfor %}
+                    </table>                 
                 </div>
                 <div class = "">
-                    <div class = "main_subject">{{result.item_skill3}} 강의</div>  
-                    {% for item in result3 %}
-                    <div class = "">{{item.iframe_number}}강</div>
-                    <div>강의 명 : {{item.iframe_name}}</div>
-                    <div><iframe src = "{{item.skill_iframe}}"></iframe></div>
-                    {% endfor %}                    
+                    <div class = "main_subject">section3. <span class = "Red">{{result.item_skill3}} 강의</span></div>  
+                    <table>                    
+                        {% for item in result3 %}
+                        <tr>
+                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section3{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                        </tr>                    
+                        {% endfor %}
+                    </table>                   
                 </div>
             </div>
         </div>
     </div>
+    <div class = "width">
+        <div class = "w1300">
+        </div>
+    </div>
 </body>
+<script type = "text/javascript">
+    let section1 = document.querySelector('.section1')
+    let value1 = section1.innerHTML
+    let section2 = document.querySelector('.section2')
+    let value2 = section2.innerHTML
+    let section3 = document.querySelector('.section3')
+    let value3 = section3.innerHTML
+    let section4 = document.querySelector('.section4')
+    let value4 = section4.innerHTML
+    let section5 = document.querySelector('.section5')
+    let value5 = section5.innerHTML
+    let section6 = document.querySelector('.section6')
+    let value6 = section6.innerHTML
+
+    let section21 = document.querySelector('.section21')
+    let value21 = section21.innerHTML
+    let section22 = document.querySelector('.section22')
+    let value22 = section22.innerHTML
+    let section23 = document.querySelector('.section23')
+    let value23 = section23.innerHTML
+    let section24 = document.querySelector('.section24')
+    let value24 = section24.innerHTML
+    let section25 = document.querySelector('.section25')
+    let value25 = section25.innerHTML
+    let section26 = document.querySelector('.section26')
+    let value26 = section26.innerHTML
+
+    let section31 = document.querySelector('.section31')
+    let value31 = section31.innerHTML
+    let section32 = document.querySelector('.section32')
+    let value32 = section32.innerHTML
+    let section33 = document.querySelector('.section33')
+    let value33 = section33.innerHTML
+    let section34 = document.querySelector('.section34')
+    let value34 = section34.innerHTML
+    let section35 = document.querySelector('.section35')
+    let value35 = section35.innerHTML
+    let section36 = document.querySelector('.section36')
+    let value36 = section36.innerHTML
+
+    let width = document.querySelector('.width')
+    let w1300 = document.querySelector('.w1300')
+
+    section1.addEventListener('click',Popup1)
+    section2.addEventListener('click',Popup2)
+    section3.addEventListener('click',Popup3)
+    section4.addEventListener('click',Popup4)
+    section5.addEventListener('click',Popup5)
+    section6.addEventListener('click',Popup6)
+
+    
+    section21.addEventListener('click',Popup21)
+    section22.addEventListener('click',Popup22)
+    section23.addEventListener('click',Popup23)
+    section24.addEventListener('click',Popup24)
+    section25.addEventListener('click',Popup25)
+    section26.addEventListener('click',Popup26)
+
+    section31.addEventListener('click',Popup31)
+    section32.addEventListener('click',Popup32)
+    section33.addEventListener('click',Popup33)
+    section34.addEventListener('click',Popup34)
+    section35.addEventListener('click',Popup35)
+    section36.addEventListener('click',Popup36)
+
+    width.addEventListener('click',Popout)
+    function Popup1(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value21}">`
+    }
+    function Popup2(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value22}">`
+    }
+    function Popup3(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value23}">`
+    }
+    function Popup4(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value24}">`
+    }
+    function Popup5(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value25}">`
+    }
+    function Popup6(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value26}">`
+    }
+
+    function Popup21(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value1}">`
+    }
+    function Popup22(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value2}">`
+    }
+    function Popup23(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value3}">`
+    }
+    function Popup24(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value4}">`
+    }
+    function Popup25(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value5}">`
+    }
+    function Popup26(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value6}">`
+    }
+
+    
+    function Popup31(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value31}">`
+    }
+    function Popup32(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value32}">`
+    }
+    function Popup33(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value33}">`
+    }
+    function Popup34(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value34}">`
+    }
+    function Popup35(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value35}">`
+    }
+    function Popup36(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value36}">`
+    }
+
+    function Popout(){
+        width.style.display = 'none'
+    }
+</script>
 </html>

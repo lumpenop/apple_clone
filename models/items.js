@@ -44,10 +44,18 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    item_tag: {
+    item_tag1: {
       type: DataTypes.STRING(100),
       allowNull: false
-    }
+    },
+    item_tag2: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_tag3: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
   }, {
     sequelize,
     tableName: 'items',

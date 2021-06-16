@@ -300,6 +300,54 @@
             
         }
 
+        maximum_number8 = document.querySelector('.maximum_number8')
+        inner8 = maximum_number8.innerHTML
+        value8 = Number(inner8)
+        href8 = document.querySelector('.href8')        
+        item8 = document.querySelector('.item8')
+        item8.addEventListener('click', delet_event8)        
+
+        function delet_event8(){
+
+            if(value8 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href8.href = "" 
+            }
+            
+        }
+
+        maximum_number9 = document.querySelector('.maximum_number9')
+        inner9 = maximum_number9.innerHTML
+        value9 = Number(inner9)
+        href9 = document.querySelector('.href9')        
+        item9 = document.querySelector('.item9')
+        item9.addEventListener('click', delet_event9)        
+
+        function delet_event9(){
+
+            if(value9 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href9.href = "" 
+            }
+            
+        }
+
+        maximum_number10 = document.querySelector('.maximum_number10')
+        inner10 = maximum_number10.innerHTML
+        value10 = Number(inner10)
+        href10 = document.querySelector('.href10')        
+        item10 = document.querySelector('.item10')
+        item10.addEventListener('click', delet_event10)        
+
+        function delet_event10(){
+
+            if(value10 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href10.href = "" 
+            }
+            
+        }
+
 
 </script>
 </html>

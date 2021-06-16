@@ -183,6 +183,15 @@ let shopping_form_success = async (req,res)=>{
         }
        
 }
+let valuation_send = async (req,res) => {
+    let value_subject = req.body.value_subject
+    let userid = req.body.userid
+    let value_content = req.body.value_content
+
+    let result = await valuation.create({ value_subject, userid, value_content}) 
+
+    res.redirect('/buy/history')
+}
 
 module.exports = { 
     buy_show,
@@ -193,4 +202,5 @@ module.exports = {
     history_show,
     lecture_render,
     shopping_basket_send,
+    valuation_send,
 }; 

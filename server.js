@@ -16,6 +16,7 @@ const {users,items,buy,valuation} = require('./models');
 const auth = require('./middleware/auth.js');
 const { createPW, createToken } = require('./JWT');
 const router = require('./routers/index');
+const swal = require("sweetalert");
 
 app.use(cookieParser())
 app.use(session({
