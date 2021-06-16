@@ -85,18 +85,49 @@ function sigmoid(z) {
     return z;
 }
 
+function sigmoid30(z) {
+    if(z>=1){
+        return 30;
+    }else if(z<=0){
+        return 0;
+    }
+    return z*30;
+}
+
 function eyebrowScroll(text){
     // var currentScrollValue = document.documentElement.scrollTop;
 
     textTop = text.getBoundingClientRect().top;
     
+
+
+    opa = (window.innerHeight - textTop-100)/300
+
+    text.style.opacity = sigmoid(opa)
+
+    opa2 = (window.innerHeight - textTop)/300
+
+    switch(text){
+        case document.querySelector('.hero-eyebrow-text'):
+            heroHeadline.style.transform = `matrix(1, 0, 0, 1, 0, ${45 - (sigmoid30(opa)*1.5)})`;
+            heroIntro.style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
+            break;
+        case document.querySelector('.typography-hero-headline'):
+            heroCopy.style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
+            break;
+
+        case document.querySelector('.typography-hero-intro'):
+            document.querySelector('.film-copy').style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
+            break;
+    }
     
     // if(textTop<=window.innerHeight){
-    console.log(window.innerHeight - textTop);
+    // console.log(window.innerHeight - textTop);
     
-    opa = (window.innerHeight - textTop - 100)/100
-    text.style.opacity = sigmoid(opa)
+    
+    
     // }
+    
 }
 
 window.onscroll = () =>{
