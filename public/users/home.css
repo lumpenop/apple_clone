@@ -7,6 +7,11 @@
     
 }
 
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 a{
     color: #0070c9;
 }
@@ -94,14 +99,17 @@ a{
 
 
 #ac-globalnav{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    min-width: 1024px;
+    min-width: 320px;
     display: block;
     font-size: 17px;
     max-height: 48px;
     height: 48px;
-    z-index: 9997;
+    z-index: 9999;
     background: linear-gradient(#2a3136e8, #181c20);
     backdrop-filter: saturate(180%) blur(20px);
 }
@@ -111,7 +119,7 @@ a{
     margin: 0 auto;
     max-width: 980px;
     padding: 2px 22px 0px;
-    z-index: 9999;
+    z-index: 2;
     position: relative;
 }
 
@@ -290,13 +298,13 @@ a{
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
     color: #86868b;
-    max-height: calc(100%-44px);
+    max-height: calc(100% - 44px);
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
     z-index: 9999;
     top: -2px;
-    position: relative;
+    display: block;
 }
 .ac-gn-searchresults-header{
     font-size: 12px;
@@ -348,13 +356,23 @@ a{
 
 
 .ac-gn-searchview-content{
-    position: relative;
+    position: absolute;
     top: 0;
     left: 16.66667%;
     width: 66.66667%;
     z-index: 9999;
-    height: 0px;
+    
+
 }
+
+
+.ac-gn-item{
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    z-index: 1;
+}
+
 
 .ac-gn-item span{
     display: block;

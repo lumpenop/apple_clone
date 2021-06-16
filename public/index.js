@@ -1,4 +1,4 @@
-const input = document.querySelectorAll(".inputFocus");
+
 const linkSearch = document.querySelector('.ac-gn-link.ac-gn-link-search');
 const searchCloseBtn = document.querySelector('.ac-gn-searchview-close-wrapper');
 const curtain = document.querySelector('#ac-gn-curtain');
@@ -23,7 +23,6 @@ window.addEventListener('click', event => windowClick(event));
 function windowClick (event){
 
     if(event.target!=bagViewMessage && event.target.className != 'item-link' && event.target != bagBtn){
-        console.log(event.target);
         document.querySelector('.ac-gn-bagview').classList.remove('displayBlock');
         document.querySelector('.caret').classList.remove('displayBlock');
         bagViewFlag = true;    
@@ -31,10 +30,7 @@ function windowClick (event){
 }
 
 
-for(var i=0; i<input.length; i++){
-    input[i].addEventListener('focus', inputFocus);
-    input[i].addEventListener('focusout', inputFocusOut);
-}
+
 
 let bagViewFlag = true;
 function bagViewOn(){
@@ -51,19 +47,6 @@ function bagViewOn(){
 }
 
 
-function inputFocus(){
-    const span = this.parentNode.querySelector('span');
-    span.classList.remove('inputFocusOut');
-    span.classList.add('inputFocus'); 
-}
-
-function inputFocusOut(){
-    const span = this.parentNode.querySelector('span');
-    if(this.value == ''){
-        span.classList.remove('inputFocus');
-        span.classList.add('inputFocusOut');    
-    }
-}
 
 const timer = ms => new Promise(res => setTimeout(res,ms));
 

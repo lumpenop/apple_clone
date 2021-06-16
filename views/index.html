@@ -1,42 +1,45 @@
 {% include "./top.html" %}
-
+<div class="ac-ln-viewport-emitter"></div>
 <div id="ac-ln-sticky-placeholder" class="css-sticky"></div>
-<nav id="ac-localnav" class="ac-localnav-scrim js no-touch css-sticky">
+<nav id="ac-localnav" class="ac-localnav-scrim js no-touch css-sticky subnav" data-analytics-region="localnav">
     <div class="ac-ln-wrapper">
         <div class="ac-ln-background"></div>
         <div class="ac-ln-content">
             <div class="ac-ln-title">
                 <a href="#">iPhone&nbsp;12</a>
             </div>
-            <div class="ac-ln-menu-tray">
-                <ul class="ac-ln-menu-items">
-                    <li class="ac-ln-menu-item">
-                        <span class="ac-ln-menu-link current">개요</span>
-                    </li>
-                    <li class="ac-ln-munu-item">
-                        <a href="#" class="ac-ln-menu-link">제품 사양</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="ac-ln-actions">
-                <div class="ac-ln-action ac-ln-action-button">
-                    <a href="#" class="ac-ln-button">
-                        <span class="ac-ln-action-product">iPhone 12</span>
-                        구입하기
-                    </a>
+            <div class="ac-ln-menu">
+                <div class="ac-ln-menu-tray">
+                    <ul class="ac-ln-menu-items">
+                        <li class="ac-ln-menu-item">
+                            <span class="ac-ln-menu-link current">개요</span>
+                        </li>
+                        <li class="ac-ln-menu-item">
+                            <a href="#" class="ac-ln-menu-link">제품 사양</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ac-ln-actions">
+                    <div class="ac-ln-action ac-ln-action-button">
+                        <a href="#" class="ac-ln-button">
+                            <span class="ac-ln-action-product">iPhone 12</span>
+                            구입하기
+                        </a>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </nav>
 
-<label for="ac-ln-munustate" class="ac-ln-curtain"></label>
+<label for="ac-ln-menustate" class="ac-ln-curtain"></label>
 <div class="ac-ln-viewport-emitter"></div>
 
 <main id="main" class="main" role="main">
-    <section class="section section-hero section-fill-light-alt">
+    <section class="section section-hero section-fill-light-alt" style="--hero-top-offset:70.6px">
         <div class="sticky-wrapper">
-            <div class="sticky-content" style="min-height:949.2px">
+            <div class="sticky-content" >
                 <div class="hero-sequence-centered">
                     <div class="hero-sequence-wrapper">
                         <div class="video-container show">
@@ -52,8 +55,7 @@
             <div class="hero-copy large-9 large-centered medium-8 samll-12 small-uncentered">
                 <h1 class="hero-eyebrow-text typography-hero-eyebrow" style="transform: matrix(1, 0, 0, 1, 0, 0); opacity:1;">iPhone&nbsp;12 및 iPhone&nbsp;12&nbsp;mini</h1>
                 <h2 class="hero-headline typography-hero-headline" style="transform: matrix(1, 0, 0, 1, 0, 0); opacity:1;">
-                    <lkslighter style="background-image: linear-gradient(transparendt 0%, transparent calc(50% - 4px), rgb(204, 242, 241) clac(50%-4px) rgb(204,242,241) 100%);
-                    transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s; background-size: 100% 200%; background-position: initial;">스피드 그 이상의 스피드</lkslighter>. 
+                    스피드 그 이상의 스피드.
                 </h2>
                 <p class="hero-intro typography-hero-intro" style="transform: matrix(1, 0, 0, 1, 0, 0); opacity:1;">
                     <lkslighter style="background-image: linear-gradient(transparendt 0%, transparent calc(50% - 4px), rgb(204, 242, 241) clac(50%-4px) rgb(204,242,241) 100%);
@@ -66,10 +68,15 @@
                     transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s; background-size: 100% 200%; background-position: initial;"> 이 모든 것을 담은 iPhone&nbsp;12, 두&nbsp;가지 완벽한 사이즈로 만날&nbsp;수&nbsp;있습니다</lkslighter>.
                     
                 </p>
-                <p class="hero-pricing typography-hero-copy samll-width small-width-pricing" style="transform: matrix(1, 0, 0, 1, 0, 21.9047); opacity:0.123813;">
+                <p class="hero-pricing typography-hero-copy samll-width small-width-pricing" >
                     <span>₩950,000부터</span>
+                    (보상판매
+                    <sup class="footnote footnote-number">
+                        <a href="#">1</a>
+                    </sup>
+                    미적용 가격)
                 </p>
-                <ul class="hero-cta typograpy-hero-copy links-inline film-copy" style="transform: matrix(1, 0, 0, 1, 0, 0.25); opacity:0;">
+                <ul class="hero-cta typograpy-hero-copy links-inline film-copy" >
                     <li>
                         <a href="/105/media/kr/iphone-12/2020/7f5b7de7-9f8c-41eb-bf3b-f294773108e6/films/product/iphone-12-product-tpl-kr-2020_16x9.m3u8" id="film-iphone12" class="icon-wrapper" data-films-modal-link="" role="button" aria-label="iPhone 12에 관한 동영상 보기" data-analytics-id="film-iphone12">
                             <span class="icon-copy">
@@ -1079,6 +1086,7 @@
 
 
 <script type="text/javascript" src ="/socket.io/socket.io.js"></script>
+
 <script src="/main/section1.js"></script>
 {% if msg %}
 <script type="text/javascript" >
