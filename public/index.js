@@ -23,7 +23,6 @@ window.addEventListener('click', event => windowClick(event));
 function windowClick (event){
 
     if(event.target!=bagViewMessage && event.target.className != 'item-link' && event.target != bagBtn){
-        console.log(event.target);
         document.querySelector('.ac-gn-bagview').classList.remove('displayBlock');
         document.querySelector('.caret').classList.remove('displayBlock');
         bagViewFlag = true;    
