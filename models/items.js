@@ -28,8 +28,20 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(200),
       allowNull: false
     },
-    item_skill: {
+    item_skill1: {
       type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_skill2: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_skill3: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    maximum_number:{
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     item_tag: {

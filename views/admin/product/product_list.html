@@ -58,6 +58,9 @@
                             <td>교육 이미지</td>
                             <td>교육 카테고리</td>
                             <td>교육 과목명</td>
+                            <td>교육 과목명2</td>
+                            <td>교육 과목명<3/td>
+                            <td>수강 제한</td>
                             <td>교육 태그</td>
                             <td>삭제하기</td>
                         </tr>
@@ -71,7 +74,10 @@
                                     <td class = "oneContent" name = "oneContent1">{{item.item_price}}</td>
                                     <td id = "img1"><img id = "img" src = "../../../{{item.item_image}}"></td>
                                     <td>{{item.item_category}}</td>
-                                    <td>{{item.item_skill}}</td>
+                                    <td>{{item.item_skill1}}</td>
+                                    <td>{{item.item_skill2}}</td>
+                                    <td>{{item.item_skill3}}</td>
+                                    <td>{{item.maximum_number}}</td>
                                     <td>{{item.item_tag}}</td>
                                     <td>
                                         <input type = "submit" class = "delete" value = "삭제하기">

@@ -1,0 +1,63 @@
+.wrap{
+    width:100%;
+    background:#E0E0E0;
+}
+.wrap2{
+    width:100%;
+}
+.content{
+    width:1200px;
+    margin:0 auto;
+}
+.footer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction:row;
+    background:#E0E0E0;
+}
+.footer>div{
+    display: inline-block;
+}
+
+.img{
+    width:600px;
+    height:450px;
+}
+
+.mainLecture{
+    clear: both;
+}
+.text{
+    margin-top: 70px;
+    margin-left: 100px;
+}
+.font{
+    font-size: 30px;
+}
+.font1{
+    font-size: 22px;
+}
+.red{
+    font-size: 40px;
+    color:red;
+}
+
+.tag{
+    margin-top: 30px;
+    border:1px solid grey;
+    border-radius: 6px;
+    width:28px;
+}
+
+.main_subject{
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+.display{
+    display: inline-block;
+}
+
+.float{
+    float:left;
+}

@@ -49,14 +49,14 @@
                     </form>
                 </div>
                 <div>
+                    <tr class = "grey">
+                        <td>인덱스값</td>
+                        <td class = "value2">제목</td>
+                        <td>아이디</td>
+                        <td class = "value">수강평</td>
+                        <td>삭제하기</td>
+                    </tr>
                     <table class = "table paginated">
-                        <tr class = "grey">
-                            <td>인덱스값</td>
-                            <td class = "value2">제목</td>
-                            <td>아이디</td>
-                            <td class = "value">수강평</td>
-                            <td>삭제하기</td>
-                        </tr>
                         {% for item in list %}
                         <form action = "/admin/delete_success3?idx={{item.id}}" method = "post"> 
                             <tr class = "blueGreen">

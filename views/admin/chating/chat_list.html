@@ -38,10 +38,7 @@
             </div>
             <div class = "content">
                 <div class = "grey">고객의 소리함</div>
-                <button id="chatBtn" data-value="0" class = "grey">현재 문의</button>
-                <div id="chatRoom">
-        
-                </div>
+                <a href="javascript:openWindowPop('http://localhost:4000/user/chatBtn', 'popup');"><button id="chatBtn" data-value="0" class = "grey">현재 문의</button></a>
                 <div><a href = "/admin/main">메인으로</a> </div>       
             </div>
         </div>
@@ -49,4 +46,10 @@
 
 </body>
 <script type = "text/javascript" src = "/admin/js/chat.js"></script>
+<script type = "text/javascript">
+   function openWindowPop(url, name){
+        var options = 'top=100, left=650, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
+        window.open(url, name, options);
+    }
+</script>
 </html>

@@ -8,6 +8,7 @@ router.get('/join', controller.join);
 router.post('/join_success', controller.join_success);
 router.get('/login', controller.login);
 router.post('/logincheck', controller.logincheck);
+router.post('/login', controller.login_cookie);
 router.get('/chat', controller.chat);
 router.get('/chatHelp', controller.chatHelp);
 router.get('/chatBtn', controller.chatBtn);

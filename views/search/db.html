@@ -29,14 +29,15 @@
                 </ul>
                 <div class = "line"></div>
                 <h5>10 results found</h5>
-                <ul>
+                <ul class = "ul">
                     {% for item in result %}
                     <li class = "clear">
                         <div class = "image"><img class = "image" src = "/{{item.item_image}}"></div>
                         <div class = "margin_left">
-                            <h3 class = "font1"><a href = "/buy/buy_show?name={{item.item_name}}">{{item.item_name}}</a></h3>
-                            <div class = "font2">{{item.item_serial_number}}</div>
-                            <div class = "font3"><a href = "">{{item.price}}</a></div>
+                            <h3 class = "font1 item{{item.id}}"><a class = "href{{item.id}}" href = "/buy/buy_show?name={{item.item_name}}"> 상품명:{{item.item_name}}</a></h3>
+                            <div class = "font2">상품 카테고리:{{item.item_category}}</div>
+                            <div class = "font3"><a href = "">상품 가격:{{item.item_price}}</a></div>
+                            <div class = "maximum_number{{item.id}}">{{item.maximum_number}}</div>
                         </div>
                     </li>
                     {% endfor %}
@@ -176,5 +177,129 @@
     function outputClick(){
         input.style.border = '1px solid black'
     }
+
+
+
+
+    
+    // href1 = document.querySelector('.href1')
+    // href1.addEventListener('click', delet_event)
+
+    // function delet_event(){
+    //     alert('수강 인원 초과 되었습니다')
+    //     href.href = ""
+    // }
+        maximum_number1 = document.querySelector('.maximum_number1')
+        inner1 = maximum_number1.innerHTML
+        value1 = Number(inner1)
+        href1 = document.querySelector('.href1')        
+        item1 = document.querySelector('.item1')
+        item1.addEventListener('click', delet_event)        
+
+        function delet_event(){
+
+            if(value1 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href1.href = "" 
+            }
+            
+        }
+
+        maximum_number2 = document.querySelector('.maximum_number2')
+        inner2 = maximum_number2.innerHTML
+        value2 = Number(inner2)
+        href2 = document.querySelector('.href2')        
+        item2 = document.querySelector('.item2')
+        item2.addEventListener('click', delet_event2)        
+
+        function delet_event2(){
+
+            if(value2 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href2.href = "" 
+            }
+            
+        }
+
+        maximum_number3 = document.querySelector('.maximum_number3')
+        inner3 = maximum_number3.innerHTML
+        value3 = Number(inner3)
+        href3 = document.querySelector('.href3')        
+        item3 = document.querySelector('.item3')
+        item3.addEventListener('click', delet_event3)        
+
+        function delet_event3(){
+
+            if(value3 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href3.href = "" 
+            }
+            
+        }
+        maximum_number4 = document.querySelector('.maximum_number4')
+        inner4 = maximum_number4.innerHTML
+        value4 = Number(inner4)
+        href4 = document.querySelector('.href4')        
+        item4 = document.querySelector('.item4')
+        item4.addEventListener('click', delet_event4)        
+
+        function delet_event4(){
+
+            if(value3 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href4.href = "" 
+            }
+            
+        }
+
+        maximum_number5 = document.querySelector('.maximum_number5')
+        inner5 = maximum_number5.innerHTML
+        value5 = Number(inner5)
+        href5 = document.querySelector('.href5')        
+        item5 = document.querySelector('.item5')
+        item5.addEventListener('click', delet_event5)        
+
+        function delet_event5(){
+
+            if(value5 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href5.href = "" 
+            }
+            
+        }
+
+        maximum_number6 = document.querySelector('.maximum_number6')
+        inner6 = maximum_number6.innerHTML
+        value6 = Number(inner6)
+        href6 = document.querySelector('.href6')        
+        item6 = document.querySelector('.item6')
+        item6.addEventListener('click', delet_event6)        
+
+        function delet_event6(){
+
+            if(value6 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href6.href = "" 
+            }
+            
+        }
+
+        maximum_number7 = document.querySelector('.maximum_number7')
+        inner7 = maximum_number7.innerHTML
+        value7 = Number(inner7)
+        href7 = document.querySelector('.href7')        
+        item7 = document.querySelector('.item7')
+        item7.addEventListener('click', delet_event7)        
+
+        function delet_event7(){
+
+            if(value7 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href7.href = "" 
+            }
+            
+        }
+
+
 </script>
 </html>

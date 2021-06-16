@@ -2,6 +2,7 @@
 
 <main class="main" role="main" data-anim-scroll-group="bubble-gum-group">
     <div class="subnav">
+        <div class = "displaynone">{{msg}}</div>
         <div class="subnav-container">
             <div class="title tk-label pull-left">
                 Apple&nbsp;ID
@@ -124,7 +125,15 @@
 </div>
 
 
+<script type = "text/javascript">
 
+    displaynone = document.querySelector('.displaynone')
+    value = displaynone.innerHTML
+
+    if(value == '"장바구니가 비었습니다"'){
+        alert('장바구니가 비었습니다')
+    }
+</script>
 
 
 <script type="text/javascript" src="/login.js"></script>

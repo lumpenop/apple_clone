@@ -12,35 +12,27 @@
         <div class = "content w1200">
             <div class = "header">
                 <h1>장바구니에 들어 있는 제품입니다</h1>
-                <div class = "font">모든 주문에 무료 배송 서비스가 제공됩니다.</div>
-                <a href = "/buy/shopping_form?name={{list.item_name}}"><input type = "submit" class = "BTT" value = "결제"></a>
+                <div class = "font"><a href = "/search/db">아직 안 살래요</a></div>
+                <a href = "/buy/shopping_form?name={{item_name}}"><input type = "submit" class = "BTT" value = "결제"></a>
             </div>
             <div class = "line"></div>
             <div class = "content">
+                {% for list in result %}
                 <div class = "img height"><img class = "img" src = "../../{{list.item_image}}"></div>
                 <div class = "text height">
                     <ul>
                         <li>
-                            {{list.item_name}}
+                            상품명:{{list.item_name}}
                         </li>
                         <li>
-                            <select class = "b">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                            </select>   
+                            상품카테고리:{{list.item_category}}
                         </li>
-                        <li class = "float">{{list.item_price}}</li>
+                        <li class = "float">상품가격:{{list.item_price}}</li>
                     </ul>
                     <div class = "line2">
     
-                    </div>
+                    </div>     
+                    {% endfor %}      
                     <div>
                         <div class = "LEFT"><img src = "../../aa.jpg"></div>
                         <div class = "right">
@@ -57,6 +49,7 @@
                     <div class = "line2">
 
                     </div>
+     
                     <div class = "foo">
                         <h3 class = "h3">이 제품을 얼마나 빨리 받을 수 있는지 확인해보십시오.</h3>
                         <div class = "blue"><a href = ""> 우편번호 입력</a></div>
@@ -86,7 +79,7 @@
                 <div class = "w1000">
                     <div class = "clear grey2">
                         <div class = "c1">소계</div>
-                        <div class = "c2">{{list.item_price}}</div>
+                        <div class = "c2">{{total_cost}}</div>
                     </div>
                     <div class = "clear grey2">
                         <div class = "c1">배송</div>
@@ -95,9 +88,9 @@
                     <div class = "line4"></div>
                     <div class = "clear bodd">
                         <div class = "c1">총계</div>
-                        <div class = "c2">{{list.item_price}}</div>
+                        <div class = "c2">{{total_cost}}</div>
                     </div><br/>
-                    <a href = "/buy/shopping_form?name={{list.item_name}}"><input type = "submit" class = "BTT add" value = "결제"></a>
+                    <a href = "/buy/shopping_form?name={{item_name}}"><input type = "submit" class = "BTT add" value = "결제"></a>
                 </div>
             </div>
         </div>

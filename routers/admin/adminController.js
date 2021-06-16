@@ -109,7 +109,7 @@ let product_view = async (req,res)=>{
         userid:req.session.uid
     })
 }
-let value_view = async (reqc,res)=>{
+let value_view = async (req,res)=>{
     let idx = req.query.idx
     let result = await valuation.findOne({ where: {id:idx}})
     console.log(result)
@@ -125,7 +125,10 @@ let product_view2 = async (req,res)=>{
     let item_price = req.body.item_price
     let item_image = req.file.path
     let item_category = req.body.item_category
-    let item_skill = req.body.item_skill
+    let item_skill1 = req.body.item_skill1
+    let item_skill2 = req.body.item_skill2
+    let item_skill3 = req.body.item_skill3
+    let maximum_number = req.body.maximum_number
     let item_tag = req.body.item_tag
     let split_img = item_image.split('\\')[1]
     console.log(id)
@@ -136,7 +139,11 @@ let product_view2 = async (req,res)=>{
             item_price:item_price,
             item_image:split_img,
             item_category:item_category,
-            item_skill:item_skill,
+            item_skill1:item_skill1,
+            item_skill2:item_skill2,
+            item_skill3:item_skill3,
+            item_skill1:item_skill1,
+            maximum_number:maximum_number,
             item_tag:item_tag,
     },{where:{id:id}})
 
@@ -232,7 +239,10 @@ let create_list = async (req,res)=>{
     let item_price = req.body.item_price
     let item_image = req.file.path
     let item_category = req.body.item_category
-    let item_skill = req.body.item_skill
+    let item_skill1 = req.body.item_skill1
+    let item_skill2 = req.body.item_skill2
+    let item_skill3 = req.body.item_skill3
+    let maximum_number = req.body.maximum_number
     let item_tag = req.body.item_tag
     console.log(item_image)
 
@@ -244,7 +254,10 @@ let create_list = async (req,res)=>{
         item_price:item_price,
         item_image:split_img,
         item_category:item_category,
-        item_skill:item_skill,
+        item_skill1:item_skill1,
+        item_skill2:item_skill2,
+        item_skill3:item_skill3,
+        maximum_number:maximum_number,
         item_tag:item_tag,
     })
 

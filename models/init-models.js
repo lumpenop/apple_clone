@@ -5,9 +5,10 @@ var _users = require("./users");
 var _valuation = require("./valuation");
 var _bag = require("./bag");
 var _history = require("./history");
-
+var _skills = require("./skills");
 function initModels(sequelize) {
   var buy = _buy(sequelize, DataTypes);
+  var skills = _skills(sequelize, DataTypes);
   var items = _items(sequelize, DataTypes);
   var users = _users(sequelize, DataTypes);
   var valuation = _valuation(sequelize, DataTypes);
@@ -28,6 +29,7 @@ function initModels(sequelize) {
     valuation,
     bag,
     history,
+    skills,
   };
 }
 

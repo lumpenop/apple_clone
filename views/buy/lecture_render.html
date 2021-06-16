@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../lecture_render.css">
+</head>
+<body>
+    <div class = "wrapping wrap">
+        <div class = "content">
+            <div class = "footer">
+                <div class = "img"><img class = "img" src = "../../{{result.item_image}}"></div>
+                <div class = "text">
+                    <h2 class = "font">{{result.item_category}}</h2>
+                    <h2 class = "red">{{result.item_name}}</h2>
+                    <div class = "font1">수강 인원 수 : {{result.maximum_number}}</div>
+                    <div class = "tag">#{{result.item_tag}}</div>
+                </div>             
+            </div>
+        </div>
+    </div>
+    <div class = "wrapping wrap2">
+        <div class = "content">
+            <div class = "mainLecture">
+                <h2>교육 과정</h2>
+                <div class = "">              
+                    <div class = "main_subject">{{result.item_skill1}} 강의</div> 
+                    {% for item in result1 %}
+                    <div class = "">{{item.iframe_number}}강</div>
+                    <div class = "display float">강의 명 : {{item.iframe_name}}</div>
+                    <div class = "display"><iframe src = "{{item.skill_iframe}}"></iframe></div>
+                    {% endfor %}                    
+                </div>  
+                <div class = "">
+                    <div class = "main_subject">{{result.item_skill2}} 강의</div>  
+                    {% for item in result2 %} 
+                    <div class = "">{{item.iframe_number}}강</div>
+                    <div>강의 명 : {{item.iframe_name}}</div>
+                    <div><iframe src = "{{item.skill_iframe}}"></iframe></div>
+                    {% endfor %}                    
+                </div>
+                <div class = "">
+                    <div class = "main_subject">{{result.item_skill3}} 강의</div>  
+                    {% for item in result3 %}
+                    <div class = "">{{item.iframe_number}}강</div>
+                    <div>강의 명 : {{item.iframe_name}}</div>
+                    <div><iframe src = "{{item.skill_iframe}}"></iframe></div>
+                    {% endfor %}                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

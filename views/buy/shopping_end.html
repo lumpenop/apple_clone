@@ -14,20 +14,14 @@
                 주문 완료 되었습니다.
             </h1>
             <div class = "line"></div>
+            {% for item in result4 %}
             <div class = "product">
-                <div class = "img"><img class = "img" src = "../../{{item_image}}"></div>
-                <div class = "text">{{item_name}}</div>
-                <div class = "text">{{item_category}}</div>
-                <div class = "text">1</div>
-                <div class = "text1">{{item_price}}</div>
+                <div class = "img"><img class = "img" src = "../../{{item.item_image}}"></div>
+                <div class = "text">상품명:{{item.item_name}}</div>
+                <div class = "text">상품카테고리:{{item.item_category}}</div>
+                <div class = "text1">상품가격:{{item.item_price}}</div>
             </div>
-            <div class = "product">
-                <div class = "img"><img class = "img" src = "../../{{item_image}}"></div>
-                <div class = "text">{{item_name}}</div>
-                <div class = "text">{{item_category}}</div>
-                <div class = "text">1</div>
-                <div class = "text1">{{item_price}}</div>
-            </div>
+            {% endfor %}
             <div class = "line clear"></div>
             <div class = "clear padding">
                 <div class = "text3">
@@ -57,7 +51,7 @@
                     <div class = "w700">
                         <div class = "font-grey">
                             <div class = "left">소계</div>
-                            <div class = "right">₩{{item_price}}</div>
+                            <div class = "right">₩{{total_cost}}</div>
                         </div>
                         <div class = "font-grey">
                             <div class = "clear left">배송</div>
@@ -68,9 +62,9 @@
                         </div>
                         <div class = "lastbold">
                             <div class = "clear left">총계</div>
-                            <div class = "right">₩{{item_price}}</div>
+                            <div class = "right">₩{{total_cost}}</div>
                         </div>
-                        <div class = "clear right"><a href = "/"><input value = "메인으로 이동" class = "btn" type = "button"></a></div>
+                        <div class = "clear right"><a href = "/buy/history"><input value = "메인으로 이동" class = "btn" type = "button"></a></div>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,9 @@ ul,li{
     width:100%;
 
 }
-
+.none{
+    display: none;
+}
 
 .w1200{
     width:1200px;

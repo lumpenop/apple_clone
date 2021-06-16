@@ -20,6 +20,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.users = models.users;
 db.items = models.items;
+db.skills = models.skills;
 db.valuation = models.valuation;
 db.buy = models.buy; 
 db.bag = models.bag;

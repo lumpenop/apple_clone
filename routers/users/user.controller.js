@@ -6,9 +6,16 @@ let join = async (req, res) => {
 }
 
 let login = async (req, res) => {
-    res.render('login.html');
+    res.render('login.html',{
+        msg:req.query.msg
+    });
 }
-
+let login_cookie = async (req,res) => {
+    res.clearCookie('username')
+    res.clearCookie('item_name')
+    res.clearCookie('AccessToken')
+    res.render('login.html')
+}
 let bags = async (req, res) => {
     // console.log(req.cookies['Access_token'])
     // res.render('index.html');
@@ -99,5 +106,5 @@ let chatRoom = (req,res)=>{
 
 
 module.exports = {
-    bags,join, join_success,userid_check, login, logincheck, login_success, chat, chatRoom, chatHelp, chatBtn, 
+    login_cookie,bags,join, join_success,userid_check, login, logincheck, login_success, chat, chatRoom, chatHelp, chatBtn, 
 }

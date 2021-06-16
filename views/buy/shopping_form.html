@@ -11,6 +11,7 @@
     <div class = "wrappingwrap wrap">
         <div class = "content w1000"> 
             <h1>주문하신 제품이 어디로 배송되길 원하십니까?</h1>
+            <input type = "text" value = "{{msg}}" class = "msg displaynone">
             <div>
                 <form action = "/buy/shopping_end?name={{name}}" method = "post">
                     <h2>이름 및 주소 입력:</h2>
@@ -18,7 +19,7 @@
                     <div class = "displaynone"><input type = "text" name = "item_name" class = "item_name" value = "{{name}}"></div>
                     <div class = "displaynone"><input type = "text" name = "item_price" class = "item_price" value = "{{item_price}}"></div>
                     <div class = "displaynone"><input type = "text" name = "item_image" value = "{{item_image}}"></div>
-                    <div class = "displaynone"><input type = "text" name = "item_category" value = "{{item_category}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "total_cost" value = "{{total_cost}}"></div>
                     <input class = "width" type = "text" name = "name1" placeholder="성"><br/>
                     <input class = "width" type = "text" name = "name2" placeholder="이름"><br/>
                     <select class = "width2" name = "address1" placeholder = "시/도">
@@ -55,9 +56,10 @@
                 <div class = "line">
     
                 </div>
-                <a href="javascript:openWindowPop('http://localhost:5000/', 'popup');"><input type = "button" class = "BTN" value = "결제 페이지로 이동"></a>
+                <a href="javascript:openWindowPop(`http://localhost:5000/?name={{name}}&price={{total_cost}}`, 'popup');"><input type = "button" class = "BTN" value = "결제 페이지로 이동"></a>
                 <div class = "d">*결제 후 완료 페이지로 이동해주세요*</div>
                 <input class = "BTN" type = "submit" value = "결제 완료"></a>
+                <a href = "/user/login"><div class = "d">메인 페이지로 이동하기</div></a>
             </form>
         </div>
     </div>
@@ -65,7 +67,7 @@
 <script type = "text/javascript">
 //javascript
     function openWindowPop(url, name){
-        var options = 'top=100, left=650, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
+        var options = 'top=230, left=650, width=800, height=460, status=no, menubar=no, toolbar=no, resizable=no';
         window.open(url, name, options);
     }
 
@@ -107,5 +109,11 @@
     // function open(){
     //     phone.style.display = 'block'
     // }
+    
+    msg = document.querySelector('.msg')
+    value = msg.value
+    if(value == '이미 구매하신 제품입니다'){
+        alert('이미 구매하신 제품입니다')
+    }
 </script>
 </html>

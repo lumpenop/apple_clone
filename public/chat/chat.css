@@ -147,7 +147,9 @@ ul,li{
     border-top: 1px solid rgb(208, 211, 214);
 }
 
-
+#chatRoom{
+    height:800px;
+}
 
 #chatBtn:hover{
     background-color: rgba(197, 209, 223, 0.596);
