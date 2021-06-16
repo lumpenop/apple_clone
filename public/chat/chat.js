@@ -130,17 +130,7 @@ function send() {
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');
-        // let chat_height = chat.getBoundingClientRect().height;
-        // console.log('chat _ height', chat_height);
-        // console.log('scrolltop',chat.scrollTop)
-
-        // if (chat_height>0) {
-        //     chat.scrollTop = chat_height;
-        // }
-
         chat.scrollTop = chat.scrollHeight;
-
-
     }
 }
 
@@ -168,13 +158,12 @@ function msgAdd(msgValue, who) {
     li_time.classList.add('time_clocking');
     if (who == 'you') li_time.classList.add('time_you');
     else li_time.classList.add('time_me');
-    ul_msg.appendChild(li_msg);
-    chat.appendChild(ul_msg);
-
     if (B.length == 0 || B[B.length - 1].textContent != clock) {
         ul_time.appendChild(li_time);
         chat.appendChild(ul_time);
     }
+    ul_msg.appendChild(li_msg);
+    chat.appendChild(ul_msg);
 }
 
 

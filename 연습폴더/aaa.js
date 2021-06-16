@@ -26,12 +26,12 @@
 //     return a-b
 // }))
 
-c = 'b'
+// c = 'b'
 
 
-console.log(c.charCodeAt(0) - 'a'.charCodeAt(0) >= 0)
-console.log(-c.charCodeAt(0) + 'z'.charCodeAt(0) >= 0)
-console.log()
+// console.log(c.charCodeAt(0) - 'a'.charCodeAt(0) >= 0)
+// console.log(-c.charCodeAt(0) + 'z'.charCodeAt(0) >= 0)
+// console.log()
 
 
 // console.log(String.fromCharCode(92))
@@ -45,3 +45,27 @@ console.log()
 // })
 
 // console.log(CC)
+
+
+
+
+let hey = {
+    a:1,
+    b:2,
+    c:3,
+}
+
+let session ={};
+session.authData={
+    ['local']: hey
+}
+
+console.log(session)
+console.log(session.authData)
+console.log(Object.keys(session.authData)[0])
+//console.log(Object.keys(session.authData[0]))
+
+
+
+
+
