@@ -2,21 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const nunjucks = require('nunjucks');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const port = process.env.SERVER_PORT || 3000;
 const socket = require('socket.io');
 const http = require('http');
 const cookieParser = require('cookie-parser');
 const server = http.createServer(app)
 const io = socket(server)
-const mysql = require('mysql');
+// const mysql = require('mysql');
 const { sequelize } = require('./models');
 const session = require("express-session");
-const { users, items, buy } = require('./models');
 const auth = require('./middleware/auth.js');
-const { createPW, createToken } = require('./JWT');
 const router = require('./routers/index');
-const swal = require("sweetalert");
+
 
 app.use(cookieParser())
 app.use(session({
@@ -32,9 +30,9 @@ sequelize.sync({ force: false, })
 nunjucks.configure('views', {
     express: app,
 })
+app.set('view engine', 'html');
 app.use(express.static('node_modules'));
 app.use(express.json());
-app.set('view engine', 'html');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(express.static('uploads'));
