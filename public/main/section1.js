@@ -100,11 +100,11 @@ function eyebrowScroll(text){
 }
 
 window.onscroll = () =>{
-    eyebrowScroll(eyebrowText, eyebrowTop);
-    eyebrowScroll(heroHeadline, heroHeadlineTop);
-    eyebrowScroll(heroIntro, heroIntroTop);
-    eyebrowScroll(heroCopy, heroCopyTop);
-    eyebrowScroll(filmIphone12, filmIphone12Top);
+    eyebrowScroll(eyebrowText);
+    eyebrowScroll(heroHeadline);
+    eyebrowScroll(heroIntro);
+    eyebrowScroll(heroCopy);
+    eyebrowScroll(filmIphone12);
 };
  
 
