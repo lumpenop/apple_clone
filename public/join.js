@@ -20,10 +20,14 @@ async function joinFn(){
     if (mobile.value==""){swal('핸드폰 번호를 입력해주세요'); mobile.focus(); return 0;};
     if (userpw.value!=pwcheck.value){swal('비밀번호가 서로 다릅니다.'); userpw.focus(); return 0;};
     
-    // ID & PW 길이 미니멈 JS 
-    // ID -> 메일 주소 유효한거 구별하는거 만들기 ex) naver, daum, gmail etc 
+    // 0. ID & PW 길이 미니멈 JS 
+    // 1. ID -> 메일 주소 유효한거 구별하는거 만들기 ex) naver, daum, gmail etc
+    // 2. 생년월일 알고리즘 추가 
+    // 3. 전화번호 알고리즘 추가 
+    // 4. 공지사항 / 개인정보 클릭 안했을 때 알고리즘 추가 
     
-    // 완성 전에 주석 풀기 ! 
+
+    // 완성 전 주석 풀것들
     //if (userpw.value.length<=6){swal('비밀번호는 6글자 이상으로 설정해주세요.'); return 0;};
 
 
