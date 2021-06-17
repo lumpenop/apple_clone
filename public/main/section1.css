@@ -1,0 +1,453 @@
+:root{
+    --r-localnav-height:1px;
+}
+.body{
+    font-size: 17px;
+    font-weight: 400;
+    color: #1d1d1f;
+    min-width: 320px;
+}
+
+main{
+    display: block;
+}
+
+.div{
+    display: block;
+}
+
+#ac-ln-sticky-placeholder{
+    display: block;
+    margin-top: 44px;
+    margin: 0;
+    padding:0;
+    position: relative;
+    visibility: hidden;
+    z-index: -1;
+}
+
+#ac-localnav.css-sticky{
+    position: sticky;
+}
+
+
+
+
+
+#ac-localnav{
+    margin-top: 44px !important;
+    margin-bottom: -96px !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    min-width: 320px;
+    z-index: 9997;
+}
+
+.section-hero{
+    z-index: 13;
+    position: relative;
+}
+
+
+
+.section_fill-light-alt{
+    background-color: #f2f2f2;
+}
+
+.section{
+    overflow: visible;
+    z-index: 1;
+    position: relative;
+}
+
+
+
+.ac-ln-background{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#ac-localnav .ac-ln-background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+#ac-localnav .ac-ln-background:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    height: 1px;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 0.16);
+}
+
+#ac-localnav.ac-localnav-scrim .ac-ln-background:after{
+    margin-left: 0;
+    left: 0;
+    width: 100%;
+}
+
+#ac-localnav .ac-ln-background:after,
+#ac-localnav .ac-ln-title:before,
+#ac-localnav .ac-ln-menu:after{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
+    letter-spacing: normal;
+}
+
+#ac-localnav .ac-ln-content{
+    padding-left: calc(max(22px, env(safe-area-insert-left)));
+    padding-right: calc(max(22px, env(safe-area-insert-right)));
+
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 22px;
+    position: relative;
+    z-index: 2;
+}
+
+#ac-localnav .ac-ln-title{
+    color: #000;
+    transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    font-size: 21px;
+    line-break: 1.14286;
+    font-weight: 600;
+    letter-spacing: .011em;
+    cursor: default;
+    display: block;
+    float: left;
+    margin: 20px 0 -14px;
+    padding: 0;
+    height: 52px;
+    white-space: nowrap;
+}
+
+#ac-localnav .ac-ln-title a{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.88;
+    line-height: 1.1426;
+}
+
+#ac-localnav .ac-ln-menu{
+    font-size:12px;
+    line-height: 1;
+    font-weight: 400;
+    float: right;
+    margin-top: -3px;
+}
+
+#ac-localnav .ac-ln-menu-tray{
+    float: left;
+    padding-top: 22px;
+}
+
+.ac-ln-menu-items{
+    list-style: none;
+}
+
+#ac-localnav .ac-ln-menu-item{
+    margin-left: 24px;
+    float: left;
+    list-style: none;
+}
+
+#ac-localnav .ac-ln-menu-link.current{
+    color: #000;
+    opacity : .56;
+    cursor: default;
+}
+
+#ac-localnav .ac-ln-menu-link{
+    color: #000;
+    display: inline-block;
+    line-height: 22px;
+    white-space: nowrap;
+    opacity: .88;
+}
+
+#ac-localnav a, #ac-localnav:hover{
+    text-decoration: none;
+}
+
+#ac-localnav .ac-ln-actions{
+    float: left;
+    padding-top: 21px;
+
+}
+
+#ac-localnav .ac-ln-action{
+    margin-left: 24px;
+    float: left;
+}
+
+#ac-localnav .ac-ln-action-button .ac-ln-button{
+    margin-top: -1px;
+}
+
+#ac-localnav .ac-ln-button{
+    cursor: pointer;
+    display: inline-block;
+    text-align : center;
+    white-space: nowrap;
+    background: #0071e3;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.33337;
+    font-weight: 400;
+    min-width: 23px;
+    padding: 4px 11px;
+    border-radius: 12px;
+}
+
+#ac-localnav .ac-ln-action-product{
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    top: auto;
+    left: auto;
+}
+
+#ac-localnav .ac-ln-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    z-index: 1;
+}
+
+#ac-localnav .ac-ln-title,
+#ac-localnav .ac-ln-title a{
+    color: #000;
+    transition: color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+#ac-localnav .ac-ln-menu-item{
+    margin-left: 24px;
+    float: left;
+    list-style: none;
+}
+
+#ac-localnav, #ac-localnav::before, 
+#ac-localnav::after, 
+#ac-localnav *, 
+#ac-localnav ::before, 
+#ac-localnav ::after {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+        padding-top: 0px;
+    pointer-events: auto;
+    letter-spacing: normal;
+}
+
+.ac-ln-curtain{
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 9996;
+    transition: opacity 0.2s ease;
+}
+
+#ac-localnav .ac-ln-viewport-emitter{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+
+
+/*************** sticky wrapper ****************/
+
+.section-hero .video-container .startframe{
+    position: absolute;
+    z-index: 1;
+    width: 1188px;
+    height: 914px;
+    background-size: 1188px 914px;
+    background-repeat: no-repeat;
+    background-image: url(
+        https://www.apple.com/kr/iphone-12/g/images/overview/hero/hero_startframe__gjx0olcpbkyi_large.jpg
+    );
+}
+.hidden{
+    visibility: hidden !important;
+}
+.section-hero .video-container .endframe{
+    
+    z-index: 3;
+    opacity: 1;
+    width: 1188px;
+    height: 914px;
+    background-size: 1188px 914px;
+    background-repeat: no-repeat;
+    background-image: url(
+        https://www.apple.com/kr/iphone-12/g/images/overview/hero/hero_endframe__fc7apyu3c7au_large.jpg
+    );
+    margin: 0 auto;
+}
+
+.section-hero .video-container video{
+    position: absolute;
+    z-index: 2;
+    width: 1188px;
+    height: 914px;
+    opacity: 0;
+
+}
+
+
+.section-hero .video-container.loaded video {
+    transition: opacity .2s ease-out;
+    opacity: 1;
+}
+
+.section-hero .video-container.loaded .show{
+    transition: opacity 1s ease-in;
+    opacity: 1;
+}
+
+.section-hero .video-container{
+    width: 1188px;
+    
+    position: relative;
+}
+
+
+
+.section-hero{
+    z-index: 13;
+    position: relative;
+    padding-top: calc(140px + var(--r-localnav-height));
+    padding-bottom: 115px;
+}
+
+.section-fill-light-alt{
+    background-color: #f2f2f2;
+}
+
+.section{
+    overflow: visible;
+}
+
+.hero-sequence-wrapper{
+    position: relative;
+    width: 1188px;
+    
+    margin: 0 auto;
+}
+
+
+
+/********** end startframe *************/
+
+
+.hero-copy-container{
+    width: 980px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+.section-hero .hero-copy{
+    text-align: center;
+    padding-top: 45px;
+}
+
+.section-hero .hero-headline{
+    margin-top: 18px;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.medium-8{
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+}
+
+.large-centered{
+    margin: 0 auto;
+}
+
+.section-hero .hero-intro{
+    margin-top: 29px;
+}
+
+.section-hero .hero-preoder,
+.section-hero .hero-avil,
+.section-hero .hero-pricing{
+    color: #86868b;
+}
+
+.section-hero .hero-pricing{
+    margin-top: 16px;
+}
+
+.footnote-number > a{
+    color: #86868b;
+    font-size: 0.9em;
+   
+}
+
+.section-hero .hero-cta{
+    margin-top: 16px;
+}
+
+#film-iphone12{
+    color: #86868b;
+}
+
+.icon-wrapper .icon{
+    position: relative;
+    display: inline;
+}
+
+.icon-wrapper .icon::after{
+    content: "👉🏼";
+    position: relative;
+    transform: translateY(-2px);
+    display: inline;
+}
+.section-hero .sticky-wrapper{
+    position: relative;
+    height: 140vh;
+    min-height: 1600.2px;
+}
+
+.section-hero .sticky-content{
+    min-height: 798.6px;
+    position: sticky;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+}

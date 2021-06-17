@@ -43,6 +43,7 @@ ul,li{
 .chat_btn{
     font-size: 17px;
     color:white;
+    padding:9px 65px;
 }
 
 
@@ -83,7 +84,7 @@ ul,li{
 
 
 #chatHelp_top{
-    width:450px;
+    width:100%;
     height:75px;
     padding:10px auto;
     text-align: center;
@@ -97,11 +98,11 @@ ul,li{
 
 .chatHelp_boxes{
     padding:13px;
-    width:300px;
+    width:350px;
     height:190px;
     border-radius: 10px;
     border:1px solid lightgray;
-    margin-left:60px;
+    margin-left:90px;
     margin-top: 30px;    
     text-align: center;
 }
@@ -162,6 +163,7 @@ ul,li{
 
 /*         chatroom        */
 
+
 #chat_bottom{
     position:fixed;
 }
@@ -169,7 +171,8 @@ ul,li{
 #chat{
     width:100%;
     height:618px;
-    overflow-y: auto;
+    overflow-y: auto; /*scroll 생기게 만듬 */
+
 }
 
 #chat_greeting{
