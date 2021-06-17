@@ -11,12 +11,13 @@ router.post('/join_success', controller.join_success);
 router.get('/login', controller.login);
 router.post('/userid_check', controller.userid_check);
 router.post('/logincheck', controller.logincheck);
-
 router.get('/logout', controller.logout)
 router.get('/deleteID', controller.deleteID)
 
 router.get('/kakaologin', controller.kakaologin);
 router.get('/kakao_login', controller.kakao_login);
+router.post('/googlelogin', controller.googlelogin);
+router.post('/google_logout', controller.google_logout);
 
 router.get('/info', controller.info);
 router.get('/info_view', controller.info_view);

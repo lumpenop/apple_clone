@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+        content="629441779926-4mqfjfoqh3u0ig9nd6j5glpjf4o6stnn.apps.googleusercontent.com">
+
     <link href="/users/apple_logo.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="/users/join.css">
     <link rel="stylesheet" href="/users/home.css">
@@ -11,12 +17,18 @@
     <link rel="stylesheet" href="/users/action.css">
     <link rel="stylesheet" href="/main/section1.css">
     <link rel="stylesheet" href="/main/sectionHands.css">
+    <link rel="stylesheet" href="/main/kakaoGoogleBtn.css">
     <title>Apple</title>
+
+   
 </head>
+
 <body class="page-home ac-nav-overlap">
 
-    <nav id="ac-globalnav" class="js no-touch no-windonws with-bagview" role="navigation" data-hires="false" data-analytics-region="ac-global nav" lang="ko-Kr" dir="ltr" data-www-domain="www.apple.com" data-store-locale="kr"
-    data-store-root-path="/kr" data-store-api="/[sotrefront]/shop/bag/status" data-seach-locale="ko_KR">
+    <nav id="ac-globalnav" class="js no-touch no-windonws with-bagview" role="navigation" data-hires="false"
+        data-analytics-region="ac-global nav" lang="ko-Kr" dir="ltr" data-www-domain="www.apple.com"
+        data-store-locale="kr" data-store-root-path="/kr" data-store-api="/[sotrefront]/shop/bag/status"
+        data-seach-locale="ko_KR">
         <div class="ac-gn-content">
             <ul class="ac-gn-header">
             </ul>
@@ -24,7 +36,8 @@
             </div>
             <ul class="ac-gn-list">
                 <li class="ac-gn-item ac-gn-apple">
-                    <a class="ac-gn-link ac-gn-link-apple" href="#" data-analytics-title="apple home" id="ac-gn-firstfocus">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" data-analytics-title="apple home"
+                        id="ac-gn-firstfocus">
                         <span></span>
                     </a>
                 </li>
@@ -73,18 +86,22 @@
                 <div class="ac-gn-searchview-content">
                     <div class="ac-gn-searchview-bar">
                         <div class="ac-gn-searchview-bar-wrapper">
-                                <div class="ac-gn-searchform-wrapper">                            
-                                    <form action = "/search/search" method = "post">
-                                    <input id="ac-gn-searchform-input" class="ac-gn-searchform-input displayNone" aria-label="apple.com 검색" placeholder="apple.com 검색" name = "AppleSearch" type="text">
-                                    
-                                    </form>
-                                    <input type="hidden" id="ac-gn-searchform-src" name="src" value="globalnav">
-                                    <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit displayNone" type="submit">
-                                        
-                                    </button>
-                                    <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset"></button>
-                                </div>
-                            
+                            <div class="ac-gn-searchform-wrapper">
+                                <form action="/search/search" method="post">
+                                    <input id="ac-gn-searchform-input" class="ac-gn-searchform-input displayNone"
+                                        aria-label="apple.com 검색" placeholder="apple.com 검색" name="AppleSearch"
+                                        type="text">
+
+                                </form>
+                                <input type="hidden" id="ac-gn-searchform-src" name="src" value="globalnav">
+                                <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit displayNone"
+                                    type="submit">
+
+                                </button>
+                                <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset"
+                                    type="reset"></button>
+                            </div>
+
                         </div>
                     </div>
                     <aside class="ac-gn-searchview-results">
@@ -93,10 +110,12 @@
                                 <h3 class="ac-gn-searchresults-header">빠른 링크</h3>
                                 <ul class="ac-gn-searchresults-list" id="defaultslinks">
                                     <li class="ac-gn-searchresults-item">
-                                        <a href="#" class="ac-gn-searchresults-link displayNone">Apple Store 임시 휴무 관련 자주하는 질문</a>
+                                        <a href="#" class="ac-gn-searchresults-link displayNone">Apple Store 임시 휴무 관련
+                                            자주하는 질문</a>
                                     </li>
                                     <li class="ac-gn-searchresults-item">
-                                        <a href="#" class="ac-gn-searchresults-link displayNone" >Apple Store 온라인에서 쇼핑하기</a>
+                                        <a href="#" class="ac-gn-searchresults-link displayNone">Apple Store 온라인에서
+                                            쇼핑하기</a>
                                     </li>
                                     <li class="ac-gn-searchresults-item">
                                         <a href="#" class="ac-gn-searchresults-link displayNone">액세서리</a>
@@ -105,7 +124,7 @@
                                         <a href="#" class="ac-gn-searchresults-link displayNone">AirPods</a>
                                     </li>
                                     <li class="ac-gn-searchresults-item">
-                                        <a href="#" class="ac-gn-searchresults-link displayNone" >AirTag</a>
+                                        <a href="#" class="ac-gn-searchresults-link displayNone">AirTag</a>
                                     </li>
                                 </ul>
                             </div>
@@ -123,7 +142,7 @@
                 </button>
             </aside>
             <span class="caret"></span>
-            <aside class="ac-gn-bagview" >
+            <aside class="ac-gn-bagview">
                 <div class="ac-gn-bagview-content">
                     <p class="ac-gn-bagview-message">장바구니가 비어있습니다.</p>
                     <nav class="ac-gn-bagview-nav">
@@ -141,8 +160,11 @@
                                 <a href="/user/info" class="item-link item-account">계정</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
-                                {% if loginornot == undefined %}
+                                {% if loginsite == undefined %}
                                 <a href="/user/login" class="item-link item-signIn">로그인</a>
+                                {% elif loginsite =='google' %}
+                                <a href="#" id="googleLogin" class="item-link item-signIn" onclick="signOut()">
+                                    {{username}} 로그아웃</a>
                                 {% else %}
                                 <a href="/user/logout" class="item-link item-signIn">{{username}} 로그아웃</a>
                                 {% endif %}
@@ -152,22 +174,62 @@
                 </div>
             </aside>
         </div>
-        
+
     </nav>
     <!-- <div class="ac-gn-blur"></div>
     <div id="ac-gn-curtain"></div>
     <div class="ac-gn-placeholder"></div>
     <div class="as-search-wrapper"></div> -->
     <!----- end global navigation ----->
-<!-- 
+    <!-- 
 
     <div class="ac-gn-blur"></div>
     <div id="ac-gn-placeholder"></div>
    
     <div id="ac-gn-viewport-emitter"></div> -->
-   
+
 
     <!----- main section ----->
 
 
     <div id="ac-gn-curtain"></div>
+
+
+
+
+
+
+
+    <!-------     GOOGLE  LOG IN & LOG OUT    -------->
+
+
+    <script>
+        async function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(async function () {
+                console.log('User signed out.');
+
+                let url = `http://localhost:3000/user/google_logout`;
+                let options = {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    }
+                }
+                let response = await fetch(url, options);
+                let res_body = await response.json();
+                let { msg } = res_body;
+                alert(msg)
+                location.href = 'http://localhost:3000/user/google_logout'
+            });
+        }
+
+        function onLoad() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            });
+        }
+    </script>
+    <!--아래 script 들  위 <HEAD> 로 옮기면 실행 x 안됨 -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
