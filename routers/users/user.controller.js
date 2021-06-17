@@ -163,11 +163,6 @@ let googlelogin = (req,res)=>{
 
 
 
-
-
-
-
-
 //     LOG OUT    &    DeleteID   //
 let logout = (req,res)=>{
     const {userid,username,loginsite} = req.cookies;
@@ -175,19 +170,36 @@ let logout = (req,res)=>{
     res.cookie('userid',userid,{maxAge:0});
     res.cookie('username',username,{maxAge:0});
     res.cookie('loginsite',loginsite,{maxAge:0});
+
+    let result = {msg: `${username}님 로그아웃 되었습니다. ${loginsite}`};
     switch(loginsite){
         case 'local':
-            res.redirect('/?msg=로그아웃 되었습니다. (local)');
+            res.redirect(`/?msg= ${username}님 로그아웃 되었습니다. ${loginsite}`);
         break;
         case 'kakao':
-            res.redirect('/?msg=로그아웃 되었습니다. (kakao)');
+            res.redirect(`/?msg= ${username}님 로그아웃 되었습니다. ${loginsite}`);
         break;  
     }
+}
+
+let google_logout =(req,res)=>{
+    const {userid,username,loginsite} = req.cookies;
+    delete req.session.authData;    
+    res.cookie('userid',userid,{maxAge:0});
+    res.cookie('username',username,{maxAge:0});
+    res.cookie('loginsite',loginsite,{maxAge:0});
+
+    let result = {msg: `${username}님 로그아웃 되었습니다. ${loginsite}`};
+    res.json(result);
 }
 
 let deleteID = (req,res) =>{
     const {userid,username,loginsite} = req.cookies;
     // const site = Object.keys(req.session.authData)[0];
+    if (loginsite=='google'){
+        res.redirect(`/?msg=${username}님 google계정 삭제는 Google 웹사이트에서만 가능합니다.`)
+        return 0;
+    }
     delete req.session.authData; 
     console.log(userid,username,loginsite)   
     res.cookie('userid',userid,{maxAge:0});
@@ -266,7 +278,7 @@ let bags = async (req, res) => {
 
 module.exports = {
     join, join_success, userid_check, login, logincheck, login_success, 
-    kakaologin, kakao_login, logout, deleteID, googlelogin, 
+    kakaologin, kakao_login, logout, deleteID, googlelogin, google_logout,
     info, info_view, info_modify,
     chat, chatRoom, chatHelp, chatBtn,
     bags, 

@@ -86,6 +86,9 @@ async function onSignIn(googleUser) {
     location.href = 'http://localhost:3000'
 }
 
+
+
+
 // const googleLogin = document.querySelector('#googleLogin');
 // googleLogin.addEventListener('click',signOut());
 

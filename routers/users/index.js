@@ -17,7 +17,7 @@ router.get('/deleteID', controller.deleteID)
 router.get('/kakaologin', controller.kakaologin);
 router.get('/kakao_login', controller.kakao_login);
 router.post('/googlelogin', controller.googlelogin);
-//router.post('/googlelogout', controller.googlelogout);
+router.post('/google_logout', controller.google_logout);
 
 router.get('/info', controller.info);
 router.get('/info_view', controller.info_view);

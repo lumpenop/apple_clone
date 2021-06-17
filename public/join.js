@@ -79,5 +79,6 @@ async function joinFn(){
     
 
     //  모든 절차 통과 후 회원가입 완료
-    joinform.submit(); swal(msg);
+    swal(msg);
+    joinform.submit(); 
 }

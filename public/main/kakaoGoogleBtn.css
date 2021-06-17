@@ -1,0 +1,39 @@
+#BTN{
+    width:320px;
+    height:30px;
+    padding:15px 0 0 22px;
+}
+
+#kakaoBtn{
+    width:120px;
+    height:36px;
+    background-color: yellow;
+    font-weight:bold;
+    padding: 10px 10px;
+    border:1px solid yellowgreen
+}
+
+#kakaoBtn:hover{
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0px 4px  rgb(253, 255, 139);
+}
+
+#kakaoBtn>span{
+    color: black;
+    font-size: 20px;
+}
+
+
+
+#BTN>a{
+    display: inline-block;
+    float:left;
+    width:120px;
+    line-height:14px;
+    text-align: center;
+}
+
+
+#googleBtn{
+    margin-right:35px;
+}

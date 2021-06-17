@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="google-signin-client_id" content="629441779926-4mqfjfoqh3u0ig9nd6j5glpjf4o6stnn.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+        content="629441779926-4mqfjfoqh3u0ig9nd6j5glpjf4o6stnn.apps.googleusercontent.com">
 
     <link href="/users/apple_logo.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="/users/join.css">
@@ -15,7 +17,10 @@
     <link rel="stylesheet" href="/users/action.css">
     <link rel="stylesheet" href="/main/section1.css">
     <link rel="stylesheet" href="/main/sectionHands.css">
+    <link rel="stylesheet" href="/main/kakaoGoogleBtn.css">
     <title>Apple</title>
+
+   
 </head>
 
 <body class="page-home ac-nav-overlap">
@@ -158,7 +163,8 @@
                                 {% if loginsite == undefined %}
                                 <a href="/user/login" class="item-link item-signIn">로그인</a>
                                 {% elif loginsite =='google' %}
-                                <a href="#" id = "googleLogin" class="item-link item-signIn" onclick="signOut()"> {{username}} 로그아웃</a>
+                                <a href="#" id="googleLogin" class="item-link item-signIn" onclick="signOut()">
+                                    {{username}} 로그아웃</a>
                                 {% else %}
                                 <a href="/user/logout" class="item-link item-signIn">{{username}} 로그아웃</a>
                                 {% endif %}
@@ -189,17 +195,41 @@
     <div id="ac-gn-curtain"></div>
 
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script type="text/javascript">
-        function signOut(){
-            console.log('d')
+
+
+
+
+
+    <!-------     GOOGLE  LOG IN & LOG OUT    -------->
+
+
+    <script>
+        async function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                location.href = 'http://localhost:3000/user/logout';
-                console.log('GOOGLE User signed out.');
+            auth2.signOut().then(async function () {
+                console.log('User signed out.');
+
+                let url = `http://localhost:3000/user/google_logout`;
+                let options = {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    }
+                }
+                let response = await fetch(url, options);
+                let res_body = await response.json();
+                let { msg } = res_body;
+                alert(msg)
+                location.href = 'http://localhost:3000/user/google_logout'
+            });
+        }
+
+        function onLoad() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
             });
         }
     </script>
-
-
-
+    <!--아래 script 들  위 <HEAD> 로 옮기면 실행 x 안됨 -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
