@@ -95,17 +95,12 @@ function sigmoid30(z) {
 }
 
 function eyebrowScroll(text){
-    // var currentScrollValue = document.documentElement.scrollTop;
 
     textTop = text.getBoundingClientRect().top;
-    
-
 
     opa = (window.innerHeight - textTop-100)/300
 
     text.style.opacity = sigmoid(opa)
-
-    opa2 = (window.innerHeight - textTop)/300
 
     switch(text){
         case document.querySelector('.hero-eyebrow-text'):
@@ -120,15 +115,36 @@ function eyebrowScroll(text){
             document.querySelector('.film-copy').style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
             break;
     }
-    
-    // if(textTop<=window.innerHeight){
-    // console.log(window.innerHeight - textTop);
-    
-    
-    
-    // }
-    
 }
+  
+
+
+
+const hiddenUl = document.querySelector('.canvas-hidden .hidden-ul');
+const lis = document.querySelectorAll('.canvas-hidden .hidden-ul li');
+function canvasHidden(){
+    
+
+    const scrollTop = html.scrollTop;
+    
+
+    if(scrollTop>=4526){
+        console.log(scrollTop)
+
+        
+        const gap = (5153 - 4526) / 5;
+        const num2 = Math.floor((scrollTop - 4526) / gap);
+        
+        lis[num2].style.opacity = sigmoid(Math.floor(gap/100));
+
+        console.log(sigmoid(gap/100))
+        
+    }
+    
+
+
+}
+
 
 window.onscroll = () =>{
     eyebrowScroll(eyebrowText);
@@ -136,6 +152,7 @@ window.onscroll = () =>{
     eyebrowScroll(heroIntro);
     eyebrowScroll(heroCopy);
     eyebrowScroll(filmIphone12);
+    canvasHidden();
 };
  
 
