@@ -122,24 +122,33 @@ function eyebrowScroll(text){
 
 const hiddenUl = document.querySelector('.canvas-hidden .hidden-ul');
 const lis = document.querySelectorAll('.canvas-hidden .hidden-ul li');
+var beforePosition;
+console.log(beforePosition)
+
 function canvasHidden(){
     
 
     const scrollTop = html.scrollTop;
     
 
+ 
     if(scrollTop>=4526){
-        console.log(scrollTop)
-
         
         const gap = (5153 - 4526) / 5;
-        const num2 = Math.floor((scrollTop - 4526) / gap);
+        let num2 = Math.floor((scrollTop - 4526) / gap);
+        if(num2>=5){
+            num2 = 4
+        }
         
-        lis[num2].style.opacity = sigmoid(Math.floor(gap/100));
+        lis[num2].style.opacity = sigmoid(scrollTop-beforePosition);
 
-        console.log(sigmoid(gap/100))
+        console.log(scrollTop-4526)
         
-    }
+    }    
+    
+    beforePosition = scrollTop;
+
+    
     
 
 
