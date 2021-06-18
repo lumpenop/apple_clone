@@ -13,34 +13,51 @@ let buy_show = async (req,res)=>{
 }
 
 let history_show = async (req,res)=>{
-    let username = req.cookies.username
-    let result = await history.findAll({where:{name1:username}})
+    let userid = req.cookies.userid
+    let result = await history.findAll({where:{name1:userid}})
     res.render('./buy/buy_history.html',{
         result:result,
-        name1:username,
+        name1:userid,
+        msg:req.query.msg
+    })
+}
+let lecture_delete = async (req,res)=>{
+    let userid = req.cookies.userid
+    let item_name = req.body.item_name
+    let result = await history.destroy({where:{name1:userid,item_name:item_name}})
+    let result2 = await history.findAll({})
+    res.render('./buy/buy_history.html',{
+        result:result2
     })
 }
 
 let lecture_render = async (req,res)=>{
     let item_name = req.query.item_name
     let result = await items.findOne({where:{item_name:item_name}})
+    let exp = result.maximum_date
+    let now = new Date().getTime() - 1000*3
     let skill1 = result.item_skill1
     let skill2 = result.item_skill2
     let skill3 = result.item_skill3
 
-    let result1 = await skills.findAll({where:{skill_name:skill1}})
-    let result2 = await skills.findAll({where:{skill_name:skill2}})
-    let result3 = await skills.findAll({where:{skill_name:skill3}})
-    res.render('./buy/lecture_render.html',{
-        result:result,
-        result1:result1,
-        result2:result2,
-        result3:result3,
-    })
+    if(exp<now){
+        let result1 = await skills.findAll({where:{skill_name:skill1}})
+        let result2 = await skills.findAll({where:{skill_name:skill2}})
+        let result3 = await skills.findAll({where:{skill_name:skill3}})
+        res.render('./buy/lecture_render.html',{
+            result:result,
+            result1:result1,
+            result2:result2,
+            result3:result3,
+        })        
+    } else{
+        res.redirect('/buy/history?msg=수강 기간이 만료되었습니다')
+    }
+
 }
 
 let shopping_basket_send = async (req,res)=>{
-    let users_name = req.cookies.username
+    let userid = req.cookies.userid
     let item_name = req.body.item_name
     let item_category = req.body.item_category
     let item_price = req.body.item_price
@@ -51,8 +68,8 @@ let shopping_basket_send = async (req,res)=>{
     let maximum_number = req.body.maximum_number
 
     
-    let result = await bag.create({users_name, item_name, item_category, item_price, item_image, item_skill1, item_skill2, item_skill3 , maximum_number})
-    let result2 = await bag.findOne({where:{users_name:users_name}})
+    let result = await bag.create({users_name:userid, item_name, item_category, item_price, item_image, item_skill1, item_skill2, item_skill3 , maximum_number})
+    let result2 = await bag.findOne({where:{users_name:userid}})
     res.cookie('item_name',`${result.item_name}`)
     res.render('./buy/shopping_basket_success.html',{
         list:result,
@@ -61,11 +78,10 @@ let shopping_basket_send = async (req,res)=>{
 }
 let shopping_basket = async (req,res)=>{
 
-    let username = req.cookies.username
-    console.log(username)
+    let userid = req.cookies.userid
     //let result = await bag.findOne({where:{item_name:name}})
-    let result = await bag.findAll({where:{users_name:username}})
-    let result2 = await bag.findOne({where:{users_name:username}})
+    let result = await bag.findAll({where:{users_name:userid}})
+    let result2 = await bag.findOne({where:{users_name:userid}})
     if(result==null || result2==null){
         res.redirect('/user/login?msg="장바구니가 비었습니다"')
     }else{
@@ -83,8 +99,8 @@ let shopping_basket = async (req,res)=>{
 }
 
 let shopping_form = async (req,res)=>{
-    let username = req.cookies.username
-    let result = await bag.findAll({where:{users_name:username}})
+    let userid = req.cookies.userid
+    let result = await bag.findAll({where:{users_name:userid}})
     let msg = req.query.msg
    
     total_cost = 0
@@ -93,7 +109,7 @@ let shopping_form = async (req,res)=>{
     }
    
     res.render('./buy/shopping_form.html',{
-        name:username,
+        name:userid,
         item_serial_number:result.item_name,
         item_price:result.item_price,
         item_image:result.item_image,
@@ -107,14 +123,14 @@ let shopping_form = async (req,res)=>{
 
 let shopping_end = async (req,res)=>{
 
-    let username = req.cookies.username
     res.render('./buy/shopping_end.html',{
 
     })
 }
 
 let shopping_form_success = async (req,res)=>{
-    let name1 = req.cookies.username 
+
+    let name1 = req.cookies.userid 
     let item_skill1 = []
     let item_skill2 = []
     let item_skill3 = []
@@ -154,12 +170,12 @@ let shopping_form_success = async (req,res)=>{
     let email = req.body.email
     let phone = req.body.phone
 
-    let result5 = await history.findOne({
-        where:{item_name:item_name}
-    })
-    
+    for(k=0; k<result4.length; k++){
+        result5 = await history.findOne({
+            where:{name1:name1, item_name:item_name[k]}
+        })
+    }
 
-        
         if(result5 == undefined){    
             for(j=0; j<result4.length; j++){
                 let result = await history.create({
@@ -192,7 +208,14 @@ let valuation_send = async (req,res) => {
 
     res.redirect('/buy/history')
 }
+let shopping_basket_delete = async (req,res) => {
+    let user_name = req.cookies.userid
+    let item_name = req.body.item_name
 
+    let result2 = await bag.destroy({where:{users_name:user_name, item_name:item_name}})
+
+    res.redirect('/buy/shopping_basket')
+}
 module.exports = { 
     buy_show,
     shopping_basket,
@@ -203,4 +226,6 @@ module.exports = {
     lecture_render,
     shopping_basket_send,
     valuation_send,
+    shopping_basket_delete,
+    lecture_delete,
 }; 

@@ -9,8 +9,15 @@ router.use('/buy',buy)
 router.use('/search',search)
 router.use('/user', userRouter);
 router.use('/admin',admin)
+
 router.use('/',(req,res)=>{
-    res.render('index.html');
+    let {msg} = req.query;
+    let {userid,username} = req.cookies;
+
+    res.render('index.html',{
+        msg, username,
+        loginornot:req.session.authData,
+    });
 })
 
 

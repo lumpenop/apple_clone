@@ -10,10 +10,11 @@
 <body>
     <div class = "wrappingwrap wrap">
         <div class = "content w1000"> 
-            <h1>주문하신 제품이 어디로 배송되길 원하십니까?</h1>
+            <h1 class = "h1">주문하신 제품이 어디로 배송되길 원하십니까?</h1>
+            <h2 class = "h2"></h2>
             <input type = "text" value = "{{msg}}" class = "msg displaynone">
             <div>
-                <form action = "/buy/shopping_end?name={{name}}" method = "post">
+                <form action = "/buy/shopping_end?name={{name}}" name = "shopping_end" method = "post">
                     <h2>이름 및 주소 입력:</h2>
                     <div class = "displaynone"><input type = "text" name = "item_skill" value = "{{item_skill}}"></div>
                     <div class = "displaynone"><input type = "text" name = "item_name" class = "item_name" value = "{{name}}"></div>
@@ -75,27 +76,32 @@
     let item_price = document.querySelector('.item_price')
 
 
-    let BTN = document.querySelector('.BTN')
     
-    BTN.addEventListener('click',button)
-    async function button(){
-        let url = "http://localhost:5000/"
-        let options = {
-            method:'POST',
-            headers:{
-                'content-type':`application/json`,
-            },
-            body:JSON.stringify({
-                item_name:item_name.value,
-                item_price:item_price.value
-            })
-        }
+    // let h1 = document.querySelector('.h1')
+
+    // h1.addEventListener('click',popup)
+    
+    // let BTN = document.querySelector('.BTN')
+    
+    // BTN.addEventListener('click',button)
+    // async function button(){
+    //     let url = "http://localhost:5000/"
+    //     let options = {
+    //         method:'POST',
+    //         headers:{
+    //             'content-type':`application/json`,
+    //         },
+    //         body:JSON.stringify({
+    //             item_name:item_name.value,
+    //             item_price:item_price.value
+    //         })
+    //     }
         // headers
         // key=value&key2=value2
         // 값을2개보낼겁니다. userid userpw 
-        let response = await fetch(url,options);
-        let json = await response.json();
-    }
+    //     let response = await fetch(url,options);
+    //     let json = await response.json();
+    // }
     // size = document.querySelector('.size')
     // phone = document.querySelector('.phone')
     // phone1 = document.querySelector('.phone1')
@@ -111,9 +117,11 @@
     // }
     
     msg = document.querySelector('.msg')
+    let h2 = document.querySelector('.h2')
     value = msg.value
     if(value == '이미 구매하신 제품입니다'){
         alert('이미 구매하신 제품입니다')
     }
+
 </script>
 </html>

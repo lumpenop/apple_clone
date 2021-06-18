@@ -36,6 +36,20 @@ a{
 .font{
     font-size: 13px;
 }
+.font1{
+    font-size:25px;
+    font-weight: lighter;
+    color:#0071e3;
+}
+.font2{
+    font-size: 20px;;
+}
+.BTTTN{
+    color:#0071e3;
+    background: white;
+    border: 1px solid #0071e3;
+    font-size: 23px;
+}
 .BTT{
     width:300px;
     background:#0071e3;
@@ -65,14 +79,17 @@ a{
 }
 
 .text>ul{
-    width:600px;
+    margin-top: 45px;
+    width:800px;
     height:150px;
+    display: inline-block;
+
 }
 .text>ul>li{display: inline-block;
 margin-right: 60px;
-font-size: 21px;
+
 margin-bottom:60px;
-font-weight: bold;}
+}
 
 .float{
     float: right;

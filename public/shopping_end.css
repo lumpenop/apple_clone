@@ -3,7 +3,7 @@
 }
 
 .wrap1200{
-    width:900px;
+    width:1000px;
     margin:0 auto;
 }
 
@@ -31,14 +31,12 @@
     margin-top:50px;
     margin-left: 50px;
     font-size:23px;
-    font-weight: bold;
 }
 
 .text1{
     margin-top:50px;
-    margin-left: 130px;
+    margin-left: 50px;
     font-size:23px;
-    font-weight: bold;
 }
 
 .line{

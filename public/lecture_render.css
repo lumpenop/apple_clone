@@ -1,7 +1,7 @@
 .wrap{
     width:100%;
     background:#E0E0E0;
-    height:600px;
+    height:800px;
 }
 .wrap2{
     width:100%;
@@ -10,6 +10,14 @@
 .content{
     width:1400px;
     margin:0 auto;
+}
+
+.BTN_click{
+    margin-top: 50px;
+    color:#c60007;
+    border:1px solid #c60007;
+    font-size: 18px;
+    background: #E0E0E0;
 }
 .footer{
     padding:70px;

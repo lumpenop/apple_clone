@@ -5,6 +5,7 @@ const sequelize = require("sequelize")
 
 router.post('/history',controller.valuation_send);
 router.post('/shopping_end',controller.shopping_form_success);
+router.post('/shopping_basket',controller.shopping_basket_delete);
 router.post('/shopping_basket_send',controller.shopping_basket_send);
 router.get('/buy_show',controller.buy_show);
 router.get('/shopping_basket',controller.shopping_basket);
@@ -12,6 +13,6 @@ router.get('/shopping_form',controller.shopping_form);
 router.get('/shopping_end',controller.shopping_end);
 router.get('/history',controller.history_show);
 router.get('/lecture_render',controller.lecture_render);
-
+router.post('/lecture_render',controller.lecture_delete);
 
 module.exports = router;

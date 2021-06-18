@@ -1,4 +1,4 @@
-const {users,items,buy,valuation} = require('../../models');
+const {users,items,buy,skills,valuation,history} = require('../../models');
 const sequelize = require("sequelize")
 const ctoken = require('./jwt'); 
 const chash = require('./chash')
@@ -35,7 +35,7 @@ let login_success = async (req,res)=>{
     let token2 = ctoken(userid)
     let result = await users.findOne({ where: {userid:userid, userpw:token}})
 
-    if(result != undefined){
+    if(result != undefined && result.admin == 0){
         res.cookie('AccessToken',token2,{httpOnly:true,secure:true,})
         req.session.uid = userid
         req.session.save(()=>{
@@ -107,6 +107,22 @@ let product_view = async (req,res)=>{
     res.render('./admin/product/product_view.html',{
         result:result,
         userid:req.session.uid
+    })
+}
+
+let history_list = async (req,res) => {
+    let result = await history.findAll({})
+    res.render('./admin/history/history.html',{
+        result:result,
+
+    })
+}
+
+let skill_list = async (req,res) => {
+    let result = await skills.findAll({})
+    res.render('./admin/skill/skill.html',{
+        result:result,
+
     })
 }
 let value_view = async (req,res)=>{
@@ -189,7 +205,12 @@ let delete_success3 = async (req,res)=>{
     console.log(result)
     res.redirect('/admin/valuation')
 }
-
+let delete_success4 = async (req,res)=>{
+    let id = req.query.idx
+    let result = await history.destroy({where:{id:id}})
+    console.log(result)
+    res.redirect('/admin/history')
+}
 let product_add = (req,res)=>{
     res.render('./admin/product/product_add.html',{
         userid:req.session.uid
@@ -236,6 +257,27 @@ let search_success3 = async (req,res) => {
 
     console.log(result)
 }
+
+let search_success4 = async (req,res) => {
+    let search = req.body.search
+    let result = await history.findAll({where:{item_name:{[Op.like]:"%"+search+"%"}}})
+    res.render('./admin/history/history.html',{result:result,})
+
+
+    console.log(result)
+}
+
+let search_success5 = async (req,res) => {
+    let search1 = req.body.search1
+    let search2 = req.body.search2
+    console.log(search1)
+    let result = await items.findAll({where:{maximum_date:{[Op.between]: [search1, search2]}}})
+    res.render('./admin/product/product_list.html',{list:result,})
+
+
+    console.log(result)
+}
+
 let create_list = async (req,res)=>{
 
     let item_serial_number = req.body.item_serial_number
@@ -250,6 +292,7 @@ let create_list = async (req,res)=>{
     let item_tag1 = req.body.item_tag1
     let item_tag2 = req.body.item_tag2
     let item_tag3 = req.body.item_tag3
+    let maximum_date = new Date().getTime()+1000;
     console.log(item_image)
 
     let split_img = item_image.split('\\')[1]
@@ -267,6 +310,7 @@ let create_list = async (req,res)=>{
         item_tag1:item_tag1,
         item_tag2:item_tag2,
         item_tag3:item_tag3,
+        maximum_date:maximum_date,
     })
 
     res.redirect('/admin/product_list')
@@ -277,6 +321,8 @@ let user_list = async (req,res) => {
     console.log(result)
     res.render('./admin/user/user_list.html',{list:result, userid:req.session.uid})
 }
+
+
 
 module.exports = { 
     main,
@@ -295,6 +341,7 @@ module.exports = {
     delete_success,
     delete_success2,
     delete_success3,
+    delete_success4,
     join_success,
     login_success,
     logout,
@@ -303,5 +350,9 @@ module.exports = {
     user_list,
     search_success2,
     search_success3,
+    search_success4,
+    search_success5,
     value_view,
+    history_list,
+    skill_list,
 }; 

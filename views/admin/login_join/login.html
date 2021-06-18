@@ -12,6 +12,7 @@
         <div class = "login w1200">
             <form action = "/admin/login_success" method = "post">
                 <div class = "class">관리자</div>
+                <div class = "msg" style = "display:none;">{{msg}}</div>
                 <div class = "id"> 아이디 :  <input type = "text" placeholder = "id" name = "userid"></div>
                 <div class = "pw"> 패스워드 :  <input type = "password" placeholder = "pw" name = "userpw"></div>
                 <br/><input class = "greyBtn" type = "submit" value="로그인">
@@ -22,4 +23,14 @@
         </div>
     </div>
 </body>
+<script type = "text/javascript">
+
+ let msg = document.querySelector('.msg')
+ let value = msg.innerHTML
+
+ if(value == '"다시"'){
+     alert('로그인 불가능합니다.')
+ }
+
+</script>
 </html>

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/users/login.css">
     <link rel="stylesheet" href="/users/action.css">
     <link rel="stylesheet" href="/main/section1.css">
+    <link rel = "stylesheet" href = "../../search.css">
+    <link rel = "stylesheet" href = "../main/scroll.css">
     
     <title>Apple</title>
 </head>
@@ -138,10 +140,14 @@
                                 <a href="/buy/history" class="item-link item-orders">주문</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
-                                <a href="#" class="item-link item-account">계정</a>
+                                <a href="/user/info" class="item-link item-account">계정</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
+                                {% if loginornot == undefined %}
                                 <a href="/user/login" class="item-link item-signIn">로그인</a>
+                                {% else %}
+                                <a href="/user/logout" class="item-link item-signIn">{{username}} 로그아웃</a>
+                                {% endif %}
                             </li>
                         </ul>
                     </nav>

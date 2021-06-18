@@ -27,9 +27,10 @@
             <div class = "menu">
                 <div>카테고리</div>
                 <ul>
-                    <li><a href = "">팝업 관리</a></li>
+                    <li><a href = "/admin/history">구매 내역 관리</a></li>
                     <li><a href = "/admin/user_list">사용자 관리</a></li>
                     <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
+                    <li><a href = "/admin/skill">과목 관리</a></li>
                     <li><a href = "/admin/valuation">수강 후기 관리</a></li>
                     <li class = "margintop"><a href = "/admin/chat_list">고객 문의/채팅</a></li>
                 </ul>
@@ -49,25 +50,25 @@
                     </form>
                 </div>
                 <div>
-                    <tr class = "grey">
-                        <td>인덱스값</td>
-                        <td>아이디</td>
-                        <td class = "product_name_length">비밀번호</td>
-                        <td>이름</td>
-                        <td>생년월일</td>
-                        <td>이미지</td>
-                        <td>연락처</td>
-                        <td>등록일</td>
-                        <td>유저 레벨</td>
-                        <td>삭제하기</td>
-                    </tr>
                     <table class = "table paginated">
                         {% for item in list %}
                         <form action = "/admin/delete_success2?idx={{item.id}}" method = "post"> 
                             <section>
+                                <tr class = "grey">
+                                    <td>인덱스값</td>
+                                    <td class = "widthlimit">아이디</td>
+                                    <td class = "product_name_length">비밀번호</td>
+                                    <td>이름</td>
+                                    <td>생년월일</td>
+                                    <td>이미지</td>
+                                    <td>연락처</td>
+                                    <td>등록일</td>
+                                    <td>유저 레벨</td>
+                                    <td>삭제하기</td>
+                                </tr>
                                 <tr class = "blueGreen">
                                     <td class = "length">{{item.id}}</td>
-                                    <td>{{item.userid}}</td>
+                                    <td class = "widthlimit">{{item.userid}}</td>
                                     <td class = "product_name_length">{{item.userpw}}</td>
                                     <td>{{item.username}}</td>
                                     <td>{{item.userbirth}}</td>

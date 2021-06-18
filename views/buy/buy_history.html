@@ -10,7 +10,7 @@
 <body style = "overflow-x:hidden;">
     <div class = "wrap">
         <div class = "img w1200">
-            <img src = "../../history_logo.png">    
+            <a href = "/user/login"><img src = "../../history_logo.png"></a>
             <h1 class = "h1">당신의 수강함</h1>
             <a href = "/search/db" class = "href">더 구매하기</a>
         </div>
@@ -23,15 +23,16 @@
                 <ul class = "scrollcontent"> 
                     {% for item in result %}
                     <li class = "lectures_li">
-                        <div class = "lecture_img"><img class = "lecture_img" src = "../../{{item.item_image}}"> </div>
-                        <div class = "bold">{{item.item_category}}</div>
-                        <div class = "bold realbold"><a href = "/buy/lecture_render?item_name={{item.item_name}}">{{item.item_name}}</a></div>
+                            <div class = "lecture_img"><img class = "lecture_img" src = "../../{{item.item_image}}"> </div>
+                            <div class = "bold">{{item.item_category}}</div>
+                            <div class = "bold realbold"><a href = "/buy/lecture_render?item_name={{item.item_name}}">{{item.item_name}}</a></div>
                     </li> 
                     {% endfor %}
                 </ul>                
             </div>
         </div>
     </div>
+    <div class = "msg" style = "display: none;">{{msg}}</div>
     <div class = "wrap container clear">
         <div class="content w1200 list"> 
             <h1 class = "h1 topdd red">나와 비슷한 사람들이 수강한 강의</h1>
@@ -90,6 +91,10 @@
         </form>     
     </div>
     <script type = "text/javascript">
+
+    if(document.querySelector('.msg').innerHTML == '수강 기간이 만료되었습니다'){
+        alert('수강 기간이 만료되었습니다')
+    }
     let ticking = false;
 
 function isElementUnderBottom(elem, triggerDiff) {
@@ -141,6 +146,25 @@ function requestTick() {
 }
 
  window.addEventListener('scroll', requestTick);
+
+ let item_name = document.querySelector('.item_name').value
+ let deleteB = document.querySelector('`.${item_name}`')
+ deleteB.addEventListener('click', removeCheck)
+
+ function removeCheck() {
+
+    if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+
+        deleteSubmit.submit()
+
+    }else{   //취소
+
+        return false;
+
+    }
+
+}
+
     </script>
 </body>
 </html>

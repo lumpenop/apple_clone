@@ -8,7 +8,8 @@
     <link rel = "stylesheet" href = "../../lecture_render.css">
 </head>
 <body>
-    <div class = "wrapping wrap">
+    <div class = "wrapping wrap" style = "text-align: center;">
+        <a href = "/user/login"><img style = "display: inline-block; margin-top: 60px;" src = "../../history_logo.png"></a>
         <div class = "content">
             <div class = "footer">
                 <div class = "img"><img class = "img" src = "../../{{result.item_image}}"></div>
@@ -20,6 +21,10 @@
                     <span class = "tag">#{{result.item_tag1}}</span>
                     <span class = "tag">#{{result.item_tag2}}</span>
                     <span class = "tag">#{{result.item_tag3}}</span>
+                    <form action = "/buy/lecture_render" method = "post">
+                        <input type = "submit" class = "BTN_click" value = "삭제하기">
+                        <input style = "display: none;" type = "text" name = "item_name" value = "{{result.item_name}}">                    
+                    </form>
                 </div>             
             </div>
         </div>
@@ -28,6 +33,9 @@
         <div class = "content">
             <div class = "mainLecture">
                 <h1 class = "h1">교육 과정</h1>
+                <div class = "">
+                    <h2>나의 진행 정도</h2>
+                </div>
                 <div class = "">              
                     <div class = "main_subject">section1. <span class = "Red">{{result.item_skill1}} 강의</span></div> 
                     <table class = "">                    
@@ -85,6 +93,12 @@
     let value5 = section5.innerHTML
     let section6 = document.querySelector('.section6')
     let value6 = section6.innerHTML
+    // let section7 = document.querySelector('.section7')
+    // let value7 = section7.innerHTML
+    // let section8 = document.querySelector('.section8')
+    // let value8 = section8.innerHTML
+    // let section9 = document.querySelector('.section9')
+    // let value9 = section9.innerHTML
 
     let section21 = document.querySelector('.section21')
     let value21 = section21.innerHTML
@@ -121,6 +135,9 @@
     section4.addEventListener('click',Popup4)
     section5.addEventListener('click',Popup5)
     section6.addEventListener('click',Popup6)
+    // section7.addEventListener('click',Popup7)
+    // section8.addEventListener('click',Popup8)
+    // section9.addEventListener('click',Popup9)
 
     
     section21.addEventListener('click',Popup21)
@@ -163,6 +180,7 @@
         w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value26}">`
     }
 
+
     function Popup21(){
         width.style.display = 'block'
         w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value1}">`
@@ -187,6 +205,18 @@
         width.style.display = 'block'
         w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value6}">`
     }
+    // function Popup7(){
+    //     width.style.display = 'block'
+    //     w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value7}">`
+    // }
+    // function Popup8(){
+    //     width.style.display = 'block'
+    //     w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value8}">`
+    // }
+    // function Popup9(){
+    //     width.style.display = 'block'
+    //     w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value9}">`
+    // }
 
     
     function Popup31(){

@@ -56,6 +56,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: false
     },
+    maximum_date: {
+      type: DataTypes.DATE, 
+      allowNull: false
+    }
   }, {
     sequelize,
     tableName: 'items',

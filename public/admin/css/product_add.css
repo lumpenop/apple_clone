@@ -135,6 +135,11 @@ ul,li{
     width:550px;
     height:80px;
 }
+.w200{
+    text-align: center;
+    width:170px;
+    height:80px;
+}
 
 .table{
     margin-bottom: 80px;
@@ -147,6 +152,7 @@ ul,li{
     height:24px;
 
 }
+
 
 .blueBtn{
     background: white;

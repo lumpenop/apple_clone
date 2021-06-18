@@ -57,3 +57,7 @@ insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('etherium', '4', '이더리움이란', 'https://www.youtube.com/embed/djX-RlrpMqA');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('etherium', '5', '블록체인이란', 'https://www.youtube.com/embed/A9rU0hhAqSQ');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('etherium', '6', '탈중앙화의 장점', 'https://www.youtube.com/embed/5UJ5XKi394U');
+
+insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '7', '자료 구조형', 'https://www.youtube.com/embed/XVQeBm_ilJU');
+insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '8', 'for문', 'https://www.youtube.com/embed/2kL0FrUXFOI');
+insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '9', 'if문', 'https://www.youtube.com/embed/tQ0yjYUFKAE');

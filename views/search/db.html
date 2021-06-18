@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "../../search.css">
-</head>
-<body>
+{% include 'top.html' %}
     <div class = "ContentWrap wrap">
-        <div class = "content wrap1200">
-            <div class = "search">
-                <div class = "click">
-                    <input TYPE="IMAGE" src="../search.png" name="Submit" value="Submit">
-                </div>
-                <form action = "/search?" method = "post">
-                    <div class = "input">
-                        <input type = "text" name = "search_value">
-                    </div>
-                </form>
+        <div class = "header">
+            <div class = "headerLogo">
+                <a href = "/user/login"><img class = "headerLogo" src = "../../logo.png"></a>
             </div>
+            <div class = "headertext">
+                From $699 or $29.12/mo.per month before trade-inFootnote*
+            </div>
+        </div>
+        <div class = "content wrap1200">
             <div class = "MainContent">
                 <ul class = "menu">
                     <li>Explore</li>

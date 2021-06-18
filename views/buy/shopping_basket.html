@@ -16,23 +16,29 @@
                 <a href = "/buy/shopping_form?name={{item_name}}"><input type = "submit" class = "BTT" value = "결제"></a>
             </div>
             <div class = "line"></div>
-            <div class = "content">
+            <div class = "content">   
                 {% for list in result %}
+                <form action = "/buy/shopping_basket" method = "post">
                 <div class = "img height"><img class = "img" src = "../../{{list.item_image}}"></div>
                 <div class = "text height">
-                    <ul>
-                        <li>
-                            상품명:{{list.item_name}}
+                    <ul class = "">
+                        <li class = "font1">
+                            {{list.item_name}}
                         </li>
-                        <li>
-                            상품카테고리:{{list.item_category}}
+                        <li class = "font2">
+                            {{list.item_category}}
                         </li>
-                        <li class = "float">상품가격:{{list.item_price}}</li>
+                        <li class = "font2">{{list.item_price}}</li>
+                        <li>
+                            <input type = "submit" class = "BTTTN" value = "삭제하기" class = "">
+                            <input type = "text" value = "{{list.item_name}}" name = "item_name" style = "display:none;">
+                        </li>
                     </ul>
                     <div class = "line2">
     
-                    </div>     
-                    {% endfor %}      
+                    </div>       
+                </form>   
+                {% endfor %}   
                     <div>
                         <div class = "LEFT"><img src = "../../aa.jpg"></div>
                         <div class = "right">

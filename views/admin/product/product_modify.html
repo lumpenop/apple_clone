@@ -24,9 +24,10 @@
             <div class = "menu">
                 <div>카테고리</div>
                 <ul>
-                    <li><a href = "">팝업 관리</a></li>
+                    <li><a href = "/admin/history">구매 내역 관리</a></li>
                     <li><a href = "/admin/user_list">사용자 관리</a></li>
                     <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
+                    <li><a href = "/admin/skill">과목 관리</a></li>
                     <li><a href = "/admin/valuation">수강 후기 관리</a></li>
                     <li class = "margintop"><a href = "/admin/chat_list">고객 문의/채팅</a></li>
                 </ul>
@@ -105,9 +106,11 @@
                     </tr>
                     <tr>
                         <td class = "w100">교육 태그</td>
-                        <td class = "w600"><input type = "text" class = "w600" value = "{{result.item_tag1}}" name = "item_tag1"></td>
-                        <td class = "w600"><input type = "text" class = "w600" value = "{{result.item_tag2}}" name = "item_tag2"></td>
-                        <td class = "w600"><input type = "text" class = "w600" value = "{{result.item_tag3}}" name = "item_tag3"></td>
+                        <td class = "w200">
+                            <input type = "text" class = "w200" name = "item_tag1">
+                            <input type = "text" class = "w200" name = "item_tag2">
+                            <input type = "text" class = "w200" name = "item_tag3">
+                        </td>
                     </tr>
                 </table>
                 <input class = "blueBtn marginbottom" type = "submit" value = "수정완료">
