@@ -6,8 +6,9 @@ const context = canvas.getContext("2d");
 
 const frameCount = 148;
 const currentFrame = index => (
-  `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index.toString().padStart(4, '0')}.jpg`
+  `/main/image/AirPodsPro/${index.toString().padStart(4, '0')}.jpg`
 )
+
 
 
 const preloadImages = () => {
@@ -44,16 +45,16 @@ window.addEventListener('scroll', () => {
 
 
         let frameIndex;
-        if(Math.floor(maxScrollTop/(num)) >= 146){
-            frameIndex = 146;
+        if(Math.floor(maxScrollTop/(num)) >= 147){
+            frameIndex = 147;
         }else if(Math.floor(maxScrollTop/(num)) <= 0){
             frameIndex = 0;
         }else{
             frameIndex = Math.floor(maxScrollTop/(num) * 4);
         }
 
-        if(frameIndex >= 146){
-            frameIndex = 146
+        if(frameIndex >= 147){
+            frameIndex = 147
         }
    
 

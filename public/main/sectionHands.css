@@ -392,7 +392,7 @@ br.large{
     background-size: 549px 1021px;
     background-repeat: no-repeat;
     background-image: url(
-        /main/image/iphone_mini_hands.png
+        /main/image/AirPodsPro/iphone_mini_hands.png
     );
     left: 80px;
     margin: 60px 0 0 ;
@@ -440,3 +440,115 @@ br.large{
     opacity: 0;
 }
 
+.section-design-materials .lift-transition-sticky-content{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+.section-design .section-design-materials .frame-container{
+    position: relative;
+    z-index: 1;
+}
+
+.frame-container{
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.section-design-framing-container .framing-group-container{
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.section-design .design-materials-framing-container > .frame-container{
+    position: absolute;
+    z-index: 10;
+}
+
+
+.frame-sticky-viewfinder{
+    z-index: 1;
+    width: 100%;
+}
+
+.will-change{
+    will-change: transform;
+}
+
+.section-design .section-design-materials .design-materials{
+    height: calc(100vh - var(--r-localnav-height) + var(--framing-size));
+
+    align-items: flex-start;
+    display: flex;
+    max-height: 1320px;
+    overflow: hidden;
+    padding-top: var(--framing-size);
+}
+
+.section-design .section-metarials .section-mini{
+    background-color: #aecbd9;
+    color: #3948b1;
+    flex-direction: column;
+    min-height: 920px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-content{
+    margin: 0 auto;
+    width: 980px;
+    z-index: 1;
+    position: relative;
+}
+
+.section-design .section-design-materials .column-flex{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.section-design .section-design-materials .section-mini .content-wrapper{
+    margin: 0 auto;
+}
+
+.section-design .section-design-materials .section-mini .section-headline{
+    margin-top: calc(var(--framing-size) + 92px);
+}
+
+br.large{
+    display: block;
+}
+
+.section-design .section-design-materials .section-mini .image-wrapper{
+    min-height: 1021px;
+}
+
+.section-design .section-design-materials .image-wrapper{
+    align-self: flex-start;
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.section-design .section-design-materials .section-mini .image-wrapper{
+    width: 549px;
+    height: 1201px;
+    background-size: 549px 1021px;
+    background-repeat: no-repeat;
+    background-image: url(
+
+    );
+}
