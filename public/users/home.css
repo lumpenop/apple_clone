@@ -158,13 +158,15 @@ a{
 
 
 #ac-globalfooter{
+    
     min-width: 320px;
     font-size: 12px;
     line-height: 1.33337;
     font-weight: 400;
     background-color: #f5f5f7;
     color: #1d1d1f;
-    /* position: relative; */
+    position: relative;
+    bottom: -1000px;
     z-index: 1;
     
 }
