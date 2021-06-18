@@ -297,7 +297,7 @@ main{
     background-size: 1188px 914px;
     background-repeat: no-repeat;
     background-image: url(
-        https://www.apple.com/kr/iphone-12/g/images/overview/hero/hero_startframe__gjx0olcpbkyi_large.jpg
+        /main/image/sayHelloTo.jpg
     );
 }
 .hidden{
@@ -312,7 +312,7 @@ main{
     background-size: 1188px 914px;
     background-repeat: no-repeat;
     background-image: url(
-        https://www.apple.com/kr/iphone-12/g/images/overview/hero/hero_endframe__fc7apyu3c7au_large.jpg
+        /main/image/hero_endframe.jpg
     );
     margin: 0 auto;
 }
@@ -451,3 +451,4 @@ main{
     overflow: hidden;
     top: 0;
 }
+

@@ -85,19 +85,70 @@ function sigmoid(z) {
     return z;
 }
 
+function sigmoid30(z) {
+    if(z>=1){
+        return 30;
+    }else if(z<=0){
+        return 0;
+    }
+    return z*30;
+}
+
 function eyebrowScroll(text){
-    // var currentScrollValue = document.documentElement.scrollTop;
 
     textTop = text.getBoundingClientRect().top;
-    
-    
-    // if(textTop<=window.innerHeight){
-    console.log(window.innerHeight - textTop);
-    
-    opa = (window.innerHeight - textTop - 100)/100
+
+    opa = (window.innerHeight - textTop-100)/300
+
     text.style.opacity = sigmoid(opa)
-    // }
+
+    switch(text){
+        case document.querySelector('.hero-eyebrow-text'):
+            heroHeadline.style.transform = `matrix(1, 0, 0, 1, 0, ${45 - (sigmoid30(opa)*1.5)})`;
+            heroIntro.style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
+            break;
+        case document.querySelector('.typography-hero-headline'):
+            heroCopy.style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
+            break;
+
+        case document.querySelector('.typography-hero-intro'):
+            document.querySelector('.film-copy').style.transform = `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid30(opa)*3)})`;
+            break;
+    }
 }
+  
+
+
+
+const hiddenUl = document.querySelector('.canvas-hidden .hidden-ul');
+const lis = document.querySelectorAll('.canvas-hidden .hidden-ul li');
+var beforePosition;
+console.log(beforePosition)
+
+function canvasHidden(){
+    
+    const scrollTop = html.scrollTop;
+    if(scrollTop>=4526 && scrollTop<=5153){
+        
+        const gap = (5153 - 4526) / 5;
+        let num2 = Math.floor((scrollTop - 4526) / gap);
+        if(num2>=5){
+            num2 = 4
+        }
+        
+        lis[num2].style.opacity = sigmoid(scrollTop-beforePosition);
+
+        
+    }    
+    
+    beforePosition = scrollTop;
+
+    
+    
+
+
+}
+
 
 window.onscroll = () =>{
     eyebrowScroll(eyebrowText);
@@ -105,6 +156,7 @@ window.onscroll = () =>{
     eyebrowScroll(heroIntro);
     eyebrowScroll(heroCopy);
     eyebrowScroll(filmIphone12);
+    canvasHidden();
 };
  
 

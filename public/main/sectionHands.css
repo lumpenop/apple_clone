@@ -1,0 +1,556 @@
+:root{
+    --framing-size:40px;
+}
+
+.section-design{
+    z-index: 13;
+    position: relative;
+}
+
+.section-design .lift-transition-container,
+.section-design .lift-transition-sticky-content{
+    position: relative;
+    width: 100%
+}
+
+.section-design .section-hands{
+    background: black;
+    margin-top: 0;
+}
+
+.section-design .compare{
+    min-height: 520vh;
+}
+
+.section-design .section-design-iphone-12{
+    display: flex;
+    align-items: flex-end;
+    min-height: 100vh;
+    overflow: hidden;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+.section-design .section-design-iphone-12 .design-content{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    min-height: 1014px;
+    width: 100%;
+}
+
+.section-design .section-design-iphone-12 .design-content .row{
+    
+    flex-wrap: row;
+    width:100%
+}
+
+
+.section-design .grid-spacer{
+
+}
+
+.section-design .section-content{
+    width: 980px;
+    margin:0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+.section-design .section-content:before,
+.section-design .section-content:after{
+    content: '  ';
+    display: table;
+}
+
+.section-design .section-content:after{
+    clear: both;
+}
+
+.section-design .will-change-transform{
+    will-change: transform;
+}
+
+.justify-content{
+    justify-content: center;
+}
+
+.section-design .flow-with-adustment{
+    align-items:flex-end;
+    flex-wrap: nowrap;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.section-design .column-iphone-12{
+    position: relative;
+    z-index: 10;
+    margin: 0 auto;
+}
+
+.large-6{
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.column{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0px;
+}
+
+.section-hands .content-wrapper .section-design-iphone-12{
+    margin-bottom:129px;
+
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.section-hadns .section-design-iphone-12 .content-iphone-12 .callout{
+    left: 176;
+    margin-bottom: 16px;
+    position: absolute;
+    z-index: 1;
+    width: 400px;
+}
+
+.section-hadns .section-design-iphone-12 .headline-wrapper{
+    left: 0;
+    width: 100%;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.section-hadns .section-design-iphone-12 .compare-headline{
+    text-align: center;
+}
+
+.section-hadns .section-design-iphone-12 .details-wrapper{
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.visuallyhidden{
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(0px, 0px, 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: 0;
+}
+
+.section-hadns .compare-display-size{
+    margin-top: -12px;
+}
+
+.section-hadns .compare-display-features{
+    margin-top: 7px;
+}
+
+.column{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0px;
+}
+
+.section-hands #flow-canvas-iphone-12{
+    margin: 0 auto;
+    width: 600px;
+    object-fit: contain;
+}
+
+.section-hadns .badge-wrapper{
+    left: 106px;
+    z-index: 15;
+
+    position: absolute;
+    top: 6px;
+    height: 100%;
+}
+
+.align-item-center{
+    align-items: center;
+}
+
+.section-hadns .will-change-transform-opacity{
+    will-change: transform, opacity;
+}
+
+.section-hadns .badge{
+    margin-bottom: 14px;
+}
+
+.section-hadns .badge-value{
+    display: block;
+    color: #e96347;
+    margin-bottom: -6px;
+}
+
+.section-hadns .section-design-iphone-12 .column-iphone-12-mini{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.section-hadns .section-design-iphone-12 .content-iphone-12-mini{
+    margin-top: 40px;
+    margin-bottom: 129px;
+}
+
+.section-hadns .section-design-iphone-12 .content-iphone-12-mini .callout{
+    position: absolute;
+    left: -118px;
+}
+.large-10{
+    flex-basis: 83.3333%;
+    max-width: 83.3333%;
+}
+.large-offset-2{
+    margin-left: 16.6667%;
+}
+
+.section-hadns .section-design-iphone-12 .content-iphone-12-mini .headline-wrapper{
+    width: 100%;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.section-hadns .compare .content-iphone-12-mini .compare-display-size{
+    margin-top: -8px;
+}
+
+.section-hadns .compare .content-iphone-12-mini .compare-display-features{
+    margin-top: 7px;
+}
+
+.section-hadns .section-design-iphone-12 #low-canvas-iphone-12-mini{
+    margin-left: 42px;
+    height: 728px;
+    object-fit: contain;
+    padding-top: 11px;
+}
+
+.section-hands .base-xp{
+    display: none;
+}
+
+.section-design .section-design-materials .frame-container{
+    position: relative;
+    z-index: 1;
+}
+
+.frame-container{
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.frame-bottom{
+    bottom: 0;
+    transform-origin: bottom center;
+}
+
+.frame-top{
+    top: 0;
+    transform-origin: top center;
+}
+
+.frame-left{
+    left: 0;
+    transform-origin: left center;
+}
+
+.frame-right{
+    right: 0;
+    transform-origin: right center;
+}
+
+.frame-h{
+    left: 0;
+    width: 100%;
+    height: var(--framing-size);
+}
+
+.frame-v{
+    top: 0;
+    height: 100%;
+    width: var(--framing-size);
+}
+
+.frame{
+    z-index: 1;
+    position: absolute;
+    background-color: #fff;
+}
+
+.framing-group-container{
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.section-design-materials .design-materials-framing-container .frame-container{
+    position: absolute;
+    z-index: 10;
+}
+
+.frame-sticky-viewfinder{
+    position: sticky;
+    top: var(--r-localnav-height);
+    height: calc(100vh - var(--r-localnav-height));
+    z-index: 1;
+    width: 100%;
+}
+
+.section-design .section-design-materials .section-mini{
+    background-color: #aecbd9;
+    color: #3948b1;
+    flex-direction: column;
+    min-height: 920px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.section-design .section-design-materials .desing-materials{
+    align-items: flex-start;
+    display: flex;
+    max-height: 1320px;
+    overflow: hidden;
+    padding-top: var(--framing-size);
+}
+
+.section-design .section-design-materials .column-flex{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.large-12{
+    max-width: 100%;
+    flex-basis: 100%;
+}
+
+.section-design .section-design-materials .section-mini .content-wrapper{
+    margin: 0 auto;
+}
+
+.section-design .section-design-materials .section-mini .section-headline{
+    margin-top: calc(var(--framing-size)+92px);
+}
+
+br.large{
+    display: block;
+}
+
+.section-design .section-design-materials .section-mini .image-wrapper{
+    min-height: 1021px;
+}
+
+.section-design .section-design-materials .image-wrapper{
+    align-self: flex-start;
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.section-design .section-design-materials .section-mini .image-mini{
+    width: 549px;
+    height: 1021px;
+    background-size: 549px 1021px;
+    background-repeat: no-repeat;
+    background-image: url(
+        /main/image/iphone_mini_hand.jpg
+    );
+    left: 80px;
+    margin: 60px 0 0 ;
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+}
+
+.section-design .flow-wrapper{
+    margin: 0 auto;
+}
+
+.flow-grid{
+    margin: 0 auto;
+}
+
+.flow-width-adjustment{
+    display: block;
+}
+
+.justify-content-center{
+    text-align: center;
+    position: relative;
+    top: 40px;
+}
+
+.canvas-hidden{
+    top: -360px;
+    color: seashell;
+    position: relative;
+    height: 360px;
+    display: inline-block;
+}
+
+.hidden-ul{
+    position: sticky;
+    display: inline-block;
+    top: 30px;
+}
+
+
+
+.hidden-ul li{
+    font-size: 60px;
+    opacity: 0;
+}
+
+.section-design-materials .lift-transition-sticky-content{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+.section-design .section-design-materials .frame-container{
+    position: relative;
+    z-index: 1;
+}
+
+.frame-container{
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.section-design-framing-container .framing-group-container{
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.section-design .design-materials-framing-container > .frame-container{
+    position: absolute;
+    z-index: 10;
+}
+
+
+.frame-sticky-viewfinder{
+    z-index: 1;
+    width: 100%;
+}
+
+.will-change{
+    will-change: transform;
+}
+
+.section-design .section-design-materials .design-materials{
+    height: calc(100vh - var(--r-localnav-height) + var(--framing-size));
+
+    align-items: flex-start;
+    display: flex;
+    max-height: 1320px;
+    overflow: hidden;
+    padding-top: var(--framing-size);
+}
+
+.section-design .section-metarials .section-mini{
+    background-color: #aecbd9;
+    color: #3948b1;
+    flex-direction: column;
+    min-height: 920px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-content{
+    margin: 0 auto;
+    width: 980px;
+    z-index: 1;
+    position: relative;
+}
+
+.section-design .section-design-materials .column-flex{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.section-design .section-design-materials .section-mini .content-wrapper{
+    margin: 0 auto;
+}
+
+.section-design .section-design-materials .section-mini .section-headline{
+    margin-top: calc(var(--framing-size) + 92px);
+}
+
+br.large{
+    display: block;
+}
+
+.section-design .section-design-materials .section-mini .image-wrapper{
+    min-height: 1021px;
+}
+
+.section-design .section-design-materials .image-wrapper{
+    align-self: flex-start;
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.typography-section-headline{
+    font-size: 60px;
+    font-weight: 600;
+}
+

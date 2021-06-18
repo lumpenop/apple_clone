@@ -12,13 +12,20 @@ router.use('/admin',admin)
 
 router.use('/',(req,res)=>{
     let {msg} = req.query;
-    let {userid,username} = req.cookies;
+    console.log(req.cookies)
+    let {userid,username, loginsite} = req.cookies;
 
     res.render('index.html',{
-        msg, username,
-        loginornot:req.session.authData,
+        msg, username, loginsite,
     });
-})
+});
 
+<<<<<<< HEAD
 
 module.exports = router;
+=======
+module.exports = router;
+
+// <!-- {% else if website == 'google' %}
+// <a href="#" onclick="signOut();">Sign out</a> -->
+>>>>>>> c284a415592b9461e177f1cb96d063ff1e27196c

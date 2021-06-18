@@ -11,13 +11,18 @@ router.post('/join_success', controller.join_success);
 router.get('/login', controller.login);
 router.post('/userid_check', controller.userid_check);
 router.post('/logincheck', controller.logincheck);
+<<<<<<< HEAD
 
 // router.post('/login', controller.login_cookie);
+=======
+>>>>>>> c284a415592b9461e177f1cb96d063ff1e27196c
 router.get('/logout', controller.logout)
 router.get('/deleteID', controller.deleteID)
 
 router.get('/kakaologin', controller.kakaologin);
 router.get('/kakao_login', controller.kakao_login);
+router.post('/googlelogin', controller.googlelogin);
+router.post('/google_logout', controller.google_logout);
 
 router.get('/info', controller.info);
 router.get('/info_view', controller.info_view);

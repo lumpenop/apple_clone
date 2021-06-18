@@ -68,13 +68,14 @@
                                     <span>Apple ID가 없으신가요? 지금 생성.</span>
                                 </a>
                             </div>
-                            <div class="login-sign-in-account">
-                                <a href="/user/kakaologin">
-                                    <span>카카오 |</span>
+                            <div id="BTN" class="login-sign-in-account">
+                                <a id="googleBtn">
+                                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                                 </a>
-                                <a href="/user/naverlogin">
-                                    <span>네이버 로그인</span>
+                                <a id="kakaoBtn" href="/user/kakaologin">
+                                    <span>Kakao</span>
                                 </a>
+
                             </div>
                         </div>
                     </form>
@@ -146,4 +147,10 @@
 
 <script type="text/javascript" src="/login.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!--GOOGLE LOGIN API  ---) top.html 로 이동-->
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
+
+
+
 {% include "./bottom.html" %}
