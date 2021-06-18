@@ -299,6 +299,12 @@
     height: var(--framing-size);
 }
 
+.frame-v{
+    top: 0;
+    height: 100%;
+    width: var(--framing-size);
+}
+
 .frame{
     z-index: 1;
     position: absolute;
@@ -320,7 +326,7 @@
 .frame-sticky-viewfinder{
     position: sticky;
     top: var(--r-localnav-height);
-
+    height: calc(100vh - var(--r-localnav-height));
     z-index: 1;
     width: 100%;
 }
@@ -392,7 +398,7 @@ br.large{
     background-size: 549px 1021px;
     background-repeat: no-repeat;
     background-image: url(
-        /main/image/AirPodsPro/iphone_mini_hands.png
+        /main/image/iphone_mini_hand.jpg
     );
     left: 80px;
     margin: 60px 0 0 ;
@@ -543,12 +549,8 @@ br.large{
     width: 100%;
 }
 
-.section-design .section-design-materials .section-mini .image-wrapper{
-    width: 549px;
-    height: 1201px;
-    background-size: 549px 1021px;
-    background-repeat: no-repeat;
-    background-image: url(
-
-    );
+.typography-section-headline{
+    font-size: 60px;
+    font-weight: 600;
 }
+
