@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+}
+
+#main_OH_wrap{
+    width:100%;
+    height:100%;
+}
+
+#main_OH_background_black{
+    background-color: black;
+    position:relative;
+    padding:0 0 300px 0;
+}
+
+#main_OH{
+    width:100%;
+    height:600px;
+    padding:200px 300px;
+}
+
+#OH_telling{
+    width:471px;
+    height:271px;
+    position:absolute;
+    right:50%;
+    transform: translateX(-30%);
+    
+}
+
+#OH_telling>h2{
+    color:white;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+#main_OH_prettyUnni{
+    width:1440px;
+    height:1083px;
+    margin:0 auto;
+}
+
+#main_dinner{
+    width:980px;
+    height:2166px;
+    margin:0 auto;
+}
+
+#main_OH_dinner{
+    width:100%;
+    height:250px;
+    padding:95px;
+}
+
+
+#main_OH_dinner>h1{
+    font-size: 52px;
+    color:white;
+    font-weight: bold;
+}
+
+#main_pink_pic{
+    width: 570px;
+    height:852px;
+    position:relative;
+}
+
+#pink_pic_telling{
+    width:570px;
+    height: 50px;
+    padding:15px 0 0 0;
+}
+
+#pink_pic_telling>p{
+    color:#86868b;
+}
+
+#main_grey_pic{
+    width:325px;
+    height: 433px;  
+    position: absolute; 
+    right: -70%;
+    transform: translateX();
+    bottom:-20%;
+    
+}
+
+
+
+#main_dinner>p>p{
+    color:white;
+    color:#86868b;
+}
+
+.main_OH_inline{
+    display: inline-block;
+    float: left;
+}
+
+
+
+#main_OH_prettyUnni2{
+    margin-top: 400px;
+}
+
+
+
+
+
+
+/*      MAGIC     */ 
+
+#main_OH_background_white{
+    width:100%;
+    height:5000px;
+    background-color: white;
+}
+
+#magic{
+    width:980px;
+    height:400px;
+    margin:0 auto;
+}
+
+#magic>h1{
+    font-size: 64px;
+    color:black;
+    font-weight: bold;
+    padding:100px;
+}
+
+#main_magic{
+    width:980px;
+    height:1954px;
+    margin:0 auto;
+    position:relative;
+}
+
+#main_Aman{
+    width:816px;
+    height:612px;
+    margin:0 auto;
+}
+
+#main_Aman>div{
+    width:445px;
+    height: 86px;
+}
+
+#main_OH_flower{
+    width: 409px;
+    height: 645px;
+    position:absolute;
+    top:20%;
+    transform: translateY(130%);
+    
+}
+
+#main_OH_food{
+    width: 409px;
+    height: 645px;
+    position: absolute;
+    right:90%;
+    transform: translateX(215%);
+    top:50%;
+}
+
+#main_OH_skategirl{
+    width:100%;
+    height:1050px;
+}
+#main_OH_skategirl>div{
+    width:980px;
+    height:1050px;
+    margin:0 auto;
+    padding:50px 0 0 164px;
+}
+
+#main_OH_blousegirl{
+    width:100%;
+    height:1185px;
+}
+
+#main_OH_blouse{
+    width:1440px;
+    height:1185px;
+    margin:0 auto;
+}
+
+
+#main_OH_picmode{
+    width:100%;
+    height: 1100px;
+}
+
+#unrejectable{
+    width:580px;
+    height:148px;
+    margin: 0 auto;
+    padding: 0 0 250px 0;
+}
+
+#unrejectable>h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#main_OH_guys{
+    width:100%;
+    height:1011px;
+    margin-bottom: 1000px;
+}
+#main_guys{
+    width:980px;
+    height:inherit;
+    margin:0 auto;
+}
+
+#main_OH_coolman{
+    width:571px;
+    height:inherit;
+    display: inline-block;
+    float:left;
+}
+
+#main_OH_coolgirl{
+    width:327px;
+    height: inherit;
+    display: inline-block;
+    float:left;
+    margin-left:70px;
+    padding:100px 0 0 0;
+}
+
+
+
+/* class 공통  */
+
+.main_OH_bold{
+    font-weight:800;
+}
+
+
+.main_OH_grey{
+    color:white;
+    color:#86868b;
+    padding: 15px 0 0 0;
+}
+
+
+
+
+
+.OH_fadein{
+    animation: OH_fadein 3s;
+}
+
+@keyframes OH_fadein{
+    from{opacity:0} to {opacity:1}
+}
+
+.OH_fadeout{
+    animation: OH_fadeout 3s;
+}
+
+@keyframes OH_fadeout{
+    from{opacity:1} to {opacity:0}
+}
