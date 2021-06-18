@@ -14,7 +14,7 @@
             <div id="main_OH_dinner">
                 <h1>저녁이 있는 사진.</h1>
             </div>
-            <div id="main_pink_pic" class="pic_div">
+            <div id="main_pink_pic" class="pic_div2">
                 <img src="/mainOH/DM_20210618111105_002.jpg" >
                 <div id="pink_pic_telling">
                     <p class="main_OH_grey">
@@ -25,7 +25,7 @@
                         하면 된답니다.
                     </p>
                 </div>
-                <div id="main_grey_pic" class="main_OH_inline pic_div">
+                <div id="main_grey_pic" class="main_OH_inline pic_div2">
                     <img src="/mainOH/DM_20210618111105_003.jpg">
                     <div id="grey_pic_telling">
                         <p class="main_OH_grey">달빛이 극적으로 비추는 사진처럼 이전에는 온전히 담아내기 힘들었던 장면도 이제 그 어느 때보다 선명하게 찍을 수 있습니다.</p>
@@ -45,11 +45,11 @@
         </div>
     </div>
     <div id="main_OH_background_white">
-        <div id="magic">
+        <div id="magic" class="magic">
             <h1>마법처럼 <br />저절로.</h1>
         </div>
         <div id="main_magic">
-            <div id="main_Aman" class="pic_div">
+            <div id="main_Aman" class="">
                 <img src="/mainOH/DM_20210618111105_004.jpg">
                 <div>
                     <p class="main_OH_grey">스마트 HDR 3 화면 요소들의 균형을 맞춰주는 스마트 HDR 3. 덕분에 햇빛이 강한 정오에도 이처럼 하늘의 풍부한 그라데이션이
@@ -60,35 +60,35 @@
                 </div>
             </div>
             <div id="main_OH_foodFlower">
-                <div id="main_OH_flower" class="pic_div">
+                <div id="main_OH_flower" class="">
                     <img src="/mainOH/DM_20210618111105_006.jpg">
                     <p class="main_OH_grey">밝은 조명에서도 질감, 피부 톤, 채도 그리고 개별 디테일을 놀라운 품질로 담아내는 스마트 HD 3을 통해 더욱 실감나는 사진을 찍을 수
                         있습니다.</p>
                 </div>
-                <div id="main_OH_food" class="pic_div">
+                <div id="main_OH_food" class="">
                     <img src="/mainOH/DM_20210618111105_005.jpg">
                     <p class="main_OH_grey">스마트 HDR 3는 머신 러닝 기술을 통해 얼굴뿐만 아니라 장면도 인식합니다. 그런 다음 선명도, 색감, 화이트 밸런스를 적절하게
                         조절해주죠.</p>
                 </div>
             </div>
         </div>
-        <div id="main_OH_skategirl">
+        <div id="main_OH_skategirl" class="">
             <div>
                 <img src="/mainOH/DM_20210618111105_007.jpg">
             </div>
         </div>
-        <div id="main_OH_blousegirl">
+        <div id="main_OH_blousegirl" class="pic_div2">
             <div id="main_OH_blouse">
                 <img src="/mainOH/DM_20210618111105_008.jpg">
             </div>
         </div>
         <div id="main_OH_picmode">
-            <div id="unrejectable" class="pic_div">
+            <div id="unrejectable">
                 <h1>거부할 수 없는 <br /> 인물 사진 모드의 우월함.</h1>
             </div>
             <div id="main_OH_guys">
                 <div id="main_guys">
-                    <div id="main_OH_coolman" class="pic_div">
+                    <div id="main_OH_coolman" class="pic_div2">
                         <img src="/mainOH/DM_20210618111105_009.jpg">
                         <div>
                             <p class="main_OH_grey">눈을 사로잡는 인물 사진 모드 피사체가 더욱 돋보일 수 있도록, <br />배경을 보다 예술적으로 불러 처리해주는 인물
@@ -96,7 +96,7 @@
                                 좋아졌습니다. 정말 근사하지 않나요?</p>
                         </div>
                     </div>
-                    <div id="main_OH_coolgirl" class="pic_div">
+                    <div id="main_OH_coolgirl" class="pic_div2">
                         <img src="/mainOH/DM_20210618111105_010.jpg">
                         <div>
                             <p class="main_OH_grey">
@@ -117,25 +117,73 @@
 
     const OH_io = new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
+            console.log(entry.intersectionRatio)
             if(entry.intersectionRatio>0){
+                console.log(entry.intersectionRatio)
                 entry.target.classList.add('OH_fadein')
-                console.log('in')
+                entry.target.classList.add('OH_inlarge')
+            }else if(entry.intersectionRatio>0.02){
+                console.log(entry.intersectionRatio)
             }
             else{
                 entry.target.classList.remove('OH_fadein');
-                console.log('out')
+                entry.target.classList.remove('OH_inlarge')
             }
         })
-    })
+    },{ threshold: [0,0.1,0.2,0.3] })
 
     let pic_div = document.querySelectorAll('.pic_div');
-    console.log(pic_div)
+
     pic_div.forEach(ele=>{
         OH_io.observe(ele);
     })
 
+    
+    const OH_io2 = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.intersectionRatio>0){
+                entry.target.classList.add('OH_fadein2')
+            }
+            else{
+                entry.target.classList.remove('OH_fadein2');
+            }
+        })
+    })
+
+    let pic_div2 = document.querySelectorAll('.pic_div2');
+
+    pic_div2.forEach(ele=>{
+        OH_io2.observe(ele);
+    })
 
 
+
+
+    const OH_io3 = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            console.log(entry.rootBounds)
+            if(entry.intersectionRatio>0){
+               
+                entry.target.classList.add('magic1')
+                // entry.target.style.height+=
+            }else if(entry.intersectionRatio>130){
+                entry.target.classList.add('magic2')
+            }else if(entry.intersectionRatio>200){
+                entry.target.classList.add('magic3')
+            }
+            else{
+                entry.target.classList.remove('magic1');
+                entry.target.classList.remove('magic2');
+                entry.target.classList.remove('magic3');
+            }
+        })
+    })
+
+    const magic = document.querySelectorAll('.magic');
+
+    magic.forEach(ele=>{
+        OH_io3.observe(ele);
+    })
 
 
 

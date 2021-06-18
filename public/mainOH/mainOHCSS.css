@@ -253,6 +253,10 @@ a{
 }
 
 
+.OH_inlarge{
+    transform: scale(0.9);
+    transition: ease-in-out 1.5s;
+}
 
 
 
@@ -271,3 +275,32 @@ a{
 @keyframes OH_fadeout{
     from{opacity:1} to {opacity:0}
 }
+
+.OH_fadein2{
+    animation: OH_fadein2 1.5s;
+}
+
+@keyframes OH_fadein2{
+    from{opacity:0.3} to {opacity:1}
+}
+
+.OH_fadeout2{
+    animation: OH_fadeout2 1.5s;
+}
+
+@keyframes OH_fadeout2{
+    from{opacity:1} to {opacity:0.3}
+}
+
+
+.magic1{
+    color:red;
+}
+.magic2{
+    color:blue;
+}
+.magic3{
+    color:yellow;
+}
+
+
