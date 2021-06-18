@@ -127,12 +127,8 @@ console.log(beforePosition)
 
 function canvasHidden(){
     
-
     const scrollTop = html.scrollTop;
-    
-
- 
-    if(scrollTop>=4526){
+    if(scrollTop>=4526 && scrollTop<=5153){
         
         const gap = (5153 - 4526) / 5;
         let num2 = Math.floor((scrollTop - 4526) / gap);
@@ -142,7 +138,7 @@ function canvasHidden(){
         
         lis[num2].style.opacity = sigmoid(scrollTop-beforePosition);
 
-        //console.log(scrollTop-4526)
+        console.log(scrollTop-4526)
         
     }    
     
