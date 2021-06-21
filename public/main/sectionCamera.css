@@ -1,0 +1,40 @@
+.section-camera{
+    z-index: 11;
+    position: relative;
+}
+
+.section{
+    z-index: 1;
+    position: relative;
+    overflow: visible;
+}
+
+.section-fill-light-alt{
+    background-color: #f2f2f2;
+}
+
+.section-camera .wrapper-sticky.hero{
+    height: 160vh;
+    margin-top: 0;
+}
+
+
+.section-camera .wrapper-sticky.hero .sticky{
+    width: 100%;
+    overflow: hidden;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+}
+
+.section-camera .wrapper-sticky.hero .section-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.section-content{
+    margin: 0 auto;
+    width: 980px;
+    
+}
+
