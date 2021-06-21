@@ -109,14 +109,13 @@ function forMiniSection(){
         const num = gap/370
         
         headLine.style.opacity = sigmoid2(num);
-        console.log(Math.round(gap/70))
         
         // locateY = Math.round(70 - (70*(gap/400)))
         headLine.style.transform =  `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid2(num)*90)})`;;
     // }
 
     
-    if(hiddenUlBottom*0.8 < scrollTop && sectionMini.bottom+100 > scrollTop){
+    if(hiddenUlBottom*0.8 < scrollTop && sectionMini.bottom > scrollTop){
         
         console.log(bottomFrame);
         bottomFrame.classList.add('will-change');
@@ -125,11 +124,12 @@ function forMiniSection(){
         topFrame.classList.add('will-change');
         
 
-        console.log(bottomFrame);
-        leftFrame.style.transform =  `matrix(${sigmoid2(num/1.6)}, 0, 0, 1, 0, 0)`;
-        rightFrame.style.transform =  `matrix(${sigmoid2(num/1.6)}, 0, 0, 1, 0, 0)`;
-        topFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num/1.6)}, 0, 0)`;
-        bottomFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num/1.6)}, 0, 0)`;
+        console.log(sigmoid2(num/1.5));
+       
+        leftFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
+        rightFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
+        topFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num/1.5)}, 0, 0)`;
+        bottomFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num/1.5)}, 0, 0)`;
 
     }else{
         leftFrame.classList.remove('will-change');
