@@ -9,15 +9,21 @@ a{
 ul,li{
     list-style: none;
 }
+.widthlimit{
+    width:50px;
+}
 .wrap{
     width:100%;
 }
 
 .w1200{
-    width:1480px;
+    width:2000px;
     margin:0 auto;
 }
-
+.w1500{
+    width:1500px;
+    margin:0 auto;
+}
 .logo{
     float:left;
 }

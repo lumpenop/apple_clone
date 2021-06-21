@@ -15,9 +15,6 @@ globalNav.addEventListener('click', event => layerClose(event, globalNav));
 bagBtn.addEventListener('click', bagViewOn);
 
 
-
-
-
 window.addEventListener('click', event => windowClick(event));
 
 function windowClick (event){
@@ -28,8 +25,6 @@ function windowClick (event){
         bagViewFlag = true;    
     }
 }
-
-
 
 
 let bagViewFlag = true;

@@ -42,33 +42,6 @@ const changeHandler = () => {
   window.addEventListener("resize", changeHandler);
 
 
-// const options = {
-// threshold : [0, 0.5, 1]
-// }
-// const eyebrowText = document.querySelector('.hero-eyebrow-text');
-// const eyebrowTop = eyebrowText.getBoundingClientRect().top; 
-
-// const io = new IntersectionObserver((entries, observer)=>{
-// entries.forEach(entry => {
-//     console.log(entry.intersectionRatio)
-//     console.log(eyebrowTop)
-//     console.log(window.innerHeight)
-//     console.log(document.body.scrollTop)
-//     console.log(window.pageYOffset)
-
-//     if (entry.intersectionRatio <= 1){
-//         eyebrowText.style.opacity = '0';
-        
-//     } else if (entry.intersectionRatio > 1){
-//         eyebrowText.style.opacity = String(entry.intersectionRatio)*10;
-//     } else{
-//         eyebrowText.style.opacity = '1';
-//     }
-//     });},options);
-
-// const imgBox = document.querySelector('.endframe');
-// io.observe(imgBox);
-
 const eyebrowText = document.querySelector('.hero-eyebrow-text');
 const heroHeadline = document.querySelector('.typography-hero-headline');
 const heroIntro = document.querySelector('.typography-hero-intro');
@@ -152,12 +125,13 @@ function canvasHidden(){
 
 
 window.onscroll = () =>{
+    canvasHidden();
     eyebrowScroll(eyebrowText);
     eyebrowScroll(heroHeadline);
     eyebrowScroll(heroIntro);
     eyebrowScroll(heroCopy);
     eyebrowScroll(filmIphone12);
-    canvasHidden();
+    
 };
  
 

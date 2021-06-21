@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="/users/login.css">
     <link rel="stylesheet" href="/users/action.css">
     <link rel="stylesheet" href="/main/section1.css">
+    <link rel = "stylesheet" href = "../../search.css">
+    <link rel = "stylesheet" href = "../main/scroll.css">
+    
     <link rel="stylesheet" href="/main/sectionHands.css">
+    <link rel="stylesheet" href="/main/sectionCamera.css">
     <link rel="stylesheet" href="/main/kakaoGoogleBtn.css">
     <link rel="stylesheet" href="/mainOH/mainOHCSS.css">
     <title>Apple</title>
@@ -25,7 +29,14 @@
 </head>
 
 <body class="page-home ac-nav-overlap">
-
+    <div id="side_menu">
+        <div id ="" class="side_menu_box">
+            <a style = "margin-top:20px; display:inline-block; color:#0070c9;" href="javascript:openWindowPop('http://localhost:3000/user/chatBtn', 'popup');">채팅</a>
+        </div>
+        <div id="" class="side_menu_box">
+            <a style = "margin-top:20px; display:inline-block; color:#0070c9;" href="/user/map">지도</a>
+        </div>
+    </div>
     <nav id="ac-globalnav" class="js no-touch no-windonws with-bagview" role="navigation" data-hires="false"
         data-analytics-region="ac-global nav" lang="ko-Kr" dir="ltr" data-www-domain="www.apple.com"
         data-store-locale="kr" data-store-root-path="/kr" data-store-api="/[sotrefront]/shop/bag/status"
@@ -68,7 +79,7 @@
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-support">
-                    <a class="ac-gn-link ac-gn-link-support" href="#">
+                    <a class="ac-gn-link ac-gn-link-support" href="/search/valuation">
                         <span>고객지원</span>
                     </a>
                 </li>
@@ -88,7 +99,7 @@
                     <div class="ac-gn-searchview-bar">
                         <div class="ac-gn-searchview-bar-wrapper">
                             <div class="ac-gn-searchform-wrapper">
-                                <form action="/search/search" method="post">
+                                <form action="/search/db" method="post">
                                     <input id="ac-gn-searchform-input" class="ac-gn-searchform-input displayNone"
                                         aria-label="apple.com 검색" placeholder="apple.com 검색" name="AppleSearch"
                                         type="text">
@@ -145,17 +156,22 @@
             <span class="caret"></span>
             <aside class="ac-gn-bagview">
                 <div class="ac-gn-bagview-content">
-                    <p class="ac-gn-bagview-message">장바구니가 비어있습니다.</p>
+                    <p class="ac-gn-bagview-message">
+                        {% for result in result %}
+                        <div><img style = "width:80px; height:100px; margin-bottom: 20px;" src = "../{{result.item_image}}"></div>
+                        <div style = "margin-bottom: 20px;">{{result.item_name}}</div>
+                        {% endfor %}
+                    </p>
                     <nav class="ac-gn-bagview-nav">
                         <ul class="ac-gn-bagview-nav-list">
                             <li class="ac-gn-bagview-nav-item">
-                                <a class="item-link item-bag" href="#">장바구니</a>
+                                <a class="item-link item-bag" href="/buy/shopping_basket">장바구니</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
                                 <a href="#" class="item-link item-favorite">즐겨찾기</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
-                                <a href="#" class="item-link item-orders">주문</a>
+                                <a href="/buy/history" class="item-link item-orders">주문</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
                                 <a href="/user/info" class="item-link item-account">계정</a>
@@ -229,6 +245,13 @@
             gapi.load('auth2', function () {
                 gapi.auth2.init();
             });
+        }
+    </script>
+    <script type = "text/javascript" src = "/admin/js/chat.js"></script>
+    <script type = "text/javascript">
+       function openWindowPop(url, name){
+            var options = 'top=100, left=500, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
+            window.open(url, name, options);
         }
     </script>
     <!--아래 script 들  위 <HEAD> 로 옮기면 실행 x 안됨 -->
