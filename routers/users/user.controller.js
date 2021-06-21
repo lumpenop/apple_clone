@@ -254,9 +254,11 @@ let deleteID = (req, res) => {
 //        INFO         //
 let info = async (req, res) => {
     let userID = req.cookies.userid
-    let result = await history.findOne({ where: { name1: userID } })
-    res.render('./info/info.html', {
-        result: result
+    let result = await users.findOne({where:{userid:userID}})
+    let result2 = await history.findOne({where:{name1:userID}})
+    res.render('./info/info.html',{
+        result:result,
+        result2:result2,
     })
 }
 
@@ -264,9 +266,19 @@ let info_view = (req, res) => {
     res.render('./info/info_view.html');
 }
 
-let info_modify = (req, res) => {
-    res.render('./info/info_modify.html')
+let info_modify = async (req,res) =>{
+
+    let userID = req.cookies.userid
+    let userpw = req.body.userpw
+    let tokenpw = createPW(userpw);
+    let username = req.body.username
+    let userbirth = req.body.userbirth
+    let mobile = req.body.mobile
+    let result2 = await users.update({userpw:tokenpw, username:username, userbirth:userbirth, mobile:mobile},{where:{userid:userID}})
+    res.render('./info/info.html');
 }
+
+
 
 
 
@@ -362,11 +374,21 @@ let pwFind = async (req, res) => {
     res.render('./pwFind.html')
 }
 
+// MAP 
+
+let map = (req,res) =>{
+    res.render('./map/map.html')
+}
+
+
+
+
 module.exports = {
     join, join_success, userid_check, login, logincheck, login_success,
     kakaologin, kakao_login, logout, deleteID, googlelogin, google_logout,
     info, info_view, info_modify,
     chat, chatRoom, chatHelp, chatBtn,
     bags,
-    pwFind, pwFind_middleware
+    pwFind, pwFind_middleware,
+    map,
 }

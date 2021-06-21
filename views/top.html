@@ -28,7 +28,14 @@
 </head>
 
 <body class="page-home ac-nav-overlap">
-
+    <div id="side_menu">
+        <div id ="" class="side_menu_box">
+            <a href="/user/chat">채팅</a>
+        </div>
+        <div id="" class="side_menu_box">
+            <a href="/user/map">지도</a>
+        </div>
+    </div>
     <nav id="ac-globalnav" class="js no-touch no-windonws with-bagview" role="navigation" data-hires="false"
         data-analytics-region="ac-global nav" lang="ko-Kr" dir="ltr" data-www-domain="www.apple.com"
         data-store-locale="kr" data-store-root-path="/kr" data-store-api="/[sotrefront]/shop/bag/status"
@@ -92,6 +99,7 @@
                         <div class="ac-gn-searchview-bar-wrapper">
                             <div class="ac-gn-searchform-wrapper">
                                 <form action="/search/search" method="post">
+                                    <!--   SEARCH  -->
                                     <input id="ac-gn-searchform-input" class="ac-gn-searchform-input displayNone"
                                         aria-label="apple.com 검색" placeholder="apple.com 검색" name="AppleSearch"
                                         type="text">
@@ -148,7 +156,12 @@
             <span class="caret"></span>
             <aside class="ac-gn-bagview">
                 <div class="ac-gn-bagview-content">
-                    <p class="ac-gn-bagview-message">장바구니가 비어있습니다.</p>
+                    <p class="ac-gn-bagview-message">
+                        {% for result in result %}
+                        <div><img style = "width:80px; height:100px; margin-bottom: 20px;" src = "../{{result.item_image}}"></div>
+                        <div style = "margin-bottom: 20px;">{{result.item_name}}</div>
+                        {% endfor %}
+                    </p>
                     <nav class="ac-gn-bagview-nav">
                         <ul class="ac-gn-bagview-nav-list">
                             <li class="ac-gn-bagview-nav-item">

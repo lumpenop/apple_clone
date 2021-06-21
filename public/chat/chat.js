@@ -27,7 +27,7 @@ chatBtn.addEventListener('click', () => {
 });
 
 async function getChatRoom() {
-    let url = `http://localhost:4000/user/chatRoom`;
+    let url = `http://localhost:3000/user/chatRoom`;
     let options = {
         method: 'get'
     }

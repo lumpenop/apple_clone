@@ -492,3 +492,36 @@ a{
 .chatBtn:hover{
     cursor: pointer;
 }
+
+
+
+
+
+/***  main 채팅, 지도 CSS  ***/
+
+#side_menu{
+    width:50px;
+    height:100px;
+    background-color: thistle;
+    position: fixed;
+    z-index: 1000;
+    right:5%;
+    transform: translateX(10%);
+    bottom: 5%;
+}
+
+.side_menu_box{
+    width:50px;
+    height:50px;
+    background-color: teal;
+}
+
+.side_menu_box>a{
+    color:black;
+}
+
+
+
+
+
+

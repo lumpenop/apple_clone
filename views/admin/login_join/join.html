@@ -50,7 +50,7 @@
     async function useridFn(){
         const check_msg = document.querySelector('#check_msg')
         const userid_value = document.querySelector('.userid_value').value
-        let result = await fetch(`http://localhost:4000/admin/userid_check?userid=${userid_value}`)
+        let result = await fetch(`http://localhost:3000/admin/userid_check?userid=${userid_value}`)
         let {check}= await result.json()
         if(check){
             check_msg.innerHTML = '사용 가능한 아이디입니다.'
