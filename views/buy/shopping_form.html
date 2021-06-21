@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../../shopping_form.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "wrappingwrap wrap">
+        <div class = "content w1000"> 
+            <h1 class = "h1">주문하신 제품이 어디로 배송되길 원하십니까?</h1>
+            <h2 class = "h2"></h2>
+            <input type = "text" value = "{{msg}}" class = "msg displaynone">
+            <div>
+                <form action = "/buy/shopping_end?name={{name}}" name = "shopping_end" method = "post">
+                    <h2>이름 및 주소 입력:</h2>
+                    <div class = "displaynone"><input type = "text" name = "item_skill" value = "{{item_skill}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "item_name" class = "item_name" value = "{{name}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "item_price" class = "item_price" value = "{{item_price}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "item_image" value = "{{item_image}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "total_cost" value = "{{total_cost}}"></div>
+                    <input class = "width" type = "text" name = "name1" placeholder="성"><br/>
+                    <input class = "width" type = "text" name = "name2" placeholder="이름"><br/>
+                    <select class = "width2" name = "address1" placeholder = "시/도">
+                        <option>시/도</option>
+                        <option value = "강원도">강원도</option>
+                        <option value = "강원도1">강원도</option>
+                        <option value = "강원도2">강원도</option>
+                        <option value = "강원도3">강원도</option>
+                        <option value = "강원도4">강원도</option>
+                        <option value = "강원도5">강원도</option>
+                        <option value = "강원도6">강원도</option>
+                        <option value = "강원도7">강원도</option>
+                    </select>
+                    <input class = "width2" type = "text" name = "address2" placeholder="지역/도시"><br/>
+                    <input class = "width" type = "text" name = "addressnumber" placeholder="우편번호"><br/>
+                    <input class = "width" type = "text" name = "nation" placeholder="국가/지역"><br/>
+                    <input class = "width" type = "text" placeholder="세부 주소">
+                </div>
+                <div>
+                    <h2>연락처 정보를 알려주십시오.</h2>
+                    <div class = "tiny2"><input name = "email" class = "width" type = "text" placeholder = "이메일 주소"></div>
+                    <div class = "tiny">이메일로 영수증을 보내 드리고, 휴대폰의 SMS 또는 iMessage를 통해<br/> 주문 업데이트를 보내 드립니다.</div>
+                    <input class = "phone width" name = "phone" type = "text" placeholder = "휴대폰 번호">
+                    <div class = "phone1 tiny">입력하시는 전화번호는 주문 후 변경할 수 없으므로 맞는 번호인지 확인해<br/> 주십시오.</div>
+                    <div class = "clear"><input class = "clear size" type = "checkbox"><div>휴대폰 번호가 없습니다.</div></div>
+                </div>
+                <div class = "line">
+    
+                </div>
+                <div>
+                    <div>배송 업데이트 정보를 다른 사람과 공유:</div>
+                    <div class = "blue"><a href = "">이메일 주소를 입력하십시오</a></div>
+                </div>
+                <div class = "line">
+    
+                </div>
+                <a href="javascript:openWindowPop(`http://localhost:5000/?name={{name}}&price={{total_cost}}`, 'popup');"><input type = "button" class = "BTN" value = "결제 페이지로 이동"></a>
+                <div class = "d">*결제 후 완료 페이지로 이동해주세요*</div>
+                <input class = "BTN" type = "submit" value = "결제 완료"></a>
+                <a href = "/user/login"><div class = "d">메인 페이지로 이동하기</div></a>
+            </form>
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+//javascript
+    function openWindowPop(url, name){
+        var options = 'top=180, left=550, width=800, height=550, status=no, menubar=no, toolbar=no, resizable=no';
+        window.open(url, name, options);
+    }
+
+    let item_name = document.querySelector('.item_name')
+    let item_price = document.querySelector('.item_price')
+
+
+    
+    // let h1 = document.querySelector('.h1')
+
+    // h1.addEventListener('click',popup)
+    
+    // let BTN = document.querySelector('.BTN')
+    
+    // BTN.addEventListener('click',button)
+    // async function button(){
+    //     let url = "http://localhost:5000/"
+    //     let options = {
+    //         method:'POST',
+    //         headers:{
+    //             'content-type':`application/json`,
+    //         },
+    //         body:JSON.stringify({
+    //             item_name:item_name.value,
+    //             item_price:item_price.value
+    //         })
+    //     }
+        // headers
+        // key=value&key2=value2
+        // 값을2개보낼겁니다. userid userpw 
+    //     let response = await fetch(url,options);
+    //     let json = await response.json();
+    // }
+    // size = document.querySelector('.size')
+    // phone = document.querySelector('.phone')
+    // phone1 = document.querySelector('.phone1')
+    // size.addEventListener('click',close)
+    // size.addEventListener('dblclick',open)
+
+    // function close(){
+    //     phone.style.display = 'none'
+    //     phone1.style.display = 'none'
+    // }
+    // function open(){
+    //     phone.style.display = 'block'
+    // }
+    
+    msg = document.querySelector('.msg')
+    let h2 = document.querySelector('.h2')
+    value = msg.value
+    if(value == '이미 구매하신 제품입니다'){
+        alert('이미 구매하신 제품입니다')
+    }
+
+</script>
+</html>

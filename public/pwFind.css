@@ -1,0 +1,60 @@
+.main_div{
+    margin-top:300px;    
+    position:relative;
+    text-align: center;
+    font-size: 30px;
+}
+
+a{
+    display: inline-block;
+    margin-top: 70px;
+    text-decoration: none;
+    color:cornflowerblue; 
+}
+
+a:hover{
+    transition: ease-in-out 1s;
+    color:rgb(63, 100, 168); 
+}
+
+.width{
+    width:400px; 
+    height:40px; 
+} 
+
+.BTN{ 
+    display: inline-block; 
+    margin-top: 40px; 
+    width:200px; 
+    height:40px; 
+    border: 1px solid transparent;
+    background: rgb(211, 209, 209); 
+}
+
+.BTN:hover{
+    background: rgb(254, 255, 167); 
+}
+
+#pwFind_msg{
+    width:500px;
+    height:50px;
+    color:red;
+    font-size: 15px;  
+    position:absolute;
+    right:50%;
+    transform: translateX(36%);
+
+}
+
+#pwfind_submit{
+    border:1px solid rgb(211, 209, 209);
+    margin-top: 100px;
+    
+}
+
+
+
+#textbox{
+    border:1px solid rgb(211, 209, 209);
+
+}

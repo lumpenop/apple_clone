@@ -1,3 +1,4 @@
+
 const input = document.querySelectorAll(".inputFocus");
 let loginBtn = document.querySelector('#loginBtn');
 loginBtn.addEventListener('click', loginFn);
@@ -8,7 +9,6 @@ for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('focus', inputFocus);
     input[i].addEventListener('focusout', inputFocusOut);
 }
-
 
 function inputFocus() {
     const span = this.parentNode.querySelector('span');
@@ -24,6 +24,8 @@ function inputFocusOut() {
     }
 }
 
+// 핸드폰 번호 형식 /^01(?:0|1|[6-9])[.-]?(\\d{3}|\\d{4})[.-]?(\\d{4})$/
+// 생년 월일 /^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/
 
 async function loginFn() {
     let loginForm = document.querySelector('#loginForm');
@@ -31,7 +33,7 @@ async function loginFn() {
     let userpw = document.querySelector('#userpw');
 
     if (userid.value == '') { swal('이메일 주소를 입력해주세요.'); userid.focus(); return 0; };
-    if (userpw.value == '') { alert('비밀번호를 입력해주세요.'); userpw.focus(); return 0; };
+    if (userpw.value == '') { swal('비밀번호를 입력해주세요.'); userpw.focus(); return 0; };
 
     let url = `http://localhost:3000/user/logincheck`;
     let options = {
@@ -56,7 +58,6 @@ async function loginFn() {
         userid.focus();
     }
 }
-
 
 
 //  GOOGLE LOGIN API 

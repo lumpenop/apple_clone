@@ -1,0 +1,153 @@
+.wrap{
+    width:100%;
+    background:#E0E0E0;
+    height:800px;
+}
+.wrap2{
+    width:100%;
+    height:1500px;
+}
+.content{
+    width:1400px;
+    margin:0 auto;
+}
+
+.BTN_click{
+    margin-top: 50px;
+    color:#c60007;
+    border:1px solid #c60007;
+    font-size: 18px;
+    background: #E0E0E0;
+}
+.footer{
+    padding:70px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    display: flex;
+    flex-direction:row;
+    background:#E0E0E0;
+}
+.footer>div{
+    display: inline-block;
+}
+
+.img{
+    width:600px;
+    height:450px;
+}
+
+.mainLecture{
+    clear: both;
+}
+.text{
+    margin-top: 70px;
+    margin-left: 100px;
+}
+.font{
+    font-size: 30px;
+}
+.font1{
+    font-size: 22px;
+}
+.red{
+    font-size: 40px;
+    color:red;
+}
+
+.tag0{
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.tag{
+    border:1px solid grey;
+    border-radius: 6px;
+    width:28px;
+}
+
+.main_subject{
+    margin-top: 70px;
+    font-size: 30px;
+    margin-bottom: 45px;
+}
+
+.display{
+    display: inline-block;
+}
+
+.float{
+    float:left;
+}
+
+.h1{
+    font-size: 50px;
+    margin-top: 60px;
+}
+
+.numbering{
+    width:100px;
+    height:30px;
+    font-size: 27px;
+    text-align: center;
+    border-bottom:1px solid grey;
+}
+.numbering2{
+    width:1000px;
+    height:30px;
+    font-size: 27px;
+    text-align: center;
+    border-bottom:1px solid grey;
+}
+
+.numbering3{
+    width:400px;
+    height:30px;
+    border-bottom:1px solid grey;
+}
+
+.width{
+    width:100%;
+    height:100%;
+    background: grey;
+    position: absolute;
+    top:0%;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+}
+html{
+    width:100%;
+    height: 100%;
+}
+body{
+    width:100%;
+    height:100%;
+}
+.close{
+    font-size: 45px;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.w1300{
+    width:1300px;
+    height:100%;
+    margin:200px auto;
+}
+
+.w1300>iframe{
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.widthheight{
+    height:1000px;
+    width:1300px;
+}
+.Red{
+    color:#c60007;
+}
