@@ -104,8 +104,10 @@ let logincheck = async (req, res) => {
     })
 }
 
-let login_success = (req, res) => {
-    res.redirect('/')
+let login_success = async (req, res) => {
+    let {userid} = req.cookies;
+    let result = await bag.findAll({where:{users_name:userid}})
+    res.render('index.html',{result:result})
 }
 
 
