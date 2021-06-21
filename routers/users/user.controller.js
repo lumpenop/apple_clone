@@ -26,7 +26,6 @@ let login = async (req, res) => {
     }else{
         res.redirect('/');
     }
-    
 }
 
 let userid_check = async (req,res) =>{
@@ -57,18 +56,19 @@ let logincheck = async (req, res) => {
         } else if (userpw == userpwfromDB && userid == useridfromDB) {
             result.result = true;
             result.msg = `Welcome back ${usernamefromDB}!`;
+            let Token = createToken(userid);
+
             res.cookie('username', usernamefromDB); 
+            res.cookie('AccessToken', Token, {httpOnly:true, secure:true}); 
+            res.cookie('userid',userid); 
+            res.cookie('loginsite','local')
+            //session에 local 로 로그인한 user의 정보 (users table의 모든 fields) 담음 
+            req.session.authData={
+                ['local']:pick.dataValues,
+            }
         }
     }
-    let Token = createToken(userid);
-    
-    res.cookie('AccessToken', Token, {httpOnly:true, secure:true}); 
-    res.cookie('userid',userid); 
-    res.cookie('loginsite','local')
-    //session에 local 로 로그인한 user의 정보 (users table의 모든 fields) 담음 
-    req.session.authData={
-        ['local']:pick.dataValues,
-    }
+
     req.session.save(()=>{
         res.json(result);
     })
