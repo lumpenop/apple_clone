@@ -1,11 +1,11 @@
 require('dotenv').config();
 const { users, items, buy, bag, history } = require('../../models');
-const { createToken, createPW } = require("../../JWT");
+const { createToken, createPW, verifying_key } = require("../../JWT");
 const axios = require('axios');
 const qs = require('qs');
 const session = require('express-session');
 const nodemailer = require('nodemailer');
-
+const smtpTransporter = require('nodemailer-smtp-transport');
 
 
 //     JOIN     //
@@ -13,41 +13,52 @@ let join = async (req, res) => {
     res.render('join.html');
 }
 
-// let login = async (req, res) => {
-//     res.render('login.html',{
-//         msg:req.query.msg
-//     });
-// }
-// let login_cookie = async (req,res) => {
-//     res.clearCookie('username')
-//     res.clearCookie('item_name')
-//     res.clearCookie('AccessToken')
-//     res.render('login.html')
-// }
-// let bags = async (req, res) => {
-//     // console.log(req.cookies['Access_token'])
-//     // res.render('index.html');
-
-//     // let payload = Buffer.from(req.cookies['Access_token'].split('.')[1],'base64').toString();
-//     // console.log(payload)
-//     // var {userid} = JSON.parse(payload)
-//     // console.log(userid)
-//     // let userList= await bag.findAll({
-//     //     where:{
-//     //         users_id:req.id
-//     //     }
-//     // });
-//     // res.json({
-
-//     // })
-// }
-
 let join_success = (req, res) => {
     let { username, userbirth, userid, userpw, mobile } = req.body;
+    // verifying key 만들어 db에 함께 create 
+    let key_for_verify = verifying_key();
     userpw = createPW(userpw);
-    users.create({ userid, userpw, username, userbirth, mobile })
-    res.redirect('/user/login');
+    users.create({ userid, userpw, username, userbirth, mobile, key_for_verify, })
+
+    let transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        host: 'smtp.gmail.com',
+        auth: {
+            user: process.env.GoogleID, //generated ethereal user
+            pass: process.env.GooglePW, //generated ethereal password 
+        }
+    });
+
+    let url = `http://` + req.get('host') + `/user/confirmEmail?key=${key_for_verify}`;
+    let options = {
+        from: process.env.GoogleID,
+        to: 'saeee210@gmail.com',
+        subject: '이메일 인증을 진행해주세요.',
+        html: `${username}님, 안녕하세요. <h1>이메일 인증을 위해 URL을 클릭해주세요. </h1><br/> ${url}`
+    }
+
+    transporter.sendMail(options, function (err, res) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('email has been successfully sent.');
+        }
+        transporter.close();
+    })
+    res.send('<script type="text/javascript"> alert("인증을 위해 이메일을 확인해 주세요."); window.location="/"; </script>');
 }
+
+
+let confirmEmail = async (req, res) => {
+    let email_verify = await users.update({ email_verified: true }, { where: { key_for_verify: req.query.key } })
+    if (email_verify == undefined) {
+        res.send('<script type="text/javascript">alert("Not verified"); window.location="/"; </script>');
+        return 0;
+    } else {
+        res.send('<script type="text/javascript"> alert("Successfully verified"); window.location="/user/login"; </script>');
+        }
+}
+
 
 //       LOGIN     //
 let login = async (req, res) => {
@@ -59,6 +70,7 @@ let login = async (req, res) => {
         res.redirect('/');
     }
 }
+
 
 let userid_check = async (req, res) => {
     let { userid } = req.body;
@@ -75,7 +87,7 @@ let logincheck = async (req, res) => {
     let { userid, userpw } = req.body;
     userpw = createPW(userpw);//고객이 로그인할 때 쓴 비번을 암호화 
     let result = { result: false, }
-    let pick = await users.findOne({ where: { userid } });
+    let pick = await users.findOne({ where: { userid, email_verified: true } });
 
     if (pick == undefined) {
         result.msg = '이메일이 존재하지 않습니다.';
@@ -254,11 +266,11 @@ let deleteID = (req, res) => {
 //        INFO         //
 let info = async (req, res) => {
     let userID = req.cookies.userid
-    let result = await users.findOne({where:{userid:userID}})
-    let result2 = await history.findOne({where:{name1:userID}})
-    res.render('./info/info.html',{
-        result:result,
-        result2:result2,
+    let result = await users.findOne({ where: { userid: userID } })
+    let result2 = await history.findOne({ where: { name1: userID } })
+    res.render('./info/info.html', {
+        result: result,
+        result2: result2,
     })
 }
 
@@ -266,7 +278,7 @@ let info_view = (req, res) => {
     res.render('./info/info_view.html');
 }
 
-let info_modify = async (req,res) =>{
+let info_modify = async (req, res) => {
 
     let userID = req.cookies.userid
     let userpw = req.body.userpw
@@ -274,7 +286,7 @@ let info_modify = async (req,res) =>{
     let username = req.body.username
     let userbirth = req.body.userbirth
     let mobile = req.body.mobile
-    let result2 = await users.update({userpw:tokenpw, username:username, userbirth:userbirth, mobile:mobile},{where:{userid:userID}})
+    let result2 = await users.update({ userpw: tokenpw, username: username, userbirth: userbirth, mobile: mobile }, { where: { userid: userID } })
     res.render('./info/info.html');
 }
 
@@ -324,15 +336,15 @@ let bags = async (req, res) => {
 }
 
 let pwFind_middleware = async (req, res) => {
-    let {msg} = req.query;
-    res.render('./pwFind_middleware.html',{msg})
+    let { msg } = req.query;
+    res.render('./pwFind_middleware.html', { msg })
 }
 
 let pwFind = async (req, res) => {
     let { userid } = req.body;
     let pick = await users.findOne({ where: { userid } });
 
-    if (pick == undefined){
+    if (pick == undefined) {
         res.redirect('/user/pwFind_middleware?msg=가입된 email주소가 존재하지 않습니다.')
         return 0;
     }
@@ -363,7 +375,7 @@ let pwFind = async (req, res) => {
 
     let userpw = createPW(randomPw);
     users.update({ userpw: userpw }, { where: { userid: userid } })
-    
+
     transport.sendMail(mailOption, function (error) {
         if (error) {
             console.log(error);
@@ -376,7 +388,7 @@ let pwFind = async (req, res) => {
 
 // MAP 
 
-let map = (req,res) =>{
+let map = (req, res) => {
     res.render('./map/map.html')
 }
 
@@ -384,7 +396,7 @@ let map = (req,res) =>{
 
 
 module.exports = {
-    join, join_success, userid_check, login, logincheck, login_success,
+    join, join_success, confirmEmail, userid_check, login, logincheck, login_success,
     kakaologin, kakao_login, logout, deleteID, googlelogin, google_logout,
     info, info_view, info_modify,
     chat, chatRoom, chatHelp, chatBtn,

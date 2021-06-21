@@ -6,6 +6,7 @@ const auth = require('../../middleware/auth.js');
 // router.get('/bags', controller.bags);
 
 router.get('/join', controller.join);
+router.get('/confirmEmail', controller.confirmEmail)
 router.post('/join_success', controller.join_success);
 
 router.get('/login', controller.login);
