@@ -14,7 +14,7 @@
 }
 
 .section-camera .wrapper-sticky.hero{
-    height: 160vh;
+    height: 1580px;
     margin-top: 0;
 }
 
@@ -23,7 +23,7 @@
     width: 100%;
     overflow: hidden;
     position: sticky;
-    height: 100vh;
+    height: 987px;
     top: 0;
 }
 
@@ -68,8 +68,9 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 101vh;
+    height: 997px;
     background:#101011;
+    opacity: 0;
 }
 
 .section-camera .wrapper-sticky.hero .image-camera-array{
@@ -89,11 +90,24 @@
 }
 
 
-.section-camera .wrapper-sticky.hero .gradient{
+.section-camera .gradient{
     z-index: 1;
     top: 0;
-    height:200vh;
-    background: linear-gradient(0deg, #101011 50%, rgba(16, 16, 17 0.005) 100%);
+    width: 100vw;
+    height:1974px;
+    background: linear-gradient(0deg, #101011 50%, rgba(16,16,17,0.005) 100%);
+    transform: matrix(1, 0, 0, 1, 0 , 1300);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+.section-camera .color-management{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .section-camera .theme-dark{
@@ -142,4 +156,14 @@
     background-image: url(
 
     );
+}
+
+.section-camera .sticky .section-content .row{
+    margin-top: calc(100vh - 361px);
+}
+
+.section-camera .sticky .section-content:after{
+    clear: both;
+    content: ' ';
+    display: table;
 }

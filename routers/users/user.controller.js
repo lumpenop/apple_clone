@@ -289,9 +289,6 @@ let info_modify = async (req, res) => {
     let userbirth = req.body.userbirth
     let mobile = req.body.mobile
 
-    let result2 = await users.update({ userpw: tokenpw, username: username, userbirth: userbirth, mobile: mobile }, { where: { userid: userID } })
-    res.render('./info/info.html');
-
     let result = await users.findOne({where:{userid:userID}})
     let result2 = await history.findOne({where:{name1:userID}})
     let result3 = await users.update({userpw:tokenpw, username:username, userbirth:userbirth, mobile:mobile},{where:{userid:userID}})

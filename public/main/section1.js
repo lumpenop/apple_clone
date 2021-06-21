@@ -111,7 +111,6 @@ function canvasHidden(){
         
         lis[num2].style.opacity = sigmoid(scrollTop-beforePosition);
 
-        console.log(scrollTop)
         
     }    
     

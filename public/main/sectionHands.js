@@ -116,15 +116,13 @@ function forMiniSection(){
 
     
     if(hiddenUlBottom*0.8 < scrollTop && sectionMini.bottom > scrollTop){
-        
-        console.log(bottomFrame);
+   
         bottomFrame.classList.add('will-change');
         leftFrame.classList.add('will-change');
         rightFrame.classList.add('will-change');
         topFrame.classList.add('will-change');
         
 
-        console.log(sigmoid2(num/1.5));
        
         leftFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
         rightFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
