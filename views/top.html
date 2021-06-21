@@ -148,7 +148,12 @@
             <span class="caret"></span>
             <aside class="ac-gn-bagview">
                 <div class="ac-gn-bagview-content">
-                    <p class="ac-gn-bagview-message">장바구니가 비어있습니다.</p>
+                    <p class="ac-gn-bagview-message">
+                        {% for result in result %}
+                        <div><img style = "width:80px; height:100px; margin-bottom: 20px;" src = "../{{result.item_image}}"></div>
+                        <div style = "margin-bottom: 20px;">{{result.item_name}}</div>
+                        {% endfor %}
+                    </p>
                     <nav class="ac-gn-bagview-nav">
                         <ul class="ac-gn-bagview-nav-list">
                             <li class="ac-gn-bagview-nav-item">

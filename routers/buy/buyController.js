@@ -83,7 +83,7 @@ let shopping_basket = async (req,res)=>{
     let result = await bag.findAll({where:{users_name:userid}})
     let result2 = await bag.findOne({where:{users_name:userid}})
     if(result==null || result2==null){
-        res.redirect('/user/login?msg="장바구니가 비었습니다"')
+        res.redirect('/?msg=장바구니가 비었습니다')
     }else{
         total_cost = 0
         for(i=0; i<result.length; i++){
