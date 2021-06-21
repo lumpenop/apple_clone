@@ -1,14 +1,44 @@
-const { users, items, buy, bag } = require('../../models');
+const { users, items, buy, bag , history} = require('../../models');
 const { createToken, createPW } = require("../../JWT");
 const axios = require('axios');
 const qs = require('qs');
 const session = require('express-session');
+const nodemailer = require('nodemailer');
 
 
 //     JOIN     //
 let join = async (req, res) => {
     res.render('join.html');
 }
+
+// let login = async (req, res) => {
+//     res.render('login.html',{
+//         msg:req.query.msg
+//     });
+// }
+// let login_cookie = async (req,res) => {
+//     res.clearCookie('username')
+//     res.clearCookie('item_name')
+//     res.clearCookie('AccessToken')
+//     res.render('login.html')
+// }
+// let bags = async (req, res) => {
+//     // console.log(req.cookies['Access_token'])
+//     // res.render('index.html');
+
+//     // let payload = Buffer.from(req.cookies['Access_token'].split('.')[1],'base64').toString();
+//     // console.log(payload)
+//     // var {userid} = JSON.parse(payload)
+//     // console.log(userid)
+//     // let userList= await bag.findAll({
+//     //     where:{
+//     //         users_id:req.id
+//     //     }
+//     // });
+//     // res.json({
+        
+//     // })
+// }
 
 let join_success = (req, res) => {
     let { username, userbirth, userid, userpw, mobile } = req.body;
@@ -220,8 +250,12 @@ let deleteID = (req,res) =>{
 
 
 //        INFO         //
-let info = (req,res) =>{
-    res.render('./info/info.html')
+let info = async (req,res) =>{
+    let userID = req.cookies.userid
+    let result = await history.findOne({where:{name1:userID}})
+    res.render('./info/info.html',{
+        result:result
+    })
 }
 
 let info_view = (req,res) =>{
@@ -275,6 +309,49 @@ let bags = async (req, res) => {
     // })
 }
 
+let pwFind_middleware = async (req,res) => {
+    res.render('./pwFind_middleware.html')
+}
+let pwFind = async (req,res) => {
+    let userid = req.body.userid
+    var arr = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,~,`,!,@,#,$,%,^,&,*,(,),-,+,|,_,=,\,[,],{,},<,>,?,/,.,;".split(",");
+    var randomPw = createCode(arr, 10);
+
+    function createCode(objArr, iLength) {
+    var arr = objArr;
+    var randomStr = "";
+    for (var j=0; j<iLength; j++) {
+    randomStr += arr[Math.floor(Math.random()*arr.length)];
+    }
+    return randomStr
+    }
+
+    let transport = nodemailer.createTransport({
+        service: "Gmail",
+        auth: {
+            user: "simbianartist@gmail.com",
+            pass: "rlatjdud2019"
+        }
+    })
+    
+    let mailOption = {
+        from: "simbianartist@gmail.com",
+        to: "simbianartist@gmail.com",
+        subject: "제목",
+        text: `랜덤 비밀번호 발급 : ${randomPw}`,
+    }
+    let userpw = createPW(randomPw);
+    let result = await users.update({userpw:userpw},{where:{userid:userid}})
+    transport.sendMail(mailOption, function(error, info){
+        if(error){
+            console.log(error)
+        } else {
+            console.log('메세지 전송 완료')
+        }
+    })
+
+    res.render('./pwFind.html')
+}
 
 module.exports = {
     join, join_success, userid_check, login, logincheck, login_success, 
@@ -282,4 +359,5 @@ module.exports = {
     info, info_view, info_modify,
     chat, chatRoom, chatHelp, chatBtn,
     bags, 
+    pwFind, pwFind_middleware
 }

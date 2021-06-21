@@ -14,6 +14,10 @@ const { sequelize } = require('./models');
 const session = require("express-session");
 const auth = require('./middleware/auth.js');
 const router = require('./routers/index');
+const cors = require('cors')
+const { fstat } = require('fs');
+
+app.use(cors());
 
 
 app.use(cookieParser())
@@ -36,8 +40,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(express.static('uploads'));
-
+app.use(express.static('images'));
 app.use('/', router)
+
 
 let id;
 io.sockets.on('connection', socket => {
@@ -57,6 +62,8 @@ io.sockets.on('connection', socket => {
         })
     }
 })
+
+
 
 server.listen(port, () => {
     console.log(`server start port : ${port}`)

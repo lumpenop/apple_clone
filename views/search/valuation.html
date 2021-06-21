@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../../valuation.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "footerwrap wrap">
+        <img class = "wrap" src = "../../제목 없음.png">
+        <div class = "w1200">
+            <div class = "footertext">고객들의 수강후기</div>
+            <div class = "search">
+                <div><input class = "submit" type = "submit" value = ""></div>
+                <div><input class = "text" type = "text" placeholder="원하는 수업의 수강후기를 검색해보세요"></div>              
+            </div>
+        </div>
+    </div>
+    <div class = "ContentWrap wrap2">
+        <div class = "content w12002">
+            <ul id = "top">
+                <li>
+                    <div><img src = "../../product_name_1.png"></div>
+                    <div><a href = "#blockchain">블록체인</a></div>
+                </li>
+                <li>
+                    <div><img src = "../../product_name_2.png"></div>
+                    <div><a href = "#ARVR">AR/VR</a></div>
+                </li>
+                <li>
+                    <div><img src = "../../product_name_3.png"></div>
+                    <div><a href = "#producing">게임기획</a></div>
+                </li>
+                <li><div><img src = "../../product_name_4.png"></div>
+                    <div><a href = "#machine">인공지능</a></div>
+                </li>
+                <li>
+                    <div><img src = "../../product_name_5.png"></div>
+                    <div><a href = "#frontback">웹앱개발</a></div>
+                </li>
+                <li>
+                    <div><img src = "../../product_name_6.png"></div>
+                    <div><a href = "#computer">컴퓨터개론</a></div>
+                </li>
+            </ul>
+            <div class = "line"></div>
+            <div class = "valuation1">
+                <div id = "blockchain">
+                    <div class = "img marginleft"><img class = "img" src = "../../content1.png"></div>
+                    <div class = "font-size marginleft2 open1" >블록체인반 수강후기</div>
+                    <div class = "marginleft2 first">
+                        {% for item in result1 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                    </div>
+                    <div class = "marginleft2 second">
+                        {% for item in result11 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div class = "close1">닫기</div>
+                    </div>
+                </div>
+                <div id = "ARVR">
+                    <div class = "img marginleft"><img class = "img" src = "../../content2.png"></div>
+                    <div class = "font-size marginleft2">AR/VR반 수강후기</div>
+                    <div class = "marginleft2">
+                        {% for item in result2 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>    
+            <div class = "line clear"></div>
+            <div class = "valuation2">
+                <div id = "producing">
+                    <div class = "img marginleft imgfloat"><img class = "img" src = "../../content1.png"></div>
+                    <div class = "font-size marginleft2 marginleft3" >게임기획반 수강후기</div>
+                    <div class = "marginleft2 imgfloat marginleft4">
+                        {% for item in result3 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div> 
+    <div class = "wrap5">
+        <img class = "wrap55" src = "../../middlefooter.png">
+        <!-- <div class = "w12003">
+            <div class = "footertext3">궁금하신 것이 있으신가요</div>
+            <div class = "footertext4">채팅 서비스를 사용하실 수 있습니다</div>
+            <div class = "href"><a href="javascript:openWindowPop('http://localhost:4000/user/chatBtn', 'popup');">채팅 바로 가기</a></div>
+        </div> -->
+    </div>
+    <div class = "ContentWrap wrap2">
+        <div class = "content w12002">
+            <div class = "valuation5">
+                <div id = "machine">
+                    <div class = "img marginleft2"><img class = "img" src = "../../content1.png"></div>
+                    <div class = "font-size marginleft2 after open4" >인공지능반 수강후기</div>
+                    <div class = "marginleft2 after first4">
+                        {% for item in result4 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div>더 보시려면 제목을 클릭해주세요</div>
+                    </div>
+                    <div class = "marginleft2 after second4">
+                        {% for item in result44 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div class = "close4">닫기</div>
+                    </div>
+                </div>
+                <div id = "frontback">
+                    <div class = "img marginleft2"><img class = "img" src = "../../content4.png"></div>
+                    <div class = "font-size marginleft2 after open5">웹앱개발반 수강후기</div>
+                    <div class = "marginleft2 after first5">
+                        {% for item in result5 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div>더 보시려면 제목을 클릭해주세요</div>
+                    </div>
+                    <div class = "marginleft2 after second5">
+                        {% for item in result55 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div class = "close5">닫기</div>
+                    </div>
+                </div>
+                <div id = "computer">
+                    <div class = "img marginleft2"><img class = "img" src = "../../content5.png"></div>
+                    <div class = "font-size marginleft2 after open6">컴퓨터개론 수강후기</div>
+                    <div class = "marginleft2 after first6">
+                        {% for item in result6 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div>더 보시려면 제목을 클릭해주세요</div>
+                    </div>
+                    <div class = "marginleft2 after second6">
+                        {% for item in result66 %}
+                        <div class = "blue">제목 : {{item.value_subject}}</div>
+                        <div>유저아이디 : {{item.userid}}</div>
+                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                        {% endfor %}
+                        <div class = "close6">닫기</div>
+                    </div>
+                </div>
+                <!-- <ul id = "computer clear">
+                    <div><a href = "#top">위로 가기</a></div>
+                </ul> -->
+            </div>    
+        </div>   
+    </div> 
+</body>
+
+<script type = "text/javascript" src = "/admin/js/chat.js"></script>
+<script type = "text/javascript">
+    function openWindowPop(url, name){
+         var options = 'top=100, left=650, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
+         window.open(url, name, options);
+     }
+
+     open1 = document.querySelector('.open1')
+     close1 = document.querySelector('.close1')
+     first = document.querySelector('.first')
+     second = document.querySelector('.second')
+
+     open1.addEventListener('click',open11)
+     close1.addEventListener('click',close11)
+
+     function open11(){
+        first.style.display = 'none'
+        second.style.display = 'block'
+     }
+
+     function close11(){
+        first.style.display = 'block'
+        second.style.display = 'none'
+     }
+     open4 = document.querySelector('.open4')
+     close4 = document.querySelector('.close4')
+     first4 = document.querySelector('.first4')
+     second4 = document.querySelector('.second4')
+
+     open4.addEventListener('click',open44)
+     close4.addEventListener('click',close44)
+
+     function open44(){
+        first4.style.display = 'none'
+        second4.style.display = 'block'
+     }
+
+     function close44(){
+        first4.style.display = 'block'
+        second4.style.display = 'none'
+     }
+
+     open5 = document.querySelector('.open5')
+     close5 = document.querySelector('.close5')
+     first5 = document.querySelector('.first5')
+     second5 = document.querySelector('.second5')
+
+     open5.addEventListener('click',open55)
+     close5.addEventListener('click',close55)
+
+     function open55(){
+        first5.style.display = 'none'
+        second5.style.display = 'block'
+     }
+
+     function close55(){
+        first5.style.display = 'block'
+        second5.style.display = 'none'
+     }
+
+     open6 = document.querySelector('.open6')
+     close6 = document.querySelector('.close6')
+     first6 = document.querySelector('.first6')
+     second6 = document.querySelector('.second6')
+
+     open6.addEventListener('click',open66)
+     close6.addEventListener('click',close66)
+
+     function open66(){
+        first6.style.display = 'none'
+        second6.style.display = 'block'
+     }
+
+     function close66(){
+        first6.style.display = 'block'
+        second6.style.display = 'none'
+     }
+ </script>
+</html>

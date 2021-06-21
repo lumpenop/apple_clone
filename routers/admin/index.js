@@ -33,14 +33,21 @@ router.post('/login_success',controller.login_success)
 router.post('/delete_success',controller.delete_success);
 router.post('/delete_success2',controller.delete_success2);
 router.post('/delete_success3',controller.delete_success3);
+router.post('/delete_success4',controller.delete_success4);
 router.post('/search_success',controller.search_success);
 router.post('/search_success2',controller.search_success2);
 router.post('/search_success3',controller.search_success3);
+router.post('/search_success4',controller.search_success4);
+router.post('/search_success5',controller.search_success5);
 router.post('/product_list/success',upload.single('img'),controller.create_list);
 router.get('/userid_check',controller.userid_check);
 
 router.get('/valuation',controller.value_list);
 
 router.get('/user_list',controller.user_list);
+
+
+router.get('/history',controller.history_list);
+router.get('/skill',controller.skill_list);
 
 module.exports = router;

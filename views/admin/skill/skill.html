@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../../../admin/css/product_list.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "headerWrap wrap">
+        <div class = "header w1200">
+            <div class = "logo">
+                <img src = "">
+            </div>
+            <div class = "user blue">
+                <div class = "">관리자 <span>{{userid}}</span>님</div>
+                <a href = "/admin/logout">로그아웃</a>
+            </div>
+        </div>
+    </div>
+    <div class = "middleWrap wrap">
+        <div class = "middle w1000">
+            <div class = "menu">
+                <div>카테고리</div>
+                <ul>
+                    <li><a href = "/admin/history">구매 내역 관리</a></li>
+                    <li><a href = "/admin/user_list">사용자 관리</a></li>
+                    <li><a href = "/admin/product_list">교육 서비스 관리</a></li>
+                    <li><a href = "/admin/skill">과목 관리</a></li>
+                    <li><a href = "/admin/valuation">수강 후기 관리</a></li>
+                    <li class = "margintop"><a href = "/admin/chat_list">고객 문의/채팅</a></li>
+                </ul>
+                <div class = >유저정보</div>
+                <ul>
+                    <li><a href = "/admin/admin_info">관리자 정보</a></li>
+                </ul>
+            </div>
+            <div class = "content4">
+                <div>
+                    <form action = "/admin/search_success3" method = "post">
+                        <div class = "search">
+                            <div class = "">과목 검색</div>
+                             <input type = "text" placeholder = "과목을 검색하세요" name = "search" class = "searchwidth searchheight">
+                            <input type = "submit" class = "searchheight buttonwidth" value = "?">
+                        </div>      
+                    </form>
+                </div>
+                <div>
+                    <table class = "table paginated">
+                        <form action = "/admin/delete_success3?idx={{item.id}}" method = "post">   
+                            <tr class = "grey">
+                                <td>과목명</td>
+                                <td class = "value2">영상 번호</td>
+                                <td>영상 이름</td>
+                                <td class = "value">영상</td>
+                                <td>삭제하기</td>
+                            </tr>    
+                            {% for item in result %} 
+                            <tr class = "blueGreen">
+                                <td>{{item.skill_name}}</td>
+                                <td>{{item.iframe_number}}</td>
+                                <td class = "value">{{item.iframe_name}}</td>
+                                <td><iframe src = "{{item.skill_iframe}}"></iframe></td>
+                                <td>
+                                    <input type = "submit" class = "delete" value = "삭제하기">
+                                </td>
+                            </tr>   
+                            {% endfor %} 
+                        </form>   
+                      
+                    </table>
+                    <div id="pagination">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    function page(){ 
+    $('table.paginated').each(function() {
+     var pagesu = 105;  //페이지 번호 갯수
+     var currentPage = 0;
+     var numPerPage = 3;  //목록의 수
+     var $table = $(this);    
+     var pagination = $("#pagination");
+    
+     var numRows = $table.find('tbody tr').length;
+     var numPages = Math.ceil(numRows / numPerPage);
+    
+     if (numPages==0) return;
+    
+    
+    
+     //pager라는 클래스의 div엘리먼트 작성
+    
+     var $pager = $('<div class="pager"></div>');
+     var nowp = currentPage;
+     var endp = nowp+10;
+    
+    
+     //페이지를 클릭하면 다시 셋팅
+     $table.bind('repaginate', function() {
+      //기본적으로 모두 감춘다, 현재페이지+1 곱하기 현재페이지까지 보여준다
+      $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+      $("#pagination").html("");
+    
+      if (numPages > 1) {     // 한페이지 이상이면
+       if (currentPage < 5 && numPages-currentPage >= 5) {   // 현재 5p 이하이면
+        nowp = 0;     // 1부터 
+        endp = pagesu;    // 10까지
+       }else{
+        nowp = currentPage -5;  // 6넘어가면 2부터 찍고
+        endp = nowp+pagesu;   // 10까지
+        pi = 1;
+       }
+       if (numPages < endp) {   // 10페이지가 안되면
+        endp = numPages;   // 마지막페이지를 갯수 만큼
+        nowp = numPages-pagesu;  // 시작페이지를   갯수 -10
+       }
+       if (nowp < 1) {     // 시작이 음수 or 0 이면
+        nowp = 0;     // 1페이지부터 시작
+       }
+      }else{       // 한페이지 이하이면
+       nowp = 0;      // 한번만 페이징 생성
+       endp = numPages;
+      }
+    
+      // [이전]
+    
+      $('<span class="pageNum back">이전</span>').bind('click', {newPage: page},function(event) {
+    
+       if(currentPage == 0) return; 
+    
+       
+    
+       currentPage = currentPage-1;
+    
+       $table.trigger('repaginate'); 
+    
+       $($(".pageNum")[(currentPage-nowp)+2]).addClass('active').siblings().removeClass('active');
+    
+      }).appendTo(pagination).addClass('clickable');
+    
+      
+    
+      // [1,2,3,4,5,6,7,8]
+    
+      for (var page = nowp ; page < endp; page++) {
+    
+       $('<span class="pageNum NUMBER"></span>').text(page + 1).bind('click', {newPage: page}, function(event) {
+    
+        currentPage = event.data['newPage'];
+    
+        $table.trigger('repaginate');
+    
+        $($(".pageNum")[(currentPage-nowp)+2]).addClass('active').siblings().removeClass('active');
+    
+       }).appendTo(pagination).addClass('clickable');
+    
+      } 
+    
+    
+    
+      // [다음]
+    
+      $('<span class="pageNum next">다음</span>').bind('click', {newPage: page},function(event) {
+    
+       if(currentPage == numPages-1) return;
+    
+      
+    
+       currentPage = currentPage+1;
+    
+       $table.trigger('repaginate'); 
+    
+       $($(".pageNum")[(currentPage-nowp)+2]).addClass('active').siblings().removeClass('active');
+    
+      }).appendTo(pagination).addClass('clickable');
+    
+    
+      $($(".pageNum")[2]).addClass('active');
+    
+     });
+    
+     
+    
+     $pager.insertAfter($table).find('span.pageNum:first').next().next().addClass('active');   
+    
+     $pager.appendTo(pagination);
+    
+     $table.trigger('repaginate');
+    
+    });
+    
+    }
+    
+    
+    
+    $(function(){
+    
+     // table pagination
+    
+     page();
+    
+    });
+    
+    </script>
+</html>

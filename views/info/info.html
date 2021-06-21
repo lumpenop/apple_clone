@@ -4,48 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../../info.css">
     <title>Document</title>
 </head>
 <body>
     <div id = "wrap">
-        <div id ="settings">
+        <div class = "headerwrap wrap">
+            <div class = "header1200 w1200">
+                <div>
+                    <div class = "margin padding">
+                        <div class = "floatl font1">계정</div>
+                        <div class = "floatr"><a href = "">로그아웃 ></a></div> 
+                    </div>                   
+                    <div class = "line1 clear"></div>  
+                    <div class = "padding font2">
+                        {{result.name1}}님, 안녕하세요.
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class = "wrap">
+            <div class = "header1200 w1200">
+                <div>
+                    <div class = "font2">현재 어느 기기에도 로그인되어 있지 않습니다.</div>
+                    <div>여기에 고객님의 기기가 보이지 않나요? 기기를 연동하거나 변경하려면 <a href = "">Apple ID 설정</a>(새 창에서 열림)을 확인하세요.</div>
+                </div>
+                <div>
+                    <div class = "floatl">
+                        <div>주문 사항</div>
+                        <div>배송을 조회하고, 주문을 변경 또는 취소하거나 반품을</br>신청하세요.</div>
+                        <div><a href = "">주문 기록 확인 ></a></div>
+                    </div>
+                    <div class = "floatl">
+                        <div>주문 사항</div>
+                        <div>배송을 조회하고, 주문을 변경 또는 취소하거나 반품을</br>신청하세요.</div>
+                        <div><a href = "">주문 기록 확인 ></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id ="settings" class = "clear">
             <div id="settings_title">
                 <h1>계정 설정</h1>
             </div>
-            <div id = "delivery">
-                <div id ="delivery_title">
-                    <h2>배송</h2>
-                </div>
-                <div id ="delivery_address">
-                    <p>배송 주소</p>
-                    <p></p>
-                    <p></p>
-                </div>
-                <div id ="contact_info">
-                    <p>연락처 정보</p>
-                    <p></p>
-                </div>
-            </div>
-            <div id = "info_secure">
-                <div id ="info_secure_title">
-                    <h2>개인 정보 보호 </h2>
-                </div>
-                <div id ="private">
-                    <p>개인 정보</p>
-                    <p>고객님의 개인 정보는 고객님만의 것으로 언제든 직접 데이터를 관리하고 계정을 삭제할 수도 있습니다. Apple은 개인 정보 보호를 취우선으로 여깁니다.</p>
-                    <a>내 개인 정보 관리 ></a>
-                </div>
-            </div>
-            <div id = "Apple_id">
-                <div id ="Apple_id_title">
-                    <h2>Apple ID</h2>
-                </div>
-                <div id ="Apple_id_content">
-                    <p></p>
-                    <a href = "/user/info_view">Apple ID 관리</a>
-                    <p>Apple ID는 App Store, Apple Music, iCloud, iMessage, FaceTime 등의 Apple 서비스를 이용할 때 사용하는 계정입니다.</p>
-                </div>
-            </div>
+            <table>
+                <tr id = "delivery">
+                    <td id ="delivery_title" class = "w150">
+                        <h2>배송</h2>
+                    </td>
+                    <td id ="delivery_address" class = "w150">
+                        <p class = "fontBold">배송 주소</p>
+                        <p>{{result.address1}}</p>
+                        <p>{{result.address2}}</p>
+                        <p>{{result.addressnumber}}</p>
+                    </td>
+                    <td id ="contact_info" class = "w150">
+                        <p class = "fontBold">연락처 정보</p>
+                        <p>{{result.name1}}</p>
+                        <p>{{result.phone}}</p>
+                        <p>{{result.email}}</p>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr id = "info_secure">
+                    <td id ="info_secure_title" class = "w150">
+                        <h2>개인 정보 보호</h2>
+                    </td>
+                    <td id ="private">
+                        <p class = "fontBold">개인 정보</p>
+                        <p>고객님의 개인 정보는 고객님만의 것으로 언제든 직접 데이터를 관리하고 계정을 삭제할 수도 있습니다. Apple은 개인<br/> 정보 보호를 취우선으로 여깁니다.</p>
+                        <a href = "">내 개인 정보 관리 ></a>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr id = "Apple_id">
+                    <td id ="Apple_id_title" class = "w150">
+                        <h2>Apple ID</h2>
+                    </td>
+                    <td id ="Apple_id_content">
+                        <p>{{result.name1}}</p>
+                        <a href = "/user/info_view">Apple ID 관리 ></a>
+                        <p>Apple ID는 App Store, Apple Music, iCloud, iMessage, FaceTime 등의 Apple 서비스를 이용할 때 사용하는 계정입니다.</p>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr id = "Apple_id">
+                    <td id ="Apple_id_title" class = "w150">
+                        <h2></h2>
+                    </td>
+                    <td style = "width:350px; height:40px; margin-top: 20px;">
+                        <span><img style = "display:inline-block; width:350px; height:40px; margin-top: 20px;" src = "../../info1.jpg"></span>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>

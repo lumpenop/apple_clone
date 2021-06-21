@@ -40,28 +40,10 @@ module.exports = function(sequelize, DataTypes) {
     admin: {
       type: DataTypes.INTEGER(100),
       allowNull: true,
-    }
+    },
   }, {
     sequelize,
     tableName: 'users',
     timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-      {
-        name: "userid",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "userid" },
-        ]
-      },
-    ]
   });
 };

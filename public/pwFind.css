@@ -1,0 +1,25 @@
+.main{
+    font-size: 40px;
+    margin-top: 340px;
+    text-align: center;
+}
+
+a{  
+    display: inline-block;
+    margin-top: 70px;
+    text-decoration: none;
+    color:cornflowerblue;
+}
+
+.width{
+    width:800px;
+    height:40px;
+}
+
+.BTN{
+    display: inline-block;
+    margin-top: 40px;
+    width:400px;
+    height:40px;
+    background: white;
+}

@@ -1,5 +1,9 @@
 
 
+.displaynone{
+    display: none;
+}
+
 #loginBtn{
  cursor: pointer;
  text-align: center;

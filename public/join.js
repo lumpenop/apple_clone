@@ -81,7 +81,7 @@ async function joinFn(){
 
 
     //  ID (email) 중복 JS 
-    let url = `http://localhost:3000/user/userid_check`;
+    let url = `http://localhost:4000/user/userid_check`;
     let options = {
         method:'post',
         headers:{'content-type':'application/json'},
