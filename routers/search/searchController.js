@@ -21,8 +21,8 @@ let search_ipad = (req,res)=>{
     })
 }
 let db = async (req,res)=>{
-
-    let result = await items.findAll({})
+    let body = req.body.AppleSearch
+    let result = await items.findAll({where:{item_name:{[Op.like]:"%"+body+"%"}}})
     console.log(result)
     res.render('./search/db.html',{
         result,

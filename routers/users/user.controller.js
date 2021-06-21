@@ -118,8 +118,10 @@ let logincheck = async (req, res) => {
     })
 }
 
-let login_success = (req, res) => {
-    res.redirect('/')
+let login_success = async (req, res) => {
+    let {userid} = req.cookies;
+    let result = await bag.findAll({where:{users_name:userid}})
+    res.render('index.html',{result:result})
 }
 
 
@@ -286,8 +288,18 @@ let info_modify = async (req, res) => {
     let username = req.body.username
     let userbirth = req.body.userbirth
     let mobile = req.body.mobile
+<<<<<<< HEAD
     let result2 = await users.update({ userpw: tokenpw, username: username, userbirth: userbirth, mobile: mobile }, { where: { userid: userID } })
     res.render('./info/info.html');
+=======
+    let result = await users.findOne({where:{userid:userID}})
+    let result2 = await history.findOne({where:{name1:userID}})
+    let result3 = await users.update({userpw:tokenpw, username:username, userbirth:userbirth, mobile:mobile},{where:{userid:userID}})
+    res.render('./info/info.html',{
+        result:result,
+        result2:result2,
+    });
+>>>>>>> 348c8ebdfe0abea2e74f4c6b35894f740e9654fb
 }
 
 
