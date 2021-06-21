@@ -111,31 +111,56 @@
         <div class = "w1300">
             <div class = "end" style = "margin-top: 60px; font-size: 40px; float: left; margin-left: 100px; margin-bottom: 45px;">X</div>
             <h1 class = "main">개인 정보를 편집하세요</h1>
-            <form action = "/user/info" method = "post">
-                <input name = "userpw" placeholder = "비밀번호를 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
+            <form action = "/user/info" method = "post" name = "pwcheckSub">
+                <input class = "userpw" name = "userpw" placeholder = "비밀번호를 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
+                <div class = "pwcheck">숫자, 영문, 특수문자를 사용해서 8자리 이상 적어주세요</div>
+                <div class = "pwcheck"></div>
                 <input name = "username" placeholder = "이름을 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
                 <input name = "userbirth" placeholder = "생년월일을 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
                 <input name = "mobile" placeholder = "폰번호를 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
-                <input type = "submit" value = "수정하기" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid #0071e3; background:#0071e3; color:white; font-size: 25px;">
+                <input type = "button" value = "수정하기" class = "btn" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid #0071e3; background:#0071e3; color:white; font-size: 25px;">
             </form>
         </div>
     </div>
+    <script type = "text/javascript">
+
+        let popup = document.querySelector('.popup')
+        let end = document.querySelector('.end')
+        let widthfull = document.querySelector('.widthfull')
+        let pwcheck = document.querySelector('.pwcheck')
+        popup.addEventListener('click',Popup1)
+        end.addEventListener('click',Popout)
+        
+        function Popup1(){
+            widthfull.style.display = 'block'
+        }
+        
+        function Popout(){
+            widthfull.style.display = 'none'
+            }
+        
+        let btn = document.querySelector('.btn')
+
+    
+        btn.addEventListener('click', regPasswordType)
+
+        function regPasswordType(){
+        
+            let regex = /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{1,50}).{8,50}$/
+            let password = document.querySelector('.userpw')
+            let pwvalue = password.value
+
+            if(!regex.test(pwvalue)){
+                pwcheck.innerHTML = '비밀번호를 조건에 맞게 작성해주세요'
+                return false
+            }else{
+                pwcheckSub.submit()
+            }
+        
+            return true
+        }
+
+    
+    </script>
 </body>
-<script type = "text/javascript">
-
-let popup = document.querySelector('.popup')
-let end = document.querySelector('.end')
-let widthfull = document.querySelector('.widthfull')
-popup.addEventListener('click',Popup1)
-end.addEventListener('click',Popout)
-
-function Popup1(){
-    widthfull.style.display = 'block'
-}
-
-function Popout(){
-    widthfull.style.display = 'none'
-    }
-
-</script>
 </html>

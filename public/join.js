@@ -1,7 +1,7 @@
 // const {users} = require('./models'); 질문 : 여기에 못쓰는 이유가 궁금 server쪽이아닌 html과 연결된 js라서?? 
 // 요 JS 는 client 브라우저가 해석하는 중 / server는 node.js 가 해석 중 
 // 요 해석하는 client 브라우저연결된js는 DB해석할수 없음 
-// import swal from 'sweetalert';
+//import swal from 'sweetalert';
 
 const input = document.querySelectorAll(".inputFocus");
 
@@ -23,6 +23,32 @@ function inputFocusOut(){
         span.classList.add('inputFocusOut');    
     }
 }
+
+//  EMAIL 형식 유효성 검사 
+
+let userid = document.querySelector('#userid')
+userid.addEventListener('change',(e)=>{  // html 의 onchange="validEmail(this)"와 동일 
+    console.log(e)
+    console.log(e.target)
+    validEmail(e.target)
+})
+
+function validEmail(obj){
+    if(validEmailCheck(obj)==false){
+        alert('올바른 이메일 주소를 입력해주세요.')
+        obj.value='';
+        obj.focus();
+        return false;
+    }
+}
+
+function validEmailCheck(obj){
+    var pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    return (obj.value.match(pattern)!=null)
+}
+
+
+
 
 let joinBtn = document.querySelector('#joinBtn');
 joinBtn.addEventListener('click',joinFn)
@@ -79,6 +105,6 @@ async function joinFn(){
     
 
     //  모든 절차 통과 후 회원가입 완료
-    swal(msg);
+    alert(msg);
     joinform.submit(); 
 }

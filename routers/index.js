@@ -15,8 +15,9 @@ router.use('/',(req,res)=>{
     console.log(req.cookies)
     let {userid,username, loginsite} = req.cookies;
 
+    // let result = await bag.findAll({where:{users_name:userid}})
     res.render('index.html',{
-        msg, username, loginsite,
+        msg, username, loginsite
     });
 });
 

@@ -31,4 +31,7 @@ router.get('/chatRoom',auth, controller.chatRoom);
 
 router.post('/pwFind',controller.pwFind);
 router.get('/pwFind_middleware',controller.pwFind_middleware);
+
+router.get('/map', controller.map);
+
 module.exports = router;
