@@ -11,11 +11,11 @@ let join = async (req, res) => {
     res.render('join.html');
 }
 
-let login = async (req, res) => {
-    res.render('login.html',{
-        msg:req.query.msg
-    });
-}
+// let login = async (req, res) => {
+//     res.render('login.html',{
+//         msg:req.query.msg
+//     });
+// }
 // let login_cookie = async (req,res) => {
 //     res.clearCookie('username')
 //     res.clearCookie('item_name')
@@ -48,11 +48,6 @@ let join_success = (req, res) => {
 }
 
 //       LOGIN     //
-<<<<<<< HEAD
-// let login = async (req, res) => {
-//     res.render('login.html');
-// }
-=======
 let login = async (req, res) => {
     //login 상태면 main.html / logout - login.html 
     let {userid} = req.cookies;
@@ -63,7 +58,6 @@ let login = async (req, res) => {
     }
     
 }
->>>>>>> c284a415592b9461e177f1cb96d063ff1e27196c
 
 let userid_check = async (req,res) =>{
     let {userid} = req.body;
@@ -256,8 +250,12 @@ let deleteID = (req,res) =>{
 
 
 //        INFO         //
-let info = (req,res) =>{
-    res.render('./info/info.html')
+let info = async (req,res) =>{
+    let userID = req.cookies.userid
+    let result = await history.findOne({where:{name1:userID}})
+    res.render('./info/info.html',{
+        result:result
+    })
 }
 
 let info_view = (req,res) =>{

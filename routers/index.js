@@ -20,12 +20,7 @@ router.use('/',(req,res)=>{
     });
 });
 
-<<<<<<< HEAD
-
-module.exports = router;
-=======
 module.exports = router;
 
 // <!-- {% else if website == 'google' %}
 // <a href="#" onclick="signOut();">Sign out</a> -->
->>>>>>> c284a415592b9461e177f1cb96d063ff1e27196c
