@@ -506,11 +506,11 @@ a{
     z-index: 1000;
     right:5%;
     transform: translateX(10%);
-    bottom: 15%;
+    bottom: 18%;
 }
 
 .side_menu_box{
-    background-color: #f2f2f2;
+    background-color: #fff;
     width:100px;
     height:100px;
     border:1px solid #0070c9;
@@ -518,7 +518,7 @@ a{
     text-align: center;
     padding: 18px;
     border-radius: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .side_menu_box>a{

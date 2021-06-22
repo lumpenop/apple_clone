@@ -194,8 +194,10 @@ let shopping_form_success = async (req,res)=>{
                 total_cost:total_cost,
             })
             let result3 = await bag.destroy({where:{users_name:name1}})
-        }else{
+        }else if(result5 != undefined){
             res.redirect('/buy/shopping_form?msg=이미 구매하신 제품입니다')
+        }else{
+            
         }
        
 }

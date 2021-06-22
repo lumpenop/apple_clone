@@ -1,0 +1,38 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "nowLocation"></div>
+</body>
+<script type = "text/javascript">
+    function getLocation() {
+        let watchId = navigator.geolocation.watchPosition(function(position) {console.log(position.coords);});
+
+        if (navigator.geolocation) { // GPS를 지원하면
+            let nowLocation = document.querySelector('.nowLocation')
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+            alert(position.coords.latitude + ' ' + position.coords.longitude);
+            }, function(error) {
+            console.error(error);
+            }, {
+            enableHighAccuracy: false,
+            maximumAge: 0,
+            timeout: Infinity
+            });
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+            nowLocation.innerHTML = position.coords.latitude + ' ' + position.coords.longitude
+            })
+        } else {
+            alert('GPS를 지원하지 않습니다');
+        }
+    }
+    getLocation();
+</script>
+</html> -->

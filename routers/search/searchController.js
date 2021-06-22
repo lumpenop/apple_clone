@@ -1,7 +1,8 @@
 const {users,items,buy,valuation} = require('../../models');
 const sequelize = require("sequelize")
 const Op = sequelize.Op
-
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 let search_error = (req,res)=>{
     res.render('./search/error.html',{
@@ -22,11 +23,46 @@ let search_ipad = (req,res)=>{
 }
 let db = async (req,res)=>{
     let body = req.body.AppleSearch
-    let result = await items.findAll({where:{item_name:{[Op.like]:"%"+body+"%"}}})
-    console.log(result)
-    res.render('./search/db.html',{
-        result,
-    })
+
+    if(result != undefined){
+      let result = await items.findAll({where:{item_name:{[Op.like]:"%"+body+"%"}}})
+      console.log(result)
+      res.render('./search/db.html',{
+          result,
+      })      
+    } else{
+
+      // const getHtml = async () => {
+      //   try {
+      //     return await axios.get(`https://www.google.com/search?q=${body}`);
+      //   } catch (error) {
+      //     console.error(error);
+      //   }
+      // };
+      
+      // let result = getHtml()
+      //   .then(html => {
+      //     let ulList = [];
+      //     const $ = cheerio.load(html.data);
+      //     const $bodyList = $("div.GyAeWb")
+      //     $bodyList.each(function(i, elem) {
+      //       ulList[i] = {
+      //           article: $(this).find('div').text()
+      //       };
+      //     });
+      
+      //     const data = ulList.filter(n => n.article);
+      //     return data;
+      //   })
+      //   .then(json => {
+      //     console.log(json)
+      //     string = JSON.stringify(json)
+      //     res.render('./search/db.html',{
+      //       result:result
+      //     })
+      //   });
+    }
+
 }
 let search_view = (req,res)=>{
     let searchValue = req.body.AppleSearch
@@ -65,6 +101,40 @@ let value = async (req,res)=>{
     })
 }
 
+let otherSite = (req,res)=>{
+
+  const getHtml = async () => {
+    try {
+      return await axios.get("https://www.yna.co.kr/sports/all");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  //https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query=gone
+  getHtml()
+    .then(html => {
+      let ulList = [];
+      const $ = cheerio.load(html.data);
+      const $bodyList = $("div.headline-list ul").children("li.section02");
+
+      $bodyList.each(function(i, elem) {
+        ulList[i] = {
+            title: $(this).find('strong.news-tl a').text(),
+            url: $(this).find('strong.news-tl a').attr('href'),
+            image_url: $(this).find('p.poto a img').attr('src'),
+            image_alt: $(this).find('p.poto a img').attr('alt'),
+            summary: $(this).find('p.lead').text().slice(0, -11),
+            date: $(this).find('span.p-time').text()
+        };
+      });
+
+      const data = ulList.filter(n => n.title);
+      return data;
+    })
+    .then(res => console.log(res));
+}
+
 module.exports = { 
     search_error,
     search,
@@ -73,4 +143,5 @@ module.exports = {
     search_ipad,
     db,
     value,
+    otherSite,
 }; 

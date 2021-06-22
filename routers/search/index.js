@@ -11,5 +11,6 @@ router.post('/search',controller.search_view);
 router.post('/db',controller.db);
 router.get('/valuation',controller.value);
 router.post('/search',controller.search);
+router.get('/otherSite',controller.otherSite);
 
 module.exports = router;

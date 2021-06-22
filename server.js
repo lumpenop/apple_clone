@@ -16,6 +16,8 @@ const auth = require('./middleware/auth.js');
 const router = require('./routers/index');
 const cors = require('cors')
 const { fstat } = require('fs');
+const axios = require("axios");
+const cheerio = require("cheerio");
 
 app.use(cors());
 
