@@ -27,6 +27,13 @@ function createPW(userpw){
     return cryptoPassword;
 }
 
+function verifying_key(){
+    let key_one = crypto.randomBytes(256).toString('hex').substr(100,5);
+    let key_two = crypto.randomBytes(256).toString('base64').substr(50,5);
+    let verifying_key = key_one + key_two;
+    return verifying_key; 
+}
+
 module.exports = {
-    createToken, createPW
+    createToken, createPW, verifying_key,
 }

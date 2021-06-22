@@ -36,13 +36,13 @@ const designSectionTop = document.querySelector('.section-design').getBoundingCl
 window.addEventListener('scroll', () => {  
   
     const scrollTop = html.scrollTop;
-    if(scrollTop > flowCanvasTop && scrollTop <= designSectionTop){
+    if(scrollTop >= flowCanvasTop && scrollTop <= designSectionTop){
 
         
         const maxScrollTop = (scrollTop - flowCanvasTop).toFixed(2);
         const range = (designSectionTop - flowCanvasTop).toFixed(2);
         const num = Math.floor(range/(frameCount));
-
+55
 
         let frameIndex;
         if(Math.floor(maxScrollTop/(num)) >= 147){
@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
         }else if(Math.floor(maxScrollTop/(num)) <= 0){
             frameIndex = 0;
         }else{
-            frameIndex = Math.floor(maxScrollTop/(num) * 4);
+            frameIndex = Math.floor(maxScrollTop/(num) * 10);
         }
 
         if(frameIndex >= 147){
@@ -116,15 +116,13 @@ function forMiniSection(){
 
     
     if(hiddenUlBottom*0.8 < scrollTop && sectionMini.bottom > scrollTop){
-        
-        console.log(bottomFrame);
+   
         bottomFrame.classList.add('will-change');
         leftFrame.classList.add('will-change');
         rightFrame.classList.add('will-change');
         topFrame.classList.add('will-change');
         
 
-        console.log(sigmoid2(num/1.5));
        
         leftFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
         rightFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;

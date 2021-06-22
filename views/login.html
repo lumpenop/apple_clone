@@ -2,6 +2,7 @@
 
 <main class="main" role="main" data-anim-scroll-group="bubble-gum-group">
     <div class="subnav">
+        <div class = "displaynone">{{msg}}</div>
         <div class="subnav-container">
             <div class="title tk-label pull-left">
                 Apple&nbsp;ID
@@ -58,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="login-sign-in-forgot-password">
-                                <a href="#">
+                                <a href="/user/pwFind_middleware">
                                     <span>Apple ID 또는 암호를 잊으셨나요?</span>
                                 </a>
                             </div>
@@ -133,7 +134,15 @@
 </div>
 
 
+<script type = "text/javascript">
 
+    displaynone = document.querySelector('.displaynone')
+    value = displaynone.innerHTML
+
+    if(value == '"장바구니가 비었습니다"'){
+        alert('장바구니가 비었습니다')
+    }
+</script>
 
 
 
@@ -142,11 +151,14 @@
 
 
 <script type="text/javascript" src="/login.js"></script>
+<script src="/index.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
+</body>
+</html>
 <!--GOOGLE LOGIN API  ---) top.html 로 이동-->
 <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
 
 
 
-{% include "./bottom.html" %}

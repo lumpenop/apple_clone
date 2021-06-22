@@ -1,0 +1,260 @@
+.size{
+    width:1000px;
+    height:400px;
+}
+.topdd{
+    margin-top: 200px;
+}
+.size2{
+  width:700px;
+  height:40px;
+  display: inline-block;
+}
+
+.size3{
+  width:700px;
+  height:700px;
+  display: inline-block;
+}
+.wrap{
+    width:100%;
+    text-align: center;
+}
+.href{
+    text-decoration: none;
+    margin-bottom: 80px;
+    font-size: 35px;
+    color:#c60007;
+    display: inline-block;
+}
+.red{
+    color:#c60007;
+}
+.w1200{
+    width:1200px;
+    margin:0 auto;
+    text-align: center;
+}
+.scrollwrap{
+    width:1200px;
+    height:1000px;
+    overflow: scroll;
+}
+.scrollcontent{
+    width:1200px;
+    height:600px;
+}
+.scrollwrap::-webkit-scrollbar {
+    overflow-y:hidden;
+    width: 10px;
+  }
+.scrollwrap::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .scrollwrap::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+
+.bold{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.realbold{
+    font-weight: bold;
+}
+.w1300{
+    width:1300px;
+    margin:0 auto;
+    overflow: scroll;
+    height:600px;
+}
+
+.h1{
+    margin-bottom: 100px;
+    font-size: 45px;
+}
+ul,li{
+    list-style: none;
+}
+.cnt01>img{
+    display: inline-block;
+    float: left;
+}
+.fulltext{
+    margin-top: 100px;
+}
+.text{
+    font-size: 25px;
+}
+
+.Text2>a{
+    text-decoration: none;
+    font-size: 30px;
+    color:#c60007;
+}
+
+.cnt01{
+    height:300px;
+}
+
+.text3>h3{
+    margin-top: 40px;
+    font-size:20px;
+    font-weight: lighter;
+
+}
+
+body {
+    margin: 0;
+    font-size: 1.3em;
+  }
+  .up-on-scroll {
+    transition: all 0.7s;
+  }
+  .black-bg {
+    background: white;
+    color: white;
+    padding: 20px;
+  }
+  .pb-300 {
+    padding-bottom: 300px;
+  }
+  .min-height-500 {
+    min-height: 500px;
+  }
+  .need-margin {
+    margin: 20px 20px;
+    font-size: 23px;
+    color:#c60007;
+  }
+  .BTN{
+    width:800px;
+    border: 1px solid #c60007;
+    color:#c60007;
+    background: white;
+    font-size: 23px;
+    height:60px;
+  }
+  section > h2 {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    z-index: 2;
+    background: black;
+  }
+  
+  .slide-up-wrap {
+    height: 610vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .slide-up-wrap > h2 {
+    padding-bottom: 50vh;
+  }
+  .slide-up-wrap > div {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .slide-up-wrap > div > img {
+    width: 100%;
+    height: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit: cover;
+  }
+  
+  .diff-desc-image-wrap > div {
+    display: flex;
+    width: 100%;
+    padding-top: 50px;
+  }
+  .diff-desc-image-wrap > div .desc {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    flex: 1 0 0%;
+  }
+  .diff-desc-image-wrap > div .desc > p {
+    margin-bottom: 250px;
+  }
+  .diff-desc-image-wrap > div .desc > p:last-child {
+    margin-bottom: 100px;
+  }
+  .diff-desc-image-wrap .image-wrap {
+    flex: 1 0 0%;
+    max-width: 40vw;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .height{
+      height:200px;
+  }
+  .background-change-wrap {
+    height: 300vh;
+    padding-bottom: 100px;
+  }
+  .background-change-wrap > div {
+    overflow: hidden;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+  .background-change-wrap > div > h2 {
+    margin: 0;
+    padding: 20px;
+    line-height: 40px;
+    background: black;
+    color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  .background-change-wrap > div > img {
+    position: sticky;
+    width: 100%;
+    height: calc(100% - 80px);
+    object-fit: cover;
+  }
+
+
+  .lectures_li{
+      display: inline-block;
+      float: left;
+      margin-right: 30px;
+      margin-left: 26px;
+  }
+
+  .lecture_img{
+      width:500px;
+      height:400px;
+      
+  }
+
+  .clear{
+      clear: both;
+  }
+
+  .listt{
+      height: 1200px;
+  }
+  
+ 

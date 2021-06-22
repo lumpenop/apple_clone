@@ -1,5 +1,9 @@
 
 
+.displaynone{
+    display: none;
+}
+
 #loginBtn{
  cursor: pointer;
  text-align: center;
@@ -130,6 +134,7 @@
     );
     background-size: cover;
     padding: 80px 0 90px;
+    margin-top: 44px;
 }
 
 .login-sign-in-forgot-password span,
@@ -165,6 +170,7 @@
 }
 
 .subnav{
+    margin-top: 44px;
     z-index: 2;
     background-color: #fff;
     opacity: .9;

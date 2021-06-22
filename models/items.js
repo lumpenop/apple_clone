@@ -24,16 +24,40 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(200),
       allowNull: false
     },
-    item_size: {
+    item_category: {
+      type: DataTypes.STRING(200),
+      allowNull: false
+    },
+    item_skill1: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_skill2: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_skill3: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    maximum_number:{
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    item_color: {
+    item_tag1: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    item_capacity: {
+    item_tag2: {
       type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    item_tag3: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    maximum_date: {
+      type: DataTypes.DATE, 
       allowNull: false
     }
   }, {
@@ -41,22 +65,6 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'items',
     timestamps: false,
     indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-      {
-        name: "item_serial_number",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "item_serial_number" },
-        ]
-      },
     ]
   });
 };

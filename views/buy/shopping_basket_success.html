@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../shopping_basket.css">
+</head>
+<body>
+    <div class = "wrappingwrap wrap">
+        <div class = "content w1200">
+            <div class = "header">
+                <h1>장바구니에 들어 갔습니다</h1>
+                <div class = "font"><a href = "/search/db">아직 안 살래요</a></div>
+                <a href = "/buy/shopping_basket?name={{item_name}}"><input type = "submit" class = "BTT" value = "장바구니로 가기"></a>
+            </div>
+            <div class = "line"></div>
+            <div class = "content">
+                {% for list in result %}
+                <div class = "img height"><img class = "img" src = "../../{{list.item_image}}"></div>
+                <div class = "text height">
+                    <ul>
+                        <li>
+                            {{list.item_name}}
+                        </li>
+                        <li>
+                            <select class = "b">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                            </select>   
+                        </li>
+                        <li class = "float">{{list.item_price}}</li>
+                    </ul>
+                    <div class = "line2">
+    
+                    </div>     
+                    {% endfor %}      
+                    <div>
+                        <div class = "LEFT"><img src = "../../aa.jpg"></div>
+                        <div class = "right">
+                            <h3 class = "h3">iPhone 12 mini을 위한 AppleCare+ 추가, ₩179,000</h3>
+                            <ul>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li>Apple 전문가의 우선 지원</li>
+                                <li class = "blue"><a href = "">더 알아보기</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class = "line2">
+
+                    </div>
+        </div>
+    </div>
+</body>
+</html>
