@@ -115,12 +115,9 @@ function canvasHidden(){
     }    
     
     beforePosition = scrollTop;
-
-    
-    
-
-
 }
+
+
 
 
 window.onscroll = () =>{

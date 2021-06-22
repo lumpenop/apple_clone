@@ -737,9 +737,28 @@
         <div class="inline-modal-wrapper"></div>
     </section>
 
-    <section class="section section-chip section-fill-light-alt">
-        <div class="frame-group-container"></div>
-
+    <section class="section section-display section-fill-light">
+        <div class="horizontal-scroll-height lift-transition-container">
+            <div class="lift-transition-sticky-content">
+                <div class="overflow-x-content flex-vert-center device-blue-fill">
+                    <div class="section-content flex-vert-center justify-content-spacearound">
+                        <div class="headline-container flex-vert-center">
+                            <h2 class="visuallyhidden">디스플레이</h2>
+                            <h3 class="section-headline typography-section-headline-elevated">
+                                Super Retina
+                                <span class="nowrap">XDR 디스플레이</span>
+                            </h3>
+                            <h3 class="section-subhead-typography-section-headline-elevated">
+                                시선 집중 ODLE.
+                            </h3>
+                        </div>
+                        <div class="hardware will-change-visible">
+                            <div class="image-hardware"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -791,6 +810,8 @@
     <script src="/main/section1.js"></script>
     <script src="/main/sectionHands.js"></script>
     <script src="/main/sectionCamera.js"></script>
+    <script src="/main/sectionDisplay.js"></script>
+    
     {% if msg %}
     <script type="text/javascript">
         alert("{{msg}}");
