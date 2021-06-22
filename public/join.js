@@ -1,10 +1,7 @@
 // const {users} = require('./models'); 질문 : 여기에 못쓰는 이유가 궁금 server쪽이아닌 html과 연결된 js라서?? 
 // 요 JS 는 client 브라우저가 해석하는 중 / server는 node.js 가 해석 중 
 // 요 해석하는 client 브라우저연결된js는 DB해석할수 없음 
-//import swal from 'sweetalert';
-
 const input = document.querySelectorAll(".inputFocus");
-
 for(var i=0; i<input.length; i++){
     input[i].addEventListener('focus', inputFocus);
     input[i].addEventListener('focusout', inputFocusOut);
