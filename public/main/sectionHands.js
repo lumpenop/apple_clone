@@ -111,7 +111,7 @@ function forMiniSection(){
         headLine.style.opacity = sigmoid2(num);
         
         // locateY = Math.round(70 - (70*(gap/400)))
-        headLine.style.transform =  `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid2(num)*90)})`;;
+        headLine.style.transform =  `matrix(1, 0, 0, 1, 0, ${90 - (sigmoid2(num)*90)})`;
     // }
 
     

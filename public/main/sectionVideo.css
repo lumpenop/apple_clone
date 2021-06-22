@@ -73,15 +73,16 @@
     z-index: 1;
     left: 50%;
     top: 50%;
-    width: var(--video-edit-device-w);
-    height: var(--video-edit-device-h);
+    width: 979px;
+    height: 485px;
+    transform: matrix(3.1, 0, 0, 3.1, -490, -242) !important;
 }
 
 .section-video .device-shadow{
     z-index: 0;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 979px;
+    height: 485px;
     box-shadow: -5px 5px 5px 5px rgba(0, 0, 0, 0.7);
     transform: scale(0.99, 0.96);
 
@@ -89,9 +90,9 @@
 }
 
 .section-video .device-screen{
-    width: 660px;
-    height: 306px;
-    background-size: 660px 306px;
+    width: 932px;
+    height: 432px;
+    background-size: 932px 432px;
     background-repeat: no-repeat;
     background-image: url(
         /main/image/video_edit_screen.jpg
@@ -99,8 +100,8 @@
 
     z-index: 1;
     position: absolute;
-    top: var(--video-edit-screen-y);
-    left: var(--video-edit-screen-x);
+    top: 40px;
+    left: 0;
 }
 
 .section-video .video-description{
@@ -112,8 +113,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: var(--video-edit-mask-w);
-    height: var(--video-edit-mask-h);
+    width: 432px;
+    height: 244px;
 }
 
 .section-video .video-container,
@@ -136,10 +137,11 @@
 
 .section-video .video-container .startframe,
 .section-video .video-container .endframe{
+    display: none;
     position: absolute;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 432px;
+    height: 244px;
     background-size: cover;
 }
 
@@ -147,12 +149,13 @@
     visibility: visible;
 }
 
-.section-video .video-container .video{
-    z-index: 2;
+.section-video .video-container video{
+    z-index: 20;
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0px;
+    top: -39%;
+    left: -59%;
     object-fit: cover;
 }
 
@@ -169,18 +172,18 @@
 }
 
 .section-video .video-container .video-ui-frame{
-    width: 312px;
-    height: 179px;
-    background-size: 312px 179px;
+    width: 440px;
+    height: 252px;
+    background-size: 440px 252px;
     background-repeat: no-repeat;
     background-image: url(
         /main/image/video_edit_frame.png
     );
-
-    z-index: 4;
+    z-index: 30;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: -40%;
+    left: -60%;
+    opacity: 0;
 }
 
 .section-video .device-ui{
@@ -196,13 +199,16 @@
 .section-video .device{
     z-index: 4;
     background-size: cover !important;
-    width: 100%;
-    height: 100%;
-
+    width: 979px;
+    height: 485px;
+    top: -10px;
+    left: -30px;
+    position: relative;
     background-repeat: no-repeat;
     background-image: url(
-        /main/image/large.mp4
+        /main/image/video_edit_hardware.png
     );
+
 }
 
 .section-video .video-scrim{
@@ -265,4 +271,19 @@
     display: inline-block;
 }
 
+.section-video .intro-wrapper{
+    width: 692px;
+}
 
+.typography-section-headline-elevated-alt-2{
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.section-video .sticky-wrapper{
+    background-color: black;
+}
+
+.section-video .video-intro-wrapper{
+    transform: matrix(1, 0, 0, 1, 0, 422);
+}
