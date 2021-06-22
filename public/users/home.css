@@ -510,19 +510,43 @@ a{
 }
 
 .side_menu_box{
-    background-color: #fff;
+    background-color: #0070c9;
     width:100px;
-    height:100px;
+    height:50px;
     border:1px solid #0070c9;
     font-size:20px;
     text-align: center;
-    padding: 18px;
-    border-radius: 15px;
+    border-radius: 30px;
     margin-bottom: 30px;
+    box-sizing: border-box;
+    opacity: 0;
+  
+}
+.side-apple{
+    background-color: #0070c9;
+    width:80px;
+    height:50px;
+    border:1px solid #0070c9;
+    font-size:20px;
+    text-align: center;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
 }
 
+.side-apple > div{
+    background-image: url(
+        /users/globalnav_apple_image.svg
+    );
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    text-align: center;
+}
+
+
 .side_menu_box>a{
-    color:black;
+    color:#fff;
+    line-height: 50px;
 }
 
 

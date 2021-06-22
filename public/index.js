@@ -7,12 +7,18 @@ const bagBtn = document.querySelector('.ac-gn-link-bag > span');
 const bagView = document.querySelector('.ac-gn-bagview');
 const bagViewMessage = document.querySelector('.ac-gn-bagview-message');
 const itemLink = document.querySelector('.item-link');
+const appleSide = document.querySelector('.side-apple');
+const sideDiv = document.querySelector('.side-div');
 
 linkSearch.addEventListener('click', searchOnClick);
 searchCloseBtn.addEventListener('click', searchClose);
 curtain.addEventListener('click', event => layerClose(event, curtain));
 globalNav.addEventListener('click', event => layerClose(event, globalNav));
 bagBtn.addEventListener('click', bagViewOn);
+appleSide.addEventListener('click', sideAppleOn);
+window.addEventListener('click', event => appleSideOff(event, sideDiv, appleSide));
+
+
 
 
 window.addEventListener('click', event => windowClick(event));
@@ -142,8 +148,6 @@ async function searchClose(){
         await timer(20)   
     }
     
-
-
     searchInput.value = '';
     
 }
@@ -152,6 +156,32 @@ function layerClose(event, layer){
     
     if(event.target == layer&&document.querySelector('#ac-gn-curtain').className=='ac-gn-curtain'){
         searchClose();
+    }
+}
+
+
+let sideAppleFlag = false;
+function sideAppleOn(){
+    if(!sideAppleFlag){
+        const sideMenus = document.querySelectorAll('.side_menu_box');
+        for(var i=0; i<sideMenus.length;i++){
+            sideMenus[i].classList.add('displayOpa1');
+        }
+        sideAppleFlag = true;
+    }
+}
+
+function appleSideOff(event, layer , layer2){
+    console.log(event.target)
+    if(event.target != layer && sideAppleFlag){
+        console.log('?')
+        const sideMenus = document.querySelectorAll('.displayOpa1');
+        if(sideMenus != null){
+            for(var i=0; i<sideMenus.length;i++){
+                sideMenus[i].classList.remove('displayOpa1');
+            }
+            sideAppleFlag = false;
+        }
     }
 }
 

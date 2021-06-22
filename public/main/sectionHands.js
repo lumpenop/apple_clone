@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
         }else if(Math.floor(maxScrollTop/(num)) <= 0){
             frameIndex = 0;
         }else{
-            frameIndex = Math.floor(maxScrollTop/(num) * 10);
+            frameIndex = Math.floor(maxScrollTop/(num) * 35);
         }
 
         if(frameIndex >= 147){

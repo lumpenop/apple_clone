@@ -52,6 +52,10 @@
     display: none !important;
 }
 
+.displayOpa1{
+    opacity: 1;
+}
+
 
 .ac-gn-curtain{
     display: block;

@@ -11,8 +11,8 @@ function displayMoving(){
     // ${1020-((scrollTop - solidTop) / gap)*2000}
     if (scrollTop >= hardwareTop && scrollTop<=hardwareBottom){
         
-        const sliding = ((hardwareTop - scrollTop) / gap) * 3000;
-        if(sliding<=-1700){
+        let sliding = ((hardwareTop - scrollTop) / gap) * 3000;
+        if(sliding<= -1700){
             sliding = -1700;
         }
         hardware.style.transform = `matrix(1 , 0, 0, 1 , ${sliding}, 0)`;
