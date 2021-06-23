@@ -2,7 +2,43 @@
     
 </body><!---- end body ---->
 <script src="/index.js"></script>
+<script>
+    async function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(async function () {
+            console.log('User signed out.');
 
+            let url = `http://localhost:3000/user/google_logout`;
+            let options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                }
+            }
+            let response = await fetch(url, options);
+            let res_body = await response.json();
+            let { msg } = res_body;
+            alert(msg)
+            location.href = 'http://localhost:3000/user/google_logout'
+        });
+    }
+
+    function onLoad() {
+        gapi.load('auth2', function () {
+            gapi.auth2.init();
+        });
+    }
+</script>
+<script type = "text/javascript" src = "/admin/js/chat.js"></script>
+<script type = "text/javascript">
+   function openWindowPop(url, name){
+        var options = 'top=100, left=500, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
+        window.open(url, name, options);
+    }
+</script>
+<!--아래 script 들  위 <HEAD> 로 옮기면 실행 x 안됨 -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 <footer>
     <footer id="ac-globalfooter" class="js flexbox">
         <section class="ac-gf-footer">
@@ -36,9 +72,9 @@
 
 window.addEventListener('scroll',function(){
         var nowScroll = document.documentElement.scrollTop
-        
+        console.log(nowScroll)
      
-        if(nowScroll >=12800 && nowScroll < 13000){
+        if(nowScroll >=12200 && nowScroll < 12400){
             document.querySelector('.background1').style.display = 'block'
             document.querySelector('.background2').style.display = 'none'
             document.querySelector('.background3').style.display = 'none'
@@ -47,7 +83,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background6').style.display = 'none'
             
         }
-        if(nowScroll >= 13000 && nowScroll < 13200){
+        if(nowScroll >= 12400 && nowScroll < 12600){
             document.querySelector('.background2').style.display = 'block'
             document.querySelector('.background1').style.display = 'none'
             document.querySelector('.background3').style.display = 'none'
@@ -55,7 +91,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background5').style.display = 'none'
             document.querySelector('.background6').style.display = 'none'
         }
-        if(nowScroll >= 13200 && nowScroll < 13400){
+        if(nowScroll >= 12600 && nowScroll < 12800){
             document.querySelector('.background3').style.display = 'block'
             document.querySelector('.background1').style.display = 'none'
             document.querySelector('.background2').style.display = 'none'
@@ -63,7 +99,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background5').style.display = 'none'
             document.querySelector('.background6').style.display = 'none'
         }
-        if(nowScroll >= 13400 && nowScroll < 13600){
+        if(nowScroll >= 12800 && nowScroll < 13000){
             document.querySelector('.background4').style.display = 'block'
             document.querySelector('.background1').style.display = 'none'
             document.querySelector('.background2').style.display = 'none'
@@ -71,7 +107,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background5').style.display = 'none'
             document.querySelector('.background6').style.display = 'none'
         }
-        if(nowScroll >= 13600 && nowScroll < 13800){
+        if(nowScroll >= 13000 && nowScroll < 13200){
             document.querySelector('.background5').style.display = 'block'
             document.querySelector('.background1').style.display = 'none'
             document.querySelector('.background2').style.display = 'none'
@@ -79,7 +115,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background4').style.display = 'none'
             document.querySelector('.background6').style.display = 'none'
         }
-        if(nowScroll >= 13800 && nowScroll < 14000){
+        if(nowScroll >= 13200 && nowScroll < 13400){
             document.querySelector('.background6').style.display = 'block'
             document.querySelector('.background1').style.display = 'none'
             document.querySelector('.background2').style.display = 'none'
@@ -89,24 +125,24 @@ window.addEventListener('scroll',function(){
         }
 
 
-        if(nowScroll >= 15800 && nowScroll < 16200){
+        if(nowScroll >= 14000 && nowScroll < 14400){
             document.querySelector('.background7').style.display = 'block'
             document.querySelector('.background8').style.display = 'none'
             document.querySelector('.background9').style.display = 'none'
         }
-        if(nowScroll >= 16200 && nowScroll < 16600){
+        if(nowScroll >= 14400 && nowScroll < 14800){
             document.querySelector('.background8').style.display = 'block'
             document.querySelector('.background7').style.display = 'none'
             document.querySelector('.background9').style.display = 'none'
         }
-        if(nowScroll >= 16600 && nowScroll < 17000){
+        if(nowScroll >= 14800 && nowScroll < 15200){
             document.querySelector('.background9').style.display = 'block'
             document.querySelector('.background8').style.display = 'none'
             document.querySelector('.background7').style.display = 'none'
         }
 
 
-        if(nowScroll >= 18200 && nowScroll < 18400){
+        if(nowScroll >= 17000 && nowScroll < 17200){
             document.querySelector('.background10').style.display = 'block'
             document.querySelector('.background11').style.display = 'none'
             document.querySelector('.background12').style.display = 'none'
@@ -117,7 +153,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 18400 && nowScroll < 18600){
+        if(nowScroll >= 17200 && nowScroll < 17400){
             document.querySelector('.background11').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background12').style.display = 'none'
@@ -128,7 +164,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 18600 && nowScroll < 18800){
+        if(nowScroll >= 17400 && nowScroll < 17600){
             document.querySelector('.background12').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background11').style.display = 'none'
@@ -139,7 +175,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 18800 && nowScroll < 19000){
+        if(nowScroll >= 17600 && nowScroll < 17800){
             document.querySelector('.background13').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background12').style.display = 'none'
@@ -150,7 +186,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 19000 && nowScroll < 19200){
+        if(nowScroll >= 17800 && nowScroll < 18000){
             document.querySelector('.background14').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background11').style.display = 'none'
@@ -161,7 +197,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 19200 && nowScroll < 19400){
+        if(nowScroll >= 18000 && nowScroll < 18200){
             document.querySelector('.background15').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background12').style.display = 'none'
@@ -172,7 +208,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 19400 && nowScroll < 19600){
+        if(nowScroll >= 18200 && nowScroll < 18400){
             document.querySelector('.background16').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background11').style.display = 'none'
@@ -183,7 +219,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background17').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 19600 && nowScroll < 19800){
+        if(nowScroll >= 18400 && nowScroll < 18600){
             document.querySelector('.background17').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background11').style.display = 'none'
@@ -194,7 +230,7 @@ window.addEventListener('scroll',function(){
             document.querySelector('.background16').style.display = 'none'
             document.querySelector('.background18').style.display = 'none'
         }
-        if(nowScroll >= 19800 && nowScroll < 20000){
+        if(nowScroll >= 18600 && nowScroll < 18800){
             document.querySelector('.background18').style.display = 'block'
             document.querySelector('.background10').style.display = 'none'
             document.querySelector('.background12').style.display = 'none'
@@ -207,180 +243,21 @@ window.addEventListener('scroll',function(){
         }
 
 
-        if(nowScroll >= 23000 && nowScroll < 23300){
+        if(nowScroll >= 21600 && nowScroll < 21900){
             document.querySelector('.background20').style.display = 'block'
             document.querySelector('.background21').style.display = 'none'
             document.querySelector('.background22').style.display = 'none'
         }
-        if(nowScroll >= 23300 && nowScroll < 23600){
+        if(nowScroll >= 21900 && nowScroll < 22200){
             document.querySelector('.background21').style.display = 'block'
             document.querySelector('.background20').style.display = 'none'
             document.querySelector('.background22').style.display = 'none'
         }
-        if(nowScroll >= 23600 && nowScroll < 23900){
+        if(nowScroll >= 22200 && nowScroll < 22500){
             document.querySelector('.background22').style.display = 'block'
             document.querySelector('.background20').style.display = 'none'
             document.querySelector('.background21').style.display = 'none'
         }
-
-        if(nowScroll >= 24900 && nowScroll < 25100){
-            document.querySelector('.background23').style.display = 'block'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 25100 && nowScroll < 25300){
-            document.querySelector('.background24').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 25300 && nowScroll < 25500){
-            document.querySelector('.background25').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 25500 && nowScroll < 25700){
-            document.querySelector('.background26').style.display = 'block'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 25700 && nowScroll < 25900){
-            document.querySelector('.background27').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 25900 && nowScroll < 26100){
-            document.querySelector('.background28').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 26100 && nowScroll < 26300){
-            document.querySelector('.background29').style.display = 'block'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 26300 && nowScroll < 26500){
-            document.querySelector('.background30').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 26500 && nowScroll < 26700){
-            document.querySelector('.background31').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 26700 && nowScroll < 26900){
-            document.querySelector('.background31').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 26900 && nowScroll < 27100){
-            document.querySelector('.background32').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-            document.querySelector('.background33').style.display = 'none'
-        }
-        if(nowScroll >= 27100 && nowScroll < 27300){
-            document.querySelector('.background33').style.display = 'block'
-            document.querySelector('.background23').style.display = 'none'
-            document.querySelector('.background24').style.display = 'none'
-            document.querySelector('.background26').style.display = 'none'
-            document.querySelector('.background27').style.display = 'none'
-            document.querySelector('.background25').style.display = 'none'
-            document.querySelector('.background29').style.display = 'none'
-            document.querySelector('.background30').style.display = 'none'
-            document.querySelector('.background28').style.display = 'none'
-            document.querySelector('.background32').style.display = 'none'
-            document.querySelector('.background31').style.display = 'none'
-        }
-
-
     })
     </script>
 </html>

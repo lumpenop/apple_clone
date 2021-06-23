@@ -1,38 +1,44 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{ margin: 0; padding: 0; overflow-x: hidden; } section.titleWrap{ position: fixed; height: 650px; width: 100%; top: 0; left: 0; } h1{ position: absolute; color: #eee; text-align: center; width: 100%; font-size: 50px; margin-top: 320px; z-index: 1; } .cover{ position: fixed; width: 100%; height: 800px; background-color: rgba(0, 0, 0, 1); } .coverImg{ position: fixed; width: 100%; height: 800px; background: url(bg2.png) center center / cover; } section.textWrap{ position: relative; width: 100%; margin-top: 800px; padding: 100px; background-color: #fff; z-index: 1; } .innerWrap{ width: 60%; margin: 0 auto; } p { color : #111; font-size : 15px; line-height: 28px; margin-bottom : 80px; }
+    </style>
 </head>
 <body>
-    <div class = "nowLocation"></div>
+    <section class="titleWrap"> 
+        <div class="coverImg"></div> 
+        <div class="cover"></div> 
+        <h1>스크롤을 통해 배경 변화주기</h1> 
+    </section> 
+    <section class="textWrap"> 
+        <div class="innerWrap"> 
+            <h2>스크롤 프로그레시브 바</h2> 
+        </div> 
+    </section> 
 </body>
 <script type = "text/javascript">
-    function getLocation() {
-        let watchId = navigator.geolocation.watchPosition(function(position) {console.log(position.coords);});
 
-        if (navigator.geolocation) { // GPS를 지원하면
-            let nowLocation = document.querySelector('.nowLocation')
+let coverImg, cover; 
+let scrollTop = 0; 
+let h1; 
+window.onload = () => { 
+    coverImg = document.getElementsByClassName("coverImg")[0]; 
+    h1 = document.getElementsByTagName("h1")[0]; 
+    cover = document.getElementsByClassName("cover")[0]; c
+    over.style.opacity = .3; 
+} 
 
-            navigator.geolocation.getCurrentPosition(function(position) {
-            alert(position.coords.latitude + ' ' + position.coords.longitude);
-            }, function(error) {
-            console.error(error);
-            }, {
-            enableHighAccuracy: false,
-            maximumAge: 0,
-            timeout: Infinity
-            });
+window.addEventListener("scroll", (e)=>{ 
+    scrollTop = document.documentElement.scrollTop; 
+    h1.style.transform = "translate(0,"+ -scrollTop/10 +"px)"; 
+    coverImg.style.transform = "scale("+ (1 + scrollTop/1000) +")"; 
+    // coverImg.style.transform = `rotate(${(1 + scrollTop/5)}deg)`; 
+    cover.style.opacity = .3 + scrollTop / 1000; });
 
-            navigator.geolocation.getCurrentPosition(function(position) {
-            nowLocation.innerHTML = position.coords.latitude + ' ' + position.coords.longitude
-            })
-        } else {
-            alert('GPS를 지원하지 않습니다');
-        }
-    }
-    getLocation();
 </script>
-</html> -->
+</html>

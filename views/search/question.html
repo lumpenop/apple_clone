@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../public/question.css">
+</head>
+<body>
+    <div class = "headerwrap wrap">
+        <div class = "header1200 w1200"> 
+            <div>묻고 답해요</div>
+            <div>55만명의 커뮤니티!! 함께 토론해봐요!</div>
+        </div>
+    </div>
+    <div class = "contentwrap wrap">
+        <div class = "content1200 w1200">
+            <div class = "menuvar" style = "display: inline-block; float:left;">
+                <div>질문&답변</div>
+                <div>자유주제</div>
+                <div>스터디</div>
+            </div>
+            <div class = "topcontent" style = "display: inline-block; float:left;">
+                <div>
+                    <input type = "submit" value = "?">
+                    <input type = "text" placeholder="궁금한 질문을 검색해보세요!">
+                </div>
+                <div style = "display: inline-block; float: left;">
+                    <div class = "Write">글쓰기</div>
+                </div>
+                <div style = "width:800px; background: grey; height:1px;"></div>
+                <div>
+                    {% for item in result %}
+                    <ul>
+                        <li><a href = "/search/question_oneview?subject={{item.id}}&question_subject={{item.question_subject}}">{{item.question_subject}}</a></li>
+                        <li>{{item.question_content}}</li>
+                        <li>{{item.question_id}}</li>
+                    </ul>  
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "WriteContent" style = "display:none; width:100vw; height:100vh; background-color: rgba(0, 0, 0, 0.3); position: absolute; z-index: 1;">
+        <div class = "WriteClose" style = "color:white; font-size:30px; font-weight: bold; padding:30px;">X</div>
+        <div style = "background: white; width:950px; margin:0 auto; height:800px; box-sizing: border-box; padding:40px;">
+            <form action = "/search/question" method = "post">
+                <h3>제목</h3>
+                <input type = "text" name = "question_subject">
+                <h3>아이디</h3>
+                <input type = "text" name = "question_id">
+                <h3>내용</h3>
+                <input type = "text" name = "question_content"><br/>
+                <input type = "submit" value = "저장" style = "background:blue; opacity: 80%;">
+            </form>
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+    let Write = document.querySelector('.Write')
+    let WriteContent = document.querySelector('.WriteContent')
+    Write.addEventListener('click', Openwrite)
+
+    function Openwrite(){
+        WriteContent.style.display = 'block'
+    }
+
+    let WriteClose = document.querySelector('.WriteClose')
+
+    WriteClose.addEventListener('click',CloseWrite)
+
+    function CloseWrite(){
+        WriteContent.style.display = 'none'
+    }
+</script>
+</html>

@@ -1,13 +1,96 @@
-const {users,items,buy,valuation} = require('../../models');
+const {users,items,buy,question,valuation,answer} = require('../../models');
 const sequelize = require("sequelize")
 const Op = sequelize.Op
 const axios = require("axios");
 const cheerio = require("cheerio");
+const { json } = require('sequelize');
+const qs = require('qs');
+const session = require('express-session');
+const nodemailer = require('nodemailer');
+const smtpTransporter = require('nodemailer-smtp-transport');
 
 let search_error = (req,res)=>{
     res.render('./search/error.html',{
 
     })
+}
+let question_view = async (req,res)=>{
+  let result = await question.findAll({})
+  res.render('./search/question.html',{
+      result,
+  })
+}
+
+let question_write_success = async (req,res)=>{
+  let question_subject = req.body.question_subject
+  let question_id = req.body.question_id
+  let question_content = req.body.question_content
+  let result2 = await question.create({question_subject:question_subject,question_id:question_id,question_content:question_content})
+  let result = await question.findAll({})
+  res.render('./search/question.html',{
+    result,
+  })
+}
+
+let question_oneview = async (req,res)=>{
+  let name = req.query.subject
+  let question_subject = req.query.question_subject
+  let result = await question.findOne({where:{id:name}})
+  let result2 = await answer.findAll({where:{question_subject:question_subject}})
+  // let result = await question.create({})
+  console.log(result)
+  res.render('./search/question_view.html',{
+    result,result2
+  })
+}
+
+let answer_write_success = async (req,res)=>{
+  let question_id = req.body.question_id
+  let question_subject = req.body.question_subject
+  let answer_subject = req.body.answer_subject
+  let answer_id = req.body.answer_id
+  let answer_content = req.body.answer_content
+  let result3 = await answer.create({question_id:question_id,question_subject:question_subject,answer_subject:answer_subject,answer_id:answer_id,answer_content:answer_content})
+  let result2 = await answer.findAll({where:{question_subject:question_subject}})
+  // let result = await question.findAll({where:{id:name}})
+  res.redirect(`/search/question_oneview?subject=${question_id}&question_subject=${question_subject}`)
+}
+
+let professor = (req,res)=>{
+  res.render('./search/professor.html',{
+
+  })
+}
+
+let professor_submit = (req,res)=>{
+  let transport = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+        user: process.env.GoogleID,
+        pass: process.env.GooglePW
+    }
+  })
+
+  let mailOption = {
+      from: "Sender : 지식",
+      to: `${req.body.email}`,
+      subject: `${req.body.oname}님 지식 공유자로 참여해주셔서 감사드립니다`,
+      text: `지원해 주신 분야는 ${req.body.category}입니다.
+            3일 이내에 강의 개설 여부 계획을 다시 알려드리겠습니다.
+            지원해주셔서 감사드립니다.`,
+  }
+
+  transport.sendMail(mailOption, function (error) {
+      if (error) {
+          console.log(error);
+      } else {
+          console.log('메세지 전송 완료');
+      }
+  })
+
+  res.render('./search/professor.html',{
+
+  })
 }
 
 let search_iphone = (req,res)=>{
@@ -23,45 +106,57 @@ let search_ipad = (req,res)=>{
 }
 let db = async (req,res)=>{
     let body = req.body.AppleSearch
+    let result = await items.findAll({where:{item_name:{[Op.like]:"%"+body+"%"}}})
+    console.log(result)
+    if(result.length != 0){
 
-    if(result != undefined){
-      let result = await items.findAll({where:{item_name:{[Op.like]:"%"+body+"%"}}})
       console.log(result)
       res.render('./search/db.html',{
           result,
-      })      
-    } else{
+      })   
 
-      // const getHtml = async () => {
-      //   try {
-      //     return await axios.get(`https://www.google.com/search?q=${body}`);
-      //   } catch (error) {
-      //     console.error(error);
-      //   }
-      // };
+    }else{
+      const getHtml = async () => {
+        try {
+          return await axios.get(`https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=${body}&oquery=${body}`);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+      getHtml()
+        .then(html => {
+          let ulList = [];
+          const $ = cheerio.load(html.data);
+          const $bodyList = $("div.total_area")
+    
+          $bodyList.each(function(i, elem) {
+            ulList[i] = {
+                title: $(this).find('a.total_tit').text(),
+                content: $(this).find('div.total_group').text(),
+                tag: $(this).find('div.total_info').text()
+            };
+          });
+
+          const data = ulList.filter(n => n.title);
+          const data2 = ulList.filter(v => v.content)
+          const data3 = ulList.filter(s => s.tag)
+          return data
+        })
+        .then((text) => {
+          console.log(text)
+
+
+          res.render('./search/db.html',{
+              result2:text
+          })
+        }
+          
       
-      // let result = getHtml()
-      //   .then(html => {
-      //     let ulList = [];
-      //     const $ = cheerio.load(html.data);
-      //     const $bodyList = $("div.GyAeWb")
-      //     $bodyList.each(function(i, elem) {
-      //       ulList[i] = {
-      //           article: $(this).find('div').text()
-      //       };
-      //     });
-      
-      //     const data = ulList.filter(n => n.article);
-      //     return data;
-      //   })
-      //   .then(json => {
-      //     console.log(json)
-      //     string = JSON.stringify(json)
-      //     res.render('./search/db.html',{
-      //       result:result
-      //     })
-      //   });
+        )   
     }
+
+      
 
 }
 let search_view = (req,res)=>{
@@ -105,34 +200,35 @@ let otherSite = (req,res)=>{
 
   const getHtml = async () => {
     try {
-      return await axios.get("https://www.yna.co.kr/sports/all");
+      return await axios.get("https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=friend&oquery=yerin&tqi=hLaeqlp0J1ssskVsHYGssssss%2BG-514962");
     } catch (error) {
       console.error(error);
     }
   };
 
-  //https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query=gone
   getHtml()
     .then(html => {
       let ulList = [];
       const $ = cheerio.load(html.data);
-      const $bodyList = $("div.headline-list ul").children("li.section02");
+      const $bodyList = $("ul.lst_total")
 
       $bodyList.each(function(i, elem) {
         ulList[i] = {
-            title: $(this).find('strong.news-tl a').text(),
-            url: $(this).find('strong.news-tl a').attr('href'),
-            image_url: $(this).find('p.poto a img').attr('src'),
-            image_alt: $(this).find('p.poto a img').attr('alt'),
-            summary: $(this).find('p.lead').text().slice(0, -11),
-            date: $(this).find('span.p-time').text()
+            title: $(this).find('li').text(),
         };
       });
 
       const data = ulList.filter(n => n.title);
       return data;
     })
-    .then(res => console.log(res));
+    .then((text) => {
+      console.log(text)
+      json = JSON.stringify(text)
+      res.render('./search/otherSite.html',{json:json})
+    }
+      
+  
+    );
 }
 
 module.exports = { 
@@ -144,4 +240,10 @@ module.exports = {
     db,
     value,
     otherSite,
+    question_view,
+    question_write_success,
+    question_oneview,
+    answer_write_success,
+    professor,
+    professor_submit,
 }; 

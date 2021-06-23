@@ -6,6 +6,8 @@ var _valuation = require("./valuation");
 var _bag = require("./bag");
 var _history = require("./history");
 var _skills = require("./skills");
+var _question = require("./question");
+var _answer = require("./answer");
 function initModels(sequelize) {
   var buy = _buy(sequelize, DataTypes);
   var skills = _skills(sequelize, DataTypes);
@@ -14,7 +16,8 @@ function initModels(sequelize) {
   var valuation = _valuation(sequelize, DataTypes);
   var bag = _bag(sequelize, DataTypes);
   var history = _history(sequelize, DataTypes);
-
+  var question = _question(sequelize, DataTypes);
+  var answer = _answer(sequelize, DataTypes);
   // buy.belongsTo(items, { as: "buying_item_serial_number_item", foreignKey: "buying_item_serial_number"});
   // items.hasMany(buy, { as: "buys", foreignKey: "buying_item_serial_number"});
   // buy.belongsTo(users, { as: "buying_user", foreignKey: "buying_userid"});
@@ -30,6 +33,8 @@ function initModels(sequelize) {
     bag,
     history,
     skills,
+    question,
+    answer,
   };
 }
 
