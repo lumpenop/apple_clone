@@ -71,7 +71,7 @@ let login = async (req, res) => {
     }
 }
 
-
+// ddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 let userid_check = async (req, res) => {
     let { userid } = req.body;
     let rst = { result: false, msg: '해당 email은 기존 등록된 아이디입니다. 다른 email 주소를 입력해주세요.' };
