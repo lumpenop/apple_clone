@@ -92,16 +92,21 @@ function videoScroll(){
 
                 // videoDeviceWrapper.style.setProperty("--device-width",videoDeviceWrapper.offsetWidth);
                 // videoDeviceWrapper.style.setProperty("--device-height",videoDeviceWrapper.offsetHeight);
-                console.log(sectionVideoBottom-manifestoBottom)
 
                 let videoPer = (sectionVideoBottom - scrollTop) / (sectionVideoBottom - videoPerTop)*100;
+                let leftPer = (sectionVideoBottom - scrollTop) / (sectionVideoBottom - videoPerTop)*102;
                 if(videoPer <= 65){
                     videoPer = 65;
                 }
-                videoDeviceWrapper.style.left = 100-videoPer-3+'%';
+                if(leftPer <= 69){
+                    leftPer = 69
+                }
+
+               
+                videoDeviceWrapper.style.left = 100-leftPer+'%';
                 videoDeviceWrapper.style.top = 100-videoPer+'%';
                 
-                videoDeviceWrapper.style.width = `${100+(manifestoBottom/4.71)}%`
+                videoDeviceWrapper.style.width = `${100+(manifestoBottom/4.45)}%`
                 videoDeviceWrapper.style.height = `${100+(manifestoBottom/4.18)}%`
 
 
