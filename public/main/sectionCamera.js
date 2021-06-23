@@ -20,7 +20,7 @@ function cameraZoom(){
     if (scrollTop >= cameraTop && scrollTop<=solidBottom){
         solid.style.opacity = ((scrollTop - cameraTop) / gap)*1.5;
         iamgeCamera.style.transform = `matrix(${1 + ((scrollTop - cameraTop) / gap)*1.8} , 0, 0, ${1 + ((scrollTop - cameraTop) / gap)*1.5}, 0, 0)`;
-        gradient.style.transform = `matrix(1, 0, 0, 1, 0, ${1300-((scrollTop - cameraTop) / gap)*2000})`;
+        gradient.style.transform = `matrix(1, 0, 0, 1, 0, ${1300-((scrollTop - cameraTop) / gap)*1960})`;
     }else{
         iamgeCamera.style.transform = `matrix(1 , 0, 0, 1, 0, 0)`;
         

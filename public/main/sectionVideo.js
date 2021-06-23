@@ -44,7 +44,7 @@ function videoScroll(){
             intro1.style.opacity = (422-(positionHeight/2))/422*10;
             intro2.style.opacity = (422-(positionHeight/2))/422*10;
 
-            // videoDeviceWrapper.style.transform = `matrix(3.1, 0, 0, 3,1, -490, ${-242-(positionHeight/2)})`
+           
         }
 
         if((422-(positionHeight/2))/422 <= -0.1){
@@ -54,11 +54,7 @@ function videoScroll(){
             const maniTop = scrolledTopLength + manifestoTop-80; // 절대좌표
             const maniBottom = scrolledTopLength + manifestoBottom;
 
-            // console.log(22-(positionHeight/2)/4)
-            // console.log('matrix', 422+(422-(positionHeight/2))*10)
-            // console.log('opacity',(-(422-(positionHeight/2)))/422*10)
-            // manifesto.style.transform = `matrix(1, 0, 0, 1, 0, ${422+(422-(positionHeight/2))*10})`
-            // manifesto.style.opacity = (-(422-(positionHeight/2)))/422*10;
+          
             manifesto.classList.remove('displayNone');
             manifesto.style.transform = `matrix(1, 0, 0, 1, 0, ${422-(positionHeight/2)})`
             let videoConOpa = 1+(422-(positionHeight/2))/422*5
@@ -66,11 +62,7 @@ function videoScroll(){
                 videoConOpa = 0.1
             }
             videoContainer.style.opacity = videoConOpa;
-            // videoDeviceWrapper.style.transform = `matrix(3.1, 0, 0, 3,1, -490, ${-242-(positionHeight/2)})`
-
-            
-            // console.log(scrollTop , maniTop)
-            // console.log('maniBottom', maniBottom);
+           
             
             if(scrollTop >= maniTop){
                 videoContainer.style.opacity = (scrollTop - maniTop)/40;
@@ -82,16 +74,12 @@ function videoScroll(){
             }
             if(manifestoBottom < 0){
                 
-                console.log(videoPerTop);
-                console.log('sectionBottom - perTop',sectionVideoBottom - videoPerTop);
-                console.log('sectionBottom - scrollTop', sectionVideoBottom - scrollTop);
-                console.log((sectionVideoBottom - scrollTop) / (sectionVideoBottom - videoPerTop)*100 +'%');
-                // videoDeviceWrapper.style.width = `${100+(manifestoBottom/2)}%`
-                // videoDeviceWrapper.style.height = `${100+(manifestoBottom/2)}%`
+               
+
+
                 videoSectionVideo.pause();
 
-                // videoDeviceWrapper.style.setProperty("--device-width",videoDeviceWrapper.offsetWidth);
-                // videoDeviceWrapper.style.setProperty("--device-height",videoDeviceWrapper.offsetHeight);
+               
 
                 let videoPer = (sectionVideoBottom - scrollTop) / (sectionVideoBottom - videoPerTop)*100;
                 let leftPer = (sectionVideoBottom - scrollTop) / (sectionVideoBottom - videoPerTop)*102;
@@ -104,22 +92,20 @@ function videoScroll(){
 
                 frameWidth = document.querySelector('.video-ui-frame').clientWidth;
                 frameHeight = document.querySelector('.video-ui-frame').clientHeight;;
-                console.log(frameWidth,'frameWidth');
+               
                
                 videoDeviceWrapper.style.left = 50+'%';
                 videoDeviceWrapper.style.top = 50+'%';
                 videoDeviceWrapper.style.transform = 'translate(-50%, -50%)';
                 
-                videoDeviceWrapper.style.width = `${100+(manifestoBottom/4.18)}%`
-                videoDeviceWrapper.style.height = `${100+(manifestoBottom/4.18)}%`
+                videoDeviceWrapper.style.width = `${100+(manifestoBottom/3.8)}%`
+                videoDeviceWrapper.style.height = `${100+(manifestoBottom/4)}%`
 
 
                 document.querySelector('.section-video .device').style.opacity='1';
                 document.querySelector('.section-video .device-screen').style.opacity='1';
 
-                // videoDeviceWrapper.style.transform = `matrix(1, 0, 0, 1, -490, ${-484-(positionHeight/2)})`
-                // deviceWrap.style.transform = `matrix(4, 0, 0, 4, -220, ${-242-(positionHeight/2)})`
-                // uiFrame.style.transform = `matrix(1, 0, 0, 1, -220, ${-242-(positionHeight/2)})`
+
             }else{
                 videoSectionVideo.play();
             
@@ -133,6 +119,9 @@ function videoScroll(){
             manifesto.classList.add('displayNone');
         }
 
+    }else{
+        videoWrapper.style.transform = `matrix(1, 0, 0, 1, 0, 0)`;
+        videoWrapper.style.opacity = 0;
     }
 }
 

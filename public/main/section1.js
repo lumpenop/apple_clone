@@ -110,11 +110,10 @@ function canvasHidden(){
             num2 = 4
         }
         
-        lis[num2].style.opacity = sigmoid(scrollTop-beforePosition);
+        lis[num2].style.opacity = sigmoid((scrollTop-beforePosition)*1.5);
 
         
-    }    
-    
+    }
     beforePosition = scrollTop;
 }
 
