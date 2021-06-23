@@ -24,10 +24,12 @@ let history_show = async (req,res)=>{
 let lecture_delete = async (req,res)=>{
     let userid = req.cookies.userid
     let item_name = req.body.item_name
-    let result = await history.destroy({where:{name1:userid,item_name:item_name}})
-    let result2 = await history.findAll({})
+    let result2 = await history.destroy({where:{name1:userid,item_name:item_name}})
+    let result = await history.findAll({where:{name1:userid}})
     res.render('./buy/buy_history.html',{
-        result:result2
+        result:result,
+        name1:userid,
+        msg:req.query.msg
     })
 }
 
@@ -35,7 +37,7 @@ let lecture_render = async (req,res)=>{
     let item_name = req.query.item_name
     let result = await items.findOne({where:{item_name:item_name}})
     let exp = result.maximum_date
-    let now = new Date().getTime() - 1000*3
+    let now = new Date().getTime() - 1000*1
     let skill1 = result.item_skill1
     let skill2 = result.item_skill2
     let skill3 = result.item_skill3

@@ -1,9 +1,9 @@
-
 const input = document.querySelectorAll(".inputFocus");
 let loginBtn = document.querySelector('#loginBtn');
 loginBtn.addEventListener('click', loginFn);
 let chatBtn = document.querySelector('#chatBtn');
 chatBtn.addEventListener('click', chatFn);
+
 
 for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('focus', inputFocus);
@@ -88,8 +88,6 @@ async function onSignIn(googleUser) {
 }
 
 
-
-
 // const googleLogin = document.querySelector('#googleLogin');
 // googleLogin.addEventListener('click',signOut());
 
@@ -101,17 +99,21 @@ async function onSignIn(googleUser) {
 //         console.log('GOOGLE User signed out.');
 //     });
 // } 
-
 /// 위의 JS 는 메인 페이지에서 아직 로딩 안된 상태다. 그래서 함수 onclick이 안된다. 
 
 
-function chatFn() {
-    var chatWidth = 450;
-    var chatHeight = 655;
-    var chatLeft = 90;
-    var chatTop = 100;
-    // xPos = (document.body.offsetWidth) - w; // 오른쪽 정렬
-    // xPos += window.screenLeft; // 듀얼 모니터일 때
-    // var yPos = (document.body.offsetHeight/2) - (h/2);
-    window.open('chat', 'a', `width = ${chatWidth}px, height = ${chatHeight}px,left = ${chatLeft}%,top = ${chatTop}`);
-}
+// function chatFn() {
+//     var chatWidth = 565;
+//     var chatHeight = 817;
+//     var chatLeft = 90;
+//     var chatTop = 100;
+//     // xPos = (document.body.offsetWidth) - w; // 오른쪽 정렬
+//     // xPos += window.screenLeft; // 듀얼 모니터일 때
+//     // var yPos = (document.body.offsetHeight/2) - (h/2);
+//     window.open('chat', 'a', `width = ${chatWidth}px, height = ${chatHeight}px,left = ${chatLeft}%,top = ${chatTop}`);
+// }
+
+
+
+
+

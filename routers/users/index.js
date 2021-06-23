@@ -29,6 +29,7 @@ router.get('/chat', controller.chat);
 router.get('/chatHelp', controller.chatHelp);
 router.get('/chatBtn', controller.chatBtn);
 router.get('/chatRoom',auth, controller.chatRoom);
+router.post('/socketID', controller.socketID);
 
 router.post('/pwFind',controller.pwFind);
 router.get('/pwFind_middleware',controller.pwFind_middleware);

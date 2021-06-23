@@ -65,7 +65,7 @@ let login = async (req, res) => {
     //login 상태면 main.html / logout - login.html 
     let { userid } = req.cookies;
     if (userid == undefined) {
-        res.render('login.html');
+        res.render('login.html',);
     } else {
         res.redirect('/');
     }
@@ -311,10 +311,12 @@ let chat = (req, res) => {
 }
 
 let chatHelp = (req, res) => {
-    res.render('./chat/chatHelp.html');
+    let {userid} = req.cookies;
+    res.render('./chat/chatHelp.html',{userid});
 }
 
-let chatBtn = (rea, res) => {
+let chatBtn = (req, res) => {
+    let {userid} = req.query;
     res.render('./chat/chatBtn.html');
 }
 
@@ -322,6 +324,15 @@ let chatRoom = (req, res) => {
     res.render('./chat/chatRoom.html');
 }
 
+// let socket_array = [];
+let socketID = (req,res)=>{
+//     let {socketID} = req.body;
+//     socket_array.push(socketID)
+//     console.log(socket_array)
+
+
+
+}
 
 
 
@@ -408,7 +419,7 @@ module.exports = {
     join, join_success, confirmEmail, userid_check, login, logincheck, login_success,
     kakaologin, kakao_login, logout, deleteID, googlelogin, google_logout,
     info, info_view, info_modify,
-    chat, chatRoom, chatHelp, chatBtn,
+    chat, chatRoom, chatHelp, chatBtn, socketID,
     bags,
     pwFind, pwFind_middleware,
     map,

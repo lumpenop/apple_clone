@@ -25,5 +25,7 @@ db.valuation = models.valuation;
 db.buy = models.buy; 
 db.bag = models.bag;
 db.history = models.history;
+db.question = models.question;
+db.answer = models.answer;
 
 module.exports = db;

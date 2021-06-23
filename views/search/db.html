@@ -1,13 +1,14 @@
 {% include 'top.html' %}
-    <div class = "ContentWrap wrap">
-        <div class = "header">
+
+    <div class = "ContentWrap wrap" style = "margin-top: 50px;">
+        <!-- <div class = "header">
             <div class = "headerLogo">
                 <a href = "/user/login"><img class = "headerLogo" src = "../../logo.png"></a>
             </div>
             <div class = "headertext">
                 From $699 or $29.12/mo.per month before trade-inFootnote*
             </div>
-        </div>
+        </div> -->
         <div class = "content wrap1200">
             <div class = "MainContent">
                 <ul class = "menu">
@@ -26,10 +27,17 @@
                             <h3 class = "font1 item{{item.id}}"><a class = "href{{item.id}}" href = "/buy/buy_show?name={{item.item_name}}"> 상품명:{{item.item_name}}</a></h3>
                             <div class = "font2">상품 카테고리:{{item.item_category}}</div>
                             <div class = "font3"><a href = "">상품 가격:{{item.item_price}}</a></div>
-                            <div class = "maximum_number{{item.id}}">{{item.maximum_number}}</div>
+                            <span>수강 가능 인원 : </span><div style="display: inline-block;" class = "maximum_number{{item.id}}">{{item.maximum_number}}</div>
                         </div>
                     </li>
                     {% endfor %}
+                    <li class = "clear">
+                        {% for item in result2 %}
+                        <div class = "bold">{{item.title}}</div>
+                        <div class = "ggg">{{item.content}}</div>
+                        <div style = "margin-bottom: 60px; margin-top: 10px;"><a href = "">{{item.tag}}</a></div>
+                        {% endfor %}
+                    </li>
                 </ul>
                 <ul>
                     <li class = "clear">
@@ -339,4 +347,5 @@
 
 
 </script>
+<script src="../index.js"></script>
 </html>

@@ -159,15 +159,20 @@ function layerClose(event, layer){
     }
 }
 
-
+// 아래 클릭하면 닫히는 기능 추가 했습니다 ! by Seyeon 
 let sideAppleFlag = false;
 function sideAppleOn(){
+    const sideMenus = document.querySelectorAll('.side_menu_box');
     if(!sideAppleFlag){
-        const sideMenus = document.querySelectorAll('.side_menu_box');
         for(var i=0; i<sideMenus.length;i++){
             sideMenus[i].classList.add('displayOpa1');
         }
         sideAppleFlag = true;
+    }else{
+        for(var i=0; i<sideMenus.length;i++){
+            sideMenus[i].classList.remove('displayOpa1');
+        }
+        sideAppleFlag = false;
     }
 }
 

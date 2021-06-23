@@ -74,3 +74,6 @@ insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '7', '자료 구조형', 'https://www.youtube.com/embed/XVQeBm_ilJU');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '8', 'for문', 'https://www.youtube.com/embed/2kL0FrUXFOI');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '9', 'if문', 'https://www.youtube.com/embed/tQ0yjYUFKAE');
+
+
+insert into question (question_subject, question_content, question_id) values ('C++관련 질문입니다', '이게 해결이 안 되네요 어떻게 하죠오', '코딩짱');
