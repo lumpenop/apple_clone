@@ -32,7 +32,7 @@ let join_success = (req, res) => {
     let url = `http://` + req.get('host') + `/user/confirmEmail?key=${key_for_verify}`;
     let options = {
         from: process.env.GoogleID,
-        to: 'saeee210@gmail.com',
+        to: req.body.userid,
         subject: '이메일 인증을 진행해주세요.',
         html: `${username}님, 안녕하세요. <h1>이메일 인증을 위해 URL을 클릭해주세요. </h1><br/> ${url}`
     }
