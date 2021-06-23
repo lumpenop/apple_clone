@@ -102,9 +102,9 @@
 
     z-index: 1;
     position: absolute;
-    top: 25%;
-    left: 15%;
-   
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
 }
 
@@ -193,8 +193,8 @@
     );
     z-index: 30;
     position: absolute;
-    top: -3px;
-    left: -4px;
+    top: -2%;
+    left: -1%;
     opacity: 1;
 }
 
@@ -214,8 +214,9 @@
     background-size: cover !important;
     width: 979px;
     height: 485px;
-    top: 20%;
+    top: 50%;
     left: auto;
+    transform: translateY(-55%);
     margin-left: auto;
     margin-right: auto;
     position: relative;
