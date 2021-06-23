@@ -66,8 +66,13 @@
 // //console.log(Object.keys(session.authData[0]))
 
 
-a = /^[0-9a-zA-Z.;\-]*$/;
-console.log(a)
+// a = /^[0-9a-zA-Z.;\-]*$/;
+// console.log(a)
 
 
 
+
+a = []
+a.push(3)
+a.push(5)
+console.log(34)

@@ -132,6 +132,14 @@ a{
     justify-content: space-between;
 }
 
+
+
+
+/* HOME */
+
+
+
+
 .mobile-only{
     display: none;
 }
@@ -549,8 +557,7 @@ a{
     line-height: 50px;
 }
 
-
-
-
-
+.side_menu_hover:hover{
+    background-color: #229cff;
+}
 
