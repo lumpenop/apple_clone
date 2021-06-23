@@ -94,6 +94,7 @@ function eyebrowScroll(text){
 
 
 const hiddenUl = document.querySelector('.canvas-hidden .hidden-ul');
+const hiddenTop = document.querySelector('.canvas-hidden .hidden-ul').getBoundingClientRect().top;
 const lis = document.querySelectorAll('.canvas-hidden .hidden-ul li');
 var beforePosition;
 const sectionDesignRow = document.querySelector('.section-design .row').getBoundingClientRect();
@@ -101,10 +102,10 @@ const sectionDesignRow = document.querySelector('.section-design .row').getBound
 function canvasHidden(){
     
     const scrollTop = html.scrollTop;
-    if(scrollTop>=sectionDesignRow.top && scrollTop<=sectionDesignRow.bottom){
+    if(scrollTop>=hiddenTop && scrollTop<=sectionDesignRow.bottom){
         
-        const gap = (sectionDesignRow.bottom - sectionDesignRow.top) / 5;
-        let num2 = Math.floor((scrollTop - sectionDesignRow.top) / gap);
+        const gap = (sectionDesignRow.bottom - hiddenTop) / 5;
+        let num2 = Math.floor((scrollTop - hiddenTop) / gap);
         if(num2>=5){
             num2 = 4
         }
