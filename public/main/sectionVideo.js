@@ -102,11 +102,15 @@ function videoScroll(){
                     leftPer = 69
                 }
 
+                frameWidth = document.querySelector('.video-ui-frame').clientWidth;
+                frameHeight = document.querySelector('.video-ui-frame').clientHeight;;
+                console.log(frameWidth,'frameWidth');
                
-                videoDeviceWrapper.style.left = 100-leftPer+'%';
-                videoDeviceWrapper.style.top = 100-videoPer+'%';
+                videoDeviceWrapper.style.left = 50+'%';
+                videoDeviceWrapper.style.top = 50+'%';
+                videoDeviceWrapper.style.transform = 'translate(-50%, -50%)';
                 
-                videoDeviceWrapper.style.width = `${100+(manifestoBottom/4.45)}%`
+                videoDeviceWrapper.style.width = `${100+(manifestoBottom/4.18)}%`
                 videoDeviceWrapper.style.height = `${100+(manifestoBottom/4.18)}%`
 
 
@@ -118,8 +122,7 @@ function videoScroll(){
                 // uiFrame.style.transform = `matrix(1, 0, 0, 1, -220, ${-242-(positionHeight/2)})`
             }else{
                 videoSectionVideo.play();
-                videoDeviceWrapper.style.left = '0';
-                videoDeviceWrapper.style.top = '0';
+            
                 videoDeviceWrapper.style.width = `100%`;
                 videoDeviceWrapper.style.height = `100%`;
                 document.querySelector('.section-video .device').style.opacity='0';
