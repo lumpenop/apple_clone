@@ -163,14 +163,17 @@ function layerClose(event, layer){
 let sideAppleFlag = false;
 function sideAppleOn(){
     const sideMenus = document.querySelectorAll('.side_menu_box');
+    const sideAs = document.querySelectorAll('.side-a');
     if(!sideAppleFlag){
         for(var i=0; i<sideMenus.length;i++){
             sideMenus[i].classList.add('displayOpa1');
+            sideAs[i].classList.remove('displayNone');
         }
         sideAppleFlag = true;
     }else{
         for(var i=0; i<sideMenus.length;i++){
             sideMenus[i].classList.remove('displayOpa1');
+            sideAs[i].classList.add('displayNone');
         }
         sideAppleFlag = false;
     }
@@ -181,9 +184,12 @@ function appleSideOff(event, layer , layer2){
     if(event.target != layer && sideAppleFlag){
         console.log('?')
         const sideMenus = document.querySelectorAll('.displayOpa1');
+        const sideAs = document.querySelectorAll('.side-a');
+        
         if(sideMenus != null){
             for(var i=0; i<sideMenus.length;i++){
                 sideMenus[i].classList.remove('displayOpa1');
+                sideAs[i].classList.add('displayNone');
             }
             sideAppleFlag = false;
         }
