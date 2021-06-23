@@ -65,16 +65,11 @@ io.sockets.on('connection', socket => {
         socket.on('send', data => {
             console.log(data)
             let {msg, socketID} = data;
-            socket.to('YO4QGA8Tmn8VXXgpAAAR').emit('msg', msg);
+            socket.broadcast.emit('msg', msg);
             
         })
         socket.on('disconnect',()=>{
-            for (let i =0; i<socket_array.length; i++){
-                if(socket_array[i]==socket.id){
-                    socket_array.splice(i,1);
-                    break;
-                }
-            }
+            socket_array.splice(socket_array.indexOf(socket.id),1)
             console.log('disconnected socket_arr =', socket_array)
         })
     }
