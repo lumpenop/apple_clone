@@ -37,31 +37,23 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: Sequelize.Sequelize.fn('curdate')
     },
+    email_verified: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
+    key_for_verify: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+      defaultValue: '0'
+    },
     admin: {
       type: DataTypes.INTEGER(100),
       allowNull: true,
-    }
+    },
   }, {
     sequelize,
     tableName: 'users',
     timestamps: false,
-    indexes: [
-      {
-        name: "PRIMARY",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "id" },
-        ]
-      },
-      {
-        name: "userid",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "userid" },
-        ]
-      },
-    ]
   });
 };

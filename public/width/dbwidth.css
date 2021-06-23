@@ -1,0 +1,12 @@
+@media screen and (max-width: 1509px) 
+
+{ 
+.wrap1200{
+    width:80vw;
+    margin:0 auto;
+}
+.ac-gn-mac, .ac-gn-ipad, .ac-gn-iphone, .ac-gn-watch, .ac-gn-music, .ac-gn-support, #side_menu, .menu, .line{
+    display: none;
+    width:0px;
+}
+}

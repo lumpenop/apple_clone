@@ -10,12 +10,15 @@ a{
 #main_OH_wrap{
     width:100%;
     height:100%;
+ 
 }
 
 #main_OH_background_black{
     background-color: black;
     position:relative;
     padding:0 0 300px 0;
+    width: 100%;
+    z-index: 20;
 }
 
 #main_OH{
@@ -99,7 +102,7 @@ a{
 
 .main_OH_inline{
     display: inline-block;
-    float: left;
+
 }
 
 
@@ -225,14 +228,12 @@ a{
     width:571px;
     height:inherit;
     display: inline-block;
-    float:left;
 }
 
 #main_OH_coolgirl{
     width:327px;
     height: inherit;
     display: inline-block;
-    float:left;
     margin-left:70px;
     padding:100px 0 0 0;
 }

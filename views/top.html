@@ -11,21 +11,45 @@
         content="629441779926-4mqfjfoqh3u0ig9nd6j5glpjf4o6stnn.apps.googleusercontent.com">
 
     <link href="/users/apple_logo.png" rel="shortcut icon" type="image/x-icon">
+
     <link rel="stylesheet" href="/users/join.css">
     <link rel="stylesheet" href="/users/home.css">
     <link rel="stylesheet" href="/users/login.css">
     <link rel="stylesheet" href="/users/action.css">
     <link rel="stylesheet" href="/main/section1.css">
+    <link rel="stylesheet" href="../../search.css">
+    <link rel="stylesheet" href="../main/scroll.css">
     <link rel="stylesheet" href="/main/sectionHands.css">
+    <link rel="stylesheet" href="/main/sectionCamera.css">
+    <link rel="stylesheet" href="/main/sectionDisplay.css">
     <link rel="stylesheet" href="/main/kakaoGoogleBtn.css">
     <link rel="stylesheet" href="/mainOH/mainOHCSS.css">
+
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="../../width/dbwidth.css">
+    <link rel="stylesheet" href="/main/sectionVideo.css">
+
+
+
+
     <title>Apple</title>
 
-   
+
 </head>
 
 <body class="page-home ac-nav-overlap">
+    <div id="side_menu">
+        <div class="side_menu_box side_menu_hover">
+            <a id="side_menu_box1" class="side-a displayNone" href="" style="width:100px; height:50px; display:inline-block">채팅</a>
+        </div>
+        <div id="" class="side_menu_box side_menu_hover">
+            <a class="side-a displayNone" style="width:100px; height:50px; display:inline-block;" href="/user/map">지도</a>
+        </div>
+        <div id="" class="side-apple side_menu_hover">
+            <div class="side-div" style="width:50px; height:50px; display:inline-block;">
 
+            </div>
+        </div>
+    </div>
     <nav id="ac-globalnav" class="js no-touch no-windonws with-bagview" role="navigation" data-hires="false"
         data-analytics-region="ac-global nav" lang="ko-Kr" dir="ltr" data-www-domain="www.apple.com"
         data-store-locale="kr" data-store-root-path="/kr" data-store-api="/[sotrefront]/shop/bag/status"
@@ -37,18 +61,18 @@
             </div>
             <ul class="ac-gn-list">
                 <li class="ac-gn-item ac-gn-apple">
-                    <a class="ac-gn-link ac-gn-link-apple" href="#" data-analytics-title="apple home"
+                    <a class="ac-gn-link ac-gn-link-apple" href="/" data-analytics-title="apple home"
                         id="ac-gn-firstfocus">
                         <span></span>
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-mac">
-                    <a class="ac-gn-link ac-gn-link-mac" href="#">
+                    <a class="ac-gn-link ac-gn-link-mac" href="/search/question">
                         <span>Mac</span>
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-ipad">
-                    <a class="ac-gn-link ac-gn-link-ipad" href="#">
+                    <a class="ac-gn-link ac-gn-link-ipad" href="/search/professor">
                         <span>iPad</span>
                     </a>
                 </li>
@@ -68,7 +92,7 @@
                     </a>
                 </li>
                 <li class="ac-gn-item ac-gn-menu ac-gn-support">
-                    <a class="ac-gn-link ac-gn-link-support" href="#">
+                    <a class="ac-gn-link ac-gn-link-support" href="/search/valuation">
                         <span>고객지원</span>
                     </a>
                 </li>
@@ -88,7 +112,7 @@
                     <div class="ac-gn-searchview-bar">
                         <div class="ac-gn-searchview-bar-wrapper">
                             <div class="ac-gn-searchform-wrapper">
-                                <form action="/search/search" method="post">
+                                <form action="/search/db" method="post">
                                     <input id="ac-gn-searchform-input" class="ac-gn-searchform-input displayNone"
                                         aria-label="apple.com 검색" placeholder="apple.com 검색" name="AppleSearch"
                                         type="text">
@@ -145,17 +169,23 @@
             <span class="caret"></span>
             <aside class="ac-gn-bagview">
                 <div class="ac-gn-bagview-content">
-                    <p class="ac-gn-bagview-message">장바구니가 비어있습니다.</p>
+                    <p class="ac-gn-bagview-message">
+                        {% for result in result %}
+                    <div><img style="width:80px; height:100px; margin-bottom: 20px;" src="../{{result.item_image}}">
+                    </div>
+                    <div style="margin-bottom: 20px;">{{result.item_name}}</div>
+                    {% endfor %}
+                    </p>
                     <nav class="ac-gn-bagview-nav">
                         <ul class="ac-gn-bagview-nav-list">
                             <li class="ac-gn-bagview-nav-item">
-                                <a class="item-link item-bag" href="#">장바구니</a>
+                                <a class="item-link item-bag" href="/buy/shopping_basket">장바구니</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
                                 <a href="#" class="item-link item-favorite">즐겨찾기</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
-                                <a href="#" class="item-link item-orders">주문</a>
+                                <a href="/buy/history" class="item-link item-orders">주문</a>
                             </li>
                             <li class="ac-gn-bagview-nav-item">
                                 <a href="/user/info" class="item-link item-account">계정</a>
@@ -229,6 +259,13 @@
             gapi.load('auth2', function () {
                 gapi.auth2.init();
             });
+        }
+    </script>
+    <script type="text/javascript" src="/admin/js/chat.js"></script>
+    <script type="text/javascript">
+        function openWindowPop(url, name) {
+            var options = 'top=100, left=500, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
+            window.open(url, name, options);
         }
     </script>
     <!--아래 script 들  위 <HEAD> 로 옮기면 실행 x 안됨 -->

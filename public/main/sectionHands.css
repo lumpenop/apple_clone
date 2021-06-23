@@ -19,7 +19,7 @@
 }
 
 .section-design .compare{
-    min-height: 520vh;
+    min-height: 320vh;
 }
 
 .section-design .section-design-iphone-12{
@@ -483,6 +483,7 @@ br.large{
 
 .will-change{
     will-change: transform;
+    
 }
 
 .section-design .section-design-materials .design-materials{
@@ -554,3 +555,16 @@ br.large{
     font-weight: 600;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*    video     */

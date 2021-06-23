@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../lecture_render.css">
+</head>
+<body>
+    <div class = "wrapping wrap" style = "text-align: center;">
+        <a href = "/user/login"><img style = "display: inline-block; margin-top: 60px;" src = "../../history_logo.png"></a>
+        <div class = "content">
+            <div class = "footer">
+                <div class = "img"><img class = "img" src = "../../{{result.item_image}}"></div>
+                <div class = "text">
+                    <h2 class = "font">{{result.item_category}}</h2>
+                    <h2 class = "red">{{result.item_name}}</h2>
+                    <div class = "font1">수강 인원 수 : {{result.maximum_number}}</div>
+                    <div class = "tag0">태그</div>
+                    <span class = "tag">#{{result.item_tag1}}</span>
+                    <span class = "tag">#{{result.item_tag2}}</span>
+                    <span class = "tag">#{{result.item_tag3}}</span>
+                    <form action = "/buy/lecture_render" method = "post">
+                        <input type = "submit" class = "BTN_click" value = "삭제하기">
+                        <input style = "display: none;" type = "text" name = "item_name" value = "{{result.item_name}}">                    
+                    </form>
+                </div>             
+            </div>
+        </div>
+    </div>
+    <div class = "wrapping wrap2">
+        <div class = "content">
+            <div class = "mainLecture">
+                <h1 class = "h1">교육 과정</h1>
+                <div class = "">
+                    <h2>나의 강의 진행 정도</h2>
+                    <div class = "progress">
+                    
+                    </div>
+                </div>
+                <div class = "">              
+                    <div class = "main_subject">section1. <span class = "Red">{{result.item_skill1}} 강의</span></div> 
+                    <table class = "">                    
+                        {% for item in result1 %}
+                        <tr>
+                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                        </tr>                    
+                        {% endfor %}
+                    </table>
+                </div>  
+                <div class = "">
+                    <div class = "main_subject">section2. <span class = "Red">{{result.item_skill2}} 강의</span></div>  
+                    <table>                    
+                        {% for item in result2 %}
+                        <tr>
+                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section2{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                        </tr>                  
+                        {% endfor %}
+                    </table>                 
+                </div>
+                <div class = "">
+                    <div class = "main_subject">section3. <span class = "Red">{{result.item_skill3}} 강의</span></div>  
+                    <table>                    
+                        {% for item in result3 %}
+                        <tr>
+                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section3{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                        </tr>                    
+                        {% endfor %}
+                    </table>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "width">
+        <div class = "w1300">
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+
+    let progress = document.querySelector('.progress')
+
+    let section1 = document.querySelector('.section1')
+    let value1 = section1.innerHTML
+    let section2 = document.querySelector('.section2')
+    let value2 = section2.innerHTML
+    let section3 = document.querySelector('.section3')
+    let value3 = section3.innerHTML
+    let section4 = document.querySelector('.section4')
+    let value4 = section4.innerHTML
+    let section5 = document.querySelector('.section5')
+    let value5 = section5.innerHTML
+    let section6 = document.querySelector('.section6')
+    let value6 = section6.innerHTML
+    // let section7 = document.querySelector('.section7')
+    // let value7 = section7.innerHTML
+    // let section8 = document.querySelector('.section8')
+    // let value8 = section8.innerHTML
+    // let section9 = document.querySelector('.section9')
+    // let value9 = section9.innerHTML
+
+    let section21 = document.querySelector('.section21')
+    let value21 = section21.innerHTML
+    let section22 = document.querySelector('.section22')
+    let value22 = section22.innerHTML
+    let section23 = document.querySelector('.section23')
+    let value23 = section23.innerHTML
+    let section24 = document.querySelector('.section24')
+    let value24 = section24.innerHTML
+    let section25 = document.querySelector('.section25')
+    let value25 = section25.innerHTML
+    let section26 = document.querySelector('.section26')
+    let value26 = section26.innerHTML
+
+    let section31 = document.querySelector('.section31')
+    let value31 = section31.innerHTML
+    let section32 = document.querySelector('.section32')
+    let value32 = section32.innerHTML
+    let section33 = document.querySelector('.section33')
+    let value33 = section33.innerHTML
+    let section34 = document.querySelector('.section34')
+    let value34 = section34.innerHTML
+    let section35 = document.querySelector('.section35')
+    let value35 = section35.innerHTML
+    let section36 = document.querySelector('.section36')
+    let value36 = section36.innerHTML
+
+    let width = document.querySelector('.width')
+    let w1300 = document.querySelector('.w1300')
+
+    section1.addEventListener('click',Popup1)
+    section2.addEventListener('click',Popup2)
+    section3.addEventListener('click',Popup3)
+    section4.addEventListener('click',Popup4)
+    section5.addEventListener('click',Popup5)
+    section6.addEventListener('click',Popup6)
+    // section7.addEventListener('click',Popup7)
+    // section8.addEventListener('click',Popup8)
+    // section9.addEventListener('click',Popup9)
+
+    
+    section21.addEventListener('click',Popup21)
+    section22.addEventListener('click',Popup22)
+    section23.addEventListener('click',Popup23)
+    section24.addEventListener('click',Popup24)
+    section25.addEventListener('click',Popup25)
+    section26.addEventListener('click',Popup26)
+
+    section31.addEventListener('click',Popup31)
+    section32.addEventListener('click',Popup32)
+    section33.addEventListener('click',Popup33)
+    section34.addEventListener('click',Popup34)
+    section35.addEventListener('click',Popup35)
+    section36.addEventListener('click',Popup36)
+
+    width.addEventListener('click',Popout)
+    function Popup1(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value21}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup2(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value22}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup3(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value23}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup4(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value24}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup5(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value25}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup6(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value26}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+
+
+    function Popup21(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value1}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup22(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value2}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup23(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value3}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup24(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value4}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup25(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value5}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    function Popup26(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value6}">`
+        let li = document.createElement('li')
+        li.style.width = '50px'
+        li.style.height = '30px'
+        li.style.background = '#c60007'
+        li.style.display = 'inline-block'
+        li.style.opacity = '70%'
+        li.style.float = 'left'
+        progress.appendChild(li)
+    }
+    // function Popup7(){
+    //     width.style.display = 'block'
+    //     w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value7}">`
+    // }
+    // function Popup8(){
+    //     width.style.display = 'block'
+    //     w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value8}">`
+    // }
+    // function Popup9(){
+    //     width.style.display = 'block'
+    //     w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value9}">`
+    // }
+
+    
+    function Popup31(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value31}">`
+    }
+    function Popup32(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value32}">`
+    }
+    function Popup33(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value33}">`
+    }
+    function Popup34(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value34}">`
+    }
+    function Popup35(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value35}">`
+    }
+    function Popup36(){
+        width.style.display = 'block'
+        w1300.innerHTML = `<iframe style="width:1300px; height:800px;" src = "${value36}">`
+    }
+
+    function Popout(){
+        width.style.display = 'none'
+    }
+</script>
+</html>

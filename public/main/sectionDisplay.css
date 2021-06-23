@@ -1,0 +1,81 @@
+.section-display{
+    z-index: 11;
+    position: relative;
+}
+
+.section{
+    display: visible;
+}
+
+
+.section-display .lift-transition-sticky-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.lift-transition-container{
+    width: 100%;
+}
+
+.section-display .flex-vert-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-display .overflow-x-content{
+    min-height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.section-display .device-blue-fill{
+    background-color: #aecbd9;
+}
+
+.section-content:before{
+    content: ' ';
+    display: table;
+}
+
+
+.section-display .headline-container{
+    position: relative;
+}
+
+.section-display .section-headline{
+    color: #3948b1;
+
+    margin-top: 86px;
+}
+
+.section-display .hardware{
+    margin-left: 50%;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    transform-origin: top left;
+    position: relative;
+}
+
+.section-display .will-change{
+    will-change: transform, opacity;
+}
+
+.section-display .hardware.visible .image-hardware{
+    display: block;
+}
+
+.section-display .image-hardware{
+    width: 1689px;
+    height: 386px;
+    background-size: 1689px 386px;
+    background-repeat: no-repeat;
+    background-image: url(
+        /main/image/display_super_retina.jpg
+    );
+}
+
+
+

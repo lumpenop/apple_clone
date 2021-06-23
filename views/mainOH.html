@@ -1,12 +1,7 @@
+
+
 <div id="main_OH_wrap">
     <div id="main_OH_background_black">
-        <div id="main_OH">
-            <div id="OH_telling">
-                <h2>이제 와이드 카메라와 울트라 와이드 카메라 모두<br /> 야간 모드를 지원합니다. 덕분에 그 어느 때보다 <br /> 놀라운 저조도 사진을 얻을 수 있습니다. 새로워진 와이드
-                    카메라는 전보다 27%더
-                    많은 빛을 포착합니다. 이제 낮이든 밤이든, 예전에는 불가능했던 수준의 디테일과 색을 담을 수 있다는 얘기죠.</h2>
-            </div>
-        </div>
         <div id="main_OH_prettyUnni" class="pic_div">
             <img src="/mainOH/DM_20210618111105_001.jpg" width='1440px' height='1083px'>
         </div>
@@ -111,6 +106,7 @@
 
     </div>
 </div>
+</main>
 
 
 
@@ -121,13 +117,13 @@ if (0 == !true) return '오세연'
 
     const OH_io = new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
-            console.log(entry.intersectionRatio)
+        
             if(entry.intersectionRatio>0){
-                console.log(entry.intersectionRatio)
+              
                 entry.target.classList.add('OH_fadein')
                 entry.target.classList.add('OH_inlarge')
             }else if(entry.intersectionRatio>0.02){
-                console.log(entry.intersectionRatio)
+                
             }
             else{
                 entry.target.classList.remove('OH_fadein');
@@ -166,7 +162,7 @@ if (0 == !true) return '오세연'
 
     const OH_io3 = new IntersectionObserver(entries=>{
         entries.forEach(entry=>{
-            console.log(entry.rootBounds)
+     
             if(entry.intersectionRatio>0){
                
                 entry.target.classList.add('magic1')
@@ -235,3 +231,5 @@ if (0 == !true) return '오세연'
 
 
 </script>
+
+{% include "./bottom.html" %}

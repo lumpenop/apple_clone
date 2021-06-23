@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style = "width:100%;">
+        <div style = "width:800px; margin:0 auto;">
+            <div>
+            Q. {{result.question_subject}} 
+            </div>
+            <div>
+                {{result.question_id}}님의 질문
+            </div>
+            <div>
+                {{result.question_content}}
+            </div>        
+        </div>
+    </div>
+    <div style = "width:100%;">
+        <div style = "width:800px; margin:0 auto;">
+            {% for item in result2 %}
+            <div>
+                A. {{item.answer_subject}} 
+            </div>
+            <div>
+                {{item.answer_id}}님의 질문
+            </div>
+            <div>
+                {{item.answer_content}}
+            </div>  
+            {% endfor %}      
+        </div>
+    </div>
+    <div style = "width:100%;">
+        <div style = "width:800px; margin:0 auto;">
+            <form action = "/search/question_oneview" method = "post">
+                <div style = "display: none;">
+                    <input type = "text" value = "{{result.id}}" name = "question_id">
+                </div>
+                <div style = "display: none;">
+                    <input type = "text" value = "{{result.question_subject}}" name = "question_subject">
+                </div>
+                <div>
+                    <input type = "text" name = "answer_subject">
+                </div>
+                <div>
+                    <input type = "text" name = "answer_id">
+                </div>
+                <div>
+                    <input type = "text" name = "answer_content">
+                </div>    
+                <div>
+                    <input type = "submit" name = "답변">
+                </div> 
+            </form>    
+        </div>
+    </div>
+
+</body>
+</html>

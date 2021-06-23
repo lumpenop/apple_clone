@@ -7,13 +7,16 @@ const bagBtn = document.querySelector('.ac-gn-link-bag > span');
 const bagView = document.querySelector('.ac-gn-bagview');
 const bagViewMessage = document.querySelector('.ac-gn-bagview-message');
 const itemLink = document.querySelector('.item-link');
+const appleSide = document.querySelector('.side-apple');
+const sideDiv = document.querySelector('.side-div');
 
 linkSearch.addEventListener('click', searchOnClick);
 searchCloseBtn.addEventListener('click', searchClose);
 curtain.addEventListener('click', event => layerClose(event, curtain));
 globalNav.addEventListener('click', event => layerClose(event, globalNav));
 bagBtn.addEventListener('click', bagViewOn);
-
+appleSide.addEventListener('click', sideAppleOn);
+window.addEventListener('click', event => appleSideOff(event, sideDiv, appleSide));
 
 
 
@@ -28,8 +31,6 @@ function windowClick (event){
         bagViewFlag = true;    
     }
 }
-
-
 
 
 let bagViewFlag = true;
@@ -147,8 +148,6 @@ async function searchClose(){
         await timer(20)   
     }
     
-
-
     searchInput.value = '';
     
 }
@@ -157,6 +156,43 @@ function layerClose(event, layer){
     
     if(event.target == layer&&document.querySelector('#ac-gn-curtain').className=='ac-gn-curtain'){
         searchClose();
+    }
+}
+
+// 아래 클릭하면 닫히는 기능 추가 했습니다 ! by Seyeon 
+let sideAppleFlag = false;
+function sideAppleOn(){
+    const sideMenus = document.querySelectorAll('.side_menu_box');
+    const sideAs = document.querySelectorAll('.side-a');
+    if(!sideAppleFlag){
+        for(var i=0; i<sideMenus.length;i++){
+            sideMenus[i].classList.add('displayOpa1');
+            sideAs[i].classList.remove('displayNone');
+        }
+        sideAppleFlag = true;
+    }else{
+        for(var i=0; i<sideMenus.length;i++){
+            sideMenus[i].classList.remove('displayOpa1');
+            sideAs[i].classList.add('displayNone');
+        }
+        sideAppleFlag = false;
+    }
+}
+
+function appleSideOff(event, layer , layer2){
+    console.log(event.target)
+    if(event.target != layer && sideAppleFlag){
+        console.log('?')
+        const sideMenus = document.querySelectorAll('.displayOpa1');
+        const sideAs = document.querySelectorAll('.side-a');
+        
+        if(sideMenus != null){
+            for(var i=0; i<sideMenus.length;i++){
+                sideMenus[i].classList.remove('displayOpa1');
+                sideAs[i].classList.add('displayNone');
+            }
+            sideAppleFlag = false;
+        }
     }
 }
 

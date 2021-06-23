@@ -49,23 +49,30 @@
 
 
 
-let hey = {
-    a:1,
-    b:2,
-    c:3,
-}
+// let hey = {
+//     a:1,
+//     b:2,
+//     c:3,
+// }
 
-let session ={};
-session.authData={
-    ['local']: hey
-}
+// let session ={};
+// session.authData={
+//     ['local']: hey
+// }
 
-console.log(session)
-console.log(session.authData)
-console.log(Object.keys(session.authData)[0])
-//console.log(Object.keys(session.authData[0]))
-
-
+// console.log(session)
+// console.log(session.authData)
+// console.log(Object.keys(session.authData)[0])
+// //console.log(Object.keys(session.authData[0]))
 
 
+// a = /^[0-9a-zA-Z.;\-]*$/;
+// console.log(a)
 
+
+
+
+a = []
+a.push(3)
+a.push(5)
+console.log(34)

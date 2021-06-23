@@ -1,6 +1,12 @@
 const chatBtn = document.querySelector('#chatBtn');
 const chatPlace = document.querySelector('#chatPlace');
+// const chat_userid = document.querySelector('#chat_userid');
+// const chatHelp_box1 = document.querySelector('#chatHelp_box1');
 let flag = undefined;
+
+// chatHelp_box1.addEventListener('click',()=>{
+//     window.location=`http://localhost:3000/user/chatBtn?${chat_userid.innerHTML}`
+// })
 
 chatBtn.addEventListener('click', () => {
     chatBtn.style.marginTop = "0px";
@@ -55,6 +61,7 @@ async function getChatRoom() {
         time.innerHTML = now.toLocaleString();
         socketChat();
 
+        //enter 로 메세지 보내기 
         const chatInput = document.querySelector('#msg');
         const chatSend = document.querySelector('.chatSend');
         chatInput.addEventListener('keydown', function (event) {
@@ -107,10 +114,27 @@ function isJson(str) {
 
 //        s o c k e t s        //
 
+// handshake 부분 
 const socket = io();
 
-function socketChat() {
+async function socketChat() {
     socket.on('connect', () => { })
+    // socketID 가서 배열에 해당 브라우저의 socket ID 저장 
+    let url = `http://localhost:3000/user/socketID`;
+    let options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            socketID:socket.id,
+        })
+    }
+    let response = await fetch(url, options);
+    let res_body = await response.json();
+    let { result, msg } = res_body;
+
+
     let chat_count = parseInt(chatBtn.dataset.value);
     socket.on('msg', data => {
         chat_count++;
@@ -121,18 +145,25 @@ function socketChat() {
     });
 };
 
-function send() {
+function send(){
     const msg = document.querySelector('#msg');
-    if (msg.value == '') {
+   console.log(socket.id)
+    if (msg.value == ''){
         return;
     } else {
-        socket.emit('send', msg.value);
+        let data = { msg:msg.value, socketID:socket.id}
+        socket.emit('send', data);
+        //내가 쓴 글 나에게 보내기 
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');
         chat.scrollTop = chat.scrollHeight;
     }
 }
+
+socket.on('send', data =>{
+
+})
 
 function msgAdd(msgValue, who) {
     const ul_time = document.createElement('ul');

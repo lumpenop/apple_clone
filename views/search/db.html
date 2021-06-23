@@ -1,0 +1,351 @@
+{% include 'top.html' %}
+
+    <div class = "ContentWrap wrap" style = "margin-top: 50px;">
+        <!-- <div class = "header">
+            <div class = "headerLogo">
+                <a href = "/user/login"><img class = "headerLogo" src = "../../logo.png"></a>
+            </div>
+            <div class = "headertext">
+                From $699 or $29.12/mo.per month before trade-inFootnote*
+            </div>
+        </div> -->
+        <div class = "content wrap1200">
+            <div class = "MainContent">
+                <ul class = "menu">
+                    <li>Explore</li>
+                    <li>Accessories</li>
+                    <li>Support</li>
+                    <li>Apple Stores</li>
+                </ul>
+                <div class = "line"></div>
+                <h5>10 results found</h5>
+                <ul class = "ul">
+                    {% for item in result %}
+                    <li class = "clear">
+                        <div class = "image"><img class = "image" src = "/{{item.item_image}}"></div>
+                        <div class = "margin_left">
+                            <h3 class = "font1 item{{item.id}}"><a class = "href{{item.id}}" href = "/buy/buy_show?name={{item.item_name}}"> 상품명:{{item.item_name}}</a></h3>
+                            <div class = "font2">상품 카테고리:{{item.item_category}}</div>
+                            <div class = "font3"><a href = "">상품 가격:{{item.item_price}}</a></div>
+                            <span>수강 가능 인원 : </span><div style="display: inline-block;" class = "maximum_number{{item.id}}">{{item.maximum_number}}</div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    <li class = "clear">
+                        {% for item in result2 %}
+                        <div class = "bold">{{item.title}}</div>
+                        <div class = "ggg">{{item.content}}</div>
+                        <div style = "margin-bottom: 60px; margin-top: 10px;"><a href = "">{{item.tag}}</a></div>
+                        {% endfor %}
+                    </li>
+                </ul>
+                <ul>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                    <li class = "clear">
+                        <div class = "bold">iPhone - Apple</div>
+                        <div class = "ggg">Explore iPhone, the world’s most powerful personal device. Check out iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12, iPhone 12<br/> mini, and iPhone SE....</div>
+                        <div><a href = "https://www.apple.com/iphone/">https://www.apple.com/iphone/</a></div>
+                    </li>
+                </ul>
+                <div class = "line2 clear"></div>
+                <div class = "w300">
+                    <div class = "d">
+                        <img class = "image2 inline" src = "/itunes.jpg">
+                        <a class = "text" href = "">Search iTunes></a>
+                    </div>
+                    <div class = "d">
+                        <img class = "image2" src = "/itunes.jpg">
+                        <a href = "text" class = "text">Search iTunes></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "wrap2">
+        <div class = "footer wrap1300">
+            <h6 class = "h6">†† We approximate your location from your internet IP address by matching it to a geographic region or from the location entered during your previous visit to Apple.</h6>
+            <div class = "line2"></div>
+            <div class = "s">Search Results</div>
+            <div class = "footer_list">
+                <ul class = "first">
+                    <h3>Shop and Learn</h3>
+                    <li>Mac</li>
+                    <li>iPad</li>
+                    <li>iPhone</li>
+                    <li>Apple Watch</li>
+                    <li>TV</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                    <li>HomePod</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+                <ul>
+                    <h3>Apple Store</h3>
+                    <li>Find a Store</li>
+                    <li>Shop Online</li>
+                    <li>Genius Bar</li>
+                    <li>Today at Apple</li>
+                    <li>Youth Programs</li>
+                    <li>Apple Store App</li>
+                    <li>Refurbished and Clearance</li>
+                    <li>Financing</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+                <ul>
+                    <h3>For Education</h3>
+                    <li>Apple and Education</li>
+                    <li>Shop for College</li>
+                    <li>For Business</li>
+                    <li>Apple and Business</li>
+                    <li>Shop for Business</li>
+                    <li>Shop for Government</li>
+                    <li>Shop for Veterans & Military</li>
+                    <li>Financing</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+                <ul>
+                    <h3>Account</h3>
+                    <li>Manage Your Apple ID</li>
+                    <li>Apple Store Account</li>
+                    <li>iCloud.com</li>
+                    <li>Apple and Business</li>
+                    <li>Shop for Business</li>
+                    <li>Shop for Government</li>
+                    <li>Shop for Veterans & Military</li>
+                    <li>Financing</li>
+                    <li>iPod touch</li>
+                    <li>Music</li>
+                    <li>iTunes</li>
+                </ul>
+            </div>
+            <div class = "font5">More ways to shop: Find an Apple Store or other retailer near you. Or call 1‑800‑MY‑APPLE.</div>
+            <div class = "font6">Copyright © 2021 Apple Inc. All rights reserved.</div>
+            <ul class = "flist">
+                <li>Privacy Policy</li>
+                <li> | </li>
+                <li>Terms of Use</li>
+                <li> | </li>
+                <li>Sales and Refunds</li>
+                <li> | </li>
+                <li>LegalSite Map</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type = "text/javascript">
+    input = document.querySelector('.search')
+    input.addEventListener('mouseover',inputClick)
+    input.addEventListener('mouseout',outputClick)
+
+    function inputClick(){
+        input.style.border = '1px solid blue'
+    }
+
+    function outputClick(){
+        input.style.border = '1px solid black'
+    }
+
+
+
+
+    
+    // href1 = document.querySelector('.href1')
+    // href1.addEventListener('click', delet_event)
+
+    // function delet_event(){
+    //     alert('수강 인원 초과 되었습니다')
+    //     href.href = ""
+    // }
+        maximum_number1 = document.querySelector('.maximum_number1')
+        inner1 = maximum_number1.innerHTML
+        value1 = Number(inner1)
+        href1 = document.querySelector('.href1')        
+        item1 = document.querySelector('.item1')
+        item1.addEventListener('click', delet_event)        
+
+        function delet_event(){
+
+            if(value1 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href1.href = "" 
+            }
+            
+        }
+
+        maximum_number2 = document.querySelector('.maximum_number2')
+        inner2 = maximum_number2.innerHTML
+        value2 = Number(inner2)
+        href2 = document.querySelector('.href2')        
+        item2 = document.querySelector('.item2')
+        item2.addEventListener('click', delet_event2)        
+
+        function delet_event2(){
+
+            if(value2 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href2.href = "" 
+            }
+            
+        }
+
+        maximum_number3 = document.querySelector('.maximum_number3')
+        inner3 = maximum_number3.innerHTML
+        value3 = Number(inner3)
+        href3 = document.querySelector('.href3')        
+        item3 = document.querySelector('.item3')
+        item3.addEventListener('click', delet_event3)        
+
+        function delet_event3(){
+
+            if(value3 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href3.href = "" 
+            }
+            
+        }
+        maximum_number4 = document.querySelector('.maximum_number4')
+        inner4 = maximum_number4.innerHTML
+        value4 = Number(inner4)
+        href4 = document.querySelector('.href4')        
+        item4 = document.querySelector('.item4')
+        item4.addEventListener('click', delet_event4)        
+
+        function delet_event4(){
+
+            if(value3 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href4.href = "" 
+            }
+            
+        }
+
+        maximum_number5 = document.querySelector('.maximum_number5')
+        inner5 = maximum_number5.innerHTML
+        value5 = Number(inner5)
+        href5 = document.querySelector('.href5')        
+        item5 = document.querySelector('.item5')
+        item5.addEventListener('click', delet_event5)        
+
+        function delet_event5(){
+
+            if(value5 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href5.href = "" 
+            }
+            
+        }
+
+        maximum_number6 = document.querySelector('.maximum_number6')
+        inner6 = maximum_number6.innerHTML
+        value6 = Number(inner6)
+        href6 = document.querySelector('.href6')        
+        item6 = document.querySelector('.item6')
+        item6.addEventListener('click', delet_event6)        
+
+        function delet_event6(){
+
+            if(value6 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href6.href = "" 
+            }
+            
+        }
+
+        maximum_number7 = document.querySelector('.maximum_number7')
+        inner7 = maximum_number7.innerHTML
+        value7 = Number(inner7)
+        href7 = document.querySelector('.href7')        
+        item7 = document.querySelector('.item7')
+        item7.addEventListener('click', delet_event7)        
+
+        function delet_event7(){
+
+            if(value7 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href7.href = "" 
+            }
+            
+        }
+
+        maximum_number8 = document.querySelector('.maximum_number8')
+        inner8 = maximum_number8.innerHTML
+        value8 = Number(inner8)
+        href8 = document.querySelector('.href8')        
+        item8 = document.querySelector('.item8')
+        item8.addEventListener('click', delet_event8)        
+
+        function delet_event8(){
+
+            if(value8 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href8.href = "" 
+            }
+            
+        }
+
+        maximum_number9 = document.querySelector('.maximum_number9')
+        inner9 = maximum_number9.innerHTML
+        value9 = Number(inner9)
+        href9 = document.querySelector('.href9')        
+        item9 = document.querySelector('.item9')
+        item9.addEventListener('click', delet_event9)        
+
+        function delet_event9(){
+
+            if(value9 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href9.href = "" 
+            }
+            
+        }
+
+        maximum_number10 = document.querySelector('.maximum_number10')
+        inner10 = maximum_number10.innerHTML
+        value10 = Number(inner10)
+        href10 = document.querySelector('.href10')        
+        item10 = document.querySelector('.item10')
+        item10.addEventListener('click', delet_event10)        
+
+        function delet_event10(){
+
+            if(value10 <= 0){
+            alert('수강 인원 초과 되었습니다')
+                href10.href = "" 
+            }
+            
+        }
+
+
+</script>
+<script src="../index.js"></script>
+</html>

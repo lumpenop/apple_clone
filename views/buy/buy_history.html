@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../../buy_history.css">
+</head>
+<body style = "overflow-x:hidden;">
+    <div class = "wrap">
+        <div class = "img w1200">
+            <a href = "/user/login"><img src = "../../history_logo.png"></a>
+            <h1 class = "h1">당신의 수강함</h1>
+            <a href = "/search/db" class = "href">더 구매하기</a>
+        </div>
+        <img class = "wrap" src = "../../full-header.png">   
+    </div> 
+    <div class = "wrap container listt">
+        <h1 class = "h1 topdd">당신의 수강목록</h1>
+        <div class="w1200"> 
+            <div class = "scrollwrap">
+                <ul class = "scrollcontent"> 
+                    {% for item in result %}
+                    <li class = "lectures_li">
+                            <div class = "lecture_img"><img class = "lecture_img" src = "../../{{item.item_image}}"> </div>
+                            <div class = "bold">{{item.item_category}}</div>
+                            <div class = "bold realbold"><a href = "/buy/lecture_render?item_name={{item.item_name}}">{{item.item_name}}</a></div>
+                    </li> 
+                    {% endfor %}
+                </ul>                
+            </div>
+        </div>
+    </div>
+    <div class = "msg" style = "display: none;">{{msg}}</div>
+    <div class = "wrap container clear">
+        <div class="content w1200 list"> 
+            <h1 class = "h1 topdd red">나와 비슷한 사람들이 수강한 강의</h1>
+            <section class="black-bg slide-up-wrap">
+                <div class = "size">
+                    <img class = "img size" src = "../../AI.jpg">
+                </div>
+                <div class = "size">
+                    <img class = "img size" src = "../../ARVR.jpg">
+                </div>
+                <div class = "size">
+                    <img class = "img size" src = "../../blockchain.jpg"> 
+                </div>
+                <div class = "size">
+                    <img class = "img size" src = "../../computer.jpg">
+                </div>
+                <div class = "size">
+                    <img class = "img size" src = "../../python.png"> 
+                </div>
+                <!-- <div class = "fulltext"> 
+                    <div class = "text">{{item.item_category}}</div>
+                    <div class = "Text2"><a href = "/buy/lecture_render?item_name={{item.item_name}}">{{item.item_name}}</a></div>
+                    <ul class = "text3">
+                        <h3>과목</h3>
+                        <li>
+                            {{item.item_skill1}}
+                        </li>
+                        <li>
+                            {{item.item_skill2}}
+                        </li>
+                        <li>
+                            {{item.item_skill3}}
+                        </li>
+                    </ul>
+                </div> -->
+            </section>
+        </div> 
+        <form action = "/buy/history" method = "post">
+            <div class = "wrap container">
+                <div class = "content w1200 list">
+                    <h1 class = "h1">수강평 작성하기</h1>
+                    <section class="need-margin up-on-scroll">
+                        소제목 : <input class = "size2" type = "text" name = "value_subject">
+                    </section>
+                    <section class="need-margin up-on-scroll">
+                        닉네임 : <input class = "size2" type = "text" name = "userid">
+                    </section>
+                    <section class="need-margin up-on-scroll">
+                        수강평 : <input class = "size3" type = "text" name = "value_content">
+                    </section>
+                    <section class="need-margin up-on-scroll">
+                        <input type = "submit" class = "BTN" value = "수강평등록">
+                    </section> 
+                </div>
+            </div>
+        </form>     
+    </div>
+    <script type = "text/javascript">
+
+    if(document.querySelector('.msg').innerHTML == '수강 기간이 만료되었습니다'){
+        alert('수강 기간이 만료되었습니다')
+    }
+    let ticking = false;
+
+function isElementUnderBottom(elem, triggerDiff) {
+  const { top } = elem.getBoundingClientRect();
+  const { innerHeight } = window;
+  return top > innerHeight + (triggerDiff || 0);
+}
+
+function handleScroll() {
+  ticking = false;
+  
+  const upOnScrollElems = document.querySelectorAll('.up-on-scroll');
+  upOnScrollElems.forEach(elem => {
+    if (isElementUnderBottom(elem)) {
+      elem.style.opacity = "0";
+      elem.style.transform = 'translateY(70px)';
+    } else {
+      elem.style.opacity = "1";
+      elem.style.transform = 'translateY(0px)';
+    }
+  });
+  
+  const productImg = document.querySelector('.diff-desc-image-wrap .image-wrap'); 
+  const productImgRect = productImg.getBoundingClientRect();
+  if (productImgRect.top < 0) {
+    productImg.style.transform = `translateY(${-1 * productImgRect.top * 0.8 }px)` 
+  } else {
+    productImg.style.transform = 'none';
+  }
+
+  const changeBgSection = document.querySelector('.background-change-wrap');
+  const changeBgImg = document.querySelector('.background-change-wrap > div');
+  const {top: bgTop, height: bgHeight} = changeBgSection.getBoundingClientRect();
+  if (bgTop < 0) {
+    const rate = (-1) * bgTop / 4;
+    changeBgImg.style.filter = `grayscale(${rate}%)`;
+    changeBgImg.style.opacity = `${(100-rate/5) / 100}`;
+  } else {
+    changeBgImg.style.filter = 'none';
+        changeBgImg.style.opacity = `1`;
+  }
+}
+
+function requestTick() {
+  if(!ticking) {
+    requestAnimationFrame(handleScroll);
+  }
+  ticking = true;
+}
+
+ window.addEventListener('scroll', requestTick);
+
+ let item_name = document.querySelector('.item_name').value
+ let deleteB = document.querySelector('`.${item_name}`')
+ deleteB.addEventListener('click', removeCheck)
+
+ function removeCheck() {
+
+    if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+
+        deleteSubmit.submit()
+
+    }else{   //취소
+
+        return false;
+
+    }
+
+}
+
+    </script>
+</body>
+</html>
