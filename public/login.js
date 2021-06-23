@@ -2,7 +2,7 @@ const input = document.querySelectorAll(".inputFocus");
 let loginBtn = document.querySelector('#loginBtn');
 loginBtn.addEventListener('click', loginFn);
 let chatBtn = document.querySelector('#chatBtn');
-chatBtn.addEventListener('click', chatFn);
+// chatBtn.addEventListener('click', chatFn);
 
 
 for (var i = 0; i < input.length; i++) {
