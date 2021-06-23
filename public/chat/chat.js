@@ -42,6 +42,7 @@ async function getChatRoom() {
 
     if (isJson(res_result)) {
         let { result, msg } = JSON.parse(res_result);
+        console.log(res_result)
         if (result == false) {
             const msg_res = confirm(msg);
             if (msg_res == true) {
@@ -91,26 +92,14 @@ async function getChatRoom() {
     }
 }
 
-function scrollFn() {
-    let chat = document.querySelector('#chat');
-    // let chat_scroll = chat.scrollTop;
-
-    // console.log(chat_scroll)
-    // console.log(chat.style.height)
-    // if (chat_scroll>0){
-    //     chat.style.marginTop=`-${chat_scroll}px`;
-    // }
-    // console.log(chat.style)
-    // console.log(chat_scroll)
-
-}
-
 function isJson(str) {
     try {
         let json = JSON.parse(str)
         return (typeof json == 'object');
     } catch (e) { return false; }
 }
+
+
 
 //        s o c k e t s        //
 
@@ -120,20 +109,19 @@ const socket = io();
 async function socketChat() {
     socket.on('connect', () => { })
     // socketID 가서 배열에 해당 브라우저의 socket ID 저장 
-    let url = `http://localhost:3000/user/socketID`;
-    let options = {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-            socketID:socket.id,
-        })
-    }
-    let response = await fetch(url, options);
-    let res_body = await response.json();
-    let { result, msg } = res_body;
-
+    // let url = `http://localhost:3000/user/socketID`;
+    // let options = {
+    //     method: 'POST',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //         socketID:socket.id,
+    //     })
+    // }
+    // let response = await fetch(url, options);
+    // let res_body = await response.json();
+    // let { result, msg } = res_body;
 
     let chat_count = parseInt(chatBtn.dataset.value);
     socket.on('msg', data => {
