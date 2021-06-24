@@ -126,7 +126,7 @@ function send() {
         return;
     } else {
 
-        let data = { msg: msg.value, socketID:socket.id }
+        let data = { msg: msg.value, socketID:socket.id,}
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
         msgAdd(msg.value, 'me');
@@ -153,7 +153,6 @@ socket.on('send', data => {
     let chat_DIV = document.querySelector('.chat_ing_div')
     chat_DIV.addEventListener('click', () => {
         getChatRoom();
-        
     })
 
 })
