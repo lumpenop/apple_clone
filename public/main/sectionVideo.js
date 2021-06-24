@@ -98,7 +98,7 @@ function videoScroll(){
                 videoDeviceWrapper.style.top = 50+'%';
                 videoDeviceWrapper.style.transform = 'translate(-50%, -50%)';
                 
-                videoDeviceWrapper.style.width = `${100+(manifestoBottom/3.8)}%`
+                videoDeviceWrapper.style.width = `${100+(manifestoBottom/4)}%`
                 videoDeviceWrapper.style.height = `${100+(manifestoBottom/4)}%`
 
 
