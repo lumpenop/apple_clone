@@ -27,12 +27,12 @@ chatBtn.addEventListener('click', () => {
             break;
         case undefined:
             flag = true;
-            getChatRoom();
+            getChatRoom('a');
             break;
     }
 });
 
-async function getChatRoom() {
+async function getChatRoom(type) {
     let url = `http://localhost:3000/user/chatRoom`;
     let options = {
         method: 'get'
@@ -60,7 +60,7 @@ async function getChatRoom() {
         const time = document.querySelector('#time');
         let now = new Date();
         time.innerHTML = now.toLocaleString();
-        socketChat();
+        if(type=='a'){socketChat();}
 
         //enter 로 메세지 보내기 
         const chatInput = document.querySelector('#msg');
@@ -104,24 +104,11 @@ function isJson(str) {
 //        s o c k e t s        //
 
 // handshake 부분 
+
 const socket = io();
 
 async function socketChat() {
     socket.on('connect', () => { })
-    // socketID 가서 배열에 해당 브라우저의 socket ID 저장 
-    // let url = `http://localhost:3000/user/socketID`;
-    // let options = {
-    //     method: 'POST',
-    //     headers: {
-    //         'content-type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //         socketID:socket.id,
-    //     })
-    // }
-    // let response = await fetch(url, options);
-    // let res_body = await response.json();
-    // let { result, msg } = res_body;
 
     let chat_count = parseInt(chatBtn.dataset.value);
     socket.on('msg', data => {
@@ -132,14 +119,14 @@ async function socketChat() {
         msgAdd(data, 'you');
     });
 };
-
-function send(){
+// let information = {}; 
+function send() {
     const msg = document.querySelector('#msg');
-   console.log(socket.id)
-    if (msg.value == ''){
+    if (msg.value == '') {
         return;
     } else {
-        let data = { msg:msg.value, socketID:socket.id}
+        // 메세지 보내기 -----------111111111
+        let data = { msg: msg.value, socketID:socket.id,}
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
         msgAdd(msg.value, 'me');
@@ -149,9 +136,42 @@ function send(){
     }
 }
 
-socket.on('send', data =>{
+
+// 채팅 시작하는 user div append 
+socket.on('Userin', data => {
+
+    console.log(data)
+    // 여기서 chatBtn.html 쏴야함. 
+    let { socketID, userid } = data;
+    let chat_ing = document.querySelector('#chat_ing');
+    let div = document.createElement('div');
+    div.classList.add('chat_ing_div')
+    div.innerHTML = `${userid}님의 채팅 대기`;
+    chat_ing.appendChild(div)
+    
+    //고치기 -> 클릭 할 때마다 새로 채팅창이 뜨는거 고치기
+    let chat_DIV = document.querySelector('.chat_ing_div')
+    chat_DIV.addEventListener('click', () => {
+        getChatRoom();
+        socket.emit('Please',{userid, socketID})
+    })
 
 })
+
+
+
+// 채팅 나가는 user 삭제 
+socket.on('sendForDelete', data => {
+    let { socketID, userid } = data;
+    let chat_ing = document.querySelector('#chat_ing');
+    let chat_ing_div = document.querySelectorAll('.chat_ing_div');
+
+    for (let i = 0; i < chat_ing_div.length; i++) {
+        if (chat_ing_div[i].innerHTML == `${userid}님의 채팅 대기`) {
+            chat_ing.removeChild(chat_ing_div[i])
+        }
+    }
+});
 
 function msgAdd(msgValue, who) {
     const ul_time = document.createElement('ul');
@@ -184,22 +204,3 @@ function msgAdd(msgValue, who) {
     ul_msg.appendChild(li_msg);
     chat.appendChild(ul_msg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,16 +1,27 @@
 {% include "./chat_top.html" %}
-<div id ="chatBtn_wrap" >
-    <div id="chatBtn_top">
-        <button id = chatBtn data-value="0">
-            <img height=22 width=19 src="../../chat/apple_icon.png"> 
-            <span class="startChatText">채팅 시작하기</span>
-        </button>
-    </div>
-    <div id = "chatPlace">
+<div id="chatBtn_wrap">
 
+    <div id="chat_side">
+        <h2>진행 중인 채팅</h2>
+        <div id="chat_ing">
+
+        </div>
+        
+    </div>
+    <div id="chtBtn_bottom">
+        <div id="chatBtn_top">
+            <button id=chatBtn data-value="0">
+                <img height=22 width=19 src="../../chat/apple_icon.png">
+                <span class="startChatText">채팅 시작하기</span>
+            </button>
+        </div>
+        <div id="chatPlace">
+
+        </div>
     </div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="/chat/chat.js"></script>
+
 </div>
 {% include "./chat_bottom.html" %}

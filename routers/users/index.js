@@ -3,7 +3,6 @@ const router = express.Router();
 const controller = require('./user.controller');
 const auth = require('../../middleware/auth.js');
 
-// router.get('/bags', controller.bags);
 
 router.get('/join', controller.join);
 router.get('/confirmEmail', controller.confirmEmail)
@@ -30,7 +29,7 @@ router.get('/chatHelp', controller.chatHelp);
 router.get('/chatBtn', controller.chatBtn);
 //chatRoom 에 middleware auth 잠시 제거 -> google, kakao accesstoken 필요 
 router.get('/chatRoom', controller.chatRoom);
-router.post('/socketID', controller.socketID);
+router.post('/socketUserCheck', controller.socketUserCheck);
 
 router.post('/pwFind',controller.pwFind);
 router.get('/pwFind_middleware',controller.pwFind_middleware);
