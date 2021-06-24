@@ -306,7 +306,7 @@ let info_modify = async (req, res) => {
 
 
 //      CHATTING      //
-let chat = (req, res) => {
+let chat = async (req, res) => {
     res.render('./chat/chat.html');
 }
 
@@ -315,45 +315,24 @@ let chatHelp = (req, res) => {
     res.render('./chat/chatHelp.html',{userid});
 }
 
-let chatBtn = (req, res) => {
-    let {userid} = req.query;
+let chatBtn =async (req, res) => {
+
     res.render('./chat/chatBtn.html');
 }
 
-let chatRoom = (req, res) => {
+let chatRoom =  (req, res) => {
+
     res.render('./chat/chatRoom.html');
 }
 
-// let socket_array = [];
-let socketID = (req,res)=>{
-//     let {socketID} = req.body;
-//     socket_array.push(socketID)
-//     console.log(socket_array)
-
-
-
+// 채팅시작할 때 userid fetch로 가져오기 
+let socketUserCheck = async (req,res)=>{
+    let {userid} = req.cookies;
+    let pick = await users.findOne({ where: { userid,} });
+    let admin = pick.dataValues.admin;
+    res.json({userid,admin})
 }
 
-
-
-//        BAGS        //
-let bags = async (req, res) => {
-    // console.log(req.cookies['Access_token'])
-    // res.render('index.html');
-
-    // let payload = Buffer.from(req.cookies['Access_token'].split('.')[1],'base64').toString();
-    // console.log(payload)
-    // var {userid} = JSON.parse(payload)
-    // console.log(userid)
-    // let userList= await bag.findAll({
-    //     where:{
-    //         users_id:req.id
-    //     }
-    // });
-    // res.json({
-
-    // })
-}
 
 let pwFind_middleware = async (req, res) => {
     let { msg } = req.query;
@@ -419,8 +398,7 @@ module.exports = {
     join, join_success, confirmEmail, userid_check, login, logincheck, login_success,
     kakaologin, kakao_login, logout, deleteID, googlelogin, google_logout,
     info, info_view, info_modify,
-    chat, chatRoom, chatHelp, chatBtn, socketID,
-    bags,
+    chat, chatRoom, chatHelp, chatBtn, socketUserCheck,
     pwFind, pwFind_middleware,
     map,
 }

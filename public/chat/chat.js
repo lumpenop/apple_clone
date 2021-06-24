@@ -125,7 +125,7 @@ function send() {
     if (msg.value == '') {
         return;
     } else {
-
+        // 메세지 보내기 -----------111111111
         let data = { msg: msg.value, socketID:socket.id,}
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
@@ -138,7 +138,7 @@ function send() {
 
 
 // 채팅 시작하는 user div append 
-socket.on('send', data => {
+socket.on('Userin', data => {
 
     console.log(data)
     // 여기서 chatBtn.html 쏴야함. 
@@ -153,6 +153,7 @@ socket.on('send', data => {
     let chat_DIV = document.querySelector('.chat_ing_div')
     chat_DIV.addEventListener('click', () => {
         getChatRoom();
+        socket.emit('Please',{userid, socketID})
     })
 
 })
@@ -203,22 +204,3 @@ function msgAdd(msgValue, who) {
     ul_msg.appendChild(li_msg);
     chat.appendChild(ul_msg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

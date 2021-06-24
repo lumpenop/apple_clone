@@ -35,7 +35,7 @@ let login_success = async (req,res)=>{
     let token2 = ctoken(userid)
     let result = await users.findOne({ where: {userid:userid, userpw:token}})
 
-    if(result != undefined && result.admin == 0){
+    if(result != undefined && result.admin == 1){
         res.cookie('AccessToken',token2,{httpOnly:true,secure:true,})
         req.session.uid = userid
         req.session.save(()=>{
