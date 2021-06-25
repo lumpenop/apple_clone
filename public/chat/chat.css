@@ -13,6 +13,7 @@ ul,li{
     list-style: none;
 }
 
+
 /*     chat      */
 
 
@@ -136,6 +137,27 @@ ul,li{
 
 /*      chat Button      */
 
+.chat_on{
+    display: block;
+}
+.chat_off{
+    display: none;
+}
+
+
+#chat_side{
+    width:30%;
+    height:100%;
+    background-color: rgb(223, 189, 255);
+}
+
+.chat_ing_div{
+    width:100%;
+    height:50px;
+    background-color: rgb(178, 126, 226);
+    border: 1px solid rgb(140, 28, 140);
+    box-sizing: border-box;
+}
 
 
 #chatBtn{
@@ -161,7 +183,30 @@ ul,li{
     display: block;
 }
 
+
+html,body{
+    height:100%;
+}
+
+
 /*         chatroom        */
+
+#chat_side{
+    display: inline-block;
+    float: left;
+}
+
+#chatBtn_wrap{
+    width:100%;
+    height:100%;
+}
+
+#chtBtn_bottom{
+    width:70%;
+    height:100%;
+    display: inline-block;
+    float: left;
+}
 
 
 #chat_bottom{

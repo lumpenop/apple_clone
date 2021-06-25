@@ -11,42 +11,47 @@
         content="629441779926-4mqfjfoqh3u0ig9nd6j5glpjf4o6stnn.apps.googleusercontent.com">
 
     <link href="/users/apple_logo.png" rel="shortcut icon" type="image/x-icon">
-    
+
     <link rel="stylesheet" href="/users/join.css">
     <link rel="stylesheet" href="/users/home.css">
     <link rel="stylesheet" href="/users/login.css">
     <link rel="stylesheet" href="/users/action.css">
     <link rel="stylesheet" href="/main/section1.css">
-    <link rel = "stylesheet" href = "../../search.css">
-    <link rel = "stylesheet" href = "../main/scroll.css">
+    <link rel="stylesheet" href="../../search.css">
+    <link rel="stylesheet" href="../main/scroll.css">
     <link rel="stylesheet" href="/main/sectionHands.css">
     <link rel="stylesheet" href="/main/sectionCamera.css">
     <link rel="stylesheet" href="/main/sectionDisplay.css">
     <link rel="stylesheet" href="/main/kakaoGoogleBtn.css">
     <link rel="stylesheet" href="/mainOH/mainOHCSS.css">
+    
 
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../../width/dbwidth.css">
     <link rel="stylesheet" href="/main/sectionVideo.css">
-    
-    
-    
+
+
+
 
     <title>Apple</title>
 
-   
+    <style>
+        @import url('/main/image/SFProKRDisplay_light.woff2');
+    </style>
+
+
 </head>
 
 <body class="page-home ac-nav-overlap">
     <div id="side_menu">
-        <div id ="" class="side_menu_box">
-            <a class="side-a" style = "width:100px; height:50px; display:inline-block" href="javascript:openWindowPop('http://localhost:3000/user/chatBtn', 'popup');">채팅</a>
+        <div class="side_menu_box side_menu_hover">
+            <a id="side_menu_box1" class="side-a displayNone" href="" style="width:100px; height:50px; display:inline-block">채팅</a>
         </div>
-        <div id="" class="side_menu_box">
-            <a class="side-a" style = "width:100px; height:50px; display:inline-block;" href="/user/map">지도</a>
+        <div id="" class="side_menu_box side_menu_hover">
+            <a class="side-a displayNone" style="width:100px; height:50px; display:inline-block;" href="/user/map">지도</a>
         </div>
-        <div id="" class="side-apple">
-            <div class="side-div" style = "width:50px; height:50px; display:inline-block;">
-                
+        <div id="" class="side-apple side_menu_hover">
+            <div class="side-div" style="width:100%; height:100%; display:inline-block;">
+
             </div>
         </div>
     </div>
@@ -171,9 +176,10 @@
                 <div class="ac-gn-bagview-content">
                     <p class="ac-gn-bagview-message">
                         {% for result in result %}
-                        <div><img style = "width:80px; height:100px; margin-bottom: 20px;" src = "../{{result.item_image}}"></div>
-                        <div style = "margin-bottom: 20px;">{{result.item_name}}</div>
-                        {% endfor %}
+                    <div><img style="width:80px; height:100px; margin-bottom: 20px;" src="../{{result.item_image}}">
+                    </div>
+                    <div style="margin-bottom: 20px;">{{result.item_name}}</div>
+                    {% endfor %}
                     </p>
                     <nav class="ac-gn-bagview-nav">
                         <ul class="ac-gn-bagview-nav-list">
@@ -260,9 +266,9 @@
             });
         }
     </script>
-    <script type = "text/javascript" src = "/admin/js/chat.js"></script>
-    <script type = "text/javascript">
-       function openWindowPop(url, name){
+    <script type="text/javascript" src="/admin/js/chat.js"></script>
+    <script type="text/javascript">
+        function openWindowPop(url, name) {
             var options = 'top=100, left=500, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
             window.open(url, name, options);
         }

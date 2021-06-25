@@ -92,7 +92,7 @@ const bottomFrame = document.querySelector('.section-design-materials .frame-bot
 
 
 const sectionMini = document.querySelector('.section-mini').getBoundingClientRect();
-const hiddenUlBottom = document.querySelector('.section-mini').getBoundingClientRect().bottom;
+const hiddenUlBottom = document.querySelector('.design-content').getBoundingClientRect().bottom;
 function forMiniSection(){
     const deviceWrapperBottom = deviceWrapper.getBoundingClientRect().bottom-250;
     const scrolledTopLength = window.pageYOffset; 
@@ -115,19 +115,17 @@ function forMiniSection(){
     // }
 
     
-    if(hiddenUlBottom*0.8 < scrollTop && sectionMini.bottom > scrollTop){
+    if(hiddenUlBottom*0.8 <= scrollTop && sectionMini.bottom >= scrollTop){
    
         bottomFrame.classList.add('will-change');
         leftFrame.classList.add('will-change');
         rightFrame.classList.add('will-change');
         topFrame.classList.add('will-change');
-        
-
-       
-        leftFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
-        rightFrame.style.transform =  `matrix(${sigmoid2(num/1.5)}, 0, 0, 1, 0, 0)`;
-        topFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num/1.5)}, 0, 0)`;
-        bottomFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num/1.5)}, 0, 0)`;
+               
+        leftFrame.style.transform =  `matrix(${sigmoid2(num)}, 0, 0, 1, 0, 0)`;
+        rightFrame.style.transform =  `matrix(${sigmoid2(num)}, 0, 0, 1, 0, 0)`;
+        topFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num)}, 0, 0)`;
+        bottomFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num)}, 0, 0)`;
 
     }else{
         leftFrame.classList.remove('will-change');

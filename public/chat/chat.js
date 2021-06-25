@@ -1,6 +1,12 @@
 const chatBtn = document.querySelector('#chatBtn');
 const chatPlace = document.querySelector('#chatPlace');
+// const chat_userid = document.querySelector('#chat_userid');
+// const chatHelp_box1 = document.querySelector('#chatHelp_box1');
 let flag = undefined;
+
+// chatHelp_box1.addEventListener('click',()=>{
+//     window.location=`http://localhost:3000/user/chatBtn?${chat_userid.innerHTML}`
+// })
 
 chatBtn.addEventListener('click', () => {
     chatBtn.style.marginTop = "0px";
@@ -21,12 +27,12 @@ chatBtn.addEventListener('click', () => {
             break;
         case undefined:
             flag = true;
-            getChatRoom();
+            getChatRoom('a');
             break;
     }
 });
 
-async function getChatRoom() {
+async function getChatRoom(type) {
     let url = `http://localhost:3000/user/chatRoom`;
     let options = {
         method: 'get'
@@ -36,6 +42,7 @@ async function getChatRoom() {
 
     if (isJson(res_result)) {
         let { result, msg } = JSON.parse(res_result);
+        console.log(res_result)
         if (result == false) {
             const msg_res = confirm(msg);
             if (msg_res == true) {
@@ -53,8 +60,9 @@ async function getChatRoom() {
         const time = document.querySelector('#time');
         let now = new Date();
         time.innerHTML = now.toLocaleString();
-        socketChat();
+        if(type=='a'){socketChat();}
 
+        //enter 로 메세지 보내기 
         const chatInput = document.querySelector('#msg');
         const chatSend = document.querySelector('.chatSend');
         chatInput.addEventListener('keydown', function (event) {
@@ -84,20 +92,6 @@ async function getChatRoom() {
     }
 }
 
-function scrollFn() {
-    let chat = document.querySelector('#chat');
-    // let chat_scroll = chat.scrollTop;
-
-    // console.log(chat_scroll)
-    // console.log(chat.style.height)
-    // if (chat_scroll>0){
-    //     chat.style.marginTop=`-${chat_scroll}px`;
-    // }
-    // console.log(chat.style)
-    // console.log(chat_scroll)
-
-}
-
 function isJson(str) {
     try {
         let json = JSON.parse(str)
@@ -105,13 +99,22 @@ function isJson(str) {
     } catch (e) { return false; }
 }
 
+
+
 //        s o c k e t s        //
+
+// handshake 부분 
 
 const socket = io();
 
+<<<<<<< HEAD
 function socketChat() {
 
+=======
+async function socketChat() {
+>>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
     socket.on('connect', () => { })
+
     let chat_count = parseInt(chatBtn.dataset.value);
     socket.on('send', data => {
         chat_count++;
@@ -121,20 +124,64 @@ function socketChat() {
         msgAdd(data, 'you');
     });
 };
-
+// let information = {}; 
 function send() {
     const msg = document.querySelector('#msg');
     if (msg.value == '') {
         return;
     } else {
+<<<<<<< HEAD
         let id = socket.id
         socket.to(id).emit('send', msg.value);
+=======
+        // 메세지 보내기 -----------111111111
+        let data = { msg: msg.value, socketID:socket.id,}
+        socket.emit('send', data);
+        //내가 쓴 글 나에게 보내기 
+>>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');
         chat.scrollTop = chat.scrollHeight;
     }
 }
+
+
+// 채팅 시작하는 user div append 
+socket.on('Userin', data => {
+
+    console.log(data)
+    // 여기서 chatBtn.html 쏴야함. 
+    let { socketID, userid } = data;
+    let chat_ing = document.querySelector('#chat_ing');
+    let div = document.createElement('div');
+    div.classList.add('chat_ing_div')
+    div.innerHTML = `${userid}님의 채팅 대기`;
+    chat_ing.appendChild(div)
+    
+    //고치기 -> 클릭 할 때마다 새로 채팅창이 뜨는거 고치기
+    let chat_DIV = document.querySelector('.chat_ing_div')
+    chat_DIV.addEventListener('click', () => {
+        getChatRoom();
+        socket.emit('Please',{userid, socketID})
+    })
+
+})
+
+
+
+// 채팅 나가는 user 삭제 
+socket.on('sendForDelete', data => {
+    let { socketID, userid } = data;
+    let chat_ing = document.querySelector('#chat_ing');
+    let chat_ing_div = document.querySelectorAll('.chat_ing_div');
+
+    for (let i = 0; i < chat_ing_div.length; i++) {
+        if (chat_ing_div[i].innerHTML == `${userid}님의 채팅 대기`) {
+            chat_ing.removeChild(chat_ing_div[i])
+        }
+    }
+});
 
 function msgAdd(msgValue, who) {
     const ul_time = document.createElement('ul');
@@ -167,22 +214,3 @@ function msgAdd(msgValue, who) {
     ul_msg.appendChild(li_msg);
     chat.appendChild(ul_msg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

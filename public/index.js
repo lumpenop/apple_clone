@@ -159,15 +159,23 @@ function layerClose(event, layer){
     }
 }
 
-
+// 아래 클릭하면 닫히는 기능 추가 했습니다 ! by Seyeon 
 let sideAppleFlag = false;
 function sideAppleOn(){
+    const sideMenus = document.querySelectorAll('.side_menu_box');
+    const sideAs = document.querySelectorAll('.side-a');
     if(!sideAppleFlag){
-        const sideMenus = document.querySelectorAll('.side_menu_box');
         for(var i=0; i<sideMenus.length;i++){
             sideMenus[i].classList.add('displayOpa1');
+            sideAs[i].classList.remove('displayNone');
         }
         sideAppleFlag = true;
+    }else{
+        for(var i=0; i<sideMenus.length;i++){
+            sideMenus[i].classList.remove('displayOpa1');
+            sideAs[i].classList.add('displayNone');
+        }
+        sideAppleFlag = false;
     }
 }
 
@@ -176,9 +184,12 @@ function appleSideOff(event, layer , layer2){
     if(event.target != layer && sideAppleFlag){
         console.log('?')
         const sideMenus = document.querySelectorAll('.displayOpa1');
+        const sideAs = document.querySelectorAll('.side-a');
+        
         if(sideMenus != null){
             for(var i=0; i<sideMenus.length;i++){
                 sideMenus[i].classList.remove('displayOpa1');
+                sideAs[i].classList.add('displayNone');
             }
             sideAppleFlag = false;
         }

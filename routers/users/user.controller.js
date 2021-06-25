@@ -31,8 +31,8 @@ let join_success = (req, res) => {
 
     let url = `http://` + req.get('host') + `/user/confirmEmail?key=${key_for_verify}`;
     let options = {
-        from: process.env.GoogleID,
-        to: 'simbianartist@gmail.com',
+        from: '<Apple>',
+        to:userid,
         subject: '이메일 인증을 진행해주세요.',
         html: `${username}님, 안녕하세요. <h1>이메일 인증을 위해 URL을 클릭해주세요. </h1><br/> ${url}`
     }
@@ -65,7 +65,7 @@ let login = async (req, res) => {
     //login 상태면 main.html / logout - login.html 
     let { userid } = req.cookies;
     if (userid == undefined) {
-        res.render('login.html');
+        res.render('login.html',);
     } else {
         res.redirect('/');
     }
@@ -200,7 +200,7 @@ let googlelogin = (req, res) => {
     req.session.authData = {
         ['google']: { userid, username }
     }
-
+    
     req.session.save(() => {
         res.json(result);
     })
@@ -306,43 +306,33 @@ let info_modify = async (req, res) => {
 
 
 //      CHATTING      //
-let chat = (req, res) => {
+let chat = async (req, res) => {
     res.render('./chat/chat.html');
 }
 
 let chatHelp = (req, res) => {
-    res.render('./chat/chatHelp.html');
+    let {userid} = req.cookies;
+    res.render('./chat/chatHelp.html',{userid});
 }
 
-let chatBtn = (rea, res) => {
+let chatBtn =async (req, res) => {
+
     res.render('./chat/chatBtn.html');
 }
 
-let chatRoom = (req, res) => {
+let chatRoom =  (req, res) => {
+
     res.render('./chat/chatRoom.html');
 }
 
-
-
-
-//        BAGS        //
-let bags = async (req, res) => {
-    // console.log(req.cookies['Access_token'])
-    // res.render('index.html');
-
-    // let payload = Buffer.from(req.cookies['Access_token'].split('.')[1],'base64').toString();
-    // console.log(payload)
-    // var {userid} = JSON.parse(payload)
-    // console.log(userid)
-    // let userList= await bag.findAll({
-    //     where:{
-    //         users_id:req.id
-    //     }
-    // });
-    // res.json({
-
-    // })
+// 채팅시작할 때 userid fetch로 가져오기 
+let socketUserCheck = async (req,res)=>{
+    let {userid} = req.cookies;
+    let pick = await users.findOne({ where: { userid,} });
+    let admin = pick.dataValues.admin;
+    res.json({userid,admin})
 }
+
 
 let pwFind_middleware = async (req, res) => {
     let { msg } = req.query;
@@ -408,8 +398,7 @@ module.exports = {
     join, join_success, confirmEmail, userid_check, login, logincheck, login_success,
     kakaologin, kakao_login, logout, deleteID, googlelogin, google_logout,
     info, info_view, info_modify,
-    chat, chatRoom, chatHelp, chatBtn,
-    bags,
+    chat, chatRoom, chatHelp, chatBtn, socketUserCheck,
     pwFind, pwFind_middleware,
     map,
 }
