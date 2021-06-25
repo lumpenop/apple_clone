@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "../../info.css">
+    <link rel= "stylesheet" media="screen and (max-width: 480px)" href="../../width/info_width.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,11 +14,11 @@
             <div class = "header1200 w1200">
                 <div>
                     <div class = "margin padding">
-                        <div class = "floatl font1"><a href = "/" style = "text-decoration: none; color:black;">계정</a></div>
-                        <div class = "floatr"><a href = "/user/logout">로그아웃 ></a></div> 
+                        <div class = "floatl font1 font"><a href = "/" style = "text-decoration: none; color:black;">계정</a></div>
+                        <div class = "floatr"><a class = "font" href = "/user/logout">로그아웃 ></a></div> 
                     </div>                   
                     <div class = "line1 clear"></div>  
-                    <div class = "padding font2">
+                    <div class = "padding font2 font">
                         {{result.username}}님, 안녕하세요.
                     </div>                    
                 </div>
@@ -26,81 +27,81 @@
         <div class = "wrap">
             <div class = "header1200 w1200">
                 <div>
-                    <div class = "font2 margin2 padding">현재 어느 기기에도 로그인되어 있지 않습니다.</div>
-                    <div class = "padding">여기에 고객님의 기기가 보이지 않나요? 기기를 연동하거나 변경하려면 <a href = "">Apple ID 설정</a>(새 창에서 열림)을 확인하세요.</div>
+                    <div class = "font2 margin2 padding font">현재 어느 기기에도 로그인되어 있지 않습니다.</div>
+                    <div class = "padding font">여기에 고객님의 기기가 보이지 않나요? 기기를 연동하거나 변경하려면 <a href = "">Apple ID 설정</a>(새 창에서 열림)을 확인하세요.</div>
                 </div>
             </div>
         </div>
-        <div class = "headerwrap wrap wrap2">
+        <div class = "headerwrap wrap wrap2 height">
             <div class = "header1200 w1200">
-                <div>
+                <div class = "">
                     <div class = "floatl padding2 w600">
-                        <div class = "bold1">주문 사항</div>
-                        <div>배송을 조회하고, 주문을 변경 또는 취소하거나 반품을</br>신청하세요.</div>
-                        <div class = "marg20"><a href = "/buy/history">주문 기록 확인 ></a></div>
+                        <div class = "bold1 font">주문 사항</div>
+                        <div class = "font">배송을 조회하고, 주문을 변경 또는 취소하거나 반품을</br>신청하세요.</div>
+                        <div class = "marg20 font"><a href = "/buy/history">주문 기록 확인 ></a></div>
                     </div>
                     <div class = "floatl padding2 w600">
-                        <div class = "bold1">주문 사항</div>
-                        <div>배송을 조회하고, 주문을 변경 또는 취소하거나 반품을</br>신청하세요.</div>
-                        <div class = "marg20"><a href = "">주문 기록 확인 ></a></div>
+                        <div class = "bold1 font">주문 사항</div>
+                        <div class = "font">배송을 조회하고, 주문을 변경 또는 취소하거나 반품을</br>신청하세요.</div>
+                        <div class = "marg20 font"><a href = "">주문 기록 확인 ></a></div>
                     </div>
                 </div>
             </div>
         </div>
         <div id ="settings" class = "clear">
             <div id="settings_title">
-                <h1 class = "margin3">계정 설정</h1>
+                <h1 class = "margin3 font">계정 설정</h1>
             </div>
             <table class = "table"> 
                 <tr id = "delivery" class = "margin4">
-                    <td id ="delivery_title" class = "w150 ">
-                        <h2 class = "margin5">배송</h2>
+                    <td id ="delivery_title" class = "w150 width">
+                        <h2 class = "margin5 font width">배송</h2>
                     </td>
-                    <td id ="delivery_address" class = "w150 ">
-                        <p class = "margin5 fontBold fontsize">배송 주소</p>
-                        <p class = "fontsize">{{result2.address1}}</p>
-                        <p class = "fontsize">{{result2.address2}}</p>
-                        <p class = "fontsize">{{result2.addressnumber}}</p>
+                    <td id ="delivery_address" class = "w150 width2">
+                        <p class = "margin5 fontBold fontsize font">배송 주소</p>
+                        <p class = "fontsize font">{{result2.address1}}</p>
+                        <p class = "fontsize font">{{result2.address2}}</p>
+                        <p class = "fontsize font">{{result2.addressnumber}}</p>
                     </td>
                     <td id ="contact_info" class = "w150">
-                        <p class = "margin5 fontBold fontsize">연락처 정보</p>
-                        <p class = "fontsize">{{result2.name1}}</p>
-                        <p class = "fontsize">{{result2.phone}}</p>
-                        <p class = "fontsize">{{result2.email}}</p>
+                        <p class = "margin5 fontBold fontsize font width2">연락처 정보</p>
+                        <p class = "fontsize font">{{result2.name1}}</p>
+                        <p class = "fontsize font">{{result2.phone}}</p>
+                        <p class = "fontsize font">{{result2.email}}</p>
                     </td>
                 </tr>
             </table>
             <table class = "table">
                 <tr id = "info_secure"  class = "margin4">
-                    <td id ="info_secure_title" class = "w150 ">
-                        <h2>개인 정보 보호</h2>
+                    <td id ="info_secure_title" class = "w150 width">
+                        <h2 class = "font width">개인 정보 보호</h2>
                     </td>
                     <td id ="private" class = "fontsize">
-                        <p class = "fontBold margin5">개인 정보</p>
-                        <p>고객님의 개인 정보는 고객님만의 것으로 언제든 직접 데이터를 관리하고 계정을 삭제할 수도 있습니다. Apple은 개인<br/> 정보 보호를 취우선으로 여깁니다.</p>
-                        <a href = "">내 개인 정보 관리 ></a>
+                        <p class = "fontBold margin5 font">개인 정보</p>
+                        <p class = "font3">고객님의 개인 정보는 고객님만의 것으로 언제든 직접 데이터를 관리하고 계정을 삭제할 수도 있습니다. Apple은 개인<br/> 정보 보호를 취우선으로 여깁니다.</p>
+                        <a href = "font" class = "font">내 개인 정보 관리 ></a>
                     </td>
                 </tr>
             </table>
             <table class = "table">
                 <tr id = "Apple_id"  class = "margin4">
-                    <td id ="Apple_id_title" class = "w150 ">
-                        <h2>Apple ID</h2>
+                    <td id ="Apple_id_title" class = "w150 width">
+                        <h2 class = "font width">Apple ID</h2>
                     </td>
                     <td id ="Apple_id_content" class = "fontsize">
-                        <p>{{result.name1}}</p>
-                        <a class = "popup">Apple ID 관리 ></a><br/>
-                        <a href="/user/deleteID">계정 탈퇴 ></a>
-                        <p>Apple ID는 App Store, Apple Music, iCloud, iMessage, FaceTime 등의 Apple 서비스를 이용할 때 사용하는 계정입니다.</p>
+                        <p class = "font">{{result.name1}}</p>
+                        <a class = "popup font">Apple ID 관리 ></a><br/>
+                        <a class = "font" href="/user/deleteID">계정 탈퇴 ></a>
+                        <p class = "font">Apple ID는 App Store, Apple Music, iCloud, iMessage, FaceTime 등의 Apple 서비스를 이용할 때 사용하는 계정입니다.</p>
                     </td>
                 </tr>
             </table>
             <table>
                 <tr id = "Apple_id">
-                    <td id ="Apple_id_title" class = "w150">
-                        <h2></h2>
+                    <td id ="Apple_id_title" class = "w150 width">
+                        <h2 class = "width"></h2>
                     </td>
-                    <td style = "width:350px; height:40px; margin-top: 20px;">
+                    <td class = "none" style = "width:350px; height:40px; margin-top: 20px;">
                         <span><img style = "display:inline-block; width:350px; height:40px; margin-top: 20px;" src = "../../info1.jpg"></span>
                     </td>
                 </tr>
@@ -110,10 +111,10 @@
     <div class = "widthfull">
         <div class = "w1300">
             <div class = "end" style = "margin-top: 60px; font-size: 40px; float: left; margin-left: 100px; margin-bottom: 45px;">X</div>
-            <h1 class = "main">개인 정보를 편집하세요</h1>
+            <h1 class = "main font">개인 정보를 편집하세요</h1>
             <form action = "/user/info" method = "post" name = "pwcheckSub">
                 <input class = "userpw" name = "userpw" placeholder = "비밀번호를 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
-                <div class = "pwcheck">숫자, 영문, 특수문자를 사용해서 8자리 이상 적어주세요</div>
+                <div class = "pwcheck font">숫자, 영문, 특수문자를 사용해서 8자리 이상 적어주세요</div>
                 <div class = "pwcheck"></div>
                 <input name = "username" placeholder = "이름을 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>
                 <input name = "userbirth" placeholder = "생년월일을 입력하세요" style = "display: inline-block; width:600px; height:65px; border-radius: 10px; line-height: 50px; margin-top: 40px; margin-bottom: 30px; border:1px solid grey; font-size: 25px; color:grey;"><br/>

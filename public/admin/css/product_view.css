@@ -19,7 +19,7 @@ ul,li{
 }
 
 .w1500{
-    width:1200px;
+    width:1500px;
     margin: 0 auto;
 }
 .logo{
@@ -61,7 +61,7 @@ ul,li{
     background:#404040;
     color:whitesmoke;
     line-height: 30px;
-    width:200px;
+    width:230px;
     box-sizing: border-box;
     padding:20px;
     height:900px;
@@ -76,12 +76,13 @@ ul,li{
 .margintop{
     margin-bottom: 50px;
 }
-.content{
+.content,.table{
     display: inline-block;
     float:left;
     box-sizing: border-box;
     padding:30px;
     margin-left:35px;
+    width:1040px;
 }
 .content>div>form>div{
     margin-bottom: 50px;

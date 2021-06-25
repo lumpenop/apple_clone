@@ -14,7 +14,7 @@ ul,li{
 }
 
 .w1200{
-    width:800px;
+    width:1500px;
     margin:0 auto;
 }
 
@@ -45,6 +45,7 @@ ul,li{
 }
 .search{
     height:250px;
+    width:1040px;
 }
 
 .middle{
@@ -57,7 +58,7 @@ ul,li{
     background:#404040;
     color:whitesmoke;
     line-height: 30px;
-    width:200px;
+    width:230px;
     box-sizing: border-box;
     padding:20px;
     height:900px;
@@ -78,6 +79,12 @@ ul,li{
     box-sizing: border-box;
     padding:25px;
     margin-left:35px;
+    width:1040px;
+   
+}
+.content>div{
+    margin:0 auto;
+    width:300px;
 }
 .content>div>form>div{
     margin-bottom: 50px;

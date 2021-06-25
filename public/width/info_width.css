@@ -1,0 +1,31 @@
+@media screen and (max-width: 480px) 
+
+{
+
+    .w1200{
+        width:100vw;
+        padding:10px;
+    }
+
+    .font{
+        font-size: 9px;
+    }
+    .font3{
+        font-size: 6px;
+        display: inline-block;
+    }
+
+    .width{
+        width:22vw;
+    }
+    .width2{
+        width:160px;
+    }
+    .height{
+        height:340px;
+    }
+
+    .none{
+        display: none;
+    }
+}

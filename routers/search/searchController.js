@@ -20,7 +20,16 @@ let question_view = async (req,res)=>{
       result,
   })
 }
-
+let question_search_success = async (req,res)=>{
+  let question_subject = req.body.question_subject
+  let question_id = req.body.question_id
+  let question_content = req.body.question_content
+  let result2 = await question.findOne({question_subject:question_subject,question_id:question_id,question_content:question_content})
+  let result = await question.findAll({})
+  res.render('./search/question.html',{
+    result,
+  })
+}
 let question_write_success = async (req,res)=>{
   let question_subject = req.body.question_subject
   let question_id = req.body.question_id
@@ -159,6 +168,14 @@ let db = async (req,res)=>{
       
 
 }
+
+let category = async (req,res) => {
+  let item_category = req.body.item_category
+  let result = await items.findAll({where:{item_category:item_category}})
+  res.render('./search/category.html',{
+    result:result
+  })
+}
 let search_view = (req,res)=>{
     let searchValue = req.body.AppleSearch
     res.redirect(`/search/${searchValue}`)
@@ -246,4 +263,5 @@ module.exports = {
     answer_write_success,
     professor,
     professor_submit,
+    category,
 }; 

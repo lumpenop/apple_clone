@@ -1,0 +1,23 @@
+@media screen and (max-width: 480px) 
+
+{
+    
+.w1000{
+    width:80vw;
+    padding:0 20px;
+}
+
+.tiny{
+    display: none;
+}
+
+.FULL{
+    width:270px;
+    height:30px;
+}
+
+.font{
+    display: inline-block;
+    font-size: 17px;
+}
+}

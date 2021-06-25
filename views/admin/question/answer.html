@@ -48,29 +48,28 @@
                 <div>
                     <form action = "/admin/search_success3" method = "post">
                         <div class = "search">
-                            <div class = "">수강 후기 검색</div>
-                             <input type = "text" placeholder = "수강 후기를 검색하세요" name = "search" class = "searchwidth searchheight">
+                            <div class = "">과목 검색</div>
+                             <input type = "text" placeholder = "과목을 검색하세요" name = "search" class = "searchwidth searchheight">
                             <input type = "submit" class = "searchheight buttonwidth" value = "?">
                         </div>      
                     </form>
                 </div>
                 <div>
                     <table class = "table paginated">
-                     
                         <form action = "/admin/delete_success3?idx={{item.id}}" method = "post">   
                             <tr class = "grey">
-                                <td>인덱스값</td>
-                                <td class = "value2">제목</td>
-                                <td>아이디</td>
-                                <td class = "value">수강평</td>
+                                <td>질문 제목</td>
+                                <td>답변 제목</td>
+                                <td class = "value2">답변자</td>
+                                <td>답변 내용</td>
                                 <td>삭제하기</td>
                             </tr>    
-                            {% for item in list %} 
+                            {% for item in result %} 
                             <tr class = "blueGreen">
-                                <td>{{item.id}}</td>
-                                <td class = "value2"><a href = "/admin/value_view?idx={{item.id}}">{{item.value_subject}}</a></td>
-                                <td>{{item.userid}}</td>
-                                <td class = "value">{{item.value_content}}</td>
+                                <td>{{item.question_subject}}</td>
+                                <td>{{item.answer_subject}}</td>
+                                <td>{{item.answer_id}}</td>
+                                <td class = "value">{{item.answer_content}}</td>
                                 <td>
                                     <input type = "submit" class = "delete" value = "삭제하기">
                                 </td>
@@ -219,4 +218,3 @@
     
     </script>
 </html>
-

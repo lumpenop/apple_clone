@@ -1,12 +1,29 @@
-@media screen and (max-width: 1509px) 
+@media screen and (max-width: 480px) 
 
 { 
 .wrap1200{
-    width:80vw;
+    padding:0px 20px;
+    width:100vw;
     margin:0 auto;
+    text-align: center;
 }
 .ac-gn-mac, .ac-gn-ipad, .ac-gn-iphone, .ac-gn-watch, .ac-gn-music, .ac-gn-support, #side_menu, .menu, .line{
     display: none;
     width:0px;
+}
+
+
+.image{
+    width:20vw
+}
+.margin_left{
+    margin-left:0px;
+}
+
+.section-camera, .section-video, #main_OH_background_white, #main_OH_wrap, .hero-sequence-centered, .hero-sequence-wrapper{
+    width:75vw;
+    margin:0 auto;
+    padding:0px 30px;
+    text-align: center;
 }
 }

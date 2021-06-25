@@ -1,0 +1,47 @@
+
+@media screen and (max-width: 480px) 
+
+{ 
+.w1200{
+    width:100vw;
+    margin:0 auto;
+}
+
+.width{
+    width:30vw;
+    height:30vw;
+    margin-left: 20px;
+}
+
+.header, .header2, .line{
+    display: none;
+}
+
+.product_text{
+    width:50vw;
+}
+
+.mar{
+    display: inline-block;
+    width:80vw;
+}
+.font-size1{
+    font-size: 15px;
+}
+
+.margin-top, .blue, .border, .border2, .fontFULL{
+    font-size: 10px;
+}
+
+.border, .border2{
+    width:180px;
+}
+
+.price>h3,.dggf{
+    font-size: 13px;
+}
+.BTM{
+    margin-top: 20px;
+    width:200px;
+}
+}

@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href = "../../public/question.css">
+    <link rel = "stylesheet" href = "../../question.css">
 </head>
 <body>
-    <div class = "headerwrap wrap">
-        <div class = "header1200 w1200"> 
-            <div>묻고 답해요</div>
-            <div>55만명의 커뮤니티!! 함께 토론해봐요!</div>
-        </div>
-    </div>
+    <a href = "/">
+        <div class = "headerwrap wrap">
+            <div class = "header1200 w1200"> 
+                <div class = "he">묻고 답해요</div>
+                <div class = "hi">55만명의 커뮤니티!! 함께 토론해봐요!</div>
+            </div>
+        </div>    
+    </a>
     <div class = "contentwrap wrap">
         <div class = "content1200 w1200">
             <div class = "menuvar" style = "display: inline-block; float:left;">
@@ -23,19 +25,22 @@
             </div>
             <div class = "topcontent" style = "display: inline-block; float:left;">
                 <div>
-                    <input type = "submit" value = "?">
-                    <input type = "text" placeholder="궁금한 질문을 검색해보세요!">
+                    <form action = "/search/question2" method = "post">
+                        <input class = "search1" type = "submit" value = "?">
+                     <input class = "search2" type = "text" placeholder="궁금한 질문을 검색해보세요!">
+                    </form>
                 </div>
                 <div style = "display: inline-block; float: left;">
                     <div class = "Write">글쓰기</div>
                 </div>
-                <div style = "width:800px; background: grey; height:1px;"></div>
+                <div style = "margin: 70px auto; width:800px; background: grey; height:1px;"></div>
                 <div>
                     {% for item in result %}
                     <ul>
-                        <li><a href = "/search/question_oneview?subject={{item.id}}&question_subject={{item.question_subject}}">{{item.question_subject}}</a></li>
-                        <li>{{item.question_content}}</li>
-                        <li>{{item.question_id}}</li>
+                        <li style = "color:black; font-size: 18px; font-weight: bold; margin-bottom: 30px;"><a style = "color:black" href = "/search/question_oneview?subject={{item.id}}&question_subject={{item.question_subject}}">{{item.question_subject}}</a></li>
+                        <li style = "font-size: 16px;  margin-bottom: 50px;">{{item.question_content}}</li>
+                        <li style = "font-size: 16px;  margin-bottom: 50px;">{{item.question_id}}</li>
+                        <li style = "margin: 70px auto; width:800px; background: grey; height:1px;"></li>
                     </ul>  
                     {% endfor %}
                 </div>
@@ -46,13 +51,13 @@
         <div class = "WriteClose" style = "color:white; font-size:30px; font-weight: bold; padding:30px;">X</div>
         <div style = "background: white; width:950px; margin:0 auto; height:800px; box-sizing: border-box; padding:40px;">
             <form action = "/search/question" method = "post">
-                <h3>제목</h3>
-                <input type = "text" name = "question_subject">
-                <h3>아이디</h3>
-                <input type = "text" name = "question_id">
-                <h3>내용</h3>
-                <input type = "text" name = "question_content"><br/>
-                <input type = "submit" value = "저장" style = "background:blue; opacity: 80%;">
+                <h3 style = "color:#00c471;">제목</h3>
+                <input style = "display: inline-block; width:840px; height:40px;" type = "text" name = "question_subject">
+                <h3 style = "color:#00c471;">아이디</h3>
+                <input style = "display: inline-block; width:840px; height:40px;" type = "text" name = "question_id">
+                <h3 style = "color:#00c471;">내용</h3>
+                <input style = "display: inline-block; width:840px; height:350px;" type = "text" name = "question_content"><br/>
+                <input style = "display: inline-block; color:#00c471; background: white; border:1px solid; color:#00c471; width:100px; height:40px; font-size: 20px; margin-top: 40px;" type = "submit" value = "저장" style = "background:blue; opacity: 80%;">
             </form>
         </div>
     </div>

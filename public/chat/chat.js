@@ -110,9 +110,10 @@ function isJson(str) {
 const socket = io();
 
 function socketChat() {
+
     socket.on('connect', () => { })
     let chat_count = parseInt(chatBtn.dataset.value);
-    socket.on('msg', data => {
+    socket.on('send', data => {
         chat_count++;
         if (flag == false) {
             chatBtn.innerHTML = `답변이 도착했습니다! <span> ${chat_count}`;
@@ -126,7 +127,8 @@ function send() {
     if (msg.value == '') {
         return;
     } else {
-        socket.emit('send', msg.value);
+        let id = socket.id
+        socket.to(id).emit('send', msg.value);
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');

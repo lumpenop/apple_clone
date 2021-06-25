@@ -59,8 +59,9 @@ io.sockets.on('connection', socket => {
                 id = userid;
             }
         })
-        socket.on('send', date => {
-            socket.broadcast.emit('msg', date);
+        socket.on('send', datas => {
+            let id = datas[0]
+            io.sockets.to(id).emit('send',datas)
         })
     }
 })
