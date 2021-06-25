@@ -37,8 +37,6 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
-
-
 <script type="text/javascript" src="/admin/js/chat.js"></script>
 <script type="text/javascript">
     function openWindowPop(url, name) {
@@ -59,7 +57,6 @@
                     <a href="#">리셀러</a>
                     를 찾아보거나, 080-330-8877번으로 전화하세요.
                 </div>
-
                 <div class="ac-gf-footer-legal">
                     <div class="ac-gf-footer-legal-copyright">Copyright &copy; 2021 Apple Inc. 모든 권리 보유</div>
                     <div class="ac-gf-footer-legal-links">
@@ -77,8 +74,6 @@
     </footer>
 </footer>
 
-
-
 <script type="text/javascript">
     const backgroundKey001 = document.querySelector('.backgroundKey001');
     const backgroundKey001Top = backgroundKey001.getBoundingClientRect().top;
@@ -86,22 +81,16 @@
     const backgroundBlue = document.querySelector('.backgroundBlue');
     const backgroundBlueTop = backgroundBlue.getBoundingClientRect().top;
 
-
-
-
-
     function syScroll() {
         var nowScroll = document.documentElement.scrollTop;
-
-
         if (nowScroll >= backgroundKey001Top && backgroundKey001Bottom >= nowScroll) {
 
             const purple1 = document.querySelector('.img-purple1');
             const purple2 = document.querySelector('.img-purple2');
 
             let len = backgroundBlueTop - backgroundKey001Top;
-
             let matrixNum = (nowScroll - backgroundBlueTop) / len;
+            
             purple1.style.transform = `matrix(1, 0, 0, 1, 0, ${150 + matrixNum * 150})`;
             purple2.style.transform = `matrix(1, 0, 0, 1, 0, ${-matrixNum * 150})`;
         }
@@ -119,14 +108,9 @@
     })
 
     const backgrounds = document.querySelectorAll('.back-color');
-
     backgrounds.forEach(ele => {
         backgroundOn.observe(ele);
     })
-
-
-
-
     window.addEventListener('scroll', syScroll);
 
 </script>
