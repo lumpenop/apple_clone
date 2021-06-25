@@ -80,6 +80,7 @@ ul,li{
     padding:25px;
     margin-left:35px;
     width:1040px;
+    text-align: center;
    
 }
 .content>div{
@@ -90,6 +91,10 @@ ul,li{
     margin-bottom: 50px;
 }
 
+#chatBtn{
+    margin-top: 20px;
+}
+
 .content>div>form>div>div{
     margin-bottom: 20px;
 }
@@ -98,7 +103,20 @@ ul,li{
     background: #808080;
     text-align: center;
     color:whitesmoke;
-    width:500px;
+    width:800px;
+    margin-bottom: 50px;
+    height:35px;
+    padding:12px;
+    box-sizing: border-box;
+    height:50px;
+    font-size: 20px;
+}
+
+.grey2{
+    background: #808080;
+    text-align: center;
+    color:whitesmoke;
+    width:800px;
     margin-bottom: 50px;
     height:35px;
     padding:12px;

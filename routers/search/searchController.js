@@ -71,6 +71,37 @@ let professor = (req,res)=>{
   })
 }
 
+let professor_submit2 = (req,res)=>{
+  let transport = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+        user: process.env.GoogleID,
+        pass: process.env.GooglePW
+    }
+  })
+
+  let mailOption = {
+      from: "Sender : 지식",
+      to: `simbianartist@gmail.com`,
+      subject: `튜터 지원서입니다.`,
+      text: 
+      `지원자의 커리어 : ${req.body.career}
+      지원자의 기술&언어 : ${req.body.skill_language}
+      지원자의 커리큘럼 : ${req.body.curriculum}`,
+  }
+
+  transport.sendMail(mailOption, function (error) {
+      if (error) {
+          console.log(error);
+      } else {
+          console.log('메세지 전송 완료');
+      }
+  })
+
+  res.render('./search/professor.html',{
+
+  })
+}
 let professor_submit = (req,res)=>{
   let transport = nodemailer.createTransport({
     service: "Gmail",
@@ -116,8 +147,10 @@ let search_ipad = (req,res)=>{
 
 let db_show = (req,res) => {
   let msg = req.query.msg
+  let msg2 = req.query.msg2
   res.render('./search/db.html',{
-    msg:msg
+    msg:msg,
+    msg2:msg2
   })
 }
 let db = async (req,res)=>{
@@ -271,6 +304,7 @@ module.exports = {
     answer_write_success,
     professor,
     professor_submit,
+    professor_submit2,
     category,
     db_show,
-}; 
+}

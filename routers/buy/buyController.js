@@ -39,7 +39,9 @@ let lecture_delete = async (req,res)=>{
 let lecture_render = async (req,res)=>{
     let item_name = req.query.item_name
     let result = await items.findOne({where:{item_name:item_name}})
+    console.log(result)
     let exp = result.maximum_date
+    console.log(exp)
     let now = new Date().getTime() - 1000*1
     let skill1 = result.item_skill1
     let skill2 = result.item_skill2
@@ -91,7 +93,7 @@ let shopping_basket = async (req,res)=>{
     let username = req.cookies.username
 
     if(username == undefined || username == null){
-        res.redirect('/?msg=로그인을 진행해주세요')
+        res.redirect('/user/login?msg2=로그인을 진행해주세요')
     }
 
     let result = await bag.findAll({where:{users_name:userid}})
@@ -210,7 +212,7 @@ let shopping_form_success = async (req,res)=>{
             })
             let result3 = await bag.destroy({where:{users_name:name1}})
         }else if(result5 != undefined){
-            res.redirect('/buy/shopping_form?msg=이미 구매하신 제품입니다')
+            res.redirect('/search/db?msg2=이미 구매하신 제품입니다')
         }else{
             
         }

@@ -11,6 +11,7 @@
         </div> -->
         <div class = "content wrap1200">
             <div style = "display: none;" class = "msg">{{msg}}</div>
+            <div style = "display: none;" class = "msg2">{{msg2}}</div>
             <div class = "MainContent">
                 <form action = "/search/category" method = "post">
                     <div style = "margin-top:40px; color:blue; width:180px; padding:3px; margin-right:10px; background: white;">
@@ -35,10 +36,10 @@
                     <li class = "clear">
                         <div class = "image"><img class = "image" src = "/{{item.item_image}}"></div>
                         <div class = "margin_left">
-                            <h3 class = "font1 item{{item.id}}"><a class = "href{{item.id}}" href = "/buy/buy_show?name={{item.item_name}}"> 상품명:{{item.item_name}}</a></h3>
+                            <h3 class = "font1 item{{item.id}}"><a class = "href{{item.id}} item{{item.id}}" href = "/buy/buy_show?name={{item.item_name}}"> 상품명:{{item.item_name}}</a></h3>
                             <div class = "font2">상품 카테고리:{{item.item_category}}</div>
                             <div class = "font3"><a href = "">상품 가격:{{item.item_price}}</a></div>
-                            <span>수강 가능 인원 : </span><div style="display: inline-block;" class = "maximum_number{{item.id}}">{{item.maximum_number}}</div>
+                            <div style="display: inline-block;" class = "maximum_number{{item.id}}">{{item.maximum_number}}</div>
                         </div>
                     </li>
                     {% endfor %}
@@ -181,17 +182,23 @@
         alert('로그인을 진행해주세요')
     }
 
-    input = document.querySelector('.search')
-    input.addEventListener('mouseover',inputClick)
-    input.addEventListener('mouseout',outputClick)
-
-    function inputClick(){
-        input.style.border = '1px solid blue'
+    let msg2 = document.querySelector('.msg2')
+    let msg2Value = msg2.innerHTML
+    if(msg2Value == '이미 구매하신 제품입니다'){
+        alert('이미 구매하신 제품입니다')
     }
 
-    function outputClick(){
-        input.style.border = '1px solid black'
-    }
+    // input = document.querySelector('.search')
+    // input.addEventListener('mouseover',inputClick)
+    // input.addEventListener('mouseout',outputClick)
+
+    // function inputClick(){
+    //     input.style.border = '1px solid blue'
+    // }
+
+    // function outputClick(){
+    //     input.style.border = '1px solid black'
+    // }
 
 
 

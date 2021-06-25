@@ -1,27 +1,3 @@
-CREATE TABLE `users` (
-    `id` INTEGER NOT NULL auto_increment ,
-     `userid` VARCHAR(100) NOT NULL, 
-     `userpw` VARCHAR(100) NOT NULL, 
-     `username` VARCHAR(100) NOT NULL, 
-     `userbirth` INTEGER NOT NULL, 
-     `image` VARCHAR(200), 
-     `mobile` VARCHAR(100) NOT NULL, 
-     `register_date` DATE NOT NULL DEFAULT curdate(), 
-     `email_verified` Boolean NOT NULL DEFAULT:false, 
-     `key_for_verify` VARCHAR(20) NOT NULL,
-     `admin` VARCHAR(100), UNIQUE 
-     `userid` (`userid`), PRIMARY KEY (`id`)
-) ENGINE=InnoDB;
-
-CREATE TABLE `items` (`id` INTEGER NOT NULL auto_increment , `item_serial_number` VARCHAR(100) NOT NULL, `item_name` VARCHAR(100) NOT NULL, `item_price` VARCHAR(100) NOT NULL, `item_image` VARCHAR(200) NOT NULL, `item_size` VARCHAR(100) NOT NULL, `item_color` VARCHAR(100) NOT NULL, `item_capacity` VARCHAR(100) NOT NULL, UNIQUE `item_serial_number` (`item_serial_number`), PRIMARY KEY (`id`)) ENGINE=InnoDB;
-CREATE TABLE `history` (`id` INTEGER NOT NULL auto_increment , `name1` VARCHAR(100) NOT NULL, `name2` VARCHAR(100) NOT NULL, `address1` VARCHAR(100) NOT NULL, `address2` VARCHAR(100) NOT 
-NULL, `addressnumber` INTEGER(200), `nation` VARCHAR(100) NOT NULL, `email` VARCHAR(100) NOT NULL, `phone` INTEGER(100), `item_serial_number` VARCHAR(100) NOT NULL, `item_name` VARCHAR(100) NOT NULL, `item_price` INTEGER NOT NULL, `item_image` VARCHAR(200) NOT NULL, `item_size` INTEGER NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
-
-
-
-CREATE TABLE `history` (`id` INTEGER NOT NULL auto_increment , `name1` VARCHAR(100) NOT NULL, `name2` VARCHAR(100) NOT NULL, `address1` VARCHAR(100) NOT NULL, `address2` VARCHAR(100) NOT 
-NULL, `addressnumber` INTEGER(200), `nation` VARCHAR(100) NOT NULL, `email` VARCHAR(100) NOT NULL, `phone` INTEGER(100), `item_serial_number` VARCHAR(100) NOT NULL, `item_name` VARCHAR(100) NOT NULL, `item_price` INTEGER NOT NULL, `item_image` VARCHAR(200) NOT NULL, `item_color` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
-
 
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '1', '자료 구조형', 'https://www.youtube.com/embed/djX-RlrpMqA');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '2', 'for문', 'https://www.youtube.com/embed/A9rU0hhAqSQ');
@@ -74,6 +50,3 @@ insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '7', '자료 구조형', 'https://www.youtube.com/embed/XVQeBm_ilJU');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '8', 'for문', 'https://www.youtube.com/embed/2kL0FrUXFOI');
 insert into skills (skill_name, iframe_number, iframe_name, skill_iframe) values ('C++', '9', 'if문', 'https://www.youtube.com/embed/tQ0yjYUFKAE');
-
-
-insert into question (question_subject, question_content, question_id) values ('C++관련 질문입니다', '이게 해결이 안 되네요 어떻게 하죠오', '코딩짱');

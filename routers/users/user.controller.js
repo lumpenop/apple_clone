@@ -63,9 +63,10 @@ let confirmEmail = async (req, res) => {
 //       LOGIN     //
 let login = async (req, res) => {
     //login 상태면 main.html / logout - login.html 
+    let msg2 = req.query.msg2
     let { userid } = req.cookies;
     if (userid == undefined) {
-        res.render('login.html',);
+        res.render('login.html',{msg2:msg2});
     } else {
         res.redirect('/');
     }
@@ -371,7 +372,7 @@ let pwFind = async (req, res) => {
 
     let mailOption = {
         from: "Sender : <apple>",
-        to: "saeee210@gmail.com",
+        to: "simbianartist@gmail.com",
         subject: "Apple 임시 비밀번호 발급",
         text: `임시 비밀번호는 ${randomPw}입니다. 로그인 후 반드시 비밀번호 변경해주시길 바랍니다.`,
     }
