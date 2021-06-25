@@ -312,16 +312,25 @@ let chat = async (req, res) => {
 
 let chatHelp = (req, res) => {
     let {userid} = req.cookies;
-    res.render('./chat/chatHelp.html',{userid});
+    console.log('chatHelp- userid',userid )
+    if (userid==undefined){
+        res.render('./chat/chatHelp.html');
+    }else{
+        res.render('./chat/chatHelp.html',{userid});
+    }
+
 }
 
 let chatBtn =async (req, res) => {
-
-    res.render('./chat/chatBtn.html');
+    let {userid} = req.cookies;
+    console.log(req.cookies)
+    console.log(userid)
+    let pick = await users.findOne({ where: { userid,} });
+    let admin = pick.dataValues.admin;
+    res.render('./chat/chatBtn.html',{admin});
 }
 
 let chatRoom =  (req, res) => {
-
     res.render('./chat/chatRoom.html');
 }
 

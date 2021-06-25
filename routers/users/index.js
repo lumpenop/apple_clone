@@ -23,12 +23,11 @@ router.get('/info', controller.info);
 router.post('/info', controller.info_modify);
 router.get('/info_view', controller.info_view);
 
-
 router.get('/chat', controller.chat);
 router.get('/chatHelp', controller.chatHelp);
 router.get('/chatBtn', controller.chatBtn);
-//chatRoom 에 middleware auth 잠시 제거 -> google, kakao accesstoken 필요 
-router.get('/chatRoom', controller.chatRoom);
+//chatRoom에 middleware auth 잠시 제거 -> google, kakao accesstoken 필요 
+router.get('/chatRoom', auth, controller.chatRoom);
 router.post('/socketUserCheck', controller.socketUserCheck);
 
 router.post('/pwFind',controller.pwFind);

@@ -85,7 +85,7 @@ io.sockets.on('connection', (socket) => {
 
         // 대기 user div 클릭하면 해당 user id, socket ID 보내기 / 변수에 담기
         let chat_user;
-        let chat_socketID
+        let chat_socketID;
         socket.on('Please', data=>{
             console.log('Please를 통해 온 userid, socketID',data.userid, data.socketID)
             chat_user = data.userid;
@@ -129,9 +129,6 @@ io.sockets.on('connection', (socket) => {
                 socket.to(ADMIN).emit('msg', msg);
             }
         })
-
-
-
 
         // socket.on('disconnect',async ()=>{
             

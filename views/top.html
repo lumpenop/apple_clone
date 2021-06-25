@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/main/sectionDisplay.css">
     <link rel="stylesheet" href="/main/kakaoGoogleBtn.css">
     <link rel="stylesheet" href="/mainOH/mainOHCSS.css">
-    
+    <link rel="stylesheet" href="/width/join_login_width.css">
 
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../../width/dbwidth.css">
     <link rel="stylesheet" href="/main/sectionVideo.css">
@@ -38,16 +38,18 @@
         @import url('/main/image/SFProKRDisplay_light.woff2');
     </style>
 
-
 </head>
 
 <body class="page-home ac-nav-overlap">
     <div id="side_menu">
         <div class="side_menu_box side_menu_hover">
-            <a id="side_menu_box1" class="side-a displayNone" href="" style="width:100px; height:50px; display:inline-block">채팅</a>
+            <!-- 클릭하면 채팅창 열리는 url 은 bottom.html 에 js 연결-->
+            <a id="side_menu_box1" class="side-a displayNone" 
+                style="width:100px; height:50px; display:inline-block">채팅</a>
         </div>
         <div id="" class="side_menu_box side_menu_hover">
-            <a class="side-a displayNone" style="width:100px; height:50px; display:inline-block;" href="/user/map">지도</a>
+            <a class="side-a displayNone" style="width:100px; height:50px; display:inline-block;"
+                href="/user/map">지도</a>
         </div>
         <div id="" class="side-apple side_menu_hover">
             <div class="side-div" style="width:100%; height:100%; display:inline-block;">
@@ -266,13 +268,30 @@
             });
         }
     </script>
-    <script type="text/javascript" src="/admin/js/chat.js"></script>
-    <script type="text/javascript">
+
+
+    <!-- <script type="text/javascript" src="/admin/js/chat.js"></script> -->
+
+    <!-- <script type="text/javascript">
         function openWindowPop(url, name) {
             var options = 'top=100, left=500, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
             window.open(url, name, options);
         }
-    </script>
+    </script> -->
     <!--아래 script 들  위 <HEAD> 로 옮기면 실행 x 안됨 -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', chat_init)
+        function chat_init() {
+            let side_menu_box1 = document.querySelector('#side_menu_box1');
+            side_menu_box1.addEventListener('click', chatFn);
+            function chatFn() {
+                var chatWidth = 565;
+                var chatHeight = 817;
+                var chatLeft = 90;
+                var chatTop = 100;
+                window.open('/user/chat', 'a', `width = ${chatWidth}px, height = ${chatHeight}px,left = ${chatLeft}%,top = ${chatTop}`);
+            }
+        }
+    </script>

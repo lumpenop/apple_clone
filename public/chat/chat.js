@@ -33,6 +33,7 @@ chatBtn.addEventListener('click', () => {
 });
 
 async function getChatRoom(type) {
+    // chatRoom 으로 갈 때 auth 거침 / 그 전, chatBtn에서 login 여부 판별 
     let url = `http://localhost:3000/user/chatRoom`;
     let options = {
         method: 'get'
@@ -149,7 +150,7 @@ socket.on('Userin', data => {
     let chat_ing = document.querySelector('#chat_ing');
     let div = document.createElement('div');
     div.classList.add('chat_ing_div')
-    div.innerHTML = `${userid}님의 채팅 대기`;
+    div.innerHTML = `${userid}님 채팅 대기 중`;
     chat_ing.appendChild(div)
     
     // 어떤 거를 클릭했을 때 되는거 수정 필요 ! 
@@ -207,3 +208,8 @@ function msgAdd(msgValue, who) {
     ul_msg.appendChild(li_msg);
     chat.appendChild(ul_msg);
 }
+
+
+
+
+

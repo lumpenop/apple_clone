@@ -58,6 +58,7 @@ let login_success = async (req,res)=>{
 
     if(result != undefined && result.admin == 1){
         res.cookie('AccessToken',token2,{httpOnly:true,secure:true,})
+        res.cookie('userid', userid)
         req.session.uid = userid
         req.session.save(()=>{
             res.redirect('/admin/main')

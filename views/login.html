@@ -1,6 +1,6 @@
 {% include "./top.html" %}
 
-<main class="main" role="main" data-anim-scroll-group="bubble-gum-group">
+<main class="main " role="main" data-anim-scroll-group="bubble-gum-group">
     <div class="subnav">
         <div class = "displaynone">{{msg}}</div>
         <div class="subnav-container">
@@ -10,10 +10,10 @@
             <div class="menu-wrapper pull-right">
                 <ul class="menu">
                     <li class="item active">
-                        <a class="btn btn-link tk-caption btn-signin" href="/user/login">로그인</a>
+                        <a class="btn btn-link tk-caption btn-signin " href="/user/login">로그인</a>
                     </li>
                     <li class="item">
-                        <a class="btn btn-link tk-caption btn-signin" href="/user/join">Apple ID 생성</a>
+                        <a class="btn btn-link tk-caption btn-signin " href="/user/join">Apple ID 생성</a>
                     </li>
                     <li class="item">
                         <a class="btn btn-link tk-caption btn-signin" href="#">FAQ</a>
@@ -21,7 +21,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>  
 </main>
 
 
@@ -143,17 +143,17 @@
         alert('장바구니가 비었습니다')
     }
 </script>
-
-
-
 <script type="text/javascript" src="/login.js"></script>
-
-
-
-
 <script src="/index.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  
+<script type = "text/javascript">
+    function openWindowPop(url, name){
+         var options = 'top=100, left=500, width=565, height=817, status=no, menubar=no, toolbar=no, resizable=no';
+         window.open(url, name, options);
+     }
+ </script>
+
 </body>
 </html>
 <!--GOOGLE LOGIN API  ---) top.html 로 이동-->

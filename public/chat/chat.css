@@ -146,15 +146,25 @@ ul,li{
 
 
 #chat_side{
-    width:30%;
+    width:250px;
     height:100%;
-    background-color: rgb(223, 189, 255);
+    background-color: rgb(210, 193, 226);
+    display: inline-block;
+    float: left;
+    padding: 20px auto 5px;
+}
+
+#chat_side>h3{
+    margin-top: 20px;
+    font-size:20px;
+    text-align: center;
+
 }
 
 .chat_ing_div{
     width:100%;
     height:50px;
-    background-color: rgb(178, 126, 226);
+    background-color: rgb(229, 201, 255);
     border: 1px solid rgb(140, 28, 140);
     box-sizing: border-box;
 }
@@ -191,18 +201,17 @@ html,body{
 
 /*         chatroom        */
 
-#chat_side{
-    display: inline-block;
-    float: left;
-}
+
 
 #chatBtn_wrap{
+    display:flex;
+    flex-direction: row;
     width:100%;
     height:100%;
 }
 
 #chtBtn_bottom{
-    width:70%;
+    width:100%;    /* 변경함  */
     height:100%;
     display: inline-block;
     float: left;
@@ -310,6 +319,9 @@ html,body{
 #chat_bottom{
     width:100%;
     height:100px;
+    display: flex;
+    flex-direction: column;   
+
 }
 
 .chatSend{
