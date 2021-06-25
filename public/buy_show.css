@@ -85,6 +85,7 @@ ul,li{
     height:400px;
 }
 .product_text{
+    margin-left: 60px;
     display: inline-block;
 }
 
@@ -288,4 +289,5 @@ ul,li{
     background: #0071e3;
     color:white;
     font-size: 20px;
+    margin-top: 30px;
 }

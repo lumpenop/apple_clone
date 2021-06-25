@@ -51,7 +51,6 @@ let id; // 전역변수 선언
 let user_array = [];
 let admin_array = [];
 io.sockets.on('connection', (socket) => {
-let userid ; 
 
     // 맨 처음 handshake 이후 userid 로 admin or user check -> array 담기 
     let cookies = socket.handshake.headers.cookie;
@@ -62,18 +61,20 @@ let userid ;
             if (key == 'AccessToken') {
                 let payload = value.split('.')[1];
                 let { userid, exp } = JSON.parse(Buffer.from(payload, 'base64').toString());
-                // id = userid
-                // admin_check => 관리자이면 return 0 아니면 NULL 
+                
+                // id = userid/ admin_check => 관리자이면 return 0 아니면 NULL 
                 let admin_check = await areYouAdmin(userid)
+                console.log('admin_check', admin_check)
                 if (admin_check==1){
                     admin_array.push({socketID:socket.id, userid,}); console.log('is admin');
                 } else {
                     user_array.push({socketID:socket.id, userid,}); console.log('is user');
-
+                   
                     // sockek 연결 후 해당 브라우저 userid, sockt.id 를 담아서 관리자들한테 보냄 
                     let data = {socketID:socket.id, userid,}
                     if (admin_array.length > 0){
                         admin_array.forEach(v =>{
+                            //0-0. 일단 접속을 한다 E 이 때 어드민 한테만 접속 정보를 넘긴다.
                             socket.to(v.socketID).emit('Userin',data)
                         })
                     }
@@ -86,15 +87,17 @@ let userid ;
         // 대기 user div 클릭하면 해당 user id, socket ID 보내기 / 변수에 담기
         let chat_user;
         let chat_socketID
+        //0-1. 클릭 시 정보를 보낸다
         socket.on('Please', data=>{
-            console.log(data.userid, data.socketID)
+            console.log('Please를 통해 온 userid, socketID',data.userid, data.socketID)
             chat_user = data.userid;
             chat_socketID = data.socketID;
         })
 
+        //2. 자기가 쓴 글이 뜨게 한다
         // 메세지 받기 ---------------222222222
         socket.on('send',async (data) => {
-            console.log(data);
+            console.log('보낸 메세지 받은 data', data);
             // 메세지 보내는 사람의 정보 (관리자도 되고 , user도 됨 )
             let {msg, socketID} = data;
             let ADMIN = admin_array[admin_array.length-1].socketID;
@@ -106,16 +109,19 @@ let userid ;
                 if ( user_array[i].socketID == socketID ){
                     // userid == user 일 때 
                     userid = user_array[i].userid
+                    break;
                     // 아래처럼 해당 userid(메세지 보낸) 의 socketID를 구하려고 했지만
                     // socketID 가 계속 바뀌어서 위의 chat_socketID 로 대체 
                     // 바뀐 이유 !!! -> 아직 delete 전이라 userid 중복 가능 해서 
                     // 계속 userid의 여러개 socket 존재해서 달랐음 ㅠㅠ 
-                    //socketID = user_array[i].socketID
+                    // socketID = user_array[i].socketID
                 } else {
                     // userid == 관리자 일 때 
                     userid = admin_array[0].userid
                 }
             }
+
+            //3. 서로가 서로한테 보낸다 E
             let admin_check = await areYouAdmin(userid)
             if (admin_check==1){
                 //관리자 -> 사용자 
@@ -124,12 +130,10 @@ let userid ;
             } else {
                 // 사용자 -> 관리자 
                 console.log('admin_check=1 아닐 떄 ㅒㅒ ')
+                console.log('admin 한테 메세지 보내기-->',ADMIN)
                 socket.to(ADMIN).emit('msg', msg);
             }
         })
-
-
-
 
         // socket.on('disconnect',async ()=>{
             
@@ -152,6 +156,7 @@ let userid ;
         //     console.log('disconnected admin_arr =', admin_array)
         // })
     }
+    
 })
 
 // Admin 인지 check Function

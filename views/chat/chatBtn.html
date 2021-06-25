@@ -1,13 +1,14 @@
 {% include "./chat_top.html" %}
 <div id="chatBtn_wrap">
-
+    {% if admin == 1 %}
     <div id="chat_side">
-        <h2>진행 중인 채팅</h2>
+        <h3>진행 중인 채팅</h3>
         <div id="chat_ing">
 
         </div>
         
     </div>
+    {% endif %}
     <div id="chtBtn_bottom">
         <div id="chatBtn_top">
             <button id=chatBtn data-value="0">

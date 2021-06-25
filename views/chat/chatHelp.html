@@ -6,7 +6,9 @@
     <div id="chatHelp_top">
         <h1>어떤 도움이<br />필요하신가요?</h1>
     </div>
+    {% if userid != undefined %}
     <p id="chat_userid" style="display:none">{{userid}}</p>
+    {% endif %}
     <a id="chatHelp_box1" class="chatHelp_box">
         <div class="chatHelp_boxes">
 
@@ -44,7 +46,17 @@
     const chat_userid = document.querySelector('#chat_userid');
     const chatHelp_box1 = document.querySelector('#chatHelp_box1');
     chatHelp_box1.addEventListener('click', () => {
-        window.location = `http://localhost:3000/user/chatBtn?${chat_userid.innerHTML}`
+        console.log(333)
+        console.log(chat_userid)
+        if(chat_userid==null){
+            console.log('userid undefined')
+            alert('로그인을 먼저 진행해주세요. :)')
+            window.close()// = `http://localhost:3000/user/login`;
+            opener.parent.location = '/user/login';
+        }else{
+            window.location = `http://localhost:3000/user/chatBtn?${chat_userid.innerHTML}`
+        }
+        
     })
 
 </script>

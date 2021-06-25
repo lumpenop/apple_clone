@@ -63,9 +63,10 @@ let confirmEmail = async (req, res) => {
 //       LOGIN     //
 let login = async (req, res) => {
     //login 상태면 main.html / logout - login.html 
+    let msg2 = req.query.msg2
     let { userid } = req.cookies;
     if (userid == undefined) {
-        res.render('login.html',);
+        res.render('login.html',{msg2:msg2});
     } else {
         res.redirect('/');
     }
@@ -268,6 +269,10 @@ let deleteID = (req, res) => {
 //        INFO         //
 let info = async (req, res) => {
     let userID = req.cookies.userid
+    let username = req.cookies.username
+    if(username == undefined || username == null){
+        res.redirect('/?msg=로그인을 진행해주세요')
+    }
     let result = await users.findOne({ where: { userid: userID } })
     let result2 = await history.findOne({ where: { name1: userID } })
     res.render('./info/info.html', {
@@ -312,16 +317,25 @@ let chat = async (req, res) => {
 
 let chatHelp = (req, res) => {
     let {userid} = req.cookies;
-    res.render('./chat/chatHelp.html',{userid});
+    console.log('chatHelp- userid',userid )
+    if (userid==undefined){
+        res.render('./chat/chatHelp.html');
+    }else{
+        res.render('./chat/chatHelp.html',{userid});
+    }
+
 }
 
 let chatBtn =async (req, res) => {
-
-    res.render('./chat/chatBtn.html');
+    let {userid} = req.cookies;
+    console.log(req.cookies)
+    console.log(userid)
+    let pick = await users.findOne({ where: { userid,} });
+    let admin = pick.dataValues.admin;
+    res.render('./chat/chatBtn.html',{admin});
 }
 
 let chatRoom =  (req, res) => {
-
     res.render('./chat/chatRoom.html');
 }
 
@@ -367,7 +381,7 @@ let pwFind = async (req, res) => {
 
     let mailOption = {
         from: "Sender : <apple>",
-        to: "saeee210@gmail.com",
+        to: "simbianartist@gmail.com",
         subject: "Apple 임시 비밀번호 발급",
         text: `임시 비밀번호는 ${randomPw}입니다. 로그인 후 반드시 비밀번호 변경해주시길 바랍니다.`,
     }

@@ -33,6 +33,7 @@ chatBtn.addEventListener('click', () => {
 });
 
 async function getChatRoom(type) {
+    // chatRoom 으로 갈 때 auth 거침 / 그 전, chatBtn에서 login 여부 판별 
     let url = `http://localhost:3000/user/chatRoom`;
     let options = {
         method: 'get'
@@ -107,16 +108,11 @@ function isJson(str) {
 
 const socket = io();
 
-<<<<<<< HEAD
-function socketChat() {
-
-=======
 async function socketChat() {
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
     socket.on('connect', () => { })
-
+    //3. 서로가 서로한테 보낸다
     let chat_count = parseInt(chatBtn.dataset.value);
-    socket.on('send', data => {
+    socket.on('msg', data => {
         chat_count++;
         if (flag == false) {
             chatBtn.innerHTML = `답변이 도착했습니다! <span> ${chat_count}`;
@@ -124,21 +120,20 @@ async function socketChat() {
         msgAdd(data, 'you');
     });
 };
-// let information = {}; 
+
+
 function send() {
     const msg = document.querySelector('#msg');
     if (msg.value == '') {
         return;
     } else {
-<<<<<<< HEAD
-        let id = socket.id
-        socket.to(id).emit('send', msg.value);
-=======
+        // let id = socket.id
+        // socket.to(id).emit('send', msg.value);
         // 메세지 보내기 -----------111111111
         let data = { msg: msg.value, socketID:socket.id,}
+        //2. 자기가 쓴 글이 뜨게 한다 E
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');
@@ -146,7 +141,7 @@ function send() {
     }
 }
 
-
+//0-0. 일단 접속을 한다 
 // 채팅 시작하는 user div append 
 socket.on('Userin', data => {
 
@@ -156,20 +151,21 @@ socket.on('Userin', data => {
     let chat_ing = document.querySelector('#chat_ing');
     let div = document.createElement('div');
     div.classList.add('chat_ing_div')
-    div.innerHTML = `${userid}님의 채팅 대기`;
+    div.innerHTML = `${userid}님 채팅 대기 중`;
     chat_ing.appendChild(div)
     
-    //고치기 -> 클릭 할 때마다 새로 채팅창이 뜨는거 고치기
+    // 어떤 거를 클릭했을 때 되는거 수정 필요 ! 
     let chat_DIV = document.querySelector('.chat_ing_div')
     chat_DIV.addEventListener('click', () => {
         getChatRoom();
+        //0-1. 클릭 시 정보를 보낸다 E
         socket.emit('Please',{userid, socketID})
     })
 
 })
 
 
-
+//4. 아직 안 되지만 채팅방을 나갈 때
 // 채팅 나가는 user 삭제 
 socket.on('sendForDelete', data => {
     let { socketID, userid } = data;
@@ -214,3 +210,8 @@ function msgAdd(msgValue, who) {
     ul_msg.appendChild(li_msg);
     chat.appendChild(ul_msg);
 }
+
+
+
+
+

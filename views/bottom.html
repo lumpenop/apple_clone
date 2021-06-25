@@ -1,28 +1,15 @@
-
-    
-</body><!---- end body ---->
+</body>
+<!---- end body ---->
 
 <!--  Main Page 채팅창 띄우기 -->
-<script type = "text/javascript" src="/index.js"></script>
-<script type="text/javascript">
-    let side_menu_box1 = document.querySelector('#side_menu_box1');
-    side_menu_box1.addEventListener('click', chatFn);
-    function chatFn(){
-    var chatWidth = 565;
-    var chatHeight = 817;
-    var chatLeft = 90;
-    var chatTop = 100;
-    window.open('/user/chat', 'a', `width = ${chatWidth}px, height = ${chatHeight}px,left = ${chatLeft}%,top = ${chatTop}`);
-}
-</script>
-
+<script type="text/javascript" src="/index.js"></script>
 
 
 <!-- Google signOut 로그아웃 -->
 <script>
-    async function signOut(){
+    async function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(async function (){
+        auth2.signOut().then(async function () {
             console.log('User signed out.');
 
             let url = `http://localhost:3000/user/google_logout`;
@@ -50,11 +37,9 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
-
-
-<script type = "text/javascript" src = "/admin/js/chat.js"></script>
-<script type = "text/javascript">
-   function openWindowPop(url, name){
+<script type="text/javascript" src="/admin/js/chat.js"></script>
+<script type="text/javascript">
+    function openWindowPop(url, name) {
         var options = 'top=100, left=500, width=800, height=660, status=no, menubar=no, toolbar=no, resizable=no';
         window.open(url, name, options);
     }
@@ -72,7 +57,6 @@
                     <a href="#">리셀러</a>
                     를 찾아보거나, 080-330-8877번으로 전화하세요.
                 </div>
-                
                 <div class="ac-gf-footer-legal">
                     <div class="ac-gf-footer-legal-copyright">Copyright &copy; 2021 Apple Inc. 모든 권리 보유</div>
                     <div class="ac-gf-footer-legal-links">
@@ -81,58 +65,85 @@
                         <a class="ac-gf-footer-legal-link con" href="#">판매 및 환불</a>
                         <a href="#" class="ac-gf-footer-legal-link con">법적 고지</a>
                         <a href="#" class="ac-gf-footer-legal-link">사이트 맵</a>
-                        
+
                         <a class="ac-gf-footer-locale-link choose" href="#">대한민국</a>
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
     </footer>
 </footer>
 
+<script type="text/javascript">
+    const backgroundKey001 = document.querySelector('.backgroundKey001');
+    const backgroundKey001Top = backgroundKey001.getBoundingClientRect().top;
+    const backgroundKey001Bottom = backgroundKey001.getBoundingClientRect().bottom;
+    const backgroundBlue = document.querySelector('.backgroundBlue');
+    const backgroundBlueTop = backgroundBlue.getBoundingClientRect().top;
 
+    function syScroll() {
+        var nowScroll = document.documentElement.scrollTop;
+        if (nowScroll >= backgroundKey001Top && backgroundKey001Bottom >= nowScroll) {
 
-<script type = "text/javascript">
-const backgroundKey001 = document.querySelector('.backgroundKey001');
-const backgroundKey001Top = backgroundKey001.getBoundingClientRect().top;
-const backgroundKey001Bottom = backgroundKey001.getBoundingClientRect().bottom;
-const backgroundBlue = document.querySelector('.backgroundBlue');
-const backgroundBlueTop = backgroundBlue.getBoundingClientRect().top;
+            const purple1 = document.querySelector('.img-purple1');
+            const purple2 = document.querySelector('.img-purple2');
 
+            let len = backgroundBlueTop - backgroundKey001Top;
+            let matrixNum = (nowScroll - backgroundBlueTop) / len;
 
-
-
-
-function syScroll(){
-    var nowScroll = document.documentElement.scrollTop;
-
-    if(nowScroll >= backgroundKey001Top && backgroundKey001Bottom >= nowScroll){
-    
-        const purple1 = document.querySelector('.img-purple1');
-        const purple2 = document.querySelector('.img-purple2');
-
-        let len = backgroundKey001Bottom - backgroundKey001Top;
-        
-        let matrixNum = (nowScroll-backgroundBlueTop)/len;
-        purple1.style.transform = `matrix(1, 0, 0, 1, 0, ${matrixNum*150-10})`;
-        purple2.style.transform = `matrix(1, 0, 0, 1, 0, ${150-matrixNum*150-60})`;
-        console.log(matrixNum, 150-matrixNum*10)
-        if(matrixNum > 0.83){
-            
-            document.querySelector('.backgroundWhite').style.opacity = '1';
+            purple1.style.transform = `matrix(1, 0, 0, 1, 0, ${150 + matrixNum * 150})`;
+            purple2.style.transform = `matrix(1, 0, 0, 1, 0, ${-matrixNum * 150})`;
         }
-        else{
-            document.querySelector('.backgroundWhite').style.opacity = '0';
+
+    }
+    const backgroundOn = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+            if (entry.intersectionRatio > 0 && entry.intersectionRatio < 0.1) {
+                entry.target.style.opacity = '1';
+            } else {
+                entry.target.style.opacity = '0';
+            }
+        })
+    })
+
+    const backgrounds = document.querySelectorAll('.back-color');
+    backgrounds.forEach(ele => {
+        backgroundOn.observe(ele);
+    })
+    window.addEventListener('scroll', syScroll);
+
+
+
+
+    const backgroundKey001 = document.querySelector('.backgroundKey001');
+    const backgroundKey001Top = backgroundKey001.getBoundingClientRect().top;
+    const backgroundKey001Bottom = backgroundKey001.getBoundingClientRect().bottom;
+    const backgroundBlue = document.querySelector('.backgroundBlue');
+    const backgroundBlueTop = backgroundBlue.getBoundingClientRect().top;
+
+    function syScroll() {
+        var nowScroll = document.documentElement.scrollTop;
+        if (nowScroll >= backgroundKey001Top && backgroundKey001Bottom >= nowScroll) {
+
+            const purple1 = document.querySelector('.img-purple1');
+            const purple2 = document.querySelector('.img-purple2');
+
+            let len = backgroundKey001Bottom - backgroundKey001Top;
+
+            let matrixNum = (nowScroll - backgroundBlueTop) / len;
+            purple1.style.transform = `matrix(1, 0, 0, 1, 0, ${matrixNum * 150 - 10})`;
+            purple2.style.transform = `matrix(1, 0, 0, 1, 0, ${150 - matrixNum * 150 - 60})`;
+            console.log(matrixNum, 150 - matrixNum * 10)
+            if (matrixNum > 0.83) {
+
+                document.querySelector('.backgroundWhite').style.opacity = '1';
+            }
+            else {
+                document.querySelector('.backgroundWhite').style.opacity = '0';
+            }
         }
-    } 
+    }
 
-}
-
-
-
-
-
-window.addEventListener('scroll', syScroll);
-
-    </script>
+</script>
 </html>
