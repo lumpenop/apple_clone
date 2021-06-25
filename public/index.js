@@ -210,3 +210,25 @@ function appleSideOff(event, layer , layer2){
 //     console.log(json)
 // })
 
+var beforePosition = document.documentElement.scrollTop
+
+document.addEventListener('scroll', function() {
+
+    var afterPosition = document.documentElement.scrollTop;
+
+
+    if (afterPosition > 50) {
+
+      if(beforePosition < afterPosition ){
+        // 스크롤 위로 
+
+      } else {
+        // 스크롤 아래로
+      }
+
+    } else {
+        // 평상 시
+
+    }
+    beforePosition = afterPosition;
+});

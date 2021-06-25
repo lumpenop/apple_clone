@@ -9,8 +9,8 @@
   width:100%;
 }
 .wrap>div{
-  position: sticky;
-  top:48px;
+  position: absolute;
+  top:58px;
 }
 .wrap2{
   position: relative;
@@ -33,7 +33,7 @@
 }
 .w1200{
   margin:0 auto;
-  width:1300px;
+  width:100%;
 }
 
 .w1200>div{
