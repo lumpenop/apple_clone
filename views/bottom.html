@@ -106,36 +106,28 @@ const backgroundBlueTop = backgroundBlue.getBoundingClientRect().top;
 function syScroll(){
     var nowScroll = document.documentElement.scrollTop;
 
-
     if(nowScroll >= backgroundKey001Top && backgroundKey001Bottom >= nowScroll){
     
         const purple1 = document.querySelector('.img-purple1');
         const purple2 = document.querySelector('.img-purple2');
 
-        let len = backgroundBlueTop - backgroundKey001Top;
-
+        let len = backgroundKey001Bottom - backgroundKey001Top;
+        
         let matrixNum = (nowScroll-backgroundBlueTop)/len;
-        purple1.style.transform = `matrix(1, 0, 0, 1, 0, ${150+matrixNum*150})`;
-        purple2.style.transform = `matrix(1, 0, 0, 1, 0, ${-matrixNum*150})`;
+        purple1.style.transform = `matrix(1, 0, 0, 1, 0, ${matrixNum*150-10})`;
+        purple2.style.transform = `matrix(1, 0, 0, 1, 0, ${150-matrixNum*150-60})`;
+        console.log(matrixNum, 150-matrixNum*10)
+        if(matrixNum > 0.83){
+            
+            document.querySelector('.backgroundWhite').style.opacity = '1';
+        }
+        else{
+            document.querySelector('.backgroundWhite').style.opacity = '0';
+        }
     } 
 
 }
-const backgroundOn = new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-     
-            if(entry.intersectionRatio>0 && entry.intersectionRatio<0.1){
-                entry.target.style.opacity='1';
-            }else{
-                entry.target.style.opacity='0';
-            }
-        })
-    })
 
-    const backgrounds = document.querySelectorAll('.back-color');
-
-    backgrounds.forEach(ele=>{
-        backgroundOn.observe(ele);
-    })
 
 
 
