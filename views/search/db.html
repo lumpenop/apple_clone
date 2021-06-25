@@ -10,6 +10,7 @@
             </div>
         </div> -->
         <div class = "content wrap1200">
+            <div style = "display: none;" class = "msg">{{msg}}</div>
             <div class = "MainContent">
                 <form action = "/search/category" method = "post">
                     <div style = "margin-top:40px; color:blue; width:180px; padding:3px; margin-right:10px; background: white;">
@@ -173,6 +174,13 @@
     </div>
 </body>
 <script type = "text/javascript">
+
+    let msg = document.querySelector('.msg')
+    let msgValue = msg.innerHTML
+    if(msgValue == '로그인을 진행해주세요'){
+        alert('로그인을 진행해주세요')
+    }
+
     input = document.querySelector('.search')
     input.addEventListener('mouseover',inputClick)
     input.addEventListener('mouseout',outputClick)

@@ -268,6 +268,10 @@ let deleteID = (req, res) => {
 //        INFO         //
 let info = async (req, res) => {
     let userID = req.cookies.userid
+    let username = req.cookies.username
+    if(username == undefined || username == null){
+        res.redirect('/?msg=로그인을 진행해주세요')
+    }
     let result = await users.findOne({ where: { userid: userID } })
     let result2 = await history.findOne({ where: { name1: userID } })
     res.render('./info/info.html', {

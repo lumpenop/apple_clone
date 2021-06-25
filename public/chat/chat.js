@@ -107,12 +107,7 @@ function isJson(str) {
 
 const socket = io();
 
-<<<<<<< HEAD
-function socketChat() {
-
-=======
 async function socketChat() {
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
     socket.on('connect', () => { })
 
     let chat_count = parseInt(chatBtn.dataset.value);
@@ -130,15 +125,10 @@ function send() {
     if (msg.value == '') {
         return;
     } else {
-<<<<<<< HEAD
-        let id = socket.id
-        socket.to(id).emit('send', msg.value);
-=======
         // 메세지 보내기 -----------111111111
         let data = { msg: msg.value, socketID:socket.id,}
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');

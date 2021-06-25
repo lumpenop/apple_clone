@@ -16,6 +16,7 @@ router.post('/professor',controller.professor_submit);
 router.get('/ipad',controller.search_ipad);
 router.post('/search',controller.search_view);
 router.post('/db',controller.db);
+router.get('/db',controller.db_show);
 router.post('/category',controller.category);
 router.get('/valuation',controller.value);
 router.post('/search',controller.search);

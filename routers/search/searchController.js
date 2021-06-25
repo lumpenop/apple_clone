@@ -21,14 +21,15 @@ let question_view = async (req,res)=>{
   })
 }
 let question_search_success = async (req,res)=>{
-  let question = req.body.question
 
-  let result2 = await question.findOne({question:question})
-  let result = await question.findAll({})
+  let question_name = req.body.question_name
+  let result = await question.findAll({where:{question_subject:{[Op.like]:"%"+question_name+"%"}}})
   res.render('./search/question.html',{
     result,
   })
+
 }
+
 let question_write_success = async (req,res)=>{
   let question_subject = req.body.question_subject
   let question_id = req.body.question_id
@@ -111,6 +112,13 @@ let search_ipad = (req,res)=>{
     res.render('./search/ipad.html',{
 
     })
+}
+
+let db_show = (req,res) => {
+  let msg = req.query.msg
+  res.render('./search/db.html',{
+    msg:msg
+  })
 }
 let db = async (req,res)=>{
     let body = req.body.AppleSearch
@@ -264,4 +272,5 @@ module.exports = {
     professor,
     professor_submit,
     category,
+    db_show,
 }; 
