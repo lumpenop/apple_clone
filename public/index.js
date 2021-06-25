@@ -212,7 +212,7 @@ function appleSideOff(event, layer , layer2){
 
 var beforePosition = document.documentElement.scrollTop
 
-document.addEventListener('scroll', function() {
+function scrollNav(){
 
     var afterPosition = document.documentElement.scrollTop;
 
@@ -231,4 +231,7 @@ document.addEventListener('scroll', function() {
 
     }
     beforePosition = afterPosition;
-});
+}
+
+
+document.addEventListener('scroll',scrollNav);
