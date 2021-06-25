@@ -21,10 +21,9 @@ let question_view = async (req,res)=>{
   })
 }
 let question_search_success = async (req,res)=>{
-  let question_subject = req.body.question_subject
-  let question_id = req.body.question_id
-  let question_content = req.body.question_content
-  let result2 = await question.findOne({question_subject:question_subject,question_id:question_id,question_content:question_content})
+  let question = req.body.question
+
+  let result2 = await question.findOne({question:question})
   let result = await question.findAll({})
   res.render('./search/question.html',{
     result,
@@ -259,6 +258,7 @@ module.exports = {
     otherSite,
     question_view,
     question_write_success,
+    question_search_success,
     question_oneview,
     answer_write_success,
     professor,

@@ -82,11 +82,6 @@ let userid ;
                 console.log('admin_array=',admin_array)
             }
         })
-<<<<<<< HEAD
-        socket.on('send', datas => {
-            let id = datas[0]
-            io.sockets.to(id).emit('send',datas)
-=======
 
         // 대기 user div 클릭하면 해당 user id, socket ID 보내기 / 변수에 담기
         let chat_user;
@@ -131,7 +126,6 @@ let userid ;
                 console.log('admin_check=1 아닐 떄 ㅒㅒ ')
                 socket.to(ADMIN).emit('msg', msg);
             }
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
         })
 
 
