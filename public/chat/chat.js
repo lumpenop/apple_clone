@@ -107,16 +107,11 @@ function isJson(str) {
 
 const socket = io();
 
-<<<<<<< HEAD
-function socketChat() {
-
-=======
 async function socketChat() {
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
     socket.on('connect', () => { })
 
     let chat_count = parseInt(chatBtn.dataset.value);
-    socket.on('send', data => {
+    socket.on('msg', data => {
         chat_count++;
         if (flag == false) {
             chatBtn.innerHTML = `답변이 도착했습니다! <span> ${chat_count}`;
@@ -124,21 +119,19 @@ async function socketChat() {
         msgAdd(data, 'you');
     });
 };
-// let information = {}; 
+
+
 function send() {
     const msg = document.querySelector('#msg');
     if (msg.value == '') {
         return;
     } else {
-<<<<<<< HEAD
-        let id = socket.id
-        socket.to(id).emit('send', msg.value);
-=======
+        // let id = socket.id
+        // socket.to(id).emit('send', msg.value);
         // 메세지 보내기 -----------111111111
         let data = { msg: msg.value, socketID:socket.id,}
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
->>>>>>> d38633b5c0af14834a75a36e8543bdb1493f30fb
         msgAdd(msg.value, 'me');
         msg.value = '';
         let chat = document.querySelector('#chat');
@@ -159,11 +152,11 @@ socket.on('Userin', data => {
     div.innerHTML = `${userid}님의 채팅 대기`;
     chat_ing.appendChild(div)
     
-    //고치기 -> 클릭 할 때마다 새로 채팅창이 뜨는거 고치기
+    // 어떤 거를 클릭했을 때 되는거 수정 필요 ! 
     let chat_DIV = document.querySelector('.chat_ing_div')
     chat_DIV.addEventListener('click', () => {
         getChatRoom();
-        socket.emit('Please',{userid, socketID})
+        socket.emit('Please',{userid, socketID});
     })
 
 })
