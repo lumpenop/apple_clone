@@ -177,7 +177,7 @@
 
 .section-hands #flow-canvas-iphone-12{
     margin: 0 auto;
-    width: 600px;
+    width: 61%;
     object-fit: contain;
 }
 
@@ -413,6 +413,7 @@ br.large{
 
 .flow-grid{
     margin: 0 auto;
+    width: 100%;
 }
 
 .flow-width-adjustment{
@@ -505,9 +506,9 @@ br.large{
     z-index: 1;
 }
 
-.section-content{
+.section-design .section-content{
     margin: 0 auto;
-    width: 980px;
+    width: 100%;
     z-index: 1;
     position: relative;
 }
@@ -527,7 +528,9 @@ br.large{
 }
 
 .section-design .section-design-materials .section-mini .section-headline{
-    margin-top: calc(var(--framing-size) + 92px);
+    margin-top: calc(var(--framing-size) + 110px);
+    width: 80%;
+    margin: 0 auto;
 }
 
 br.large{
@@ -555,6 +558,9 @@ br.large{
     font-weight: 600;
 }
 
+.serction-design .device-wrapper{
+    width: 100%;
+}
 
 
 

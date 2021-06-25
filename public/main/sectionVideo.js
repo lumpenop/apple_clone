@@ -99,7 +99,7 @@ function videoScroll(){
                 videoDeviceWrapper.style.transform = 'translate(-50%, -50%)';
                 
                 videoDeviceWrapper.style.width = `${100+(manifestoBottom/4)}%`
-                videoDeviceWrapper.style.height = `${100+(manifestoBottom/4)}%`
+                videoDeviceWrapper.style.height = `${videoDeviceWrapper.offsetWidth*0.57}px`
 
 
                 document.querySelector('.section-video .device').style.opacity='1';

@@ -17,25 +17,25 @@ async function imgVideo(){
 imgVideo();
 
 let beforeWindowHeight = window.innerHeight;
+const endFrame = document.querySelector(".video-container > .endframe");
+endFrame.style.height=`${endFrame.offsetWidth*0.77}px`;
 const changeHandler = () => {
     let afterWindowHeight = window.innerHeight;
     
     plusHeight = (afterWindowHeight - beforeWindowHeight)/afterWindowHeight;
 
     const startFrame = document.querySelector(".video-container > .startframe");
-    const video = document.querySelector(".video-container > video");
-    const endFrame = document.querySelector(".video-container > .endframe");
-    const videoContainer = document.querySelector(".video-container");
-    const stickyContent = document.querySelector(".sticky-content");
+    const video = document.querySelector(".section-hero .video-container > video");
+    const videoContainer = document.querySelector(".section-hero .video-container");
+    const stickyContent = document.querySelector(".section-hero .sticky-content");
 
     startFrame.style.backgroundSize=`${window.innerHeight*1.3}px ${window.innerHeight}px`;
     video.style.height=String(window.innerHeight)+"px";
-    endFrame.style.backgroundSize=`${window.innerHeight*1.3}px ${window.innerHeight}px`;
-    endFrame.style.height=`${window.innerHeight}px`;
-    endFrame.style.width=`${window.innerHeight * 1.3}px`;
-    videoContainer.style.height=`${window.innerHeight}px`;
-    
-    stickyContent.style.height=String(window.innerHeight)+"px";
+
+    endFrame.style.height=`${endFrame.offsetWidth*0.77}px`;
+    // endFrame.style.width=`${window.innerHeight * 1.3}px`;
+    videoContainer.style.height=`${window.innerHeight*0.7}px`;
+
 
   };
   

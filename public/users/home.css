@@ -7,6 +7,10 @@
     
 }
 
+html{
+    margin: 0 auto;
+}
+
 body{
     width: 100%;
     overflow-x: hidden;
@@ -608,6 +612,7 @@ a{
     transform: matrix(1, 0, 0, 1, 0, 0);
     top: -10px;
     left: 4px;
+
 }
 .img-purple2{
     transform: matrix(1, 0, 0, 1, 0, 150);
@@ -648,4 +653,6 @@ a{
 
 .grid-image{
     margin: 0 auto;
+    width: 80%;
+    min-width: 400px;
 }
