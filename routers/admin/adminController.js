@@ -1,8 +1,29 @@
-const {users,items,buy,skills,valuation,history} = require('../../models');
+const {users,items,buy,skills,valuation,history,answer,question} = require('../../models');
 const sequelize = require("sequelize")
 const ctoken = require('./jwt'); 
 const chash = require('./chash')
 const Op = sequelize.Op
+
+
+let question_view = async(req,res)=>{
+
+    let result = await question.findAll({}) 
+    res.render('./admin/question/question.html',{
+        result:result,
+        userid:req.session.uid
+    })
+
+}
+let answer_view = async(req,res)=>{
+
+    let result = await answer.findAll({}) 
+    res.render('./admin/question/answer.html',{
+        result:result,
+        userid:req.session.uid
+    })
+
+}
+
 let main = (req,res)=>{
     res.render('./admin/main.html',{
         userid:req.session.uid
@@ -355,4 +376,6 @@ module.exports = {
     value_view,
     history_list,
     skill_list,
+    question_view,
+    answer_view,
 }; 

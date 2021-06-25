@@ -16,10 +16,6 @@ ul,li{
     width:100%;
 }
 
-.w1200{
-    width:2000px;
-    margin:0 auto;
-}
 .w1500{
     width:1500px;
     margin:0 auto;
@@ -66,7 +62,7 @@ ul,li{
     background:#404040;
     color:whitesmoke;
     line-height: 30px;
-    width:200px;
+    width:230px;
     box-sizing: border-box;
     padding:20px;
     height:1200px;
@@ -85,12 +81,13 @@ ul,li{
 .margintop{
     margin-bottom: 50px;
 }
+
 .content{
     display: inline-block;
-    float:left;
     box-sizing: border-box;
     padding:30px;
     margin-left:35px;
+    width:1040px;
 }
 .content>div>form>div{
     margin-bottom: 50px;
@@ -104,6 +101,7 @@ ul,li{
     background: #808080;
     text-align: center;
     color:whitesmoke;
+    width:1040px;
 }
 .delete{
     background: #80808080;
@@ -116,15 +114,16 @@ ul,li{
 .margin_top{
     margin-top: 100px;
 }
-.table{
+.table>form>section{
     text-align: center;
+    width:1040px;
 }
-
+.table>tbody{width: 1040px;}
 #img1, #img{width:230px; 
 height:200px;}
 
 .product_name_length{
-    width:50px;
+    width:40px;
     overflow: hidden;
 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href = "../../lecture_render.css">
+    <link rel= "stylesheet" media="screen and (max-width: 480px)" href = "../../width/lecture_render_width.css">
 </head>
 <body>
     <div class = "wrapping wrap" style = "text-align: center;">
@@ -14,15 +15,15 @@
             <div class = "footer">
                 <div class = "img"><img class = "img" src = "../../{{result.item_image}}"></div>
                 <div class = "text">
-                    <h2 class = "font">{{result.item_category}}</h2>
-                    <h2 class = "red">{{result.item_name}}</h2>
-                    <div class = "font1">수강 인원 수 : {{result.maximum_number}}</div>
-                    <div class = "tag0">태그</div>
-                    <span class = "tag">#{{result.item_tag1}}</span>
-                    <span class = "tag">#{{result.item_tag2}}</span>
-                    <span class = "tag">#{{result.item_tag3}}</span>
+                    <h2 class = "font font2">{{result.item_category}}</h2>
+                    <h2 class = "red font2">{{result.item_name}}</h2>
+                    <div class = "font1 font2">수강 인원 수 : {{result.maximum_number}}</div>
+                    <div class = "tag0 font2">태그</div>
+                    <span class = "tag font2">#{{result.item_tag1}}</span>
+                    <span class = "tag font2">#{{result.item_tag2}}</span>
+                    <span class = "tag font2">#{{result.item_tag3}}</span>
                     <form action = "/buy/lecture_render" method = "post">
-                        <input type = "submit" class = "BTN_click" value = "삭제하기">
+                        <input type = "submit" class = "BTN_click font2" value = "삭제하기">
                         <input style = "display: none;" type = "text" name = "item_name" value = "{{result.item_name}}">                    
                     </form>
                 </div>             
@@ -32,45 +33,45 @@
     <div class = "wrapping wrap2">
         <div class = "content">
             <div class = "mainLecture">
-                <h1 class = "h1">교육 과정</h1>
-                <div class = "">
+                <h1 class = "h1 none">교육 과정</h1>
+                <div class = "none">
                     <h2>나의 강의 진행 정도</h2>
                     <div class = "progress">
                     
                     </div>
                 </div>
                 <div class = "">              
-                    <div class = "main_subject">section1. <span class = "Red">{{result.item_skill1}} 강의</span></div> 
+                    <div class = "main_subject font2">section1. <span class = "Red font2">{{result.item_skill1}} 강의</span></div> 
                     <table class = "">                    
                         {% for item in result1 %}
                         <tr>
-                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
-                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
-                            <td class = "numbering3 Table section{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                            <td class = "numbering Table"><span class = "Red font2">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table font2">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section{{item.iframe_number}} font2">{{item.skill_iframe}}</td>
                         </tr>                    
                         {% endfor %}
                     </table>
                 </div>  
                 <div class = "">
-                    <div class = "main_subject">section2. <span class = "Red">{{result.item_skill2}} 강의</span></div>  
+                    <div class = "main_subject font2">section2. <span class = "Red font2">{{result.item_skill2}} 강의</span></div>  
                     <table>                    
                         {% for item in result2 %}
                         <tr>
-                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
-                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
-                            <td class = "numbering3 Table section2{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                            <td class = "numbering Table"><span class = "Red font2">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table font2">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section2{{item.iframe_number}} font2">{{item.skill_iframe}}</td>
                         </tr>                  
                         {% endfor %}
                     </table>                 
                 </div>
                 <div class = "">
-                    <div class = "main_subject">section3. <span class = "Red">{{result.item_skill3}} 강의</span></div>  
+                    <div class = "main_subject font2">section3. <span class = "Red font2">{{result.item_skill3}} 강의</span></div>  
                     <table>                    
                         {% for item in result3 %}
                         <tr>
-                            <td class = "numbering Table"><span class = "Red">{{item.iframe_number}}강</span></td>
-                            <td class = "numbering2 Table">{{item.iframe_name}}</td>
-                            <td class = "numbering3 Table section3{{item.iframe_number}}">{{item.skill_iframe}}</td>
+                            <td class = "numbering Table"><span class = "Red font2">{{item.iframe_number}}강</span></td>
+                            <td class = "numbering2 Table font2">{{item.iframe_name}}</td>
+                            <td class = "numbering3 Table section3{{item.iframe_number}} font2">{{item.skill_iframe}}</td>
                         </tr>                    
                         {% endfor %}
                     </table>                   
@@ -79,7 +80,7 @@
         </div>
     </div>
     <div class = "width">
-        <div class = "w1300">
+        <div class = "w1300 content2">
         </div>
     </div>
 </body>

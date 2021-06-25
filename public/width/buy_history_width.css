@@ -1,0 +1,30 @@
+@media screen and (max-width: 480px) 
+
+{
+
+    .w1200{
+        width:100vw;
+        margin:0 auto;
+
+    }
+
+    .advertisement{
+        display: none;
+    }
+
+    .lecture_img{
+        width:26vw;
+        height:30vh;
+
+    }
+    .lectures_li{
+        display: block;
+    }
+    .bold{
+        font-size: 17px;
+    }
+
+    .size2, .size3{
+        width:80vw;
+    }
+}

@@ -7,15 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+    <div style = "position: fixed; top:110px; right:30%; ">
+        <div style = "border: 1px solid #00c471; width:70px; height:40px; border-radius: 15px; margin-bottom: 30px; color:#00c471; text-align: center; box-sizing:border-box; padding: 7px 0px;">해결됨</div>
+        <div style = "border: 1px solid #00c471; width:70px; height:40px; border-radius: 15px; margin-bottom: 30px; color:#00c471; text-align: center; box-sizing:border-box; padding: 7px 0px;"">P</div>
+        <div style = "border: 1px solid #00c471; width:70px; height:40px; border-radius: 15px; color:#00c471; text-align: center; box-sizing:border-box; padding: 7px 0px;"">O</div>
+    </div>
     <div style = "width:100%;">
         <div style = "width:800px; margin:0 auto;">
-            <div>
-            Q. {{result.question_subject}} 
+            <div><a href = "http://localhost:3000/search/question" style = "display: inline-block; text-decoration: none; margin-bottom:50px; color:grey;">뒤로 가기 ></a></div>
+            <div style = "font-size: 30px;">
+            <span style = "color:#00c471;">Q.</span> {{result.question_subject}} 
             </div>
-            <div>
+            <div style = "margin-top: 20px; margin-bottom: 20px; color:grey;">
                 {{result.question_id}}님의 질문
             </div>
-            <div>
+            <div style = "margin-bottom: 50px;">
                 {{result.question_content}}
             </div>        
         </div>
@@ -23,13 +29,13 @@
     <div style = "width:100%;">
         <div style = "width:800px; margin:0 auto;">
             {% for item in result2 %}
-            <div>
-                A. {{item.answer_subject}} 
+            <div style = "font-size: 30px;">
+                <span style = "color:#00c471;">A.</span>  {{item.answer_subject}} 
             </div>
-            <div>
-                {{item.answer_id}}님의 질문
+            <div style = "margin-top: 20px; margin-bottom: 20px; color:grey;">
+                {{item.answer_id}}님의 답변
             </div>
-            <div>
+            <div style = "margin-bottom: 50px;">
                 {{item.answer_content}}
             </div>  
             {% endfor %}      
@@ -44,17 +50,20 @@
                 <div style = "display: none;">
                     <input type = "text" value = "{{result.question_subject}}" name = "question_subject">
                 </div>
-                <div>
-                    <input type = "text" name = "answer_subject">
+                <div style = "font-size: 30px;">
+                    <span style = "color:#00c471;">답변하기</span>
                 </div>
                 <div>
-                    <input type = "text" name = "answer_id">
+                    <input type = "text" name = "answer_subject" placeholder = "답변 제목" style = "display: inline-block; border:1px solid grey; width:800px; height:40px; color:grey; border-radius: 7px; margin-top: 45px;">
                 </div>
                 <div>
-                    <input type = "text" name = "answer_content">
+                    <input type = "text" name = "answer_id" placeholder = "답변자" style = "display: inline-block; border:1px solid grey; width:800px; height:40px; color:grey; border-radius: 7px; margin-top: 15px;">
+                </div>
+                <div>
+                    <input type = "text" name = "answer_content" placeholder = "답변내용" style = "display: inline-block; border:1px solid grey; width:800px; height:400px; color:grey; border-radius: 7px; margin-top: 15px;">
                 </div>    
                 <div>
-                    <input type = "submit" name = "답변">
+                    <input type = "submit" name = "답변" style = "display: inline-block; margin-top: 40px; height: 40px; border-radius: 10px; font-size:20px; background:white; width:100px; text-align: center; color: #00c471; border:1px solid #00c471;">
                 </div> 
             </form>    
         </div>

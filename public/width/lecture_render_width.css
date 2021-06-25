@@ -1,0 +1,31 @@
+@media screen and (max-width: 480px) 
+
+{
+    .content{
+        width:100vw;
+    }
+
+    .content2>iframe{
+        width:220px;
+        margin:0 auto;
+        display: inline-block;
+    }
+
+
+    .img{
+        margin-top: 50px;
+        width:120px;
+        height:130px;
+    }
+
+    .font2{
+        font-size: 11px;
+    }
+    .mainLecture{
+        width:100vw;
+    }
+
+    .none{
+        display: none;
+    }
+}

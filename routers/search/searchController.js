@@ -20,7 +20,15 @@ let question_view = async (req,res)=>{
       result,
   })
 }
+let question_search_success = async (req,res)=>{
+  let question = req.body.question
 
+  let result2 = await question.findOne({question:question})
+  let result = await question.findAll({})
+  res.render('./search/question.html',{
+    result,
+  })
+}
 let question_write_success = async (req,res)=>{
   let question_subject = req.body.question_subject
   let question_id = req.body.question_id
@@ -159,6 +167,14 @@ let db = async (req,res)=>{
       
 
 }
+
+let category = async (req,res) => {
+  let item_category = req.body.item_category
+  let result = await items.findAll({where:{item_category:item_category}})
+  res.render('./search/category.html',{
+    result:result
+  })
+}
 let search_view = (req,res)=>{
     let searchValue = req.body.AppleSearch
     res.redirect(`/search/${searchValue}`)
@@ -242,8 +258,10 @@ module.exports = {
     otherSite,
     question_view,
     question_write_success,
+    question_search_success,
     question_oneview,
     answer_write_success,
     professor,
     professor_submit,
+    category,
 }; 

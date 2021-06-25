@@ -5,24 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "../../shopping_form.css">
+    <link rel= "stylesheet" media="screen and (max-width: 480px)" href="../../width/shopping_form_width.css">
     <title>Document</title>
 </head>
 <body>
     <div class = "wrappingwrap wrap">
         <div class = "content w1000"> 
-            <h1 class = "h1"><a href = "/" style = "text-decoration: none; color:black;">주문하신 제품이 어디로 배송되길 원하십니까?</a></h1>
+            <h1 class = "h1"><a href = "/" class = "font" style = "text-decoration: none; color:black;">주문하신 제품이 어디로 배송되길 원하십니까?</a></h1>
             <h2 class = "h2"></h2>
             <input type = "text" value = "{{msg}}" class = "msg displaynone">
             <div>
                 <form action = "/buy/shopping_end?name={{name}}" name = "shopping_end" method = "post">
-                    <h2>이름 및 주소 입력:</h2>
-                    <div class = "displaynone"><input type = "text" name = "item_skill" value = "{{item_skill}}"></div>
-                    <div class = "displaynone"><input type = "text" name = "item_name" class = "item_name" value = "{{name}}"></div>
-                    <div class = "displaynone"><input type = "text" name = "item_price" class = "item_price" value = "{{item_price}}"></div>
-                    <div class = "displaynone"><input type = "text" name = "item_image" value = "{{item_image}}"></div>
-                    <div class = "displaynone"><input type = "text" name = "total_cost" value = "{{total_cost}}"></div>
-                    <input class = "width" type = "text" name = "name1" placeholder="성"><br/>
-                    <input class = "width" type = "text" name = "name2" placeholder="이름"><br/>
+                    <h2 class = "font">이름 및 주소 입력:</h2>
+                    <div class = "displaynone"><input type = "text" name = "item_skill" class = "FULL" value = "{{item_skill}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "item_name" class = "FULL item_name" value = "{{name}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "item_price" class = "FULL item_price" value = "{{item_price}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "item_image" class = "FULL" value = "{{item_image}}"></div>
+                    <div class = "displaynone"><input type = "text" name = "total_cost" class = "FULL" value = "{{total_cost}}"></div>
+                    <input class = "FULL width" type = "text" name = "name1" placeholder="성"><br/>
+                    <input class = "FULL width" type = "text" name = "name2" placeholder="이름"><br/>
                     <select class = "width2" name = "address1" placeholder = "시/도">
                         <option>시/도</option>
                         <option value = "강원도">강원도</option>
@@ -34,18 +35,18 @@
                         <option value = "강원도6">강원도</option>
                         <option value = "강원도7">강원도</option>
                     </select>
-                    <input class = "width2" type = "text" name = "address2" placeholder="지역/도시"><br/>
-                    <input class = "width" type = "text" name = "addressnumber" placeholder="우편번호"><br/>
-                    <input class = "width" type = "text" name = "nation" placeholder="국가/지역"><br/>
-                    <input class = "width" type = "text" placeholder="세부 주소">
+                    <input class = "width2 FULL" type = "text" name = "address2" placeholder="지역/도시"><br/>
+                    <input class = "width FULL" type = "text" name = "addressnumber" placeholder="우편번호"><br/>
+                    <input class = "width FULL " type = "text" name = "nation" placeholder="국가/지역"><br/>
+                    <input class = "width FULL" type = "text" placeholder="세부 주소">
                 </div>
                 <div>
-                    <h2>연락처 정보를 알려주십시오.</h2>
-                    <div class = "tiny2"><input name = "email" class = "width" type = "text" placeholder = "이메일 주소"></div>
+                    <h2 class = "font">연락처 정보를 알려주십시오.</h2>
+                    <div class = "tiny2"><input name = "email" class = "width FULL" type = "text" placeholder = "이메일 주소"></div>
                     <div class = "tiny">이메일로 영수증을 보내 드리고, 휴대폰의 SMS 또는 iMessage를 통해<br/> 주문 업데이트를 보내 드립니다.</div>
-                    <input class = "phone width" name = "phone" type = "text" placeholder = "휴대폰 번호">
+                    <input class = "phone width FULL" name = "phone"type = "text" placeholder = "휴대폰 번호">
                     <div class = "phone1 tiny">입력하시는 전화번호는 주문 후 변경할 수 없으므로 맞는 번호인지 확인해<br/> 주십시오.</div>
-                    <div class = "clear"><input class = "clear size" type = "checkbox"><div>휴대폰 번호가 없습니다.</div></div>
+                    <div class = "clear"><input class = "clear tiny size" type = "checkbox"><div class = "tiny">휴대폰 번호가 없습니다.</div></div>
                 </div>
                 <div class = "line">
     
@@ -57,9 +58,9 @@
                 <div class = "line">
     
                 </div>
-                <a href="javascript:openWindowPop(`http://localhost:5000/?name={{name}}&price={{total_cost}}`, 'popup');"><input type = "button" class = "BTN" value = "결제 페이지로 이동"></a>
-                <div class = "d">*결제 후 완료 페이지로 이동해주세요*</div>
-                <input class = "BTN" type = "submit" value = "결제 완료"></a>
+                <a href="javascript:openWindowPop(`http://localhost:5000/?name={{name}}&price={{total_cost}}`, 'popup');"><input type = "button" class = "BTN FULL" value = "결제 페이지로 이동"></a>
+                <div class = "d tiny">*결제 후 완료 페이지로 이동해주세요*</div>
+                <input class = "BTN FULL" type = "submit" value = "결제 완료"></a>
             </form>
         </div>
     </div>
