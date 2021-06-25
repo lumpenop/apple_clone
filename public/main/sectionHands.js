@@ -42,7 +42,6 @@ window.addEventListener('scroll', () => {
         const maxScrollTop = (scrollTop - flowCanvasTop).toFixed(2);
         const range = (designSectionTop - flowCanvasTop).toFixed(2);
         const num = Math.floor(range/(frameCount));
-55
 
         let frameIndex;
         if(Math.floor(maxScrollTop/(num)) >= 147){
@@ -101,7 +100,6 @@ function forMiniSection(){
     const scrollTop = html.scrollTop;
     // if(absoluteTop < scrollTop){
         
-
         const gap= Math.round(scrollTop) - Math.round(absoluteTop)
         const headLine = document.querySelector('div.design-materials.section-mini div.content-wrapper h4.section-headline.typography-section-headline');
         
@@ -116,7 +114,7 @@ function forMiniSection(){
 
     
     if(hiddenUlBottom*0.8 <= scrollTop && sectionMini.bottom >= scrollTop){
-   
+        
         bottomFrame.classList.add('will-change');
         leftFrame.classList.add('will-change');
         rightFrame.classList.add('will-change');

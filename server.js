@@ -69,11 +69,12 @@ io.sockets.on('connection', (socket) => {
                     admin_array.push({socketID:socket.id, userid,}); console.log('is admin');
                 } else {
                     user_array.push({socketID:socket.id, userid,}); console.log('is user');
-
+                   
                     // sockek 연결 후 해당 브라우저 userid, sockt.id 를 담아서 관리자들한테 보냄 
                     let data = {socketID:socket.id, userid,}
                     if (admin_array.length > 0){
                         admin_array.forEach(v =>{
+                            //0-0. 일단 접속을 한다 E 이 때 어드민 한테만 접속 정보를 넘긴다.
                             socket.to(v.socketID).emit('Userin',data)
                         })
                     }
@@ -85,13 +86,15 @@ io.sockets.on('connection', (socket) => {
 
         // 대기 user div 클릭하면 해당 user id, socket ID 보내기 / 변수에 담기
         let chat_user;
-        let chat_socketID;
+        let chat_socketID
+        //0-1. 클릭 시 정보를 보낸다
         socket.on('Please', data=>{
             console.log('Please를 통해 온 userid, socketID',data.userid, data.socketID)
             chat_user = data.userid;
             chat_socketID = data.socketID;
         })
 
+        //2. 자기가 쓴 글이 뜨게 한다
         // 메세지 받기 ---------------222222222
         socket.on('send',async (data) => {
             console.log('보낸 메세지 받은 data', data);
@@ -117,6 +120,8 @@ io.sockets.on('connection', (socket) => {
                     userid = admin_array[0].userid
                 }
             }
+
+            //3. 서로가 서로한테 보낸다 E
             let admin_check = await areYouAdmin(userid)
             if (admin_check==1){
                 //관리자 -> 사용자 
@@ -151,6 +156,7 @@ io.sockets.on('connection', (socket) => {
         //     console.log('disconnected admin_arr =', admin_array)
         // })
     }
+    
 })
 
 // Admin 인지 check Function

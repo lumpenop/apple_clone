@@ -110,7 +110,7 @@ const socket = io();
 
 async function socketChat() {
     socket.on('connect', () => { })
-
+    //3. 서로가 서로한테 보낸다
     let chat_count = parseInt(chatBtn.dataset.value);
     socket.on('msg', data => {
         chat_count++;
@@ -131,6 +131,7 @@ function send() {
         // socket.to(id).emit('send', msg.value);
         // 메세지 보내기 -----------111111111
         let data = { msg: msg.value, socketID:socket.id,}
+        //2. 자기가 쓴 글이 뜨게 한다 E
         socket.emit('send', data);
         //내가 쓴 글 나에게 보내기 
         msgAdd(msg.value, 'me');
@@ -140,7 +141,7 @@ function send() {
     }
 }
 
-
+//0-0. 일단 접속을 한다 
 // 채팅 시작하는 user div append 
 socket.on('Userin', data => {
 
@@ -157,13 +158,14 @@ socket.on('Userin', data => {
     let chat_DIV = document.querySelector('.chat_ing_div')
     chat_DIV.addEventListener('click', () => {
         getChatRoom();
-        socket.emit('Please',{userid, socketID});
+        //0-1. 클릭 시 정보를 보낸다 E
+        socket.emit('Please',{userid, socketID})
     })
 
 })
 
 
-
+//4. 아직 안 되지만 채팅방을 나갈 때
 // 채팅 나가는 user 삭제 
 socket.on('sendForDelete', data => {
     let { socketID, userid } = data;

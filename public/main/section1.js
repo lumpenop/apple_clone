@@ -48,11 +48,19 @@ const heroIntro = document.querySelector('.typography-hero-intro');
 const heroCopy = document.querySelector('.typography-hero-copy');
 const filmIphone12 = document.querySelector('#film-iphone12');
 
-
 function sigmoid(z) {
     if(z>=1){
         return 1;
-    }else if(z<=0){
+    }else if(z<1){
+        return 0;
+    }
+    return z;
+}
+
+function sigmoid70(z) {
+    if(z>=70){
+        return 1;
+    }else if(z<70){
         return 0;
     }
     return z;
@@ -102,19 +110,25 @@ const sectionDesignRow = document.querySelector('.section-design .row').getBound
 function canvasHidden(){
     
     const scrollTop = html.scrollTop;
+
     if(scrollTop>=hiddenTop && scrollTop<=sectionDesignRow.bottom){
+
         
         const gap = (sectionDesignRow.bottom - hiddenTop) / 5;
         let num2 = Math.floor((scrollTop - hiddenTop) / gap);
+
+        let devide = (sectionDesignRow.bottom-hiddenTop)/5;
+        let minus = devide * num2;
+        
         if(num2>=5){
             num2 = 4
         }
-        
-        lis[num2].style.opacity = sigmoid((scrollTop-beforePosition)*1.5);
+        lis[num2].style.opacity = sigmoid70((scrollTop-minus-hiddenTop));
 
         
     }
     beforePosition = scrollTop;
+    
 }
 
 
