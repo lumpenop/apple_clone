@@ -111,7 +111,7 @@ async function socketChat() {
     socket.on('connect', () => { })
 
     let chat_count = parseInt(chatBtn.dataset.value);
-    socket.on('send', data => {
+    socket.on('msg', data => {
         chat_count++;
         if (flag == false) {
             chatBtn.innerHTML = `답변이 도착했습니다! <span> ${chat_count}`;
