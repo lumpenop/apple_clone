@@ -167,3 +167,7 @@
     content: ' ';
     display: table;
 }
+
+.section-camera .typography-section-headline-elevated-alt-2{
+    font-size: 60px;
+}

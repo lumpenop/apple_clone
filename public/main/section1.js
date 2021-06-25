@@ -1,11 +1,12 @@
 
+
 const timer2 = ms => new Promise(res => setTimeout(res,ms));
 
 async function imgVideo(){
     await timer2(300);
     document.querySelector('.section-hero .video-container').classList.add('loaded');
     await timer2(300);
-    document.querySelector('.section-hero .video-container .startframe').classList.add('hidden');
+    // document.querySelector('.section-hero .video-container .startframe').classList.add('hidden');
     
     await timer2(4600);
     document.querySelector('.section-hero .video-container .endframe').classList.remove('hidden');
@@ -18,16 +19,19 @@ imgVideo();
 
 let beforeWindowHeight = window.innerHeight;
 const endFrame = document.querySelector(".video-container > .endframe");
+const stickyWrap = document.querySelector(".section-hero .video-container");
 endFrame.style.height=`${endFrame.offsetWidth*0.77}px`;
+
+
 const changeHandler = () => {
     let afterWindowHeight = window.innerHeight;
     
     plusHeight = (afterWindowHeight - beforeWindowHeight)/afterWindowHeight;
 
-    const startFrame = document.querySelector(".video-container > .startframe");
+    // const startFrame = document.querySelector(".video-container > .startframe");
     const video = document.querySelector(".section-hero .video-container > video");
     const videoContainer = document.querySelector(".section-hero .video-container");
-    const stickyContent = document.querySelector(".section-hero .sticky-content");
+    const stickyWrap = document.querySelector(".section-hero .sticky-wrapper");
 
     startFrame.style.backgroundSize=`${window.innerHeight*1.3}px ${window.innerHeight}px`;
     video.style.height=String(window.innerHeight)+"px";

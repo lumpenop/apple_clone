@@ -1,7 +1,10 @@
-@media (max-width:752px){
+@media (max-width:900px){
     /* html,img,video,div{
         max-width: 752px;
         min-width: 400px;
     } */
+    .section-hero .video-container{
+        margin-top: 30px;
+    }
 
 }

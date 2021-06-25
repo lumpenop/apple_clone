@@ -11,6 +11,11 @@ const iamgeCamera = document.querySelector('.section-camera .image-camera-array'
 const cameraTop = iamgeCamera.getBoundingClientRect().top;
 const cameraBottom = iamgeCamera.getBoundingClientRect().bottom;
 
+
+
+
+
+
 function cameraZoom(){
     const scrollTop = html.scrollTop;
     
