@@ -69,6 +69,8 @@ async function searchOnClick(){
     
     const gnbsub = document.querySelector('.ac-gn-list');
     const searchView = document.querySelector('#ac-gn-searchview');
+    const searchViewContent = document.querySelector('.ac-gn-searchview-content');
+    const searchViewBar = document.querySelector('.ac-gn-searchview-bar');
     const subnav = document.querySelector('.subnav');
     const curtain = document.querySelector('#ac-gn-curtain');
     const appleLogo = document.querySelector('.ac-gn-link-apple');
@@ -101,6 +103,8 @@ async function searchOnClick(){
     input.classList.remove('displayNone');
     searchImg.classList.remove('displayNone');
     xBox.classList.remove('displayNone');
+    searchViewContent.classList.remove('displayNone');
+    searchViewBar.classList.remove('displayNone');
     input.focus();
 }
 
