@@ -89,8 +89,9 @@ async function searchOnClick(){
 
     await timer(40);
     for(var i=0; i<resultLink.length; i++){
-        resultLink[i].classList.add('slidingText4');
         resultLink[i].classList.remove('displayNone');
+        resultLink[i].classList.add('slidingText4');
+        
         await timer(10);
     }
     await timer(220);
@@ -120,11 +121,15 @@ async function searchClose(){
 
     input.classList.add('displayNone');
     searchImg.classList.add('displayNone');
+    xBox.classList.remove('slidingText4');
     xBox.classList.add('displayNone');
+    
 
 
     for(var i=0; i<resultLink.length; i++){
+        resultLink[i].classList.remove('slidingText4');
         resultLink[i].classList.add('displayNone');
+        
     }
 
     curtain.classList.remove('ac-gn-curtain');

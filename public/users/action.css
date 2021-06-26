@@ -111,21 +111,21 @@
 }
 
 
+
+.slidingText4{
+    animation-fill-mode:forwards !important;
+    animation: slidingText4 0.8s;
+    left: 0;
+    display: inline-block !important;
+}
+
 @keyframes slidingText4{
     from{
-        display: none;
         left: 8%;
     }to{
         left: 0;
         display: inline-block;
     }
-}
-
-.slidingText4{
-    animation-fill-mode:forwards;
-    animation: slidingText4 0.4s;
-    left: 0;
-    display: inline-block !important;
 }
 
 @keyframes slidingText8{
