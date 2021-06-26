@@ -13,6 +13,9 @@ const searchVeiwBar = document.querySelector('.ac-gn-searchview-bar');
 const searchViewRst = document.querySelector('.ac-gn-searchview-results');
 const acGlobalNav = document.querySelector('#ac-globalnav');
 const searchViewContent = document.querySelector('.ac-gn-searchview-content');
+const hambugTop = document.querySelector('.bread-top');
+const hambugBottom = document.querySelector('.bread-bottom');
+const burgerCrustBottom = document.querySelector('.bread-crust-bottom');
 
 let hambugFlag = false;
 function hambugOn(){
@@ -28,6 +31,9 @@ function hambugOn(){
         searchVeiwBar.classList.remove('displayNone');
         searchViewContent.classList.remove('displayNone');
         acGlobalNav.classList.add('backBlack');
+        hambugTop.classList.add('burgerTopOn');
+        hambugBottom.classList.add('burgerBottomOn');
+        burgerCrustBottom.classList.add('burgerCrustBottom');
         hambugFlag = true;
     }else{
         main.classList.remove('displayNone');
@@ -40,6 +46,9 @@ function hambugOn(){
         searchVeiwBar.classList.add('displayNone');
         searchViewContent.classList.add('displayNone');
         acGlobalNav.classList.remove('backBlack');
+        hambugTop.classList.remove('burgerTopOn');
+        hambugBottom.classList.remove('burgerBottomOn');
+        burgerCrustBottom.classList.remove('burgerCrustBottom');
         hambugFlag = false;
     }  
 }

@@ -164,5 +164,21 @@
         left: 5%;
     }
 
+    .burgerTopOn{
+        transform: rotate(45deg) !important;
+        transition: .3192s !important;
+        top: 21.5%;
+        left: 6.5%;
+    }
+    .burgerBottomOn{
+        transform: rotate(-45deg) !important;
+        transition: .3192s !important;
+        top: 10%;
+        left: 8%;
+    }
+
+    .burgerCrustBottom{
+        height: 1px !important;
+    }
 }
 
