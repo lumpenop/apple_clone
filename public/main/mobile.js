@@ -4,7 +4,7 @@
 
 
 const main = document.querySelector('#main');
-const footer = document.querySelector('.footer');
+
 const localNav = document.querySelector('#ac-localnav');
 const smallList = document.querySelector('.ac-gn-small-list');
 const acSearch = document.querySelector('.ac-gn-search');
@@ -16,16 +16,16 @@ const searchViewContent = document.querySelector('.ac-gn-searchview-content');
 const hambugTop = document.querySelector('.bread-top');
 const hambugBottom = document.querySelector('.bread-bottom');
 const burgerCrustBottom = document.querySelector('.bread-crust-bottom');
+const loginSubNav = document.querySelector('.subnav');
 
 let hambugFlag = false;
 function hambugOn(){
 
     if(!hambugFlag){
         main.classList.add('displayNone');
-        footer.classList.add('displayNone');
         searchViewRst.classList.add('displayNone');
         acSearch.classList.add('displayNone');
-        localNav.classList.add('displayNone');
+        
         smallList.classList.add('displayBlock');
         searchView.classList.add('displayBlock');
         searchVeiwBar.classList.remove('displayNone');
@@ -35,12 +35,20 @@ function hambugOn(){
         hambugBottom.classList.add('burgerBottomOn');
         burgerCrustBottom.classList.add('burgerCrustBottom');
         hambugFlag = true;
+        if(footer!=undefined){
+            footer.classList.add('displayNone');
+        }
+        if(loginSubNav!=undefined){
+            loginSubNav.classList.add('displayNone');
+        }
+        if(localNav!=undefined){
+            localNav.classList.add('displayNone');
+        }
     }else{
         main.classList.remove('displayNone');
-        footer.classList.remove('displayNone');
+        
         searchViewRst.classList.remove('displayNone');
         acSearch.classList.remove('displayNone');
-        localNav.classList.remove('displayNone');
         smallList.classList.remove('displayBlock');
         searchView.classList.remove('displayBlock');
         searchVeiwBar.classList.add('displayNone');
@@ -50,6 +58,15 @@ function hambugOn(){
         hambugBottom.classList.remove('burgerBottomOn');
         burgerCrustBottom.classList.remove('burgerCrustBottom');
         hambugFlag = false;
+        if(footer!=undefined){
+            footer.classList.remove('displayNone');
+        }
+        if(loginSubNav!=undefined){
+            loginSubNav.classList.remove('displayNone');
+        }
+        if(localNav!=undefined){
+            localNav.classList.remove('displayNone');
+        }
     }  
 }
 
