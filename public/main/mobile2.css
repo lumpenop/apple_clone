@@ -26,8 +26,7 @@
     .ac-gn-iphone,
     .ac-gn-watch,
     .ac-gn-music,
-    .ac-gn-support,
-    .ac-gn-search{
+    .ac-gn-support{
         display: none;
     }
     .ac-gn-bag{
@@ -56,6 +55,11 @@
         opacity: 0;
     }
 
+
+ 
+    .ac-gn-small-list{
+        display: block;
+    }
 
     .ac-gn-apple{
         top: 1px;
@@ -92,7 +96,16 @@
         border-bottom: 1px solid #424245;
     }
 
-  
+    .ac-gn-small-item:nth-last-child(2),
+    .ac-gn-small-item:last-child{
+        border: none;
+    }
+
+    #ac-localnav{
+        display: none;
+
+    }
+
     .ac-gn-small-item:last-child::before{
         content: '';
         display: block;
@@ -100,14 +113,29 @@
         height: 1.8px;
         background: #424245;
     }
-    
-    
+    .ac-gn-search{
+        top: 110%;
+        left: 5%;
+        display: none
+    }
+    #ac-gn-searchview,
+    .ac-gn-searchview-bar{
+        display: block !important;
+    }
     .ac-gn-searchview-bar{
         padding: 0 35px;
     }
+    #main,footer{
+        display: none;
+    }
 
-    .backBlack{
-        background: #000 !important;
+    .ac-gn-searchview-results{
+        display: none;
+    }
+
+    #ac-globalnav{
+    
+        background: #000;
     }
 
     #ac-gn-searchview{
@@ -134,7 +162,6 @@
         width: 100%;
         background: #000;
     }
-
     .ac-gn-searchview-results h3,
     .ac-gn-searchview-results a{
         color: #dedede;
@@ -146,6 +173,7 @@
     .ac-gn-searchview-content{
         height: 56px;
         background: #000;
+       
     }
 
     .ac-gn-searchform-input{
@@ -153,16 +181,5 @@
         left: 12% !important;
        
     }
-
-    .ac-gn-small-item:nth-last-child(2),
-    .ac-gn-small-item:last-child{
-        border: none;
-    }
-
-    .ac-gn-search{
-        top: 110%;
-        left: 5%;
-    }
-
 }
 
