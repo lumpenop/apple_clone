@@ -33,7 +33,7 @@ const changeHandler = () => {
     const videoContainer = document.querySelector(".section-hero .video-container");
     const stickyWrap = document.querySelector(".section-hero .sticky-wrapper");
 
-    startFrame.style.backgroundSize=`${window.innerHeight*1.3}px ${window.innerHeight}px`;
+    // startFrame.style.backgroundSize=`${window.innerHeight*1.3}px ${window.innerHeight}px`;
     video.style.height=String(window.innerHeight)+"px";
 
     endFrame.style.height=`${endFrame.offsetWidth*0.77}px`;
@@ -115,19 +115,20 @@ function canvasHidden(){
     
     const scrollTop = html.scrollTop;
 
-    if(scrollTop>=hiddenTop && scrollTop<=sectionDesignRow.bottom){
+    if(scrollTop>=sectionDesignRow.top && scrollTop<=sectionDesignRow.bottom){
 
-        
-        const gap = (sectionDesignRow.bottom - hiddenTop) / 5;
-        let num2 = Math.floor((scrollTop - hiddenTop) / gap);
+        // console.log(scrollTop);
+        const gap = (sectionDesignRow.bottom - sectionDesignRow.top) / 5;
+        let num2 = Math.floor((scrollTop - sectionDesignRow.top) / gap);
 
-        let devide = (sectionDesignRow.bottom-hiddenTop)/5;
+        let devide = (sectionDesignRow.bottom-sectionDesignRow.top)/5;
         let minus = devide * num2;
         
         if(num2>=5){
             num2 = 4
         }
-        lis[num2].style.opacity = sigmoid70((scrollTop-minus-hiddenTop));
+ 
+        lis[num2].style.opacity = sigmoid70((scrollTop-minus-sectionDesignRow.top));
 
         
     }

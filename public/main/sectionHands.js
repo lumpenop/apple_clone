@@ -92,11 +92,12 @@ const bottomFrame = document.querySelector('.section-design-materials .frame-bot
 
 const sectionMini = document.querySelector('.section-mini').getBoundingClientRect();
 const hiddenUlBottom = document.querySelector('.design-content').getBoundingClientRect().bottom;
+const handsImgMini = document.querySelector('.section-mini .image-mini');
 function forMiniSection(){
     const deviceWrapperBottom = deviceWrapper.getBoundingClientRect().bottom-250;
     const scrolledTopLength = window.pageYOffset; 
     const absoluteTop = scrolledTopLength + deviceWrapperBottom; 
-
+    
     const scrollTop = html.scrollTop;
     // if(absoluteTop < scrollTop){
         
@@ -125,6 +126,11 @@ function forMiniSection(){
         topFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num)}, 0, 0)`;
         bottomFrame.style.transform =  `matrix(1, 0, 0, ${sigmoid2(num)}, 0, 0)`;
 
+        let handsMoving = num*400;
+        if(handsMoving>=500){
+            handsMoving = 500;    
+        }
+        handsImgMini.style.transform = `matrix(1, 0, 0, 1, 0, ${500-handsMoving})`;
     }else{
         leftFrame.classList.remove('will-change');
         rightFrame.classList.remove('will-change');
@@ -134,3 +140,4 @@ function forMiniSection(){
 }
 
 window.addEventListener('scroll', forMiniSection); 
+

@@ -96,20 +96,7 @@
         }
 
     }
-    const backgroundOn = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
 
-            if (entry.intersectionRatio > 0 && entry.intersectionRatio < 0.1) {
-                entry.target.style.opacity = '1';
-            } else {
-                entry.target.style.opacity = '0';
-            }
-        })
-    })
-
-    const backgrounds = document.querySelector('.backgroundWhite');
-    
-    backgroundOn.observe(backgrounds);
 
     window.addEventListener('scroll', syScroll);
 
@@ -137,6 +124,22 @@
             }
         }
     }
+
+       const backgroundOn = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+            if (entry.intersectionRatio > 0) {
+                entry.target.style.opacity = '1';
+                console.log(entry.intersectionRatio)
+            } else {
+                entry.target.style.opacity='0';
+            }
+        })
+    })
+
+    const backgrounds = document.querySelector('.background8');
+    
+    backgroundOn.observe(backgrounds);
 
 </script>
 </html>

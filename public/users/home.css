@@ -568,7 +568,7 @@ a{
 
 
 .grid-copy{
-    padding-top: 60px;
+    padding-top: 80px;
 }
 
 .grid-image{
@@ -655,4 +655,8 @@ a{
     margin: 0 auto;
     width: 80%;
     min-width: 400px;
+}
+
+.backgroundWhite{
+    opacity: 0;
 }
