@@ -6,6 +6,10 @@
 }
 
 
+.content.wrap1200{
+    position: relative !important;
+}
+
 .line2{
     height:1px;
     width:100%;

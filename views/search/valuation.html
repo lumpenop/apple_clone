@@ -14,8 +14,10 @@
             <div class = "w1200">
                 <div class = "footertext">고객들의 수강후기</div>
                 <div class = "search">
-                    <div><input class = "submit" type = "submit" value = ""></div>
-                    <div><input class = "text" type = "text" placeholder="원하는 수업의 수강후기를 검색해보세요"></div>              
+                    <div class="text-box">
+                        <div><input class = "text" type = "text" placeholder="원하는 수업의 수강후기를 검색해보세요"></div>              
+                        <div><input class = "submit" type = "submit" value = ""></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,50 +51,53 @@
             </ul>
             <div class = "line"></div>
             <div class = "valuation1">
-                <div id = "blockchain">
-                    <div class = "img marginleft"><img class = "img" src = "../../content1.png"></div>
-                    <div class = "font-size marginleft2 open1" >블록체인반 수강후기</div>
-                    <div class = "marginleft2 first">
-                        {% for item in result1 %}
-                        <div class = "blue">제목 : {{item.value_subject}}</div>
-                        <div>유저아이디 : {{item.userid}}</div>
-                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
-                        {% endfor %}
+                <div class="content-wrap">
+                    <div id = "blockchain">
+                        <div class = "img marginleft"><img class = "img" src = "../../content1.png"></div>
+                        <div class = "font-size marginleft2 open1" >블록체인반 수강후기</div>
+                        <div class = "marginleft2 first">
+                            {% for item in result1 %}
+                            <div class = "blue">제목 : {{item.value_subject}}</div>
+                            <div>유저아이디 : {{item.userid}}</div>
+                            <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                            {% endfor %}
+                        </div>
+                        <div class = "marginleft2 second">
+                            {% for item in result11 %}
+                            <div class = "blue">제목 : {{item.value_subject}}</div>
+                            <div>유저아이디 : {{item.userid}}</div>
+                            <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                            {% endfor %}
+                            <div class = "close1">닫기</div>
+                        </div>
                     </div>
-                    <div class = "marginleft2 second">
-                        {% for item in result11 %}
-                        <div class = "blue">제목 : {{item.value_subject}}</div>
-                        <div>유저아이디 : {{item.userid}}</div>
-                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
-                        {% endfor %}
-                        <div class = "close1">닫기</div>
+                    <div id = "ARVR">
+                        <div class = "img marginleft"><img class = "img" src = "../../content2.png"></div>
+                        <div class = "font-size marginleft2">AR/VR반 수강후기</div>
+                        <div class = "marginleft2">
+                            {% for item in result2 %}
+                            <div class = "blue">제목 : {{item.value_subject}}</div>
+                            <div>유저아이디 : {{item.userid}}</div>
+                            <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-                <div id = "ARVR">
-                    <div class = "img marginleft"><img class = "img" src = "../../content2.png"></div>
-                    <div class = "font-size marginleft2">AR/VR반 수강후기</div>
-                    <div class = "marginleft2">
-                        {% for item in result2 %}
-                        <div class = "blue">제목 : {{item.value_subject}}</div>
-                        <div>유저아이디 : {{item.userid}}</div>
-                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
-                        {% endfor %}
+                    <div id = "producing">
+                        <div class = "img marginleft imgfloat"><img class = "img" src = "../../content1.png"></div>
+                        <div class = "font-size marginleft2 marginleft3" >게임기획반 수강후기</div>
+                        <div class = "marginleft2 imgfloat marginleft4">
+                            {% for item in result3 %}
+                            <div class = "blue">제목 : {{item.value_subject}}</div>
+                            <div>유저아이디 : {{item.userid}}</div>
+                            <div class = "bottom">평가 내용 : {{item.value_content}}</div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>    
             <div class = "line clear"></div>
             <div class = "valuation2">
-                <div id = "producing">
-                    <div class = "img marginleft imgfloat"><img class = "img" src = "../../content1.png"></div>
-                    <div class = "font-size marginleft2 marginleft3" >게임기획반 수강후기</div>
-                    <div class = "marginleft2 imgfloat marginleft4">
-                        {% for item in result3 %}
-                        <div class = "blue">제목 : {{item.value_subject}}</div>
-                        <div>유저아이디 : {{item.userid}}</div>
-                        <div class = "bottom">평가 내용 : {{item.value_content}}</div>
-                        {% endfor %}
-                    </div>
-                </div>
+                
             </div>
         </div>   
     </div> 

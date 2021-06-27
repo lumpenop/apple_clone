@@ -19,3 +19,7 @@
   #pos2:checked~.pos>label:nth-child(2){background:#666;}
   #pos3:checked~.pos>label:nth-child(3){background:#666;}
   #pos4:checked~.pos>label:nth-child(4){background:#666;}
+
+  input{
+    border-radius: 8px;
+  }

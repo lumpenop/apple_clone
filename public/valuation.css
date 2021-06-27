@@ -28,7 +28,7 @@ html{
     width:100vw;
     height:500px;
     position:absolute;
-    top:2200px;
+    top: 1700px;
 }
 .wrap55{  width:100vw;
     height:500px;}
@@ -70,7 +70,7 @@ html{
 }
 .footertext{
     font-size:34px;
-    color:black;
+    color: rgb(24, 34, 8);
     font-weight: bold;
 }
 
@@ -81,14 +81,18 @@ html{
 }
 
 .submit{
-   margin-left: 350px;
+   margin-left: 2px;
+   height: 40px !important;
 }
-.text{
 
-}
 .text{
     width:430px;
     height:40px;
+    border-radius: 6px;
+    border: none;
+}
+.text-box{
+    margin: 0 auto;
 }
 
 .submit{
@@ -119,28 +123,18 @@ html{
     text-align: center;
 }
 
-.valuation1>div{
-    display: inline-block;
-    float: left;
-}
 
 .img{
     width:300px;
     height:240px;
+    margin: 0 auto;
 }
 .marginleft5{
     margin-left:130px;
 }
-.marginleft{
-    margin-left:190px;
-}
-.marginleft2{
-    margin-left:80px;
-}
-.marginleft3{
-    display: inline-block;
-    margin-left:150px;
-}
+
+
+
 .marginleft4{
     margin-top: 20px;
     display: inline-block;
@@ -172,18 +166,19 @@ html{
 
 .imgfloat{
     display: inline-block;
-    float: left;
 }
 
 .valuation5{
     position: absolute;
-    top:2200px;
+    top:760px;
 }
 .valuation5>div{
     display: inline-block;
     width:400px;
-    float: left;
+    text-align: center;
 }
+
+
 
 #computer>div>a{
     text-decoration: none;
@@ -202,4 +197,20 @@ html{
 }
 a{
     text-decoration: none;
+}
+
+.valuation1 > div > div{
+    width: 30%;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.content-wrap{
+    display: flex;
+    width: 80% !important;
+    margin: 0 auto !important;
+}
+
+.content-wrap div{
+    text-align: center;
 }
