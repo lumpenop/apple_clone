@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 a{
     text-decoration: none;
 }
@@ -7,7 +12,7 @@ a{
 }
 
 .w1200{
-    width:1200px;
+    width:60%;
     margin:0 auto;
 }
 
@@ -32,26 +37,53 @@ a{
 
 .menuvar{
     line-height: 40px;
-    color:#00c471;
+    color:#0c8b5673;
     font-weight: bold;
 }
 
 .topcontent{
-    margin-left: 80px;
+    width: 60%;    
+    margin-left: 2%;
+}
+
+.id-wrap{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.write-content h3{
+    padding-bottom: 10px;
+}
+
+.write-content{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.write-content input{
+    width: 100%;
+}
+.write-form-wrap{
+    width: 80%;
+    margin: 0 auto;
 }
 
 .search1{
     display: inline-block;
     background:white;
-    color:#00c471;
-    border:1px solid #00c471;
+    color:#0c8b5673;
+    border:1px solid #0c8b5673;
     width:50px;
     height:30px;
 }
 .search2{
     border:1px solid grey;
-    width:700px;
-    height:28px;
+    width:50%;
+    height:30px;
+}
+
+.WriteContent{
+    top: 0;
 }
 
 .Write{
@@ -65,4 +97,14 @@ a{
 }
 ul,li{
     list-style: none;
+}
+.WriteClose{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.WriteClose:hover{
+    cursor: pointer;
 }
