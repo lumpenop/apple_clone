@@ -39,7 +39,7 @@
                             <span aria-hidden="true" for="username" class="form-label">이름</span>
                         </div>
                         <div class="form-element">
-                            <input id="userbirth" name="userbirth" type="text" class="form-cell form-textbox form-textbox-text form-field inputFocus generic-input-field joinJS">
+                            <input id="userbirth" name="userbirth"  onkeyup="birth_keyup(this)"  type="text" class="form-cell form-textbox form-textbox-text form-field inputFocus generic-input-field joinJS">
                             <span aria-hidden="true" class="form-label" for="userbirth">
                                 생년월일
                             </span>
@@ -76,7 +76,7 @@
             <div class="flow-section">
                 <div class="container-xs centered phone-section">
                     <div class="form-element">
-                        <input id="mobile" name="mobile" type="tel" class="generic-input-field inputFocus phone-field form-textbox form-textbox-text joinJS">
+                        <input id="mobile" name="mobile" type="tel" onkeyup="mobile_keyup(this)" maxlength='13' class="generic-input-field inputFocus phone-field form-textbox form-textbox-text joinJS">
                         <span class="form-label">전화번호</span>
                     </div>
                     <button class="phone-info list-action">

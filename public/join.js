@@ -1,5 +1,7 @@
 // const {users} = require('./models'); 질문 : 여기에 못쓰는 이유가 궁금 server쪽이아닌 html과 연결된 js라서?? 
 // 요 JS 는 client 브라우저가 해석하는 중 / server는 node.js 가 해석 중 
+
+
 // 요 해석하는 client 브라우저연결된js는 DB해석할수 없음 
 const input = document.querySelectorAll(".inputFocus");
 for(var i=0; i<input.length; i++){
@@ -21,15 +23,12 @@ function inputFocusOut(){
     }
 }
 
-//  EMAIL 형식 유효성 검사 
-
+//  EMAIL (userid) 형식 유효성 검사 
 let userid = document.querySelector('#userid')
 userid.addEventListener('change',(e)=>{  // html 의 onchange="validEmail(this)"와 동일 
-    console.log(e)
-    console.log(e.target)
     validEmail(e.target)
+    console.log(e.target)
 })
-
 function validEmail(obj){
     if(validEmailCheck(obj)==false){
         alert('올바른 이메일 주소를 입력해주세요.')
@@ -38,14 +37,33 @@ function validEmail(obj){
         return false;
     }
 }
-
 function validEmailCheck(obj){
     var pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     return (obj.value.match(pattern)!=null)
 }
 
+//  Mobile  - 하이픈 자동 생성 
+function mobile_keyup(obj){
+    let mobile_len=obj.value.length;
+    console.log(mobile_len)
+    if(event.keyCode==8){
+        obj.value=obj.value.slice(0,mobile_len); 
+        return 0; 
+    }else if (mobile_len==3 || mobile_len==8){
+        obj.value += '-';
+    }
+}
 
-
+//  생년월일 - 하이픈 자동 생성
+function birth_keyup(obj){
+    let birth_len = obj.value.length;
+    if (event.keyCode==8){
+        obj.value = obj.value.slice(0,birth_len)
+        return 0;
+    }else if(birth_len==4 || birth_len==7){
+        obj.value += '-';
+    }
+}
 
 let joinBtn = document.querySelector('#joinBtn');
 joinBtn.addEventListener('click',joinFn)
@@ -66,16 +84,13 @@ async function joinFn(){
     if (mobile.value==""){swal('핸드폰 번호를 입력해주세요'); mobile.focus(); return 0;};
     if (userpw.value!=pwcheck.value){swal('비밀번호가 서로 다릅니다.'); userpw.focus(); return 0;};
     
-    // 0. ID & PW 길이 미니멈 JS 
-    // 1. ID -> 메일 주소 유효한거 구별하는거 만들기 ex) naver, daum, gmail etc
-    // 2. 생년월일 알고리즘 추가 
-    // 3. 전화번호 알고리즘 추가 
-    // 4. 공지사항 / 개인정보 클릭 안했을 때 알고리즘 추가 
-    
 
-    // 완성 전 주석 풀것들
-    //if (userpw.value.length<=6){swal('비밀번호는 6글자 이상으로 설정해주세요.'); return 0;};
-
+    // 전화번호 유효성 검사  
+    let mobile_pattern = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/
+    if(!mobile_pattern.test(mobile.value)) {swal('핸드폰 번호를 확인해주세요.'); mobile.value=''; mobile.focus(); return 0; }
+    // 생년월일 유효성 검사
+    let birth_pattern = /^(19[0-9][0-9]|20\d{2})-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/
+    if(!birth_pattern.test(userbirth.value)){swal('생년월일 8자리를 입력해주세요'); userbirth.value=''; userbirth.focus(); return 0; }
 
     //  ID (email) 중복 JS 
     let url = `http://localhost:3000/user/userid_check`;
