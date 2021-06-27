@@ -21,6 +21,23 @@
 }
 
 @media (max-width:796px){
+    .img-purple1{
+        float: left;
+        padding-right: 6px;
+    }
+
+    .img-purple2{
+        padding-left: 2px;
+        top: 178px !important;
+    }
+
+    .purple-wrap{
+        width: 810px;
+        display: block;
+    }
+
+  
+
     .ac-gn-mac,
     .ac-gn-ipad,
     .ac-gn-iphone,

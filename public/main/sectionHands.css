@@ -19,7 +19,7 @@
 }
 
 .section-design .compare{
-    min-height: 340vh;
+    min-height: 260vh;
 }
 
 .section-design .section-design-iphone-12{
@@ -428,7 +428,7 @@ br.large{
 }
 
 .canvas-hidden{
-    top: -500px;
+    top: -300px;
     color: seashell;
     position: relative;
     height: 360px;

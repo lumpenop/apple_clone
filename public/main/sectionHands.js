@@ -31,7 +31,7 @@ const updateImage = index => {
   context.drawImage(img, 0, 0, 600, 400);
 }
 
-const flowCanvasTop = document.querySelector('#flow-canvas-iphone-12').getBoundingClientRect().top;
+const flowCanvasTop = document.querySelector('.section-design').getBoundingClientRect().top;
 const designSectionTop = document.querySelector('.section-design').getBoundingClientRect().bottom;
 window.addEventListener('scroll', () => {  
   

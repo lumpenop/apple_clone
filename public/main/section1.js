@@ -62,9 +62,9 @@ function sigmoid(z) {
 }
 
 function sigmoid70(z) {
-    if(z>=70){
+    if(z>=40){
         return 1;
-    }else if(z<70){
+    }else if(z<40){
         return 0;
     }
     return z;
@@ -109,7 +109,7 @@ const hiddenUl = document.querySelector('.canvas-hidden .hidden-ul');
 const hiddenTop = document.querySelector('.canvas-hidden .hidden-ul').getBoundingClientRect().top;
 const lis = document.querySelectorAll('.canvas-hidden .hidden-ul li');
 var beforePosition;
-const sectionDesignRow = document.querySelector('.section-design .row').getBoundingClientRect();
+const sectionDesignRow = document.querySelector('.section-design .device-wrapper').getBoundingClientRect();
 
 function canvasHidden(){
     
@@ -127,7 +127,7 @@ function canvasHidden(){
         if(num2>=5){
             num2 = 4
         }
- 
+        console.log(scrollTop-minus-sectionDesignRow.top);
         lis[num2].style.opacity = sigmoid70((scrollTop-minus-sectionDesignRow.top));
 
         
