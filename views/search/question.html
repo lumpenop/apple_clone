@@ -18,12 +18,14 @@
     </a>
     <div class = "contentwrap wrap">
         <div class = "content1200 w1200">
+      
             <div class = "menuvar" style = "display: inline-block; float:left;">
                 <div>질문&답변</div>
                 <div>자유주제</div>
                 <div>스터디</div>
             </div>
-            <div class = "topcontent" style = "display: inline-block; float:left;">
+            <div class = "topcontent" style = "display: inline-block;">
+                
                 <div>
                     <form action = "/search/question2" method = "post">
                         <input class = "search2" type = "text" name = "question_name" placeholder="궁금한 질문을 검색해보세요!">
@@ -48,17 +50,24 @@
         </div>
     </div>
     <div class = "WriteContent" style = "display:none; width:100vw; height:100vh; background-color: rgba(0, 0, 0, 0.3); position: absolute; z-index: 1;">
-        <div class = "WriteClose" style = "color:white; font-size:30px; font-weight: bold; padding:30px;">X</div>
-        <div style = "background: white; width:950px; margin:0 auto; height:800px; box-sizing: border-box; padding:40px;">
-            <form action = "/search/question" method = "post">
-                <h3 style = "color:#00c471;">제목</h3>
-                <input style = "display: inline-block; width:840px; height:40px;" type = "text" name = "question_subject">
-                <h3 style = "color:#00c471;">아이디</h3>
-                <input style = "display: inline-block; width:840px; height:40px;" type = "text" name = "question_id">
-                <h3 style = "color:#00c471;">내용</h3>
-                <input style = "display: inline-block; width:840px; height:350px;" type = "text" name = "question_content"><br/>
-                <input style = "display: inline-block; color:#00c471; background: white; border:1px solid; color:#00c471; width:100px; height:40px; font-size: 20px; margin-top: 40px;" type = "submit" value = "저장" style = "background:blue; opacity: 80%;">
-            </form>
+        
+        <div class="write-content" style = "background: white; width: 70%; margin:0 auto; height:600px; box-sizing: border-box; padding:40px;">
+            <div class = "WriteClose" style = "color: grey; font-size:26px; font-weight: bold; padding:10px;">X</div>
+            <div class="write-form-wrap">
+                <form action = "/search/question" method = "post">
+                    <div class="headline-wrap">
+                        <h3 style = "color:#0c8b5673;">제목</h3>
+                        <input style = "display: inline-block; height:40px;" type = "text" name = "question_subject">
+                    </div>
+                    <div class="id-wrap">
+                        <h3 style = "color:#0c8b5673;">아이디</h3>
+                        <input style = "display: inline-block; height:40px;" type = "text" name = "question_id">
+                    </div>
+                    <h3 style = "color:#0c8b5673;">내용</h3>
+                    <input style = "display: inline-block; height:200px;" type = "text" name = "question_content"><br/>
+                    <input style = "display: inline-block; color:#0c8b5673; background: white; border:1px solid; color:#0c8b5673; width:100px; height:40px; font-size: 20px; margin-top: 40px;" type = "submit" value = "저장" style = "background:blue; opacity: 80%;">
+                </form>
+            </div>
         </div>
     </div>
 </body>
@@ -78,5 +87,18 @@
     function CloseWrite(){
         WriteContent.style.display = 'none'
     }
+
+    const writeCont = document.querySelector('.WriteContent');
+    function contentPopup(evnet){
+        console.log('dasa')
+        if(evnet.target == writeCont){
+            CloseWrite();
+        }
+    }
+
+    
+    window.addEventListener('click', event => {
+        contentPopup(event);
+    })
 </script>
 </html>
