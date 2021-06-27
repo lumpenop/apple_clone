@@ -24,8 +24,7 @@ function inputFocusOut() {
     }
 }
 
-// 핸드폰 번호 형식 /^01(?:0|1|[6-9])[.-]?(\\d{3}|\\d{4})[.-]?(\\d{4})$/
-// 생년 월일 /^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/
+
 
 async function loginFn() {
     let loginForm = document.querySelector('#loginForm');
