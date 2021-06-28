@@ -405,6 +405,10 @@ let map = (req, res) => {
     res.render('./map/map.html')
 }
 
+let musicOn=(req, res) =>{
+    res.render('./music/board.html');
+}
+
 
 
 
@@ -415,4 +419,5 @@ module.exports = {
     chat, chatRoom, chatHelp, chatBtn, socketUserCheck,
     pwFind, pwFind_middleware,
     map,
+    musicOn,
 }

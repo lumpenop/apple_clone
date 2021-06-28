@@ -169,13 +169,14 @@ html{
 }
 
 .valuation5{
-    position: absolute;
+    position: relative;
     top:760px;
 }
 .valuation5>div{
     display: inline-block;
-    width:400px;
+    width:30%;
     text-align: center;
+    padding: 0 1%;
 }
 
 

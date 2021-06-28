@@ -35,4 +35,6 @@ router.get('/pwFind_middleware',controller.pwFind_middleware);
 
 router.get('/map', controller.map);
 
+router.get('/music', controller.musicOn);
+
 module.exports = router;

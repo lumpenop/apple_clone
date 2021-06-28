@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.board-wrap{
+    width: 100%;
+}
+
+.board-container,
+.board-headline,
+.board-content,
+.board{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.board-container{
+    margin-top: 40px;
+}
+
+.board{
+    margin-top: 20px;
+}

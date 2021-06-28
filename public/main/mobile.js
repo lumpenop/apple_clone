@@ -70,7 +70,14 @@ function hambugOn(){
     }  
 }
 
-const hambug = document.querySelector('.ac-gn-hambug');
+function resizeHambug(){
+    if(hambugFlag){
+        hambugOn();
+    }
+}
 
+const hambug = document.querySelector('.ac-gn-hambug');
 hambug.addEventListener('click',hambugOn);
+window.addEventListener('resize',resizeHambug);
+
 
