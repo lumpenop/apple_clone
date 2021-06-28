@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     userbirth:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     image: {

@@ -13,12 +13,13 @@ let join = async (req, res) => {
     res.render('join.html');
 }
 
-let join_success = (req, res) => {
+let join_success = async (req, res) => {
     let { username, userbirth, userid, userpw, mobile } = req.body;
+    console.log(userbirth)
     // verifying key 만들어 db에 함께 create 
     let key_for_verify = verifying_key();
     userpw = createPW(userpw);
-    users.create({ userid, userpw, username, userbirth, mobile, key_for_verify, })
+    await users.create({ userid, userpw, username, userbirth, mobile, key_for_verify, })
 
     let transporter = nodemailer.createTransport({
         service: 'Gmail',
