@@ -15,10 +15,23 @@
     margin: 0 auto;
 }
 
+.board-headline{
+    width: 90%;
+}
+
 .board-container{
     margin-top: 40px;
 }
 
 .board{
     margin-top: 20px;
+}
+
+.board-headline,
+.write-button-wrap{
+    display: inline-block;
+}
+.board-header-wrap{
+    width: 80%;
+    margin: 0 auto;
 }

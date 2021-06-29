@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.board-write-wrap{
+    width: 100%;
+}
+
+.board-write-container{
+    width: 60%;
+    margin: 60px auto 0;
+}

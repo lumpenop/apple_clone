@@ -11,9 +11,14 @@
     <div class="board-wrap">
         <div class="board-container">
             <div class="board-content">
-                <h2 class="board-headline">
-                    수강후기
-                </h2>
+                <div class="board-header-wrap">
+                    <h2 class="board-headline">
+                        수강후기
+                    </h2>
+                    <div class="write-button-wrap">
+                        <a class="write-button" href="/user/boardWrite">작성하기</a>
+                    </div>
+                </div>
                 <table border="1" class="board">
                     <tr>
                         <th colspan="2">
@@ -21,11 +26,16 @@
                         </th>
                         <th>작성자</th>
                     </tr>
-                    <tr>
-                        <td>0</td>
-                        <td>제목1</td>
-                        <td>작성자1</td>
-                    </tr>
+                    
+                    {% for item in result %}
+                        <tr>
+                            <td style="width: 10%;">{{item.id}}</td>
+                            <td style="width: 60%"><a href="/user/musicContent/?id={{item.id}}">{{item.question_subject}}</a></td>
+                            <td style="width: 30%;">{{item.question_id}}</td>
+                        </tr>
+
+                    {% endfor %}    
+                
                 </table>
             </div>
         </div>

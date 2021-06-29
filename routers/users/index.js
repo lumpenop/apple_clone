@@ -36,5 +36,8 @@ router.get('/pwFind_middleware',controller.pwFind_middleware);
 router.get('/map', controller.map);
 
 router.get('/music', controller.musicOn);
-
+router.get('/boardWrite', controller.boardWrite);
+router.post('/boardWriting', controller.boardWriting);
+router.get('/musicContent', controller.musicContent);
+router.get('/hash', controller.hash);
 module.exports = router;

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { users, items, buy, bag, history } = require('../../models');
+const { users, items, buy, bag, history, question } = require('../../models');
 const { createToken, createPW, verifying_key } = require("../../JWT");
 const axios = require('axios');
 const qs = require('qs');
@@ -406,11 +406,35 @@ let map = (req, res) => {
     res.render('./map/map.html')
 }
 
-let musicOn=(req, res) =>{
-    res.render('./music/board.html');
+let musicOn = async (req, res) =>{
+    let result = await question.findAll()
+    res.render('./music/board.html',{
+        result
+    });
 }
 
+let boardWrite= async(req, res)=>{
+    res.render('./music/boardWrite.html');
+}
 
+let boardWriting = async(req, res)=>{
+    await question.create({ 
+        question_subject:req.body.title,
+        question_content:req.body.content,
+        question_id:req.body.name
+    })
+    res.redirect('/user/music');
+}
+
+let musicContent = async(req, res)=>{
+    let result = await question.findOne({ where: {id:req.query.id}})
+    res.render('./music/content.html',{result});
+}
+
+let hash = async(req, res)=>{
+    let result = await question.findAll({ where: {question_content:req.query.content}});
+    res.render('./music/hash.html',{result});
+}
 
 
 module.exports = {
@@ -420,5 +444,6 @@ module.exports = {
     chat, chatRoom, chatHelp, chatBtn, socketUserCheck,
     pwFind, pwFind_middleware,
     map,
-    musicOn,
+    musicOn, boardWrite, boardWriting,musicContent,hash,
+
 }
